@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/kylucdialog"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.8"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/kyluc_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right" 
+            android:background="@drawable/kylucbt_style"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7.2"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="8"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="113dp"
+                        android:layout_height="fill_parent" >
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent" >
+
+                        <TextView
+                            android:id="@+id/name1"
+                            android:layout_width="152dp"
+                            android:layout_height="fill_parent"
+                            android:text="name1"
+                            android:textColor="#fa0606"
+                            android:textSize="30px" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="116dp"
+                        android:layout_height="fill_parent" >
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/num1"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:text="TextView"
+                        android:textColor="#fa0c06"
+                        android:textSize="30px" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.5"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="8.5"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="113dp"
+                        android:layout_height="fill_parent" >
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent" >
+
+                        <TextView
+                            android:id="@+id/name2"
+                            android:layout_width="152dp"
+                            android:layout_height="fill_parent"
+                            android:text="name2"
+                            android:textColor="#fa7906"
+                            android:textSize="30px" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="116dp"
+                        android:layout_height="fill_parent" >
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/num2"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:text="TextView"
+                        android:textColor="#fa0c06"
+                        android:textSize="30px" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="9"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="114dp"
+                        android:layout_height="fill_parent" >
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent" >
+
+                        <TextView
+                            android:id="@+id/name3"
+                            android:layout_width="152dp"
+                            android:layout_height="fill_parent"
+                            android:text="name3"
+                            android:textColor="#0cfa06"
+                            android:textSize="30px" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="116dp"
+                        android:layout_height="fill_parent" >
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/num3"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:text="TextView"
+                        android:textColor="#fa0c06"
+                        android:textSize="30px" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="7"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="114dp"
+                        android:layout_height="fill_parent" >
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent" >
+
+                        <TextView
+                            android:id="@+id/name4"
+                            android:layout_width="152dp"
+                            android:layout_height="fill_parent"
+                            android:text="name4"
+                            android:textColor="#0c06fa"
+                            android:textSize="30px" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="116dp"
+                        android:layout_height="fill_parent" >
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/num4"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:text="TextView"
+                        android:textColor="#fa0c06"
+                        android:textSize="30px" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="9"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="113dp"
+                        android:layout_height="fill_parent" >
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent" >
+
+                        <TextView
+                            android:id="@+id/name5"
+                            android:layout_width="152dp"
+                            android:layout_height="match_parent"
+                            android:text="name5"
+                            android:textColor="#9b06fa"
+                            android:textSize="30px" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="116dp"
+                        android:layout_height="fill_parent" >
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/num5"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:text="TextView"
+                        android:textColor="#fa0c06"
+                        android:textSize="30px" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

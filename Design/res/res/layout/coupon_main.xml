@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_coupon_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="3dip"
+        android:stretchColumns="1" >
+
+        <TableRow>
+
+            <TextView
+                android:gravity="left"
+                android:padding="3dip"
+                android:text="@string/payment_label_coupon_code"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txt_coupon_code"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/payment_label_coupon_hint"
+                android:maxLines="1"
+                android:capitalize="characters"
+                android:maxLength="6" >
+            </EditText>
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/tv_coupon_description"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dip"
+        android:layout_marginRight="6dip"
+        android:ellipsize="end"
+        android:maxWidth="50dip"
+        android:text="@string/payment_label_coupon_description"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" >
+    </TextView>
+
+</LinearLayout>
