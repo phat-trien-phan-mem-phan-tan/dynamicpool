@@ -1,4 +1,6 @@
-package vn.edu.hust.student.dynamicpool;
+package vn.edu.hust.student.dynamicpool.presentation.assets;
+
+import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetDescriptor;
@@ -36,6 +38,8 @@ public class Assets implements Disposable, AssetErrorListener {
 						+ assetManager.getAssetNames().size);
 		bindAssets();
 	}
+	
+	
 
 	private void loadAssets() {
 		background.load(assetManager);

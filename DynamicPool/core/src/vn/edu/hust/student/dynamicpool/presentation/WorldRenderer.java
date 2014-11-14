@@ -1,8 +1,8 @@
-package vn.edu.hust.student.dynamicpool;
+package vn.edu.hust.student.dynamicpool.presentation;
 
 import java.util.List;
 
-import vn.edu.hust.student.dynamicpool.gameobject.FishUI;
+import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUI;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;

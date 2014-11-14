@@ -1,4 +1,4 @@
-package vn.edu.hust.student.dynamicpool;
+package vn.edu.hust.student.dynamicpool.presentation.gameobject;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;

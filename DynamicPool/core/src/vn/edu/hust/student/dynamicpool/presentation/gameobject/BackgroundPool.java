@@ -1,4 +1,6 @@
-package vn.edu.hust.student.dynamicpool;
+package vn.edu.hust.student.dynamicpool.presentation.gameobject;
+
+import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;

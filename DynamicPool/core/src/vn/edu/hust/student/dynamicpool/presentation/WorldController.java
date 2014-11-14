@@ -1,4 +1,4 @@
-package vn.edu.hust.student.dynamicpool;
+package vn.edu.hust.student.dynamicpool.presentation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,9 @@ import java.util.List;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import vn.edu.hust.student.dynamicpool.bll.Fish;
-import vn.edu.hust.student.dynamicpool.gameobject.FishOneUI;
-import vn.edu.hust.student.dynamicpool.gameobject.FishUI;
+import vn.edu.hust.student.dynamicpool.presentation.gameobject.BackgroundPool;
+import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishOneUI;
+import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUI;
 
 public class WorldController {
 	private static final String TAG = WorldController.class.getName();

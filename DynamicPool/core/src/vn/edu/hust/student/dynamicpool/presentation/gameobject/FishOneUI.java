@@ -1,7 +1,7 @@
-package vn.edu.hust.student.dynamicpool.gameobject;
+package vn.edu.hust.student.dynamicpool.presentation.gameobject;
 
-import vn.edu.hust.student.dynamicpool.Assets;
 import vn.edu.hust.student.dynamicpool.bll.IFish;
+import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
 
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

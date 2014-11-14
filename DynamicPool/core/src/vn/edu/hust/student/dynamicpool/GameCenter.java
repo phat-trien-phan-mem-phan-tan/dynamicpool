@@ -1,5 +1,9 @@
 package vn.edu.hust.student.dynamicpool;
 
+import vn.edu.hust.student.dynamicpool.presentation.WorldController;
+import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
+import vn.edu.hust.student.dynamicpool.presentation.assets.WorldRenderer;
+
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
