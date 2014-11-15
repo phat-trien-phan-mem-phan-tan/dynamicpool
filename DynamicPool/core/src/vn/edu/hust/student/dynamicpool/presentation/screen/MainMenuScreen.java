@@ -73,7 +73,7 @@ public class MainMenuScreen implements Screen {
 	}
 	
 	protected void createHostClickHander() {
-		// TODO goi ham tao host tu interface
+		worldController.createHost();
 	}
 
 	private void initJoinButton() {
