@@ -3,56 +3,36 @@ package vn.edu.hust.student.dynamicpool.presentation.screen;
 import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
 import vn.edu.hust.student.dynamicpool.presentation.assets.AssetMainMenu;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
-import vn.edu.hust.student.dynamicpool.utils.AppConst;
-
+import com.badlogic.gdx.Application.ApplicationType;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 public class MainMenuScreen implements Screen {
 	private WorldRenderer worldRenderer = null;
-	private SpriteBatch bath = null;
-	AssetMainMenu mainMenuAssets = null;
+	private AssetMainMenu mainMenuAssets = null;
+	private Stage stage = new Stage();
+	private Table table = new Table();
+	private ImageButton createHostButton = null;
+	private ImageButton joinHostButton = null;
 	
 	public MainMenuScreen(WorldRenderer worldRenderer) {
 		this.worldRenderer = worldRenderer;
-		this.bath = worldRenderer.getBatch();
 	}
 
 	@Override
 	public void render(float delta) {
-		mainMenuAssets = Assets.instance.mainMenu;
 		worldRenderer.beginRender();
-		renderBackgroundTexture();
-		renderButtons();
+		stage.act();
+		stage.draw();
 		worldRenderer.endRender();
 	}
-
-	private void renderBackgroundTexture() {
-		Texture mainMenuBackgroundTexture = mainMenuAssets.getMainMenuBackgroundTexture();
-		bath.draw(mainMenuBackgroundTexture, 0, 0, AppConst.width, AppConst.height);
-	}
 	
-	private void renderButtons() {
-		Texture createHostTexture = renderCreateHostButton();
-		renderJoinHostButton(createHostTexture);
-	}
-
-	public Texture renderCreateHostButton() {
-		Texture createHostTexture = mainMenuAssets.getCreateHostTexture();
-		int btn1X = AppConst.width /2 - createHostTexture.getWidth()/2;
-		int btn1Y = AppConst.height/2 + 30;
-		bath.draw(createHostTexture, btn1X, btn1Y);
-		return createHostTexture;
-	}
-	
-	public void renderJoinHostButton(Texture createHostTexture) {
-		Texture joinHostTexture = mainMenuAssets.getJoinHostTexture();
-		int btn2X = AppConst.width /2 - createHostTexture.getWidth()/2;
-		int btn2Y = AppConst.height/2 - 30 - joinHostTexture.getHeight();
-		bath.draw(joinHostTexture, btn2X, btn2Y);
-	}
-
 	@Override
 	public void resize(int width, int height) {
 		worldRenderer.resize(width, height);
@@ -60,12 +40,73 @@ public class MainMenuScreen implements Screen {
 
 	@Override
 	public void show() {
+		mainMenuAssets = Assets.instance.mainMenu;
+		initButtons();
+		initBackground();
+		configureTableAndStage();
+	}
 
+	private void initButtons() {
+		if (Gdx.app.getType() == ApplicationType.Desktop) {
+			initCreateButton();
+		}
+		initJoinButton();
+	}
+
+	private void initCreateButton() {
+		TextureRegionDrawable creatHostImageUp = mainMenuAssets.getCreateHostDrawable();
+		createHostButton = new ImageButton(creatHostImageUp);
+		addCreateClickListener();
+		table.add(createHostButton).row();
+	}
+
+	private void addCreateClickListener() {
+		createHostButton.addListener(new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				createHostClickHander();
+			}
+		});
+	}
+	
+	protected void createHostClickHander() {
+		
+	}
+
+	private void initJoinButton() {
+		TextureRegionDrawable joinHostImageUp = mainMenuAssets.getJoinHostDrawable();
+		joinHostButton = new ImageButton(joinHostImageUp);
+		addJoinClickListener();
+		table.add(joinHostButton).row();
+	}
+
+	private void addJoinClickListener() {
+		joinHostButton.addListener(new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				joinHostClickHander();
+			}
+		});
+	}
+	
+	protected void joinHostClickHander() {
+		
+	}
+
+	private void initBackground() {
+		TextureRegionDrawable background = mainMenuAssets.getMainMenuBackgroundDrawable();
+		table.setBackground(background);
+	}
+	
+	private void configureTableAndStage() {
+		table.setFillParent(true);
+		stage.addActor(table);		
+		Gdx.input.setInputProcessor(stage);
 	}
 
 	@Override
 	public void hide() {
-
+		dispose();
 	}
 
 	@Override
@@ -80,7 +121,6 @@ public class MainMenuScreen implements Screen {
 
 	@Override
 	public void dispose() {
-
+		stage.dispose();
 	}
-
 }

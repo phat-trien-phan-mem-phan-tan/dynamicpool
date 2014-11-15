@@ -4,12 +4,13 @@ import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 public class AssetMainMenu {
-	
-	private Texture mainMenuBackgroundTexture;
-	private Texture createHostTexture;
-	private Texture joinHostTexture;
+	private TextureRegionDrawable mainMenuBackgroundDrawable;
+	private TextureRegionDrawable createHostDrawable;
+	private TextureRegionDrawable joinHostDrawable;
 
 	public void load(AssetManager assetManager) {
 		assetManager.load(AppConst.MAIN_MEMU_BACKGROUND_TEXTURE, Texture.class);
@@ -18,20 +19,38 @@ public class AssetMainMenu {
 	}
 
 	public void bind(AssetManager assetManager) {
-		mainMenuBackgroundTexture = assetManager.get(AppConst.MAIN_MEMU_BACKGROUND_TEXTURE);
-		createHostTexture = assetManager.get(AppConst.CREATE_HOST_BTN_TEXTURE);
-		joinHostTexture = assetManager.get(AppConst.JOIN_HOST_BTN_TEXTURE);
+		bindMainMenuBackground(assetManager);
+		bindCreateHost(assetManager);
+		bindJoinHost(assetManager);
 	}
 
-	public Texture getMainMenuBackgroundTexture() {
-		return mainMenuBackgroundTexture;
+	private void bindMainMenuBackground(AssetManager assetManager) {
+		Texture mainMenuBackgroundTexture = assetManager.get(AppConst.MAIN_MEMU_BACKGROUND_TEXTURE);
+		TextureRegion region = new TextureRegion(mainMenuBackgroundTexture);
+		mainMenuBackgroundDrawable = new TextureRegionDrawable(region);
 	}
 	
-	public Texture getCreateHostTexture() {
-		return createHostTexture;
+	private void bindCreateHost(AssetManager assetManager) {
+		Texture createHostTexture = assetManager.get(AppConst.CREATE_HOST_BTN_TEXTURE);
+		TextureRegion region = new TextureRegion(createHostTexture);
+		createHostDrawable = new TextureRegionDrawable(region);
 	}
 	
-	public Texture getJoinHostTexture() {
-		return joinHostTexture;
+	private void bindJoinHost(AssetManager assetManager) {
+		Texture joinHostTexture = assetManager.get(AppConst.JOIN_HOST_BTN_TEXTURE);
+		TextureRegion region = new TextureRegion(joinHostTexture);
+		joinHostDrawable = new TextureRegionDrawable(region);
+	}
+
+	public TextureRegionDrawable getMainMenuBackgroundDrawable() {
+		return mainMenuBackgroundDrawable;
+	}
+	
+	public TextureRegionDrawable getCreateHostDrawable() {
+		return createHostDrawable;
+	}
+	
+	public TextureRegionDrawable getJoinHostDrawable() {
+		return joinHostDrawable;
 	}
 }
