@@ -1,43 +1,30 @@
 package vn.edu.hust.student.dynamicpool.presentation;
 
-import java.util.ArrayList;
-import java.util.List;
+import vn.edu.hust.student.dynamicpool.GameCenter;
+import vn.edu.hust.student.dynamicpool.presentation.screen.SplashScreen;
 
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
-import vn.edu.hust.student.dynamicpool.bll.Fish;
-import vn.edu.hust.student.dynamicpool.presentation.gameobject.BackgroundPool;
-import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishOneUI;
-import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUI;
+import com.badlogic.gdx.utils.Timer;
 
 public class WorldController {
-	private static final String TAG = WorldController.class.getName();
-	public BackgroundPool background;
-	private List<FishUI> fishs;
-
-	public WorldController() {
-		init();
-	}
-
-	private void init() {
-		background = new BackgroundPool();
-		fishs = new ArrayList<FishUI>();
-		initTest();
-	}
-
-	private void initTest() {
-		Fish fish = new Fish();
-		FishUI fishUI = new FishOneUI(fish);
-		fishs.add(fishUI);
-	}
-
-	public void update(float deltaTime) {
-		for (FishUI fishUI : fishs) {
-			fishUI.update(deltaTime);
-		}
+	Timer timer = new Timer();
+	GameCenter game;
+	SplashScreen splashScreen;
+	public WorldController(GameCenter game) {
+		this.game = game;
 	}
 	
-	public List<FishUI> getFishs() {
-		return fishs;
+	public void init() {
+		showSplashScreen();
+	}
+	
+	public void showSplashScreen() {
+		WorldRenderer worldRenderer = game.getWorldRenderer();
+		splashScreen = new SplashScreen(worldRenderer);
+		game.setScreen(splashScreen);
+		waitFewSecondsAndShowMenus();
+	}
+
+	private void waitFewSecondsAndShowMenus() {
+		
 	}
 }

@@ -17,29 +17,41 @@ public class Assets implements Disposable, AssetErrorListener {
 	public static final Assets instance = new Assets();
 	private AssetManager assetManager;
 	private AssetFishAnimated fish1;
-	public AssetBackgroundPool background;
+	public AssetBackgroundPool background = new AssetBackgroundPool();
+	public AssetSplashScreen splashScreen = new AssetSplashScreen();
 
 	// Singleton: Xem lai dinh nghia trong Java nhe
 	private Assets() {
-		background = new AssetBackgroundPool();
-		fish1 = new AssetFishAnimated(AppConst.HORIZONTAL_FISH_1_TEXTURE, 8,
-				AppConst.VERTICAL_FISH_1_TEXTURE, 8,
-				AppConst.FISH_ANIMATED_DURATION);
+//		fish1 = new AssetFishAnimated(AppConst.HORIZONTAL_FISH_1_TEXTURE, 8,
+//				AppConst.VERTICAL_FISH_1_TEXTURE, 8,
+//				AppConst.FISH_ANIMATED_DURATION);
 	}
 
 	public void init(AssetManager assetManager) {
 		this.assetManager = assetManager;
 		assetManager.setErrorListener(this);
-		loadAssets();
-		assetManager.finishLoading();
+		initSplashScreenAssets(assetManager);
+	}
 
-		Gdx.app.debug(TAG,
-				"Du lieu duoc load vao bo nho: "
-						+ assetManager.getAssetNames().size);
-		bindAssets();
+	public void initSplashScreenAssets(AssetManager assetManager) {
+		loadSplashScreenAsset();
+		assetManager.finishLoading();
+		bindSplashScreenAsset();
+	}
+
+	private void loadSplashScreenAsset() {
+		splashScreen.load(assetManager);
 	}
 	
-	
+	private void bindSplashScreenAsset() {
+		splashScreen.bind(assetManager);
+	}
+
+	public void loadGameAssets() {
+		loadAssets();
+		assetManager.finishLoading();
+		bindAssets();
+	}
 
 	private void loadAssets() {
 		background.load(assetManager);

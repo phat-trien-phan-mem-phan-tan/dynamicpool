@@ -1,53 +1,37 @@
 package vn.edu.hust.student.dynamicpool;
 
 import vn.edu.hust.student.dynamicpool.presentation.WorldController;
+import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
-import vn.edu.hust.student.dynamicpool.presentation.assets.WorldRenderer;
+import vn.edu.hust.student.dynamicpool.presentation.screen.SplashScreen;
 
 import com.badlogic.gdx.Application;
-import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.graphics.GL20;
 
-public class GameCenter extends ApplicationAdapter {
-	private WorldController worldController;
+public class GameCenter extends Game {
 	private WorldRenderer worldRenderer;
 	private boolean paused;
+	private WorldController worldController;
 
 	@Override
 	public void create() {
-		// Thiet lap log debug cho game
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
-		// init asset
 		Assets.instance.init(new AssetManager());
-		// Tao the hien cho controller và render
-		worldController = new WorldController();
-		worldRenderer = new WorldRenderer(worldController);
+		worldRenderer = new WorldRenderer();
+		worldController = new WorldController(this);
+		worldController.init();
 	}
 
 	@Override
 	public void render() {
-		// Thiet lap delta time - thoi gian cap nhat game
-		worldController.update(Gdx.graphics.getDeltaTime());
-		// Hien thi game ra man hinh
-		worldRenderer.render();
+		super.render();
 	}
-
 	
 	@Override
 	public void resize(int width, int height) {
 		worldRenderer.resize(width, height);
-	}	
-
-	@Override
-	public void pause() {
-		paused = true;
-	}
-
-	@Override
-	public void resume() {
-		paused = false;
 	}
 
 	@Override
@@ -55,4 +39,11 @@ public class GameCenter extends ApplicationAdapter {
 		worldRenderer.dispose();
 	}
 
+	public boolean isPaused() {
+		return paused;
+	}
+
+	public WorldRenderer getWorldRenderer() {
+		return worldRenderer;
+	}
 }
