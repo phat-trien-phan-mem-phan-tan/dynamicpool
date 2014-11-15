@@ -76,3 +76,6 @@
 1416070649032	Extract method 'bindJoinHost'
 1416073305931	Rename local variable 'text'
 1416074612448	Rename field 'mainMenuScreen'
+1416077343876	Delete element
+1416078058118	Move file
+1416078067295	Copy source folders
