@@ -47,10 +47,18 @@ public class WorldController {
 	private void loadMainMenuScreenResources() {
 		Assets.instance.initMainMenuAssets();
 		WorldRenderer worldRenderer = game.getWorldRenderer();
-		mainMenuScreen = new MainMenuScreen(worldRenderer);
+		mainMenuScreen = new MainMenuScreen(worldRenderer, this);
 	}
 
 	public void showMainMenuScreen() {
 		game.setScreen(mainMenuScreen);
+	}
+
+	public void joinHost(String key) {
+		
+	}
+
+	public void createHost() {
+		
 	}
 }

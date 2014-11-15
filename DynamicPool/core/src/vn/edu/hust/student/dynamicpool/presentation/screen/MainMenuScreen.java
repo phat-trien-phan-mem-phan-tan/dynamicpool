@@ -1,5 +1,6 @@
 package vn.edu.hust.student.dynamicpool.presentation.screen;
 
+import vn.edu.hust.student.dynamicpool.presentation.WorldController;
 import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
 import vn.edu.hust.student.dynamicpool.presentation.assets.AssetMainMenu;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
@@ -20,9 +21,11 @@ public class MainMenuScreen implements Screen {
 	private Table table = new Table();
 	private ImageButton createHostButton = null;
 	private ImageButton joinHostButton = null;
+	private WorldController worldController;
 	
-	public MainMenuScreen(WorldRenderer worldRenderer) {
+	public MainMenuScreen(WorldRenderer worldRenderer, WorldController worldController) {
 		this.worldRenderer = worldRenderer;
+		this.worldController = worldController;
 	}
 
 	@Override
@@ -70,7 +73,7 @@ public class MainMenuScreen implements Screen {
 	}
 	
 	protected void createHostClickHander() {
-		
+		// TODO goi ham tao host tu interface
 	}
 
 	private void initJoinButton() {
@@ -90,7 +93,17 @@ public class MainMenuScreen implements Screen {
 	}
 	
 	protected void joinHostClickHander() {
-		
+		MyStringCallback joinHostInputCallback = new MyStringCallback() {
+			@Override
+			public void callback(String text) {
+				joinHostAction(text);
+			}
+		};
+		Gdx.input.getTextInput(new TokenKeyInputListener(joinHostInputCallback), "Please enter key of host", "");
+	}
+	
+	public void joinHostAction(String key) {
+		worldController.joinHost(key);
 	}
 
 	private void initBackground() {
@@ -123,4 +136,5 @@ public class MainMenuScreen implements Screen {
 	public void dispose() {
 		stage.dispose();
 	}
+
 }
