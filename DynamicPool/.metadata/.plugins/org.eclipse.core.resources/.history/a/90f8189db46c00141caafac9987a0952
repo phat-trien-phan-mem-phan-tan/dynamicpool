@@ -1,0 +1,8 @@
+package vn.edu.hust.student.dynamicpool.presentation;
+
+public class WorldController {
+	public WorldController() {
+		
+	}
+	
+}

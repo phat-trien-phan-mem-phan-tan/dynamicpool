@@ -1,0 +1,23 @@
+package vn.edu.hust.student.dynamicpool.bll;
+
+public class FishPosition implements IFishPosition {
+
+	@Override
+	public float getX() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public float getY() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public float getAngle() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

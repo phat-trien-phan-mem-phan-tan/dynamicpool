@@ -1,0 +1,32 @@
+package vn.edu.hust.student.dynamicpool.gameobject;
+
+import vn.edu.hust.student.dynamicpool.Assets;
+import vn.edu.hust.student.dynamicpool.Assets.AssetFishAnimated;
+import vn.edu.hust.student.dynamicpool.bll.IFish;
+
+import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.graphics.g2d.Animation;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+public class FishOneUI extends FishUI {
+	private Animation horizontalAnimation;
+	private Animation verticalAnimation;
+
+	public FishOneUI(IFish fish) {
+		super(fish);
+	}
+
+	@Override
+	public void init() {
+		Assets assets = Assets.instance;
+		Assets.AssetFishAnimated fishAsset = assets.getFish1Asset();
+		horizontalAnimation = fishAsset.getHorizontalAnimation();
+		verticalAnimation = fishAsset.getVerticalAnimation();
+	}
+
+	@Override
+	public void render(SpriteBatch batch) {
+
+	}
+
+}

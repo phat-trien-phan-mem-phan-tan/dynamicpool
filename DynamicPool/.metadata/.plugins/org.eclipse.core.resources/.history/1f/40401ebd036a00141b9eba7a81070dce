@@ -1,0 +1,20 @@
+package vn.edu.hust.student.dynamicpool.bll;
+
+public abstract class Trajectory {
+	
+	private IFishPosition fishPosition;
+
+	public Trajectory(IFishPosition fishPosition) {
+		this.setFishPosition(fishPosition);
+	}
+	
+	public abstract void updateCoordinate(float deltaTime);
+
+	public IFishPosition getFishPosition() {
+		return fishPosition;
+	}
+
+	public void setFishPosition(IFishPosition fishPosition) {
+		this.fishPosition = fishPosition;
+	}
+}

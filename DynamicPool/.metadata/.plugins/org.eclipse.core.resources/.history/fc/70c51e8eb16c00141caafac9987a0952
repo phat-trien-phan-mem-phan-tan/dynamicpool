@@ -1,0 +1,51 @@
+package vn.edu.hust.student.dynamicpool.presentation.screen;
+
+import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
+
+import com.badlogic.gdx.Screen;
+
+public class SplashScreen implements Screen {
+	private WorldRenderer worldRenderer = null;
+
+	public SplashScreen(WorldRenderer worldRenderer) {
+		this.worldRenderer  = worldRenderer;
+	}
+
+	@Override
+	public void render(float delta) {
+		worldRenderer.beginRender();
+		
+		worldRenderer.endRender();
+	}
+
+	@Override
+	public void resize(int width, int height) {
+
+	}
+
+	@Override
+	public void show() {
+
+	}
+
+	@Override
+	public void hide() {
+
+	}
+
+	@Override
+	public void pause() {
+
+	}
+
+	@Override
+	public void resume() {
+
+	}
+
+	@Override
+	public void dispose() {
+		
+	}
+
+}

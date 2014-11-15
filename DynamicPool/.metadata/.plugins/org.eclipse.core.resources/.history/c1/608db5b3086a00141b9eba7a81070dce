@@ -1,0 +1,10 @@
+package vn.edu.hust.student.dynamicpool.bll;
+
+public class FishFactory {
+	public static Fish createFishWithLineTrajectory(float screenWidth, float screenHeight) {
+		// center of screen
+		IFishPosition position = new FishPosition(screenWidth/2, screenHeight/2);
+		Trajectory trajectory = new LineTrajectory(position);
+		Fish fish = new Fish(position);
+	}
+}

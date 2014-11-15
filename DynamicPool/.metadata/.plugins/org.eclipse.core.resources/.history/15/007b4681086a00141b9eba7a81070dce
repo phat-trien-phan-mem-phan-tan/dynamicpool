@@ -1,0 +1,34 @@
+package vn.edu.hust.student.dynamicpool.bll;
+
+public class Fish implements IFish {
+	private IFishPosition position;
+	private Trajectory trajectory;
+
+	public Fish(IFishPosition fishPosition) {
+		this.position = fishPosition;
+	}
+	
+	public Fish() {
+		this.position = new FishPosition();
+	}
+
+	@Override
+	public IFishPosition getPoint() {
+		return position;
+	}
+
+	@Override
+	public IFishPosition update(float deltaTime) {
+		sampleMoving();
+		return position;
+	}
+
+	private void sampleMoving() {
+		position.increaseX(1f);
+		position.increaseY(1f);
+		position.setAngle(position.getAngle()+3);
+	}
+	
+	
+
+}

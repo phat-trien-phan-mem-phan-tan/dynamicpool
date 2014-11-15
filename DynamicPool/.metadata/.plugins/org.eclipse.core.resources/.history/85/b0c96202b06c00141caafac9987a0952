@@ -1,0 +1,16 @@
+package vn.edu.hust.student.dynamicpool.presentation.assets;
+
+import com.badlogic.gdx.assets.AssetManager;
+
+public class AssetSplashScreen {
+	public AssetSplashScreen() {
+		
+	}
+	
+	public void load() {
+		
+	}
+	public void bind(AssetManager assetManager) {
+		
+	}
+}

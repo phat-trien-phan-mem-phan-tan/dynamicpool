@@ -1,0 +1,24 @@
+package vn.edu.hust.student.dynamicpool.presentation.screen;
+
+import com.badlogic.gdx.Input.TextInputListener;
+
+public class TokenKeyInputListener implements TextInputListener {
+
+	private MainMenuScreen mainMenuScreen;
+
+	public TokenKeyInputListener(MainMenuScreen mainMenuScreen) {
+		this.mainMenuScreen = mainMenuScreen;
+	}
+
+	@Override
+	public void input(String text) {
+		mainMenuScreen.joinHostAction(text);
+	}
+
+	@Override
+	public void canceled() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

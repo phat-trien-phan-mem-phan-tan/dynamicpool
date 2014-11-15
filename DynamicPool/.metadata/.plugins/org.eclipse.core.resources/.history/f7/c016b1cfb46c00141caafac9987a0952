@@ -1,0 +1,18 @@
+package vn.edu.hust.student.dynamicpool.presentation;
+
+import com.badlogic.gdx.utils.Timer;
+
+public class WorldController {
+	Timer timer = new Timer();
+	public WorldController() {
+		
+	}
+	
+	public void init() {
+		
+	}
+	
+	public void showSplashScreen() {
+		
+	}
+}

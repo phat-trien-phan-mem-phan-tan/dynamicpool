@@ -1,0 +1,14 @@
+package vn.edu.hust.student.dynamicpool.presentation.assets;
+
+import vn.edu.hust.student.dynamicpool.utils.AppConst;
+
+import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.graphics.Texture;
+
+public class AssetMainMenuBackground {
+	private Texture texture;
+	
+	public void load(AssetManager assetManager) {
+		assetManager.load(AppConst.MAIN_MEMU_BACKGROUND_TEXTURE, Texture.class);
+	}
+}
