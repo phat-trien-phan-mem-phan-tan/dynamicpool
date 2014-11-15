@@ -1,8 +1,0 @@
-package vn.edu.hust.student.dynamicpool.gameobject;
-
-public enum EDirection {
-	RIGHT,
-	LEFT,
-	RIGHT,
-	BOTTOM
-}
