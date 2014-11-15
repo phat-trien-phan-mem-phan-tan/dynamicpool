@@ -1,0 +1,99 @@
+2014-Nov-10 17:51:57:295 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 17:51:57:576 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 17:52:00:826 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 17:52:01:248 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 18:00:02:730 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 18:00:02:777 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 18:00:03:402 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 18:00:03:714 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 18:00:17:152 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-10 18:00:17:152 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-10 18:00:19:089 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=24 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Nov-10 18:00:19:089 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-10 18:00:19:089 [NioProcessor-2] DEBUG org.puppet.server.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"}
+2014-Nov-10 18:00:21:121 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:23:121 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:25:121 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:27:121 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:29:121 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:31:121 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:33:121 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:35:121 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:36:918 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-10 18:00:36:918 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-10 18:00:37:121 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:38:012 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=24 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Nov-10 18:00:38:012 [NioProcessor-3] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 2
+2014-Nov-10 18:00:38:012 [NioProcessor-3] DEBUG org.puppet.server.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"}
+2014-Nov-10 18:00:39:121 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:40:043 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:42:043 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:44:043 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:46:043 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:48:043 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:49:152 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:00:50:043 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:52:043 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:54:043 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:56:043 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:58:043 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 18:00:59:168 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:01:08:077 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:01:09:187 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:01:18:128 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:01:19:222 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:01:28:157 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:01:29:267 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:01:38:220 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:01:39:314 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:01:48:251 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:01:49:345 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:01:58:275 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:01:59:390 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:02:08:337 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:02:09:446 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:02:18:352 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:02:19:509 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:02:28:399 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:02:29:571 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:02:38:435 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:02:39:623 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:02:41:232 [NioProcessor-3] WARN  org.apache.mina.filter.logging.LoggingFilter  - EXCEPTION :
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:273)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:44)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:690)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:664)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:653)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1124)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2014-Nov-10 18:02:41:310 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - CLOSED
+2014-Nov-10 18:02:49:685 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 18:02:50:251 [NioProcessor-2] WARN  org.apache.mina.filter.logging.LoggingFilter  - EXCEPTION :
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:273)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:44)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:690)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:664)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:653)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1124)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2014-Nov-10 18:02:50:251 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CLOSED
