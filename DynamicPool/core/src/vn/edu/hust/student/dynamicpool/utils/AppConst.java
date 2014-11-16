@@ -16,6 +16,9 @@ public class AppConst {
 	public static final String CREATE_HOST_BTN_TEXTURE = "createhost.png";
 	public static final String JOIN_HOST_BTN_TEXTURE = "joinhost.png";
 	public static final String DEFAUFT_FONT = "defaultfont.ttf";
+	public static final String LOADING_TEXT = "Loading";
+	public static final int LOADING_FONT_SIZE = 50;
+	public static final String LOADING_FONT_NAME = "size"+ LOADING_FONT_SIZE + ".ttf";
 	
 	public static int width = 800;
 	public static int height = 480;

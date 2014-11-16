@@ -1,55 +1,73 @@
 package vn.edu.hust.student.dynamicpool.presentation.screen;
 
 import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
+import vn.edu.hust.student.dynamicpool.presentation.assets.AssetLoading;
+import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
+import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class LoadingScreen implements Screen {
 
+	private WorldRenderer wordRenderer = null;
+	private SpriteBatch batch = null;
+	private BitmapFont bitmapFont;
+	private float loadingX;
+	private float loadingY;
+
 	public LoadingScreen(WorldRenderer worldRenderer) {
-		// TODO Auto-generated constructor stub
+		this.wordRenderer = worldRenderer;
+		this.batch = worldRenderer.getBatch();
 	}
 
 	@Override
 	public void render(float delta) {
-		// TODO Auto-generated method stub
+		wordRenderer.beginRender();
+		renderLoadingText();
+		wordRenderer.endRender();
+	}
 
+	private void renderLoadingText() {
+		bitmapFont.draw(batch, AppConst.LOADING_TEXT, loadingX, loadingY);
 	}
 
 	@Override
 	public void resize(int width, int height) {
-		// TODO Auto-generated method stub
-
+		wordRenderer.resize(width, height);
 	}
 
 	@Override
 	public void show() {
-		// TODO Auto-generated method stub
+		AssetLoading loadingAssets = Assets.instance.loading;
+		this.bitmapFont = loadingAssets.getDefaultFont();
+		calculateLoadingTextPosition();
+	}
 
+	private void calculateLoadingTextPosition() {
+		loadingX = AppConst.width/2 - bitmapFont.getBounds(AppConst.LOADING_TEXT).width;
+		loadingY = AppConst.height/2 - bitmapFont.getBounds(AppConst.LOADING_TEXT).height/2;
 	}
 
 	@Override
 	public void hide() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void pause() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void resume() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 }
