@@ -1,10 +1,10 @@
 package vn.edu.hust.student.dynamicpool.dal;
 
-import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
+import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 
 public interface DataAccessLayer {
 	
-	void joinHost(int key, PresentationBooleanCallback callback);
+	void joinHost(int key, BusinessLogicDataCallback callback);
 
-	void createHost(PresentationBooleanCallback callback);
+	void createHost(BusinessLogicDataCallback callback);
 }
