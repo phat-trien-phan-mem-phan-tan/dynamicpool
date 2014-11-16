@@ -7,6 +7,7 @@ import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
 import vn.edu.hust.student.dynamicpool.presentation.screen.LoadingScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.MainMenuScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.SplashScreen;
+import vn.edu.hust.student.dynamicpool.tests.presentation.BLLTest;
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 import com.badlogic.gdx.Screen;
@@ -23,7 +24,7 @@ public class WorldController {
 	
 	public WorldController(GameCenter game) {
 		this.game = game;
-		this.businessLogicLayer = new BusinessLogicLayerImpl();
+		this.businessLogicLayer = new BLLTest();
 	}
 	
 	public void init() {
@@ -93,6 +94,6 @@ public class WorldController {
 	}
 
 	protected void createHostCallbackHander(boolean isSuccess, Exception error) {
-		
+		showLoadingScreen();
 	}
 }
