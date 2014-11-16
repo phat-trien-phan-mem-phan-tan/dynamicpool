@@ -3,7 +3,7 @@ package vn.edu.hust.student.dynamicpool.presentation.screen;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationStringCallback;
 import vn.edu.hust.student.dynamicpool.presentation.WorldController;
 import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
-import vn.edu.hust.student.dynamicpool.presentation.assets.AssetMainMenu;
+import vn.edu.hust.student.dynamicpool.presentation.assets.AssetMainMenuScreen;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
 
 import com.badlogic.gdx.Application.ApplicationType;
@@ -18,7 +18,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 public class MainMenuScreen implements Screen {
 	private WorldRenderer worldRenderer = null;
-	private AssetMainMenu mainMenuAssets = null;
+	private AssetMainMenuScreen mainMenuAssets = null;
 	private Stage stage = new Stage();
 	private Table table = new Table();
 	private ImageButton createHostButton = null;
@@ -45,7 +45,7 @@ public class MainMenuScreen implements Screen {
 
 	@Override
 	public void show() {
-		mainMenuAssets = Assets.instance.mainMenu;
+		mainMenuAssets = Assets.instance.mainMenuScreen;
 		initButtons();
 		initBackground();
 		configureTableAndStage();

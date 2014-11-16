@@ -16,17 +16,16 @@ public class Assets implements Disposable, AssetErrorListener {
 	public static final String TAG = Assets.class.getName();
 	public static final Assets instance = new Assets();
 	private AssetManager assetManager;
-	private AssetFishAnimated fish1;
-	public AssetBackgroundPool background = new AssetBackgroundPool();
 	public AssetSplashScreen splashScreen = new AssetSplashScreen();
-	public AssetMainMenu mainMenu = new AssetMainMenu();
-	public AssetLoading loading = new AssetLoading();
+	public AssetMainMenuScreen mainMenuScreen = new AssetMainMenuScreen();
+	public AssetLoadingScreen loadingScreen = new AssetLoadingScreen();
+	public AssetBackground background = new AssetBackground();
+	private AssetFishAnimated fish1;
 
-	// Singleton: Xem lai dinh nghia trong Java nhe
 	private Assets() {
-//		fish1 = new AssetFishAnimated(AppConst.HORIZONTAL_FISH_1_TEXTURE, 8,
-//				AppConst.VERTICAL_FISH_1_TEXTURE, 8,
-//				AppConst.FISH_ANIMATED_DURATION);
+		fish1 = new AssetFishAnimated(AppConst.HORIZONTAL_FISH_1_TEXTURE, 8,
+				AppConst.VERTICAL_FISH_1_TEXTURE, 8,
+				AppConst.FISH_ANIMATED_DURATION);
 	}
 
 	public void init(AssetManager assetManager) {
@@ -40,36 +39,36 @@ public class Assets implements Disposable, AssetErrorListener {
 		assetManager.finishLoading();
 		splashScreen.bind(assetManager);
 	}
-	
+
 	public void initMainMenuAssets() {
-		mainMenu.load(assetManager);
+		mainMenuScreen.load(assetManager);
 		assetManager.finishLoading();
-		mainMenu.bind(assetManager);
+		mainMenuScreen.bind(assetManager);
 	}
-	
+
 	public void initLoadingAssets() {
-		loading.load(assetManager);
+		loadingScreen.load(assetManager);
 		assetManager.finishLoading();
-		loading.bind(assetManager);
+		loadingScreen.bind(assetManager);
 	}
 
-	public void loadGameAssets() {
-		loadAssets();
+	public void initGameAssets() {
+		loadGameAssets();
 		assetManager.finishLoading();
-		bindAssets();
+		bindGameAssets();
 	}
 
-	private void loadAssets() {
+	private void loadGameAssets() {
 		background.load(assetManager);
 		fish1.load(assetManager);
 	}
 
-	private void bindAssets() {
+	private void bindGameAssets() {
 		background.bind(assetManager, 0, 0, 800, 480);
 		fish1.bind(assetManager);
 	}
 
-	public AssetBackgroundPool getBackgroundAsset() {
+	public AssetBackground getBackgroundAsset() {
 		return background;
 	}
 
@@ -90,11 +89,11 @@ public class Assets implements Disposable, AssetErrorListener {
 				(Exception) throwable);
 	}
 
-	public class AssetBackgroundPool {
+	public class AssetBackground {
 		public Texture mainBackgroundTexture;
 		public TextureRegion mainBackgroundRegion;
 
-		public AssetBackgroundPool() {
+		public AssetBackground() {
 		}
 
 		public void load(AssetManager assetManager) {

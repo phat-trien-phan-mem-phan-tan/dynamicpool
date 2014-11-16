@@ -1,7 +1,7 @@
 package vn.edu.hust.student.dynamicpool.presentation.screen;
 
 import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
-import vn.edu.hust.student.dynamicpool.presentation.assets.AssetLoading;
+import vn.edu.hust.student.dynamicpool.presentation.assets.AssetLoadingScreen;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
@@ -40,7 +40,7 @@ public class LoadingScreen implements Screen {
 
 	@Override
 	public void show() {
-		AssetLoading loadingAssets = Assets.instance.loading;
+		AssetLoadingScreen loadingAssets = Assets.instance.loadingScreen;
 		this.bitmapFont = loadingAssets.getDefaultFont();
 		calculateLoadingTextPosition();
 	}

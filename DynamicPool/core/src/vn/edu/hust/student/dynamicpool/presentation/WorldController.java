@@ -2,15 +2,14 @@ package vn.edu.hust.student.dynamicpool.presentation;
 
 import vn.edu.hust.student.dynamicpool.GameCenter;
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayer;
-import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayerImpl;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
+import vn.edu.hust.student.dynamicpool.presentation.screen.GameScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.LoadingScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.MainMenuScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.SplashScreen;
 import vn.edu.hust.student.dynamicpool.tests.presentation.BLLTest;
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 
@@ -20,7 +19,8 @@ public class WorldController {
 	private BusinessLogicLayer businessLogicLayer;
 	private SplashScreen splashScreen;
 	private MainMenuScreen mainMenuScreen;
-	private Screen loadingScreen;
+	private LoadingScreen loadingScreen;
+	private GameScreen gameScreen;
 	
 	public WorldController(GameCenter game) {
 		this.game = game;
@@ -73,14 +73,26 @@ public class WorldController {
 			}
 		};
 		this.businessLogicLayer.joinHost(key, callback);
+		showLoadingScreen();
+		loadGameResources();
 	}
 
 	protected void joinHostCallbackHander(boolean isSuccess, Exception error) {
-		showLoadingScreen();
+		showGameScreen();
+	}
+	
+	private void showGameScreen() {
+		game.setScreen(gameScreen);
 	}
 
 	private void showLoadingScreen() {
 		game.setScreen(loadingScreen);
+	}
+	
+	private void loadGameResources() {
+		Assets.instance.initGameAssets();
+		WorldRenderer worldRenderer = game.getWorldRenderer();
+		gameScreen = new GameScreen(worldRenderer, this);
 	}
 
 	public void createHost() {
@@ -91,9 +103,11 @@ public class WorldController {
 			}
 		};
 		this.businessLogicLayer.createHost(callback);
+		showLoadingScreen();
+		loadGameResources();
 	}
 
 	protected void createHostCallbackHander(boolean isSuccess, Exception error) {
-		showLoadingScreen();
+		showGameScreen();
 	}
 }

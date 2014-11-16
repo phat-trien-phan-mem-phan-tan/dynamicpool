@@ -11,7 +11,7 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGeneratorLoader;
 import com.badlogic.gdx.graphics.g2d.freetype.FreetypeFontLoader;
 import com.badlogic.gdx.graphics.g2d.freetype.FreetypeFontLoader.FreeTypeFontLoaderParameter;
 
-public class AssetLoading {
+public class AssetLoadingScreen {
 	private BitmapFont defaultFont;
 	public void load(AssetManager assetManager) {
 		FileHandleResolver resolver = new InternalFileHandleResolver();
