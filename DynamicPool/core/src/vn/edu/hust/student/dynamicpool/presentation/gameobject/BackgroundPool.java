@@ -12,7 +12,7 @@ public class BackgroundPool {
 	}
 	
 	private void init() {
-		backgroundRegion = Assets.instance.background.mainBackgroundRegion;
+		backgroundRegion = Assets.instance.gameScreen.getGameBackgroundRegion();
 	}
 	public void render(SpriteBatch batch) {
 		batch.draw(backgroundRegion, 0f, 0f);

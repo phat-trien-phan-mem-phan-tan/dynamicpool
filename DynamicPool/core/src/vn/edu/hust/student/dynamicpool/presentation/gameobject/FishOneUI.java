@@ -1,6 +1,8 @@
 package vn.edu.hust.student.dynamicpool.presentation.gameobject;
 
 import vn.edu.hust.student.dynamicpool.bll.IFish;
+import vn.edu.hust.student.dynamicpool.presentation.assets.AssetFishAnimated;
+import vn.edu.hust.student.dynamicpool.presentation.assets.AssetGameScreen;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
 
 import com.badlogic.gdx.graphics.g2d.Animation;
@@ -18,8 +20,8 @@ public class FishOneUI extends FishUI {
 
 	@Override
 	public void init() {
-		Assets assets = Assets.instance;
-		Assets.AssetFishAnimated fishAsset = assets.getFish1Asset();
+		AssetGameScreen gameScreen = Assets.instance.gameScreen;
+		AssetFishAnimated fishAsset = gameScreen.getFish1Asset();
 		horizontalAnimation = fishAsset.getHorizontalAnimation();
 		verticalAnimation = fishAsset.getVerticalAnimation();
 	}
