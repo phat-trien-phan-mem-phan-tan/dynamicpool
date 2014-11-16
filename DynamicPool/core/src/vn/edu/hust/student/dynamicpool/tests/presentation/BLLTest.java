@@ -4,6 +4,7 @@ import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayer;
+import vn.edu.hust.student.dynamicpool.model.DevideInfor;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
 
 public class BLLTest implements BusinessLogicLayer {
@@ -29,6 +30,13 @@ public class BLLTest implements BusinessLogicLayer {
 				newcallback.callback(true, null);
 			}
 		}, 1);
+	}
+
+	@Override
+	public void intialDevide(DevideInfor devideInfor,
+			PresentationBooleanCallback callback) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
