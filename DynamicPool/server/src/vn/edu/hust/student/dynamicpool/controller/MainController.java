@@ -11,7 +11,7 @@ import vn.edu.hust.student.dynamicpool.exception.NetworkException;
 import vn.edu.hust.student.dynamicpool.processor.Processor;
 import vn.edu.hust.student.dynamicpool.server.socket.SocketServerController;
 import vn.edu.hust.student.dynamicpool.statics.Field;
-import vn.edu.hust.stuedent.dynimicpool.utils.xml.ServerXMLConfigReader;
+import vn.edu.hust.student.dynamicpool.utils.xml.ServerXMLConfigReader;
 
 public class MainController {
 	private static MainController _instance;
@@ -65,6 +65,23 @@ public class MainController {
 
 	public void stop() {
 		socketServerController.stop();
+	}
+
+	public int createHost() throws NetworkException {
+		String response = httpClientController.regHost();
+		@SuppressWarnings("unchecked")
+		Map<String, Object> map = (Map<String, Object>) json.fromJSON(response);
+		if (map.containsKey(Field.ERROR)) {
+			if (map.get(Field.ERROR) != null) {
+				throw new NetworkException((String) map.get("error"));
+			} else {
+				int key = (int)(long) map.get(Field.KEY);
+				@SuppressWarnings("unused")
+				String ip = (String)map.get(Field.IP);
+				return key;
+			}
+		}
+		return 0;
 	}
 
 	public HttpClientController getHttpClientController() {
