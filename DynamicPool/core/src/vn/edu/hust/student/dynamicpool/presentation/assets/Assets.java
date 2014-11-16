@@ -20,6 +20,7 @@ public class Assets implements Disposable, AssetErrorListener {
 	public AssetBackgroundPool background = new AssetBackgroundPool();
 	public AssetSplashScreen splashScreen = new AssetSplashScreen();
 	public AssetMainMenu mainMenu = new AssetMainMenu();
+	private AssetLoading loading = new AssetLoading();
 
 	// Singleton: Xem lai dinh nghia trong Java nhe
 	private Assets() {
@@ -44,6 +45,12 @@ public class Assets implements Disposable, AssetErrorListener {
 		mainMenu.load(assetManager);
 		assetManager.finishLoading();
 		mainMenu.bind(assetManager);
+	}
+	
+	public void initLoadingAssets() {
+		loading.load(assetManager);
+		assetManager.finishLoading();
+		loading.bind(assetManager);
 	}
 
 	public void loadGameAssets() {

@@ -15,6 +15,7 @@ public class AppConst {
 	public static final String MAIN_MEMU_BACKGROUND_TEXTURE = "mainmenubg.png";
 	public static final String CREATE_HOST_BTN_TEXTURE = "createhost.png";
 	public static final String JOIN_HOST_BTN_TEXTURE = "joinhost.png";
+	public static final String DEFAUFT_FONT = "defaultfont.ttf";
 	
 	public static int width = 800;
 	public static int height = 480;

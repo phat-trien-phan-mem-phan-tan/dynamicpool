@@ -4,10 +4,12 @@ import vn.edu.hust.student.dynamicpool.GameCenter;
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayer;
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayerImpl;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
+import vn.edu.hust.student.dynamicpool.presentation.screen.LoadingScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.MainMenuScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.SplashScreen;
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 
@@ -17,6 +19,7 @@ public class WorldController {
 	private BusinessLogicLayer businessLogicLayer;
 	private SplashScreen splashScreen;
 	private MainMenuScreen mainMenuScreen;
+	private Screen loadingScreen;
 	
 	public WorldController(GameCenter game) {
 		this.game = game;
@@ -35,13 +38,14 @@ public class WorldController {
 	}
 
 	private void waitFewSecondsAndShowMenus() {
-		loadMainMenuScreenResources();
 		timer.scheduleTask(new Task() {	
 			@Override
 			public void run() {
 				showMainMenuScreen();
 			}
 		}, AppConst.DELAY_TIME);
+		loadMainMenuScreenResources();
+		loadLoadingResources();
 	}
 
 	private void loadMainMenuScreenResources() {
@@ -52,6 +56,12 @@ public class WorldController {
 
 	public void showMainMenuScreen() {
 		game.setScreen(mainMenuScreen);
+	}
+	
+	private void loadLoadingResources() {
+		Assets.instance.initLoadingAssets();
+		WorldRenderer worldRenderer = game.getWorldRenderer();
+		loadingScreen = new LoadingScreen(worldRenderer);
 	}
 
 	public void joinHost(String key) {
@@ -65,7 +75,11 @@ public class WorldController {
 	}
 
 	protected void joinHostCallbackHander(boolean isSuccess, Exception error) {
-		
+		showLoadingScreen();
+	}
+
+	private void showLoadingScreen() {
+		game.setScreen(loadingScreen);
 	}
 
 	public void createHost() {
