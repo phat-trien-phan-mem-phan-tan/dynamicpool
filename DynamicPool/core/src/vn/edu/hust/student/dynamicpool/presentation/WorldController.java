@@ -55,10 +55,22 @@ public class WorldController {
 	}
 
 	public void joinHost(String key) {
-		
+		PresentationBooleanCallback callback = new PresentationBooleanCallback() {
+			@Override
+			public void callback(boolean isSuccess, Exception error) {
+				
+			}
+		};
+		this.businessLogicLayer.joinHost(key, callback);
 	}
 
 	public void createHost() {
-		
+		PresentationBooleanCallback callback = new PresentationBooleanCallback() {
+			@Override
+			public void callback(boolean isSuccess, Exception error) {
+				
+			}
+		};
+		this.businessLogicLayer.createHost(callback);
 	}
 }

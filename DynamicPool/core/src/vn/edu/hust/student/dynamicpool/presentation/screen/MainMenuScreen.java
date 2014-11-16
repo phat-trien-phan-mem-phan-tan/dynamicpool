@@ -1,9 +1,11 @@
 package vn.edu.hust.student.dynamicpool.presentation.screen;
 
+import vn.edu.hust.student.dynamicpool.presentation.PresentationStringCallback;
 import vn.edu.hust.student.dynamicpool.presentation.WorldController;
 import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
 import vn.edu.hust.student.dynamicpool.presentation.assets.AssetMainMenu;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
+
 import com.badlogic.gdx.Application.ApplicationType;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -93,7 +95,7 @@ public class MainMenuScreen implements Screen {
 	}
 	
 	protected void joinHostClickHander() {
-		MyStringCallback joinHostInputCallback = new MyStringCallback() {
+		PresentationStringCallback joinHostInputCallback = new PresentationStringCallback() {
 			@Override
 			public void callback(String text) {
 				joinHostAction(text);
