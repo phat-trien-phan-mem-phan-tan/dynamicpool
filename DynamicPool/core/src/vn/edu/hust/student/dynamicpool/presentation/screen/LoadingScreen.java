@@ -46,8 +46,8 @@ public class LoadingScreen implements Screen {
 	}
 
 	private void calculateLoadingTextPosition() {
-		loadingX = AppConst.width/2 - bitmapFont.getBounds(AppConst.LOADING_TEXT).width;
-		loadingY = AppConst.height/2 - bitmapFont.getBounds(AppConst.LOADING_TEXT).height/2;
+		loadingX = AppConst.width/2 - bitmapFont.getBounds(AppConst.LOADING_TEXT).width/2;
+		loadingY = AppConst.height/2 + bitmapFont.getBounds(AppConst.LOADING_TEXT).height;
 	}
 
 	@Override
