@@ -5,9 +5,9 @@ import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
-public class BackgroundPool {
+public class GameBackgroundUI {
 	private TextureRegion backgroundRegion;
-	public BackgroundPool() {
+	public GameBackgroundUI() {
 		init();
 	}
 	

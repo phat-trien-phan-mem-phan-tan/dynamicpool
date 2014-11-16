@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 public class AssetGameScreen {
-	public AssetBackground background = new AssetBackground();
+	private AssetBackground background = new AssetBackground();
 	private AssetFishAnimated fish1;
 	
 	public AssetGameScreen() {
