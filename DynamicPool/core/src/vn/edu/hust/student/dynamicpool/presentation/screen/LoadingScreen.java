@@ -1,4 +1,6 @@
-package vn.edu.hust.student.dynamicpool.presentation;
+package vn.edu.hust.student.dynamicpool.presentation.screen;
+
+import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
 
 import com.badlogic.gdx.Screen;
 
