@@ -1,5 +1,5 @@
 package vn.edu.hust.student.dynamicpool.processor;
 
-public class Processor {
-
+public abstract class Processor {
+	public abstract ProcessorExecutionResponse execute(ProcessorExecutionRequest request);
 }
