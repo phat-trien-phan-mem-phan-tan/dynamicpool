@@ -4,7 +4,7 @@ import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
 
 public interface DataAccessLayer {
 	
-	void joinHost(String key, PresentationBooleanCallback callback);
+	void joinHost(int key, PresentationBooleanCallback callback);
 
 	void createHost(PresentationBooleanCallback callback);
 }
