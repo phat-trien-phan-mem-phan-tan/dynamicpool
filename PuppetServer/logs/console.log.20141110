@@ -1,0 +1,246 @@
+2014-Nov-10 00:18:10:493 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 00:18:10:508 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 00:18:11:088 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 00:18:14:494 [main] DEBUG org.puppet.client.socket.SocketClientController  - Socket Client connot connect to server
+2014-Nov-10 00:19:31:790 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 00:19:31:806 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 00:19:32:306 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 00:19:33:926 [main] DEBUG org.puppet.client.socket.SocketClientController  - Socket Client connot connect to server
+2014-Nov-10 00:20:12:984 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 00:20:12:984 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 00:20:13:484 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 00:20:15:647 [main] DEBUG org.puppet.client.socket.SocketClientController  - Socket Client connot connect to server
+2014-Nov-10 00:44:03:263 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 00:44:03:263 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 00:44:03:794 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 00:44:04:629 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 00:44:04:958 [main] DEBUG org.puppet.client.socket.SocketClientController  - message receive: hello
+2014-Nov-10 00:44:05:301 [main] DEBUG org.puppet.client.socket.SocketClientController  - message receive: "hello thanh"
+2014-Nov-10 00:45:51:808 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 00:45:51:808 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 00:45:52:308 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 00:45:53:076 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 00:45:53:342 [main] DEBUG org.puppet.client.socket.SocketClientController  - message receive: hello
+2014-Nov-10 00:45:53:654 [main] DEBUG org.puppet.client.socket.SocketClientController  - message receive: "hello thanh"
+2014-Nov-10 13:08:00:698 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 13:08:00:796 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 13:08:01:641 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 13:08:03:026 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 13:08:04:589 [main] DEBUG org.puppet.client.socket.SocketClientController  - message receive: hello
+2014-Nov-10 13:08:05:292 [main] DEBUG org.puppet.client.socket.SocketClientController  - message receive: "hello thanh"
+2014-Nov-10 14:18:46:750 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 14:18:46:765 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 14:18:47:250 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 14:18:48:200 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 14:24:15:781 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 14:24:15:781 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 14:24:16:281 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 14:24:17:271 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 14:37:22:823 [main] DEBUG org.puppet.client.socket.SocketClientController  - diconnect from server
+2014-Nov-10 14:42:29:419 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 14:42:29:434 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 14:42:29:966 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 14:42:30:993 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 14:45:40:995 [main] DEBUG org.puppet.client.socket.SocketClientController  - diconnect from server
+2014-Nov-10 14:47:45:845 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 14:47:45:845 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 14:47:46:361 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 14:47:48:664 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 14:48:45:653 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-10 14:48:45:653 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-10 14:48:55:731 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 14:49:05:802 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 14:49:15:861 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 14:49:16:598 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=27 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 68 65 6C 6C...]
+2014-Nov-10 14:49:16:598 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-10 14:49:16:614 [NioProcessor-2] DEBUG org.puppet.server.server.socket.NIOSocketServerController  - data recieved: {"command":"hello_world"}
+2014-Nov-10 14:49:16:676 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 14:49:26:737 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 14:49:36:780 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 14:49:46:860 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 14:49:48:800 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=24 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Nov-10 14:49:48:800 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-10 14:49:48:809 [NioProcessor-2] DEBUG org.puppet.server.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"}
+2014-Nov-10 14:49:48:810 [NioProcessor-2] WARN  org.apache.mina.filter.logging.LoggingFilter  - EXCEPTION :
+java.lang.Exception: Processor not found for command `schedule`
+	at org.puppet.server.processor.ProcessorManager.processCommand(ProcessorManager.java:15)
+	at org.puppet.server.server.socket.NIOSocketServerController.messageReceived(NIOSocketServerController.java:119)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:690)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:407)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:236)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:410)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:710)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:664)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:653)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1124)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2014-Nov-10 14:49:58:828 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 14:50:08:899 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 14:50:18:948 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 14:50:28:984 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 14:50:38:987 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 14:50:49:011 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 14:50:59:061 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 14:51:09:121 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 14:51:13:586 [NioProcessor-2] WARN  org.apache.mina.filter.logging.LoggingFilter  - EXCEPTION :
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:273)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:44)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:690)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:664)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:653)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1124)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2014-Nov-10 14:51:13:590 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CLOSED
+2014-Nov-10 15:19:37:192 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 15:19:37:207 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 15:19:37:723 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 15:19:38:129 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 15:20:24:200 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 15:20:24:216 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 15:20:24:714 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 15:20:25:058 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 15:21:07:234 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 15:21:07:249 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 15:21:07:734 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 15:21:08:070 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 15:23:57:936 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 15:23:57:936 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 15:23:58:452 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 15:23:59:951 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 15:24:58:622 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 15:24:58:622 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 15:24:59:122 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 15:24:59:419 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 15:30:14:922 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 15:30:14:938 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 15:30:15:438 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 15:30:15:735 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 15:30:49:466 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 15:30:49:466 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 15:30:49:997 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 15:30:50:294 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 15:32:12:369 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 15:32:12:369 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 15:32:12:884 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 15:32:13:197 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 15:32:58:386 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 15:32:58:402 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 15:32:58:949 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 15:32:59:245 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-10 15:38:24:195 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-10 15:38:24:195 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-10 15:38:32:144 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=24 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Nov-10 15:38:32:144 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-10 15:38:32:158 [NioProcessor-2] DEBUG org.puppet.server.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"}
+2014-Nov-10 15:38:34:377 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:38:36:376 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:38:38:363 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:38:40:375 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:38:42:378 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:38:44:378 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:38:46:365 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:38:48:368 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:38:50:371 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:38:52:373 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:39:02:455 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:39:12:534 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:39:22:593 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:39:32:634 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:39:42:672 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:39:52:726 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:40:02:838 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:40:12:887 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:40:22:934 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:40:32:968 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:40:43:018 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:40:53:076 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:41:03:123 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:41:13:126 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:41:23:175 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:41:33:215 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:41:43:264 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:41:53:313 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:42:03:335 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:42:05:011 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-10 15:42:05:011 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-10 15:42:10:385 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=24 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Nov-10 15:42:10:385 [NioProcessor-3] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 2
+2014-Nov-10 15:42:10:391 [NioProcessor-3] DEBUG org.puppet.server.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"}
+2014-Nov-10 15:42:12:392 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:42:13:395 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-10 15:42:14:392 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:42:16:395 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:42:18:398 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:42:18:439 [NioProcessor-2] WARN  org.apache.mina.filter.logging.LoggingFilter  - EXCEPTION :
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:273)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:44)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:690)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:664)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:653)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1124)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2014-Nov-10 15:42:18:439 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CLOSED
+2014-Nov-10 15:42:20:392 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:42:22:395 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:42:24:398 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:42:26:402 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:42:28:405 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-10 15:42:29:038 [NioProcessor-3] WARN  org.apache.mina.filter.logging.LoggingFilter  - EXCEPTION :
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:273)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:44)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:690)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:664)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:653)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1124)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2014-Nov-10 15:42:29:102 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - CLOSED
+2014-Nov-10 16:02:14:305 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-10 16:02:14:305 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-10 16:02:14:867 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-10 16:02:15:508 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully

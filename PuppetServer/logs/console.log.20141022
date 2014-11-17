@@ -1,0 +1,3 @@
+2014-Oct-22 14:03:44:225 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-22 14:03:44:241 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-22 14:03:44:832 [main] DEBUG Main  - Puppet Server Started Successfully

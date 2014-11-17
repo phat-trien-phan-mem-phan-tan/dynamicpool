@@ -1,0 +1,62 @@
+2014-Oct-19 18:23:40:502 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-19 18:23:40:946 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-19 18:23:43:043 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-19 18:35:08:552 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-19 18:35:08:567 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-19 18:35:09:130 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-19 18:35:21:154 [qtp563797747-16] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:35:22:012 [qtp563797747-15] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /favicon.ico from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:38:15:154 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-19 18:38:15:164 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-19 18:38:15:670 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-19 18:38:19:616 [qtp1353359112-12] DEBUG vn.puppetserver.server.http.SimpleServlet  - POST: / from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:39:01:008 [qtp1353359112-12] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:39:01:619 [qtp1353359112-15] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /favicon.ico from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:40:40:235 [qtp1353359112-16] DEBUG vn.puppetserver.server.http.SimpleServlet  - POST: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:41:52:008 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-19 18:41:52:018 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-19 18:41:52:568 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-19 18:41:56:079 [qtp1289521927-17] DEBUG vn.puppetserver.server.http.SimpleServlet  - POST: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:41:56:084 [qtp1289521927-17] INFO  vn.puppetserver.server.http.HttpServerController  - {}
+2014-Oct-19 18:42:22:347 [qtp1289521927-14] DEBUG vn.puppetserver.server.http.SimpleServlet  - POST: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:42:22:348 [qtp1289521927-14] INFO  vn.puppetserver.server.http.HttpServerController  - {}
+2014-Oct-19 18:42:59:285 [qtp1289521927-15] DEBUG vn.puppetserver.server.http.SimpleServlet  - POST: / from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:42:59:286 [qtp1289521927-15] INFO  vn.puppetserver.server.http.HttpServerController  - {}
+2014-Oct-19 18:43:02:850 [qtp1289521927-15] DEBUG vn.puppetserver.server.http.SimpleServlet  - POST: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:43:02:850 [qtp1289521927-15] INFO  vn.puppetserver.server.http.HttpServerController  - {}
+2014-Oct-19 18:43:04:495 [qtp1289521927-11] DEBUG vn.puppetserver.server.http.SimpleServlet  - POST: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:43:04:496 [qtp1289521927-11] INFO  vn.puppetserver.server.http.HttpServerController  - {}
+2014-Oct-19 18:43:38:479 [qtp1289521927-16] DEBUG vn.puppetserver.server.http.SimpleServlet  - POST: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:43:38:480 [qtp1289521927-16] INFO  vn.puppetserver.server.http.HttpServerController  - {}
+2014-Oct-19 18:44:56:372 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-19 18:44:56:383 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-19 18:44:56:916 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-19 18:45:02:453 [qtp590061565-17] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:45:02:455 [qtp590061565-17] INFO  vn.puppetserver.server.http.HttpServerController  - data receive {}
+2014-Oct-19 18:45:03:088 [qtp590061565-14] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /favicon.ico from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:45:03:088 [qtp590061565-14] INFO  vn.puppetserver.server.http.HttpServerController  - data receive {}
+2014-Oct-19 18:45:16:375 [qtp590061565-16] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:45:16:436 [qtp590061565-16] INFO  vn.puppetserver.server.http.HttpServerController  - data receive {test=[1]}
+2014-Oct-19 18:45:16:791 [qtp590061565-15] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /favicon.ico from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:45:16:792 [qtp590061565-15] INFO  vn.puppetserver.server.http.HttpServerController  - data receive {}
+2014-Oct-19 18:45:30:530 [qtp590061565-13] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:45:30:532 [qtp590061565-13] INFO  vn.puppetserver.server.http.HttpServerController  - data receive {test=[1]}
+2014-Oct-19 18:45:30:948 [qtp590061565-12] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /favicon.ico from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:45:30:948 [qtp590061565-12] INFO  vn.puppetserver.server.http.HttpServerController  - data receive {}
+2014-Oct-19 18:45:37:200 [qtp590061565-14] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:45:37:201 [qtp590061565-14] INFO  vn.puppetserver.server.http.HttpServerController  - data receive {test=[2]}
+2014-Oct-19 18:45:37:606 [qtp590061565-12] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /favicon.ico from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:45:37:606 [qtp590061565-12] INFO  vn.puppetserver.server.http.HttpServerController  - data receive {}
+2014-Oct-19 18:47:43:886 [qtp590061565-16] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:47:43:887 [qtp590061565-16] INFO  vn.puppetserver.server.http.HttpServerController  - data receive {test=[1]}
+2014-Oct-19 18:48:06:896 [qtp590061565-17] DEBUG vn.puppetserver.server.http.SimpleServlet  - POST: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:48:06:897 [qtp590061565-17] INFO  vn.puppetserver.server.http.HttpServerController  - data receive {test=[1]}
+2014-Oct-19 18:48:20:983 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-19 18:48:20:992 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-19 18:48:21:561 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-19 18:48:23:740 [qtp590061565-10] DEBUG vn.puppetserver.server.http.SimpleServlet  - POST: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:48:23:746 [qtp590061565-10] INFO  vn.puppetserver.server.http.HttpServerController  - data receive on post {test=[1]}
+2014-Oct-19 18:48:46:898 [qtp590061565-16] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:48:46:898 [qtp590061565-16] INFO  vn.puppetserver.server.http.HttpServerController  - data receive {test=[1]}
+2014-Oct-19 18:48:58:067 [qtp590061565-15] DEBUG vn.puppetserver.server.http.SimpleServlet  - POST: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-19 18:48:58:068 [qtp590061565-15] INFO  vn.puppetserver.server.http.HttpServerController  - data receive on post {test=[1]}
