@@ -1,0 +1,51 @@
+2014-Oct-06 18:01:41:595 [main] DEBUG Main  - Starting Doko Game Server.........
+2014-Oct-06 18:01:41:645 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-06 18:13:39:038 [main] DEBUG Main  - Starting Doko Game Server.........
+2014-Oct-06 18:13:39:053 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-06 18:15:26:572 [main] DEBUG Main  - Starting Doko Game Server.........
+2014-Oct-06 18:15:26:572 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-06 23:37:43:121 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-06 23:37:43:335 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-06 23:41:08:362 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-06 23:41:08:405 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-06 23:41:35:421 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-06 23:41:35:463 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-06 23:42:01:321 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-06 23:42:01:444 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-06 23:42:02:207 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-06 23:42:39:706 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-06 23:42:39:716 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-06 23:42:40:142 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-06 23:43:15:623 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-06 23:43:15:633 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-06 23:43:16:054 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-06 23:43:39:450 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-06 23:43:39:461 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-06 23:43:39:921 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-06 23:44:13:965 [qtp1086604495-13] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-06 23:45:45:410 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Oct-06 23:45:45:411 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Oct-06 23:45:55:429 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-06 23:45:58:262 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=27 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 68 65 6C 6C...]
+2014-Oct-06 23:45:58:263 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-06 23:45:58:272 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"hello_world"}
+2014-Oct-06 23:45:58:332 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: "hello world"
+2014-Oct-06 23:46:01:903 [NioProcessor-2] WARN  org.apache.mina.filter.logging.LoggingFilter  - EXCEPTION :
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:302)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:694)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2014-Oct-06 23:46:01:915 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CLOSED

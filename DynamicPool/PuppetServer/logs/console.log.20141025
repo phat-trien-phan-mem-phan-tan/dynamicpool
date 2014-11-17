@@ -1,0 +1,25 @@
+2014-Oct-25 14:59:56:026 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-25 14:59:58:828 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-25 15:00:04:385 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-25 15:00:43:894 [qtp457775972-12] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-25 15:00:43:946 [qtp457775972-12] INFO  vn.puppetserver.server.http.HttpServerController  - data receive {wsdl=[]}
+2014-Oct-25 15:00:45:522 [qtp457775972-17] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /favicon.ico from 0:0:0:0:0:0:0:1
+2014-Oct-25 15:00:45:523 [qtp457775972-17] INFO  vn.puppetserver.server.http.HttpServerController  - data receive {}
+2014-Oct-25 17:36:32:114 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-25 17:36:32:192 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-25 17:36:32:875 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-25 17:37:22:609 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-25 17:37:22:625 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-25 17:37:23:093 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-25 17:39:21:556 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-25 17:39:21:790 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-25 17:39:22:465 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-25 17:41:16:159 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-25 17:41:16:331 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-25 17:41:16:925 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-25 17:41:33:191 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-25 17:41:33:269 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-25 17:41:33:754 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-25 17:46:59:019 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-25 17:46:59:019 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-25 17:46:59:519 [main] DEBUG Main  - Puppet Server Started Successfully

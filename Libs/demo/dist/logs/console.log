@@ -1,0 +1,33 @@
+2014-Nov-15 16:45:04:074 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-15 16:45:04:084 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-15 16:45:05:326 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-15 16:45:05:656 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-15 16:45:34:990 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-15 16:45:34:990 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-15 16:45:36:041 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=24 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Nov-15 16:45:36:041 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-15 16:45:36:041 [NioProcessor-2] DEBUG org.puppet.server.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"}
+2014-Nov-15 16:45:38:141 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:45:40:141 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:45:42:144 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:45:44:146 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:45:46:146 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:45:48:146 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:45:49:596 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-15 16:45:49:596 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-15 16:45:50:096 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=24 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Nov-15 16:45:50:106 [NioProcessor-3] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 2
+2014-Nov-15 16:45:50:106 [NioProcessor-3] DEBUG org.puppet.server.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"}
+2014-Nov-15 16:45:50:146 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:45:52:117 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:45:52:147 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:45:54:117 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:45:54:147 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:45:56:117 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:45:56:147 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:45:58:120 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:46:00:120 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:46:02:120 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:46:04:120 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:46:06:111 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-15 16:46:06:151 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE

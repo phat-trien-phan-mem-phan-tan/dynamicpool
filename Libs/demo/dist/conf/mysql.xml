@@ -1,0 +1,5 @@
+<mysql>
+	<url>jdbc:mysql://localhost:3306/puppet</url>
+	<user>puppet</user>
+	<password>Puppet2014</password>
+</mysql>

@@ -1,0 +1,69 @@
+<resources>
+
+    <string name="app_name">Câu cá</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hint">Mời Nhập Tên</string>
+    
+    <string name="available_game_1">Bạn có </string>
+    <string name="available_game_2"> xu.</string>
+    <string name="buy_game_text_0">Đã hết xu! Bạn cần ít nhất 300 xu để chơi tiếp!</string>
+    <string name="buy_game_text_2">Đã hết xu! Bạn cần ít nhất 1000 xu để mua tất cả!</string>
+    <string name="buy_game_text_1">Bạn có muốn mua 3000 xu bằng tin nhắn giá 15.000 đồng không?\nNhấn "khác" để được mua ưu đãi hơn!</string>
+    <string name="buy_all_item_text">Mua tất cả các vật dụng tại đây mà không bị trừ điểm, việc này sẽ giúp bạn qua bàn dễ hơn\nChi phí: 1000 xu! Bạn có muốn mua không?</string>
+    <string name="buy_times_success">Mua lượt chơi thành công</string>
+    <string name="buy_items_success">Mua vật phẩm thành công</string>
+    <string name="buy_times_unsuccess">Gửi tin nhắn dịch vụ không thành công nên không thêm lượt chơi được</string>
+    <string name="buy_items_unsuccess">Gửi tin nhắn dịch vụ không thành công nên không mua vật phẩm được</string>
+    <string name="title_share">Chia sẻ game</string>
+    <string name="message_share_title">Bạn có muốn giới thiệu game này cho bạn bè không?</string>
+    <string name="message_share_subject">Hãy chia sẻ với bạn bè mình.</string>
+    <string name="message_share_content">Tải game Câu Cá ở đây: </string>
+    <string name="title_download">Tải hot game</string>
+    <string name="message_download_title">Bạn có muốn tải hot game khác không?</string>
+
+    <!-- Thanh toán -->
+	<string name="payment_title">Chọn hình thức thanh toán</string>
+	<string name="payment_other">Khác</string>
+	<string name="payment_do_scratch">Nạp thẻ</string>
+	<string name="payment_description_coupon">Nhập mã số quà tặng để được hưởng ưu đãi dịch vụ</string>
+	<string name="payment_title_coupon">Thẻ quà tặng</string>
+     <string name="payment_description_scratch" formatted="false">Đổi xu bằng thẻ cào&lt;br>
+    10.000đ - 21.000xu &lt;font color=#00ff00>(+5%)&lt;/font>&lt;br>
+    20.000đ - 44.000xu &lt;font color=#00ff00>(+10%)&lt;/font>&lt;br>
+    50.000đ - 115.000xu &lt;font color=#00ff00>(+15%)&lt;/font>&lt;br>
+    100.000đ - 240.000xu &lt;font color=#00ff00>(+20%)&lt;/font>&lt;br>
+    200.000đ - 500.000xu &lt;font color=#00ff00>(+25%)&lt;/font>&lt;br>
+    500.000đ - 1.300.000xu &lt;font color=#00ff00>(+30%)&lt;/font></string>
+	<string name="payment_title_scratch">Nạp thẻ cào</string>
+	<string name="payment_success_coupon">Nạp thẻ quà tặng thành công!</string>
+	<string name="payment_failure_coupon">Nạp thẻ quà tặng thất bại!</string>
+	<string name="payment_success_scratch">Nạp thẻ cào thành công!</string>
+	<string name="payment_failure_scratch">Nạp thẻ cào thất bại!</string>
+	<string name="payment_success_sms">Gửi tin nhắn thành công!</string>
+	<string name="payment_failure_sms">Gửi tin nhắn thất bại!</string>
+	<string name="buy_diamond_title"> Bạn có muốn mua 30.000 xu bằng tin nhắn giá 15.000 đồng không? \n Hoặc chọn \"Khác\" để nhận nhiều ưu đãi hơn!</string>
+	<string name="payment_label_coupon_code">Mã số</string>
+	<string name="payment_label_coupon_hint">Nhập mã số thẻ quà tặng</string>
+	<string name="payment_label_coupon_description">Nhập mã số thẻ quà tặng để được hưởng ưu đãi dịch vụ</string>
+	
+	<string name="payment_label_scratch_code">Mã số</string>
+	<string name="payment_label_scratch_code_hint">Nhập mã số thẻ cào</string>
+	<string name="payment_label_scratch_seri">Số seri</string>
+	<string name="payment_label_scratch_seri_hint">Nhập số seri in trên thẻ</string>
+	<string name="payment_label_scratch_operator">Loại thẻ</string>
+	
+	<string name="buy_time_title">Bạn có muốn mua 150.000 xu bằng tin nhắn giá 15.000 đồng không?\nHoặc bạn nhấn "khác" để có hình thức thanh toán ưu đãi hơn!</string>
+	
+	<string-array name= "sms_list_info">
+	    <item>5.000VNĐ - 50 lượt chơi</item>
+	    <item>10.000VNĐ - 100 lượt chơi</item>
+	    <item>15.000VNĐ - 150 lượt chơi</item>
+	</string-array>
+	
+	<string-array name= "sms_confirm">
+	    <item>Bạn có đồng ý gửi tin nhắn 5.000VNĐ để mua 50 lượt chơi?</item>
+	    <item>Bạn có đồng ý gửi tin nhắn 10.000VNĐ để mua 100 lượt chơi?</item>
+	    <item>Bạn có đồng ý gửi tin nhắn 15.000VNĐ để mua 150 lượt chơi?</item>
+	</string-array>
+</resources>

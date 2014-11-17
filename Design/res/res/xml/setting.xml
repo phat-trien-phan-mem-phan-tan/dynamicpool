@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference 
+        android:defaultValue="true"
+        android:key="music"
+        android:summary="Bật/Tắt nhạc nền"
+        android:title="Bật nhạc nền"/>
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="sound"
+        android:summary="Bật/Tắt âm thanh"
+        android:title="Bật âm thanh"/>
+    <CheckBoxPreference 
+        android:defaultValue="true"
+        android:key="touch"
+        android:summary="Vào HƯỚNG DẪN để xem chi tiết"
+        android:title="Đổi loại tương tác"/>
+</PreferenceScreen>
