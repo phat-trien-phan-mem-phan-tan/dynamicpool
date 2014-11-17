@@ -1,4 +1,0 @@
-2014-Nov-10 17:51:57:295 [main] DEBUG Main  - Starting Puppet Server.........
-2014-Nov-10 17:51:57:576 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
-2014-Nov-10 17:52:00:826 [main] DEBUG Main  - Puppet Server Started Successfully
-2014-Nov-10 17:52:01:248 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
