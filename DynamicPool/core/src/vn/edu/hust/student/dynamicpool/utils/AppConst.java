@@ -22,7 +22,7 @@ public class AppConst {
 	public static final String EXIT_BUTTON_TEXTURE = "exit-btn.png";
 	public static final String SELECT_FISH_BUTTONS_TEXTURE = "create-fish-buttons.png";
 	public static final String ADD_FISH_BUTTON_TEXTURE = "add-fish.png";
-	public static final String SELECT_TRANJECTORY_TEXTURE = "tranjectory.png";
+	public static final String SELECT_TRAJECTORY_TEXTURE = "trajectory.png";
 	public static final int FISH_ONE_WIDTH = 100;
 	public static final int FISH_ONE_HEIGHT = 51;
 	public static final int FISH_TWO_WIDTH = 100;

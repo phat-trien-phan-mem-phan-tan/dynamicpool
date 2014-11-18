@@ -12,7 +12,7 @@ public class AssetGameScreen {
 	private Texture exitButtonTexture;
 	private Texture selectFishButtonsTexture;
 	private Texture addFishButtonTexture;
-	private Texture selectTranjectoryButtonTexture;
+	private Texture selectTrajectoryButtonTexture;
 	
 	public AssetGameScreen() {
 		fish1 = new AssetFishAnimated(AppConst.HORIZONTAL_FISH_1_TEXTURE, 8,
@@ -26,7 +26,7 @@ public class AssetGameScreen {
 		assetManager.load(AppConst.EXIT_BUTTON_TEXTURE, Texture.class);
 		assetManager.load(AppConst.ADD_FISH_BUTTON_TEXTURE, Texture.class);
 		assetManager.load(AppConst.SELECT_FISH_BUTTONS_TEXTURE, Texture.class);
-		assetManager.load(AppConst.SELECT_TRANJECTORY_TEXTURE, Texture.class);
+		assetManager.load(AppConst.SELECT_TRAJECTORY_TEXTURE, Texture.class);
 	}
 	
 	public void bind(AssetManager assetManager) {
@@ -35,7 +35,7 @@ public class AssetGameScreen {
 		exitButtonTexture = assetManager.get(AppConst.EXIT_BUTTON_TEXTURE);
 		addFishButtonTexture = assetManager.get(AppConst.ADD_FISH_BUTTON_TEXTURE);
 		selectFishButtonsTexture = assetManager.get(AppConst.SELECT_FISH_BUTTONS_TEXTURE);
-		selectTranjectoryButtonTexture = assetManager.get(AppConst.SELECT_TRANJECTORY_TEXTURE);
+		selectTrajectoryButtonTexture = assetManager.get(AppConst.SELECT_TRAJECTORY_TEXTURE);
 	}
 
 	public TextureRegion getGameBackgroundRegion() {
@@ -58,7 +58,7 @@ public class AssetGameScreen {
 		return selectFishButtonsTexture;
 	}
 
-	public Texture getSelectTranjectoryButtonTexture() {
-		return selectTranjectoryButtonTexture;
+	public Texture getSelectTrajectoryButtonTexture() {
+		return selectTrajectoryButtonTexture;
 	}
 }

@@ -27,10 +27,10 @@ public class GameScreen implements Screen {
 	private Texture exitButtonTexture;
 	private Texture addFishButtonTexture;
 	private Texture selectFishButtonsTexture;
-	private Texture selectTranjectoryButtonTexture;
+	private Texture selectTrajectoryButtonTexture;
 	private InputProcessor defaultInputProcessor;
 	private InputProcessor selectFishInputProcessor;
-	private InputProcessor selectTranjectoryInputProcessor;
+	private InputProcessor selectTrajectoryInputProcessor;
 
 	public GameScreen(WorldRenderer worldRenderer,
 			WorldController worldController) {
@@ -72,11 +72,11 @@ public class GameScreen implements Screen {
 		if (worldController.isShowSelectFishButtons())
 			batch.draw(selectFishButtonsTexture, 0, AppConst.height - 100, 480,
 					100);
-		if (worldController.isShowSelectTranjectoryButtons())
-			batch.draw(selectTranjectoryButtonTexture, 0,
+		if (worldController.isShowSelectTrajectoryButtons())
+			batch.draw(selectTrajectoryButtonTexture, 0,
 					AppConst.height - 100,
-					selectTranjectoryButtonTexture.getWidth(),
-					selectTranjectoryButtonTexture.getHeight());
+					selectTrajectoryButtonTexture.getWidth(),
+					selectTrajectoryButtonTexture.getHeight());
 	}
 
 	@Override
@@ -91,7 +91,7 @@ public class GameScreen implements Screen {
 		this.addFishButtonTexture = gameAssets.getAddFishButtonTexture();
 		this.selectFishButtonsTexture = gameAssets
 				.getSelectFishButtonsTexture();
-		this.selectTranjectoryButtonTexture = gameAssets.getSelectTranjectoryButtonTexture();
+		this.selectTrajectoryButtonTexture = gameAssets.getSelectTrajectoryButtonTexture();
 		createInputprocessors();
 	}
 
@@ -100,7 +100,7 @@ public class GameScreen implements Screen {
 				worldController);
 		this.selectFishInputProcessor = new GSSelectFishInputProcessor(
 				worldController);
-		this.selectTranjectoryInputProcessor = new GSSelectTranjectoryInputProcessor(
+		this.selectTrajectoryInputProcessor = new GSSelectTrajectoryInputProcessor(
 				worldController);
 		worldController.setGameInputProcessor(defaultInputProcessor);
 	}
@@ -133,7 +133,7 @@ public class GameScreen implements Screen {
 		return selectFishInputProcessor;
 	}
 
-	public InputProcessor getSelectTranjectoryInputProcessor() {
-		return selectTranjectoryInputProcessor;
+	public InputProcessor getSelectTrajectoryInputProcessor() {
+		return selectTrajectoryInputProcessor;
 	}
 }

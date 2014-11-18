@@ -38,7 +38,7 @@ public class WorldController {
 
 	public WorldController(GameCenter game) {
 		this.game = game;
-		this.businessLogicLayer = new BusinessLogicLayerImpl();
+		this.businessLogicLayer = new BLLTest();
 	}
 
 	public void init() {
@@ -182,15 +182,15 @@ public class WorldController {
 	public void selectFish(FishType fishType) {
 		this.selectedFishType = fishType;
 		this.addingFishStep = 2;
-		InputProcessor selectTranjectoryInputProcessor = gameScreen.getSelectTranjectoryInputProcessor();
-		this.setGameInputProcessor(selectTranjectoryInputProcessor);
+		InputProcessor selectTrajectoryInputProcessor = gameScreen.getSelectTrajectoryInputProcessor();
+		this.setGameInputProcessor(selectTrajectoryInputProcessor);
 	}
 
-	public boolean isShowSelectTranjectoryButtons() {
+	public boolean isShowSelectTrajectoryButtons() {
 		return addingFishStep == 2;
 	}
 
-	public void selectTranjectory(ETrajectoryType trajectoryType) {
+	public void selectTrajectory(ETrajectoryType trajectoryType) {
 		createFish(selectedFishType, trajectoryType);
 		cancelAddFish();
 	}
