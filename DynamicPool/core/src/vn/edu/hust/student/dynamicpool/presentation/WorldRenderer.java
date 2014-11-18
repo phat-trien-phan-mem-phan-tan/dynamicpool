@@ -1,5 +1,7 @@
 package vn.edu.hust.student.dynamicpool.presentation;
 
+import vn.edu.hust.student.dynamicpool.utils.AppConst;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -48,6 +50,8 @@ public class WorldRenderer implements Disposable {
 	}
 
 	public void resize(int width, int height) {
+		AppConst.width = width;
+		AppConst.height = height;
 		camera.setToOrtho(false, width, height);
 		camera.update();
 	}

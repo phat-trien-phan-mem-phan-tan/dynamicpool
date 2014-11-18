@@ -7,7 +7,9 @@ import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayer;
+import vn.edu.hust.student.dynamicpool.bll.ETrajectoryType;
 import vn.edu.hust.student.dynamicpool.bll.FishFactory;
+import vn.edu.hust.student.dynamicpool.bll.FishType;
 import vn.edu.hust.student.dynamicpool.bll.IFish;
 import vn.edu.hust.student.dynamicpool.model.DevideInfor;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
@@ -28,7 +30,7 @@ public class BLLTest implements BusinessLogicLayer {
 			public void run() {
 				newcallback.callback(true, null);
 			}
-		}, 1);
+		}, 3);
 	}
 
 	@Override
@@ -39,7 +41,7 @@ public class BLLTest implements BusinessLogicLayer {
 			public void run() {
 				newcallback.callback(true, null);
 			}
-		}, 1);
+		}, 3);
 	}
 
 	@Override
@@ -66,5 +68,15 @@ public class BLLTest implements BusinessLogicLayer {
 		for (IFish fish : fishs) {
 			fish.update(deltaTime);
 		}
+	}
+	@Override
+	public void exit() {
+		
+	}
+	@Override
+	public void createFish(FishType fishType, ETrajectoryType trajectoryType,
+			int width, int height) {
+		// TODO Auto-generated method stub
+		
 	}
 }

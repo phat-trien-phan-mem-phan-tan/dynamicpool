@@ -19,6 +19,10 @@ public class AppConst {
 	public static final String LOADING_TEXT = "Loading";
 	public static final int LOADING_FONT_SIZE = 50;
 	public static final String LOADING_FONT_NAME = "size"+ LOADING_FONT_SIZE + ".ttf";
+	public static final int HUB_BUTTON_WIDTH = 64;
+	public static final int HUB_BUTTON_HEIGHT = 64;
+	public static final String EXIT_BUTTON_TEXTURE = "exit-btn.png";
+	public static final String FISH1_BUTTON_TEXTURE = "fish1button.png";
 	
 	public static int width = 800;
 	public static int height = 480;

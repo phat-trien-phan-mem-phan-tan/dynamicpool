@@ -19,4 +19,8 @@ public interface BusinessLogicLayer {
 	List<IFish> getFishs();
 
 	void update(float deltaTime);
+
+	void exit();
+
+	void createFish(FishType fishType, ETrajectoryType trajectoryType, int width, int height);
 }

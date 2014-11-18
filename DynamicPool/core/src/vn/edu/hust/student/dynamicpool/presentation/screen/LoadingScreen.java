@@ -36,6 +36,7 @@ public class LoadingScreen implements Screen {
 	@Override
 	public void resize(int width, int height) {
 		wordRenderer.resize(width, height);
+		calculateLoadingTextPosition();
 	}
 
 	@Override

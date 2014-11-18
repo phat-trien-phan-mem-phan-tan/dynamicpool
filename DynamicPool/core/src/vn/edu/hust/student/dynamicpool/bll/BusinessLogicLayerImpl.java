@@ -7,7 +7,6 @@ import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayerImpl;
 import vn.edu.hust.student.dynamicpool.model.DevideInfor;
 import vn.edu.hust.student.dynamicpool.model.Pool;
-import vn.edu.hust.student.dynamicpool.model.PoolManager;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
 
 public class BusinessLogicLayerImpl implements BusinessLogicLayer {
@@ -120,5 +119,18 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 			fishes.get(i).update(deltaTime);
 		}
 
+	}
+
+	@Override
+	public void exit() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void createFish(FishType fishType, ETrajectoryType trajectoryType,
+			int width, int height) {
+		// TODO Auto-generated method stub
+		
 	}
 }
