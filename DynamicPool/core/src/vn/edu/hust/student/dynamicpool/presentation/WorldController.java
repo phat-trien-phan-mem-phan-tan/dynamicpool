@@ -7,6 +7,7 @@ import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayer;
 import vn.edu.hust.student.dynamicpool.bll.ETrajectoryType;
 import vn.edu.hust.student.dynamicpool.bll.FishType;
 import vn.edu.hust.student.dynamicpool.bll.IFish;
+import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUICollection;
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUIFactory;
@@ -36,6 +37,7 @@ public class WorldController {
 	private FishUICollection fishUICollection = new FishUICollection();
 	private int addingFishStep = 0;
 	private FishType selectedFishType = FishType.FISH1;
+	private float size;
 
 	public WorldController(GameCenter game) {
 		this.game = game;
@@ -144,17 +146,29 @@ public class WorldController {
 
 	public boolean saveScreenSizeByInch(String screenSize) {
 		if (isValidScreenSize(screenSize)) {
+			sendDeviceInfoToServer();
 			showFullScreen();
 			showLoadingScreen();
-			showGameScreen();
 			return true;
 		}
 		return false;
 	}
 
+	private void sendDeviceInfoToServer() {
+		DisplayMode desktopDisplayMode = Gdx.graphics.getDesktopDisplayMode();
+		PresentationBooleanCallback sendDeviceInfoCallback = new PresentationBooleanCallback() {
+			@Override
+			public void callback(boolean isSuccess, Exception error) {
+				showGameScreen();
+			}
+		};
+		DeviceInfo deviceInfo = new DeviceInfo(desktopDisplayMode.width, desktopDisplayMode.height, this.size);
+		businessLogicLayer.addDevide(deviceInfo, sendDeviceInfoCallback);
+	}
+
 	private boolean isValidScreenSize(String screenSize) {
 		try {
-			float size = Float.parseFloat(screenSize);
+			size = Float.parseFloat(screenSize);
 			if (size < 0 || size > 30)
 				return false;
 		} catch (Exception e) {

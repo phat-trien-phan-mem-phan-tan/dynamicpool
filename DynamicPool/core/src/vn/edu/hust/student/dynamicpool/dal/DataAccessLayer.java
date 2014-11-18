@@ -3,7 +3,7 @@ package vn.edu.hust.student.dynamicpool.dal;
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.ETrajectoryType;
 import vn.edu.hust.student.dynamicpool.bll.FishType;
-import vn.edu.hust.student.dynamicpool.model.DevideInfor;
+import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 
 public interface DataAccessLayer {
 	
@@ -11,9 +11,9 @@ public interface DataAccessLayer {
 
 	void createHost(BusinessLogicDataCallback callback);
 	
-	void intialDevide(DevideInfor devideInfor,BusinessLogicDataCallback callback);
+	void intialDevide(DeviceInfo devideInfor,BusinessLogicDataCallback callback);
 	
-	void addDevide(DevideInfor devideInfor,BusinessLogicDataCallback callback);
+	void addDevide(DeviceInfo devideInfor,BusinessLogicDataCallback callback);
 	
 	void exit();
 

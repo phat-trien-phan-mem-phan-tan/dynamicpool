@@ -5,7 +5,7 @@ import vn.edu.hust.student.dynamicpool.bll.ETrajectoryType;
 import vn.edu.hust.student.dynamicpool.bll.FishType;
 import vn.edu.hust.student.dynamicpool.controller.MainController;
 import vn.edu.hust.student.dynamicpool.exception.NetworkException;
-import vn.edu.hust.student.dynamicpool.model.DevideInfor;
+import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 
 public class DataAccessLayerImpl implements DataAccessLayer {
 	@Override
@@ -29,14 +29,14 @@ public class DataAccessLayerImpl implements DataAccessLayer {
 	}
 
 	@Override
-	public void intialDevide(DevideInfor devideInfor,
+	public void intialDevide(DeviceInfo devideInfor,
 			BusinessLogicDataCallback callback) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void addDevide(DevideInfor devideInfor,
+	public void addDevide(DeviceInfo devideInfor,
 			BusinessLogicDataCallback callback) {
 		// TODO Auto-generated method stub
 		
