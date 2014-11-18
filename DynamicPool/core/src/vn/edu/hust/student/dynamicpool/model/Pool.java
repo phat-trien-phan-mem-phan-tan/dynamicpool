@@ -16,22 +16,25 @@ public class Pool implements IPool{
 	private int id;
 	private ArrayList<Segment> segmentList;
 	private IPoolPosition position;
+	private float diagonal;//duong cheo thiet bi
 	
 	private IFishManager fishManager;
 	
 	
-	public Pool(IPoolPosition position,IFishManager fishManager){
+	public Pool(IPoolPosition position,IFishManager fishManager, float diagonal){
 		
 		this.id = 0;
 		this.position = position;
 		this.fishManager = fishManager;
+		this.diagonal=diagonal;
 		
 	}
 	
-	public Pool(IPoolPosition position,IFishManager fishManager,int id){
+	public Pool(IPoolPosition position,IFishManager fishManager,float diagnoal,int id){
 		this.id = id;
 		this.position = position;
 		this.fishManager = fishManager;
+		this.diagonal=diagnoal;
 	}
 	
 	
