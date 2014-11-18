@@ -6,7 +6,7 @@ import vn.edu.hust.student.dynamicpool.equation.vector.Oxy;
 import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
 
 public class LineTrajectory extends Trajectory {
-	
+
 	/*
 	 * x = x0+u1t; y = y0+u2t;
 	 * 
@@ -16,14 +16,13 @@ public class LineTrajectory extends Trajectory {
 	// vector chi phuong
 	private Vector u;
 	
+
 	public LineTrajectory(IFishPosition fishPosition) {
-		
-		
+
 		super(fishPosition);
 		this.timeState = 0;
-		u = new Vector();
-		
-		
+		u = new Vector(1,1);
+
 		// TODO Auto-generated constructor stub
 	}
 
@@ -40,33 +39,29 @@ public class LineTrajectory extends Trajectory {
 	 * }
 	 */
 
-	
-	public LineTrajectory(IFishPosition fishPosition,Vector u,float timeState){
+	public LineTrajectory(IFishPosition fishPosition, Vector u, float timeState) {
 		super(fishPosition);
 		this.timeState = timeState;
 		this.u = u;
 	}
-	
-	
 
 	public Point move(float t) {
 
-		
-		float x = (float) (fishPosition.getX()+ u.getX()*t);
-		float y = (float) (fishPosition.getY() + u.getY()*t);
-		
+		float x = (float) (fishPosition.getX() + u.getX() * t);
+		float y = (float) (fishPosition.getY() + u.getY() * t);
+
 		Point point = new Point();
 		point.setLocation(x, y);
 		return point;
 	}
 
-
 	public void hit(Vector vector) {
 
 		setDirection(vector);
-		
+
 	}
 
+	@Override
 	public void setDirection(Vector vector) {
 		if (vector.equals(Oxy.ox)) {
 			// create new vector u
@@ -87,7 +82,7 @@ public class LineTrajectory extends Trajectory {
 	public void setU(Vector u) {
 		this.u = u;
 	}
-	
+
 	@Override
 	public ETrajectoryType getTrajectoryType() {
 		return ETrajectoryType.LINE;
@@ -96,14 +91,16 @@ public class LineTrajectory extends Trajectory {
 	@Override
 	public IFishPosition updateCoordinate(float deltaTime) {
 		// TODO Auto-generated method stub
-		
-		float x = (float) (fishPosition.getX()+ u.getX()*deltaTime);
-		float y = (float) (fishPosition.getY() + u.getY()*deltaTime);
-		
+
+		float x = (float) (fishPosition.getX() + u.getX() * deltaTime);
+		float y = (float) (fishPosition.getY() + u.getY() * deltaTime);
+
 		FishPosition fishPosition = new FishPosition();
 		fishPosition.setX(x);
 		fishPosition.setY(y);
-		
+
 		return fishPosition;
 	}
+
+	
 }

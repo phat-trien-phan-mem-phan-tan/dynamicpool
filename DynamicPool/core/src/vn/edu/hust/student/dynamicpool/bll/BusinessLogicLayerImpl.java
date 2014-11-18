@@ -113,24 +113,29 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	@Override
 	public void update(float deltaTime) {
 
-		List<IFish> fishes = getFishs();
-
-		for (int i = 0; i < fishes.size(); i++) {
-			fishes.get(i).update(deltaTime);
-		}
+		pool.updatePosition(deltaTime);
 
 	}
 
 	@Override
 	public void exit() {
-		// TODO Auto-generated method stub
 		
+		// call data access layer
 	}
 
 	@Override
 	public void createFish(FishType fishType, ETrajectoryType trajectoryType,
 			int width, int height) {
-		// TODO Auto-generated method stub
+
+		
+		Fish newFish = new Fish();
+		newFish.setDx(width/2);
+		newFish.setDy(height/2);
+		newFish.setTrajectoryType(trajectoryType);
+		newFish.setFishType(fishType);
+		
+		pool.getFishCollection().addFish(newFish);
+		// call data access  layer
 		
 	}
 }
