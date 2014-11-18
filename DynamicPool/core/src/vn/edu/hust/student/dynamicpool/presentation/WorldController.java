@@ -120,9 +120,12 @@ public class WorldController {
 		return fishUICollection;
 	}
 
-	public List<IFish> getFishsAndUpdate(float deltaTime) {
-		List<IFish> fishs = businessLogicLayer.getFishs();		
-		businessLogicLayer.update(deltaTime);
+	public List<IFish> getFishs() {
+		List<IFish> fishs = businessLogicLayer.getFishs();
 		return fishs;
+	}
+	
+	public void updateFishsCordinate(float deltaTime) {
+		businessLogicLayer.update(deltaTime);
 	}
 }

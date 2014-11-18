@@ -1,15 +1,16 @@
 package vn.edu.hust.student.dynamicpool.presentation.screen;
 
+import java.util.List;
+
+import vn.edu.hust.student.dynamicpool.bll.IFish;
 import vn.edu.hust.student.dynamicpool.presentation.WorldController;
 import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
-import vn.edu.hust.student.dynamicpool.presentation.assets.AssetGameScreen;
-import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
+import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUI;
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUICollection;
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.GameBackgroundUI;
 
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class GameScreen implements Screen {
 
@@ -31,7 +32,7 @@ public class GameScreen implements Screen {
 	public void render(float delta) {
 		worldRenderer.beginRender();
 		renderGameBackground();
-		renderFishsUI(delta);
+		renderFishsUIAndUpdate(delta);
 		worldRenderer.endRender();
 	}
 
@@ -39,8 +40,17 @@ public class GameScreen implements Screen {
 		gameBackground.render(batch);
 	}
 	
-	private void renderFishsUI(float deltaTime) {
-		
+	private void renderFishsUIAndUpdate(float deltaTime) {
+		List<IFish> fishs = worldController.getFishs();
+		for (IFish fish : fishs) {
+			renderAFishUI(fish);
+		}
+		worldController.updateFishsCordinate(deltaTime);
+	}
+
+	private void renderAFishUI(IFish fish) {
+		FishUI fishUI = fishUICollection.getFishUI(fish);
+		fishUI.render(batch);
 	}
 
 	@Override

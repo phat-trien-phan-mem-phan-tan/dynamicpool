@@ -1,16 +1,25 @@
 package vn.edu.hust.student.dynamicpool.tests.presentation;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayer;
+import vn.edu.hust.student.dynamicpool.bll.FishFactory;
 import vn.edu.hust.student.dynamicpool.bll.IFish;
 import vn.edu.hust.student.dynamicpool.model.DevideInfor;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
+import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 public class BLLTest implements BusinessLogicLayer {
 	private Timer timmer = new Timer();
-
+	private List<IFish> fishs = new ArrayList<IFish>();
+	
+	public BLLTest() {
+		fishs.add(FishFactory.createFishWithLineTrajectory(AppConst.width, AppConst.height));
+	}
 	@Override
 	public void joinHost(String key, PresentationBooleanCallback callback) {
 		final PresentationBooleanCallback newcallback = callback;
@@ -36,7 +45,7 @@ public class BLLTest implements BusinessLogicLayer {
 	@Override
 	public void intialDevide(DevideInfor devideInfor,
 			PresentationBooleanCallback callback) {
-		// TODO Auto-generated method stub
+		// TODO Aut1o-generated method stub
 		
 	}
 
@@ -49,13 +58,13 @@ public class BLLTest implements BusinessLogicLayer {
 
 	@Override
 	public java.util.List<IFish> getFishs() {
-		// TODO Auto-generated method stub
-		return null;
+		return fishs;
 	}
 
 	@Override
 	public void update(float deltaTime) {
-		// TODO Auto-generated method stub
-		
+		for (IFish fish : fishs) {
+			fish.update(deltaTime);
+		}
 	}
 }
