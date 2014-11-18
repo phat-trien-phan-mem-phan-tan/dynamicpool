@@ -1,6 +1,11 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
+import java.awt.Point;
+import java.util.ArrayList;
+
 import vn.edu.hust.student.dynamicpool.model.FishState;
+import vn.edu.hust.student.dynamicpool.model.Pool;
+import vn.edu.hust.student.dynamicpool.model.Segment;
 
 public class Fish implements IFish {
 	private IFishPosition position;
@@ -10,8 +15,10 @@ public class Fish implements IFish {
 	private int id;
 	private float dx;
 	private float dy;
-	private FishState fishState;
+	private ETrajectoryType trajectoryType;
+	private FishType fishType;
 	
+	private FishState fishState;	
 	
 	public Fish(IFishPosition fishPosition, Trajectory trajectory) {
 		this.position = fishPosition;
@@ -20,6 +27,8 @@ public class Fish implements IFish {
 		this.dx = 0;
 		this.dy = 0;
 		this.fishState = FishState.NONE;
+		trajectoryType = ETrajectoryType.LINE;
+		this.fishType = FishType.FISH1;
 	}
 
 	
@@ -45,11 +54,22 @@ public class Fish implements IFish {
 	public IFishPosition update(float deltaTime) {
 	
 		position = this.trajectory.updateCoordinate(deltaTime);
-		
-		/*return this.trajectory.updateCoordinate(deltaTime);*/
 		return position;
+		
 	}
 	
+	public IFishPosition checkPosition(float deltaTime){
+		
+		return this.trajectory.updateCoordinate(deltaTime);
+	}
+	
+	
+	
+	public Trajectory getTrajectory() {
+		return trajectory;
+	}
+
+
 	public void setTrajectory(Trajectory trajectory) {
 		this.trajectory = trajectory;
 	}
@@ -111,5 +131,97 @@ public class Fish implements IFish {
 		// TODO Auto-generated method stub
 		
 		this.fishState = fishState;
+	}
+
+
+	public ETrajectoryType getTrajectoryType() {
+		return trajectoryType;
+	}
+
+
+	public void setTrajectoryType(ETrajectoryType trajectoryType) {
+		this.trajectoryType = trajectoryType;
+	}
+
+
+	public FishType getFishType() {
+		return fishType;
+	}
+
+
+	public void setFishType(FishType fishType) {
+		this.fishType = fishType;
+	}
+	
+	 /***
+	  * kiem tra vi tri tiep theo cua con ca sau moi lan update
+	  * 
+	  */
+	
+	
+	public void setFishState(Pool pool,FishPosition position)
+	{
+		float x = (float) position.getX();
+		float y = (float) position.getY();
+
+		// if hit
+		double pointAboveBoundX = x + dx;
+		double pointUnderBoundX = x - dx;
+
+		double pointAboveBoundY = y + dy;
+		double pointUnderBoundY = y - dy;
+
+		
+		double maxX = pool.getCorrdiate().getPosition().getMaxX();
+		double minX = pool.getCorrdiate().getPosition().getMinX();
+
+		double maxY = pool.getCorrdiate().getPosition().getMaxY();
+		double minY = pool.getCorrdiate().getPosition().getMinY();
+
+		
+		ArrayList<Segment> segmentsX = pool.getSegmentsX();
+		ArrayList<Segment> segmentsY = pool.getSegmentsY();
+		
+		// check hit with oy
+		if (pointAboveBoundX == maxX || pointUnderBoundX == minX) {
+
+			
+			// check can go through
+			for (int i = 0; i < segmentsY.size(); i++) {
+
+				Segment segment = segmentsY.get(i);
+
+				Point beginPoint = segment.getBeginPoint();
+				Point endPoint = segment.getEndPoint();
+
+				if (pointAboveBoundY < endPoint.getY()
+						&& pointUnderBoundY > beginPoint.getY()) {
+					fishState = FishState.NOT_PASS;
+				}
+				fishState = FishState.HIT_Y;
+			}
+
+			// check hit with ox
+		} else if (pointAboveBoundY == maxY || pointUnderBoundY == minY) {
+
+			// check can go through
+			for (int i = 0; i < segmentsX.size(); i++) {
+
+				Segment segment = segmentsX.get(i);
+
+				Point beginPoint = segment.getBeginPoint();
+				Point endPoint = segment.getEndPoint();
+
+				if (pointAboveBoundX < endPoint.getX()
+						&& pointUnderBoundX > beginPoint.getX()) {
+
+					fishState = FishState.NOT_PASS;
+				}
+
+				fishState = FishState.HIT_X;;
+			}
+
+		}
+		fishState = FishState.NONE;
 	}
 }

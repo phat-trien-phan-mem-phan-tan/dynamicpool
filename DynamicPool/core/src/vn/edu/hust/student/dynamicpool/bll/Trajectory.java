@@ -1,5 +1,7 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
+import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
+
 public abstract class Trajectory {
 	
 	protected float timeState = 0f;
@@ -24,6 +26,8 @@ public abstract class Trajectory {
 	public void increaseTimeState(float deltaTime) {
 		this.timeState += deltaTime;
 	}
+	
+	public abstract void  setDirection(Vector vector);
 	
 	public abstract ETrajectoryType getTrajectoryType();
 	public abstract IFishPosition updateCoordinate(float deltaTime);

@@ -46,6 +46,9 @@ public class AppConst {
 	public static int width = 800;
 	public static int height = 480;
 	
+	
+	public static float timePass = 0.5f;
+	
 	private AppConst() {
 		
 	}
