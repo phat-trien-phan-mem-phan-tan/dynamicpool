@@ -4,13 +4,13 @@ import java.util.List;
 
 import vn.edu.hust.student.dynamicpool.GameCenter;
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayer;
-import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayerImpl;
 import vn.edu.hust.student.dynamicpool.bll.ETrajectoryType;
 import vn.edu.hust.student.dynamicpool.bll.FishType;
 import vn.edu.hust.student.dynamicpool.bll.IFish;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUICollection;
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUIFactory;
+import vn.edu.hust.student.dynamicpool.presentation.screen.DeviceInfoScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.GameScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.LoadingScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.MainMenuScreen;
@@ -32,6 +32,7 @@ public class WorldController {
 	private MainMenuScreen mainMenuScreen = null;
 	private LoadingScreen loadingScreen = null;
 	private GameScreen gameScreen = null;
+	private DeviceInfoScreen deviceInfoScreen;
 	private FishUICollection fishUICollection = new FishUICollection();
 	private int addingFishStep = 0;
 	private FishType selectedFishType = FishType.FISH1;
@@ -87,13 +88,13 @@ public class WorldController {
 			}
 		};
 		this.businessLogicLayer.joinHost(key, callback);
-		showFullScreen();
 		showLoadingScreen();
-		loadGameResources();
 	}
 
 	protected void joinHostCallbackHander(boolean isSuccess, Exception error) {
-		showGameScreen();
+		loadDeviceInfoScreenResource();
+		showDeviceInforScreen();
+		loadGameResources();
 	}
 
 	private void showGameScreen() {
@@ -124,13 +125,42 @@ public class WorldController {
 			}
 		};
 		this.businessLogicLayer.createHost(callback);
-		showFullScreen();
-		showLoadingScreen();
-		loadGameResources();
 	}
 
 	protected void createHostCallbackHander(boolean isSuccess, Exception error) {
-		showGameScreen();
+		loadDeviceInfoScreenResource();
+		showDeviceInforScreen();
+		loadGameResources();
+	}
+
+	private void loadDeviceInfoScreenResource() {
+		WorldRenderer worldRenderer = game.getWorldRenderer();
+		deviceInfoScreen = new DeviceInfoScreen(worldRenderer, this);
+	}
+
+	private void showDeviceInforScreen() {
+		game.setScreen(deviceInfoScreen);
+	}
+
+	public boolean saveScreenSizeByInch(String screenSize) {
+		if (isValidScreenSize(screenSize)) {
+			showFullScreen();
+			showLoadingScreen();
+			showGameScreen();
+			return true;
+		}
+		return false;
+	}
+
+	private boolean isValidScreenSize(String screenSize) {
+		try {
+			float size = Float.parseFloat(screenSize);
+			if (size < 0 || size > 30)
+				return false;
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
 	}
 
 	public FishUICollection getFishUICollection() {
@@ -151,18 +181,14 @@ public class WorldController {
 		Gdx.app.exit();
 	}
 
-	public void createFish1() {
-		businessLogicLayer.createFish(FishType.FISH1, ETrajectoryType.LINE,
-				100, 100);
-	}
-
 	public void addFishButtonClick() {
 		if (this.addingFishStep == 0) {
 			this.addingFishStep = 1;
 		} else {
 			this.addingFishStep = 0;
 		}
-		InputProcessor selectFishInputProcessor = gameScreen.getSelectFishInputProcessor();
+		InputProcessor selectFishInputProcessor = gameScreen
+				.getSelectFishInputProcessor();
 		this.setGameInputProcessor(selectFishInputProcessor);
 	}
 
@@ -182,7 +208,8 @@ public class WorldController {
 	public void selectFish(FishType fishType) {
 		this.selectedFishType = fishType;
 		this.addingFishStep = 2;
-		InputProcessor selectTrajectoryInputProcessor = gameScreen.getSelectTrajectoryInputProcessor();
+		InputProcessor selectTrajectoryInputProcessor = gameScreen
+				.getSelectTrajectoryInputProcessor();
 		this.setGameInputProcessor(selectTrajectoryInputProcessor);
 	}
 
@@ -200,4 +227,5 @@ public class WorldController {
 				FishUIFactory.getWith(fishType),
 				FishUIFactory.getHeight(fishType));
 	}
+
 }
