@@ -3,6 +3,7 @@ package vn.edu.hust.student.dynamicpool.model;
 import java.awt.Point;
 import java.util.ArrayList;
 
+import vn.edu.hust.student.dynamicpool.bll.poolmanager.IPool;
 import vn.edu.hust.student.dynamicpool.equation.IFishState;
 
 public class FishInfor implements IFishState {
@@ -25,7 +26,7 @@ public class FishInfor implements IFishState {
 	}
 
 	@Override
-	public FishState getFishState(ArrayList<Segment> segmentList, Pool pool) {
+	public FishState getFishState(ArrayList<Segment> segmentList, IPool pool) {
 
 		Point point = this.getPoint();
 

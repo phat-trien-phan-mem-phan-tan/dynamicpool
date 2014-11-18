@@ -18,16 +18,30 @@ public class FishPosition implements IFishPosition {
 		return x;
 	}
 
+	public void setX(float x){
+		this.x = x;
+	}
+	
 	@Override
 	public float getY() {
 		return y;
 	}
 
+	public void setY(float y){
+		this.y = y;
+	}
+	
 	@Override
 	public float getAngle() {
 		return angle;
 	}
 
+	@Override
+	public void setAngle(float angle) {
+		this.angle = angle;
+	}
+
+	
 	@Override
 	public float increaseX(float dx) {
 		x += dx;
@@ -40,9 +54,5 @@ public class FishPosition implements IFishPosition {
 		return dy;
 	}
 
-	@Override
-	public void setAngle(float angle) {
-		this.angle = angle;
-	}
-
+	
 }

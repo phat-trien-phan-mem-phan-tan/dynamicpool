@@ -1,35 +1,90 @@
 package vn.edu.hust.student.dynamicpool.model;
 
-public class Pool {
 
-	private float width_limit;
-	private float high_limit;
+import java.util.ArrayList;
+
+import vn.edu.hust.student.dynamicpool.bll.FishManager;
+import vn.edu.hust.student.dynamicpool.bll.IFish;
+import vn.edu.hust.student.dynamicpool.bll.IFishManager;
+import vn.edu.hust.student.dynamicpool.bll.poolmanager.IPool;
+import vn.edu.hust.student.dynamicpool.bll.poolmanager.IPoolPosition;
+import vn.edu.hust.student.dynamicpool.bll.poolmanager.PoolPosition;
+
+public class Pool implements IPool{
+
+
+	private int id;
+	private ArrayList<Segment> segmentList;
+	private IPoolPosition position;
+	
+	private IFishManager fishManager;
 	
 	
-	
-	public Pool(){
-		this.width_limit = 0;
-		this.high_limit = 0;
+	public Pool(IPoolPosition position,IFishManager fishManager){
+		
+		this.id = 0;
+		this.position = position;
+		this.fishManager = fishManager;
 		
 	}
 	
-	public Pool(float width_limit,float high_limit){
-		this.width_limit = width_limit;
-		this.high_limit = high_limit;
+	public Pool(IPoolPosition position,IFishManager fishManager,int id){
+		this.id = id;
+		this.position = position;
+		this.fishManager = fishManager;
 	}
 	
-	public float getWidth_limit() {
-		return width_limit;
+	
+	public Pool(){
+		this(new PoolPosition(),new FishManager());
 	}
-	public void setWidth_limit(float width_limit) {
-		this.width_limit = width_limit;
+
+	@Override
+	public int getPoolId() {
+		
+		return id;
 	}
-	public float getHigh_limit() {
-		return high_limit;
+
+	public void setPoolId(int id){
+		this.id = id;
 	}
-	public void setHigh_limit(float high_limit) {
-		this.high_limit = high_limit;
+	
+	
+	@Override
+	public IPoolPosition getPosition() {
+		// TODO Auto-generated method stub
+		return position;
 	}
+
+	@Override
+	public IFishManager getFishCollection() {
+		// TODO Auto-generated method stub
+		
+		return fishManager;
+	}
+
+	@Override
+	public ArrayList<Segment> getSegments() {
+		
+		return segmentList;
+	}
+
+	@Override
+	public void setSegments(ArrayList<Segment> segments) {
+		
+		segmentList = segments;
+	}
+
+	@Override
+	public IFish updatePosition(float detatime) {
+		
+		
+		
+		return null;
+	}
+	
+	
+	
 	
 	
 	

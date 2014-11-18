@@ -13,7 +13,6 @@ public class LineTrajectory extends Trajectory {
 	 * he so goc cua duong thang : k = u2/u1 v(u1,u2) la vec to chi phuong.
 	 */
 
-
 	// vector chi phuong
 	private Vector u;
 	
@@ -41,6 +40,7 @@ public class LineTrajectory extends Trajectory {
 	 * }
 	 */
 
+	
 	public LineTrajectory(IFishPosition fishPosition,Vector u,float timeState){
 		super(fishPosition);
 		this.timeState = timeState;
@@ -51,8 +51,6 @@ public class LineTrajectory extends Trajectory {
 
 	public Point move(float t) {
 
-		/*double x = x0 + u.getX() * t;
-		double y = y0 + u.getX() * t;*/
 		
 		float x = (float) (fishPosition.getX()+ u.getX()*t);
 		float y = (float) (fishPosition.getY() + u.getY()*t);
@@ -82,22 +80,6 @@ public class LineTrajectory extends Trajectory {
 		}
 	}
 
-	/*public double getX0() {
-		return x0;
-	}
-
-	public void setX0(double x0) {
-		this.x0 = x0;
-	}
-
-	public double getY0() {
-		return y0;
-	}
-
-	public void setY0(double y0) {
-		this.y0 = y0;
-	}*/
-
 	public Vector getU() {
 		return u;
 	}
@@ -105,6 +87,7 @@ public class LineTrajectory extends Trajectory {
 	public void setU(Vector u) {
 		this.u = u;
 	}
+	
 	@Override
 	public ETrajectoryType getTrajectoryType() {
 		return ETrajectoryType.LINE;
@@ -117,7 +100,10 @@ public class LineTrajectory extends Trajectory {
 		float x = (float) (fishPosition.getX()+ u.getX()*deltaTime);
 		float y = (float) (fishPosition.getY() + u.getY()*deltaTime);
 		
+		FishPosition fishPosition = new FishPosition();
+		fishPosition.setX(x);
+		fishPosition.setY(y);
 		
-		return null;
+		return fishPosition;
 	}
 }
