@@ -1,6 +1,6 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
-import java.util.concurrent.Future;
+import com.badlogic.gdx.scenes.scene2d.ui.List;
 
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayerImpl;
@@ -95,5 +95,11 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 		dataAccessLayer.addDevide(devideInfor, logicDataCallBack);
 		
+	}
+
+	@Override
+	public List<IFish> getFishs() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

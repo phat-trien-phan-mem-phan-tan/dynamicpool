@@ -1,5 +1,7 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
+import com.badlogic.gdx.scenes.scene2d.ui.List;
+
 import vn.edu.hust.student.dynamicpool.model.DevideInfor;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
 
@@ -13,4 +15,6 @@ public interface BusinessLogicLayer {
 	void intialDevide(DevideInfor devideInfor,PresentationBooleanCallback callback);
 	
 	void addDevide(DevideInfor devideInfor,PresentationBooleanCallback callback);
+	
+	List<IFish> getFishs();
 }

@@ -1,9 +1,11 @@
 package vn.edu.hust.student.dynamicpool.tests.presentation;
 
+import com.badlogic.gdx.scenes.scene2d.ui.List;
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayer;
+import vn.edu.hust.student.dynamicpool.bll.IFish;
 import vn.edu.hust.student.dynamicpool.model.DevideInfor;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
 
@@ -37,6 +39,19 @@ public class BLLTest implements BusinessLogicLayer {
 			PresentationBooleanCallback callback) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void addDevide(DevideInfor devideInfor,
+			PresentationBooleanCallback callback) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<IFish> getFishs() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

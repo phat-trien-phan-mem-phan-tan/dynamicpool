@@ -30,6 +30,12 @@ public class Fish implements IFish {
 	public void setTrajectory(Trajectory trajectory) {
 		this.trajectory = trajectory;
 	}
+
+	@Override
+	public int getFishId() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 	
 }
