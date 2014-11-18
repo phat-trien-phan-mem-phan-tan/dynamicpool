@@ -1,0 +1,73 @@
+<project name="PuppetServer" default="build" basedir=".">
+
+	<property name="build" value="bin" />
+	<property name="dist" value="dist" />
+	<property name="dist.bin" value="${dist}/bin" />
+	<property name="dist.conf" value="${dist}/conf" />
+	<property name="lib" value="lib" />
+	<property name="config" value="conf" />
+	<property name="main-class" value="Main" />
+	<property name="class-path" value="*.jar" />
+
+	<target name="clean">
+		<delete dir="${dist}" />
+	</target>
+
+	<target name="prep" depends="clean">
+		<mkdir dir="${dist}" />
+		<mkdir dir="${dist.bin}" />
+		<mkdir dir="${dist.conf}" />
+	</target>
+
+	<path id="build.classpath">
+		<fileset dir="${lib}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<pathconvert property="manifest.classpath" pathsep=" ">
+		<path refid="build.classpath" />
+		<mapper>
+			<chainedmapper>
+				<flattenmapper />
+				<globmapper from="*.jar" to="*.jar" />
+			</chainedmapper>
+		</mapper>
+	</pathconvert>
+
+	<target name="build" depends="prep">
+		<jar jarfile="${dist.bin}/${ant.project.name}.jar">
+			<fileset dir="${build}" />
+			<manifest>
+				<attribute name="Main-Class" value="${main-class}" />
+				<attribute name="Class-Path" value="${manifest.classpath}" />
+			</manifest>
+		</jar>
+		<copy todir="${dist}/" failonerror="true">
+			<fileset dir="./">
+				<include name="*.sh"/>
+				<exclude name="**/.svn" />
+			</fileset>
+		</copy>
+
+		<copy todir="${dist.bin}" failonerror="false">
+			<fileset dir="${lib}">
+				<exclude name="**/.svn" />
+			</fileset>
+		</copy>
+
+		<copy todir="${dist.conf}" failonerror="false">
+			<fileset dir="${config}">
+				<exclude name="**/.svn" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="deploy" depends="build">
+		<!-- <scp todir="thanh@104.131.13.155:/opt/${ant.project.name}" password="12345678" trust="yes">
+			<fileset dir="${dist}" />
+		</scp> -->
+		<!-- <sshexec host="104.131.13.155" username="thanh" password="12345678" trust="yes" command="chmod 755 /opt/${ant.project.name}/*.sh" /> -->
+	</target>
+
+</project>

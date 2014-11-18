@@ -1,0 +1,27 @@
+2014-Nov-16 18:14:23:524 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-16 18:14:23:805 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-16 18:14:24:899 [AWT-EventQueue-0] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-16 18:14:25:814 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-16 18:14:27:309 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-16 18:16:41:221 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-16 18:16:41:221 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-16 18:16:51:274 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-16 18:16:58:521 [NioProcessor-2] WARN  org.apache.mina.filter.logging.LoggingFilter  - EXCEPTION :
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:273)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:44)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:690)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:664)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:653)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1124)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2014-Nov-16 18:16:58:533 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CLOSED

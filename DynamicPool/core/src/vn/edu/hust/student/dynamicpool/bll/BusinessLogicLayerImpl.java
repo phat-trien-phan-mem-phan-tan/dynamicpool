@@ -16,13 +16,13 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	}
 
 	@Override
-	public void joinHost(String key, PresentationBooleanCallback callback) {
+	public void joinHost(String key, final PresentationBooleanCallback callback) {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
 			@Override
 			public void callback(Object data, Exception ex) {
-				// TODO Auto-generated method stub
+				callback.callback((Boolean)data, ex);
 
 			}
 		};
@@ -35,6 +35,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 			// check number format
 		} catch (NumberFormatException e) {
 
+			callback.callback(false, e);
 			System.out.println(e.getMessage());
 			e.printStackTrace();
 
@@ -44,16 +45,19 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	}
 
 	@Override
-	public void createHost(PresentationBooleanCallback callback) {
+	public void createHost(final PresentationBooleanCallback callback) {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
 			@Override
 			public void callback(Object data, Exception ex) {
 				// TODO Auto-generated method stub
+				callback.callback((Boolean)data, ex);
 
 			}
 		};
+		
+		dataAccessLayer.createHost(logicDataCallBack);
 
 	}
 
@@ -70,7 +74,26 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 			}
 		};
 		
+		dataAccessLayer.intialDevide(devideInfor, logicDataCallBack);
 		
+		
+		
+	}
+
+	@Override
+	public void addDevide(DevideInfor devideInfor,
+			PresentationBooleanCallback callback) {
+		
+		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
+
+			@Override
+			public void callback(Object data, Exception ex) {
+				// TODO Auto-generated method stub
+
+			}
+		};
+
+		dataAccessLayer.addDevide(devideInfor, logicDataCallBack);
 		
 	}
 }

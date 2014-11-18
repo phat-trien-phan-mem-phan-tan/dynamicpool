@@ -32,4 +32,11 @@ public class DataAccessLayerImpl implements DataAccessLayer {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void addDevide(DevideInfor devideInfor,
+			BusinessLogicDataCallback callback) {
+		// TODO Auto-generated method stub
+		
+	}
 }

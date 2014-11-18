@@ -1,0 +1,530 @@
+2014-Oct-15 09:52:17:492 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-15 09:52:17:747 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-15 09:52:31:373 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-15 09:53:05:164 [qtp1844091758-15] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /hello_world from 0:0:0:0:0:0:0:1
+2014-Oct-15 09:53:06:244 [qtp1844091758-16] DEBUG vn.puppetserver.server.http.SimpleServlet  - GET: /favicon.ico from 0:0:0:0:0:0:0:1
+2014-Oct-15 09:53:51:572 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Oct-15 09:53:51:573 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Oct-15 09:54:01:603 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:54:11:463 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=27 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 68 65 6C 6C...]
+2014-Oct-15 09:54:11:464 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-15 09:54:11:468 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"hello_world"}
+2014-Oct-15 09:54:11:510 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: "hello world"
+2014-Oct-15 09:54:21:526 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:54:31:532 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:54:41:532 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:54:51:534 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:55:01:535 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:55:11:535 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:55:21:538 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:55:31:544 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:55:41:545 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:55:51:560 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:56:01:562 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:56:11:565 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:56:21:579 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:56:31:582 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:56:41:582 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:56:51:584 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:57:01:587 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:57:11:591 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:57:21:594 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:57:31:604 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:57:41:605 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:57:51:607 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:58:41:216 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-15 09:58:41:227 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-15 09:58:41:898 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-15 09:58:49:005 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Oct-15 09:58:49:006 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Oct-15 09:58:59:009 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 09:59:03:087 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=24 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Oct-15 09:59:03:088 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-15 09:59:03:091 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"}
+2014-Oct-15 09:59:43:103 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello wolrd 0
+2014-Oct-15 09:59:43:107 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=24 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Oct-15 09:59:43:107 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-15 09:59:43:107 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"}
+2014-Oct-15 10:00:45:210 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-15 10:00:45:222 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-15 10:00:45:937 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-15 10:00:47:745 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Oct-15 10:00:47:746 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Oct-15 10:00:57:750 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:01:00:596 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=24 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Oct-15 10:01:00:597 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-15 10:01:00:601 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"}
+2014-Oct-15 10:01:20:612 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello wolrd 0
+2014-Oct-15 10:01:20:620 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello wolrd 1
+2014-Oct-15 10:01:20:621 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello wolrd 2
+2014-Oct-15 10:01:20:640 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello wolrd 3
+2014-Oct-15 10:01:20:645 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello wolrd 4
+2014-Oct-15 10:01:20:652 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello wolrd 5
+2014-Oct-15 10:01:20:660 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello wolrd 6
+2014-Oct-15 10:01:20:676 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello wolrd 7
+2014-Oct-15 10:01:20:677 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello wolrd 8
+2014-Oct-15 10:01:20:680 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello wolrd 9
+2014-Oct-15 10:01:30:686 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:06:32:667 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-15 10:06:32:746 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-15 10:06:34:709 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-15 10:06:39:353 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Oct-15 10:06:39:354 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Oct-15 10:06:49:358 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:06:51:549 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=24 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Oct-15 10:06:51:549 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-15 10:06:51:558 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"}
+2014-Oct-15 10:06:51:751 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello world
+2014-Oct-15 10:06:51:752 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello world
+2014-Oct-15 10:06:51:754 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello world
+2014-Oct-15 10:06:51:754 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello world
+2014-Oct-15 10:06:51:755 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello world
+2014-Oct-15 10:06:51:772 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello world
+2014-Oct-15 10:06:51:775 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello world
+2014-Oct-15 10:06:51:782 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello world
+2014-Oct-15 10:06:51:784 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello world
+2014-Oct-15 10:06:51:791 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello world
+2014-Oct-15 10:12:10:017 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-15 10:12:10:027 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-15 10:12:10:562 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-15 10:12:16:151 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Oct-15 10:12:16:152 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Oct-15 10:12:26:155 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:12:27:619 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=24 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Oct-15 10:12:27:620 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-15 10:12:27:625 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"}
+2014-Oct-15 10:12:37:651 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:12:47:652 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:12:57:652 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:13:07:652 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:13:17:652 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:13:23:510 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-15 10:13:23:526 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-15 10:13:24:017 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-15 10:13:26:215 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Oct-15 10:13:26:215 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Oct-15 10:13:27:778 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=25 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Oct-15 10:13:27:778 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-15 10:13:27:782 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"} 
+2014-Oct-15 10:13:37:799 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:13:47:801 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:13:57:803 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:14:07:805 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:14:25:197 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-15 10:14:25:207 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-15 10:14:25:745 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-15 10:14:26:706 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Oct-15 10:14:26:707 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Oct-15 10:14:30:879 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=25 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Oct-15 10:14:30:880 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-15 10:14:30:885 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"} 
+2014-Oct-15 10:14:40:901 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:14:50:903 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:15:00:904 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:15:11:612 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-15 10:15:11:623 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-15 10:15:12:076 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-15 10:15:14:035 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Oct-15 10:15:14:035 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Oct-15 10:15:16:008 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=25 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Oct-15 10:15:16:009 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-15 10:15:16:015 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"} 
+2014-Oct-15 10:15:17:235 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello dcdffeb0-c429-4ec1-8944-a4d4a8fe0511
+2014-Oct-15 10:15:27:237 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:15:37:237 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:15:47:531 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-15 10:15:47:542 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-15 10:15:48:051 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-15 10:15:49:066 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Oct-15 10:15:49:066 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Oct-15 10:15:50:642 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=25 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Oct-15 10:15:50:642 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-15 10:15:50:647 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"} 
+2014-Oct-15 10:15:51:781 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello c9c78354-84aa-4053-b381-9a2ee5409eb2
+2014-Oct-15 10:15:51:782 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello e6472813-77b3-4b24-81d0-e49c2835973b
+2014-Oct-15 10:15:51:782 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 4ee016b3-13e6-4c92-a29d-79a1765a09a9
+2014-Oct-15 10:15:51:783 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 40473433-2983-4490-af90-9aea2f8538d9
+2014-Oct-15 10:15:51:783 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 253f443c-6740-4d8c-a152-3dceb28ca839
+2014-Oct-15 10:15:51:784 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 18a96bfe-0067-4986-92d7-a87eab61645d
+2014-Oct-15 10:15:51:785 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 37b57e50-6829-4a56-82de-e5e14de7d59f
+2014-Oct-15 10:15:51:785 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello a61136d3-1802-4cb1-a339-4f17d8f574a4
+2014-Oct-15 10:15:51:786 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 282c18ba-8d85-4623-988e-2815053ec2a4
+2014-Oct-15 10:15:51:786 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 82754194-f7ff-438b-9884-96e6b6b581d9
+2014-Oct-15 10:16:06:545 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-15 10:16:06:555 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-15 10:16:07:127 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-15 10:16:09:566 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Oct-15 10:16:09:567 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Oct-15 10:16:12:782 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=25 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Oct-15 10:16:12:782 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-15 10:16:12:786 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"} 
+2014-Oct-15 10:16:15:902 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 9dc0ed3a-e97c-4ee6-be30-da45bccbb364
+2014-Oct-15 10:16:15:903 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 875c3607-20e3-431f-9ed9-4b5cb67b1938
+2014-Oct-15 10:16:15:903 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 689f1522-f1ac-4562-ac88-f46f690267cc
+2014-Oct-15 10:16:15:904 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 6604885e-eebe-4f78-bea5-7a79c004c208
+2014-Oct-15 10:16:15:904 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 557b6428-37f2-4023-b30e-90e8122c5083
+2014-Oct-15 10:16:15:905 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello ed73964f-8b32-4661-b174-460761860fb6
+2014-Oct-15 10:16:15:905 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello fb552c86-81c4-4bca-b397-03b38a8852e6
+2014-Oct-15 10:16:15:907 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 23996456-a44a-4ce5-b0cb-053b8bfa3701
+2014-Oct-15 10:16:15:908 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello fec5897a-4167-4d07-9064-b7cf419d7f2f
+2014-Oct-15 10:16:15:908 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 7b71e2fb-6a43-4b45-8245-d71bbfc7fb3a
+2014-Oct-15 10:16:25:912 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:17:29:915 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-15 10:17:29:925 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-15 10:17:30:410 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-15 10:17:31:877 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Oct-15 10:17:31:877 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Oct-15 10:17:33:688 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=25 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Oct-15 10:17:33:688 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-15 10:17:33:692 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"} 
+2014-Oct-15 10:17:36:807 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello ac8fc2bb-4c94-4486-8ffa-f2fd1dde9139
+2014-Oct-15 10:21:17:342 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-15 10:21:17:354 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-15 10:21:17:886 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-15 10:21:20:897 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Oct-15 10:21:20:898 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Oct-15 10:21:30:901 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:21:35:795 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=24 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Oct-15 10:21:35:795 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-15 10:21:35:798 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"}
+2014-Oct-15 10:21:35:800 [NioProcessor-2] INFO  vn.puppetserver.processor.ScheduleHelloProcessor  - Task 0
+2014-Oct-15 10:21:35:807 [NioProcessor-2] INFO  vn.puppetserver.processor.ScheduleHelloProcessor  - Task 1
+2014-Oct-15 10:21:35:807 [NioProcessor-2] INFO  vn.puppetserver.processor.ScheduleHelloProcessor  - Task 2
+2014-Oct-15 10:21:35:808 [NioProcessor-2] INFO  vn.puppetserver.processor.ScheduleHelloProcessor  - Task 3
+2014-Oct-15 10:21:35:808 [NioProcessor-2] INFO  vn.puppetserver.processor.ScheduleHelloProcessor  - Task 4
+2014-Oct-15 10:21:35:809 [NioProcessor-2] INFO  vn.puppetserver.processor.ScheduleHelloProcessor  - Task 5
+2014-Oct-15 10:21:35:809 [NioProcessor-2] INFO  vn.puppetserver.processor.ScheduleHelloProcessor  - Task 6
+2014-Oct-15 10:21:35:809 [NioProcessor-2] INFO  vn.puppetserver.processor.ScheduleHelloProcessor  - Task 7
+2014-Oct-15 10:21:35:810 [NioProcessor-2] INFO  vn.puppetserver.processor.ScheduleHelloProcessor  - Task 8
+2014-Oct-15 10:21:35:810 [NioProcessor-2] INFO  vn.puppetserver.processor.ScheduleHelloProcessor  - Task 9
+2014-Oct-15 10:21:38:970 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello d7933b39-bc65-49a2-b5ae-6aebb1618994
+2014-Oct-15 10:21:38:970 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 95a47c02-afca-446e-8170-826c9a8c2512
+2014-Oct-15 10:21:38:971 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 6fbdcca5-c43f-41e6-9b11-2339aa0266d8
+2014-Oct-15 10:21:38:971 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello e99a24fa-bba1-4c54-acf6-ab8f353c4011
+2014-Oct-15 10:21:38:971 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello a6469ce3-8853-43fb-aa73-075a7545439f
+2014-Oct-15 10:21:38:972 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello c1aa8100-e02e-4760-97ee-29526f29d3ea
+2014-Oct-15 10:21:38:972 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello e2e3d509-1b58-4a70-818d-93e0a94ac18e
+2014-Oct-15 10:21:38:973 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 6580c83f-34ca-49c1-81b2-06b06ae69e2b
+2014-Oct-15 10:21:38:973 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 074a5bd5-b2ec-4743-94f9-ec4b82e3d914
+2014-Oct-15 10:21:38:974 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: hello 4b95ab49-fd05-4b42-9a5f-8c923dabc7d1
+2014-Oct-15 10:21:48:974 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:21:58:975 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:22:08:977 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:22:18:978 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:30:24:258 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-15 10:30:24:270 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-15 10:30:24:751 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-15 10:30:26:122 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Oct-15 10:30:26:122 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Oct-15 10:30:36:125 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:30:37:956 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=24 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Oct-15 10:30:37:957 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-15 10:30:37:963 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"}
+2014-Oct-15 10:30:38:993 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: AAA
+2014-Oct-15 10:30:48:997 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:30:58:999 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:31:09:001 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:31:19:002 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:31:29:003 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:31:39:005 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:53:55:617 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-15 10:53:55:630 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-15 10:53:56:138 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-15 10:55:00:817 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-15 10:55:00:827 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-15 10:55:01:331 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-15 10:55:09:881 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Oct-15 10:55:09:882 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Oct-15 10:55:11:569 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=25 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Oct-15 10:55:11:570 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-15 10:55:11:576 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"} 
+2014-Oct-15 10:55:13:626 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: AAA
+2014-Oct-15 10:55:15:616 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: AAA
+2014-Oct-15 10:55:17:617 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: AAA
+2014-Oct-15 10:55:19:617 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: AAA
+2014-Oct-15 10:55:21:616 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: AAA
+2014-Oct-15 10:55:31:618 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:55:41:619 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:55:51:621 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:56:01:623 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:56:11:624 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:56:21:625 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:56:31:627 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:56:41:629 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:56:51:629 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:57:01:631 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:57:11:633 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:57:21:636 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:57:37:764 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Oct-15 10:57:37:777 [main] INFO  vn.puppetserver.controller.MainController  - Reading config file from path conf/server.xml
+2014-Oct-15 10:57:38:440 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Oct-15 10:57:40:659 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Oct-15 10:57:40:660 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Oct-15 10:57:50:661 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:58:00:663 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:58:10:664 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:58:16:280 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=24 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 73 63 68 65...]
+2014-Oct-15 10:58:16:280 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Oct-15 10:58:16:283 [NioProcessor-2] DEBUG vn.puppetserver.server.socket.NIOSocketServerController  - data recieved: {"command":"schedule"}
+2014-Oct-15 10:58:18:315 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: AAA
+2014-Oct-15 10:58:20:301 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: AAA
+2014-Oct-15 10:58:22:300 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: AAA
+2014-Oct-15 10:58:24:301 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: AAA
+2014-Oct-15 10:58:26:300 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: AAA
+2014-Oct-15 10:58:36:302 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:58:46:302 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:58:56:303 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:59:06:305 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:59:16:307 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:59:26:308 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:59:36:308 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:59:46:310 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 10:59:56:311 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:00:06:312 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:00:16:313 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:00:26:313 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:00:36:316 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:00:46:317 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:00:56:318 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:01:06:319 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:01:16:321 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:01:26:323 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:01:36:324 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:01:46:326 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:01:56:327 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:02:06:329 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:02:16:330 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:02:26:331 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:02:36:332 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:02:46:332 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:02:56:334 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:03:06:334 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:03:16:336 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:03:26:337 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:03:36:339 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:03:46:340 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:03:56:341 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:04:06:342 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:04:16:342 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:04:26:344 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:04:36:345 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:04:46:346 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:04:56:347 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:05:06:348 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:05:16:350 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:05:26:350 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:05:36:351 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:05:46:352 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:05:56:353 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:06:06:355 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:06:16:355 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:06:26:357 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:06:36:359 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:06:46:362 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:06:56:363 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:07:06:364 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:07:16:366 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:07:26:366 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:07:36:367 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:07:46:367 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:07:56:369 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:08:06:370 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:08:16:371 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:08:26:372 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:08:36:373 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:08:46:375 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:08:56:375 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:09:06:377 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:09:16:378 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:09:26:379 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:09:36:379 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:09:46:380 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:09:56:381 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:10:06:382 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:10:16:383 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:10:26:384 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:10:36:387 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:10:46:389 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:10:56:389 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:11:06:393 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:11:16:393 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:11:26:395 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:11:36:395 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:11:46:396 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:11:56:397 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:12:06:398 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:12:16:399 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:12:26:399 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:12:36:402 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:12:46:403 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:12:56:404 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:13:06:405 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:13:16:407 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:13:26:409 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:13:36:409 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:13:46:411 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:13:56:412 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:14:06:413 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:14:16:414 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:14:26:415 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:14:36:418 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:14:46:419 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:14:56:420 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:15:06:423 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:15:16:425 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:15:26:425 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:15:36:427 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:15:46:429 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:15:56:432 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:16:06:434 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:16:16:434 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:16:26:438 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:16:36:439 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:16:46:440 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:16:56:441 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:17:06:441 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:17:16:443 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:17:26:444 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:17:36:446 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:17:46:447 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:17:56:448 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:18:06:449 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:18:16:449 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:18:26:450 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:18:36:451 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:18:46:453 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:18:56:453 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:19:06:455 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:19:16:456 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:19:26:456 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:19:36:457 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:19:46:457 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:19:56:459 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:20:06:459 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:20:16:460 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:20:26:462 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:20:36:462 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:20:46:582 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:20:56:582 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:21:06:585 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:21:16:585 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:21:26:587 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:21:36:588 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:21:46:589 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:21:56:592 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:22:06:594 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:22:16:597 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:22:26:600 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:22:36:602 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:22:46:604 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:22:56:604 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:23:06:606 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:23:16:608 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:23:26:612 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:23:36:613 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:23:46:615 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:23:56:617 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:24:06:617 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:24:16:620 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:24:26:621 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:24:36:622 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:24:46:629 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:24:56:630 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:25:06:631 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:25:16:631 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:25:26:633 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:25:36:634 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:25:46:635 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:25:56:636 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:26:06:638 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:26:16:640 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:26:26:642 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:26:36:645 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:26:46:646 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:26:56:649 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:27:06:649 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:27:16:651 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:27:26:654 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:27:36:656 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:27:46:657 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:27:56:659 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:28:06:660 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:28:16:662 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:28:26:663 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:28:36:665 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:28:46:667 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:28:56:668 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:29:06:669 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:29:16:672 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:29:26:672 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:29:36:673 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:29:46:674 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:29:56:675 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:30:06:677 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:30:16:677 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:30:26:678 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:30:36:678 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:30:46:680 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:30:56:683 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:31:06:683 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:31:16:686 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:31:26:686 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:31:36:687 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:31:46:688 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:31:56:689 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:32:06:690 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:32:16:690 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:32:26:691 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:32:36:691 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:32:46:692 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:32:56:695 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:33:06:697 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:33:16:699 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:33:26:699 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:33:36:703 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:33:46:703 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:33:56:705 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:34:06:705 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:34:16:707 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:34:26:707 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:34:36:708 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:34:46:709 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:34:56:710 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:35:06:711 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:35:16:711 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:35:26:713 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:35:36:714 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:35:46:714 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:35:56:715 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:36:06:869 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:36:16:870 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:36:26:871 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:36:36:873 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:36:46:874 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:36:56:875 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:37:06:878 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:37:16:880 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:37:26:881 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:37:36:882 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:37:46:883 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:37:56:885 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:38:06:886 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:38:16:889 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:38:26:891 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:38:36:892 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:38:46:892 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:38:56:893 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:39:06:917 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:39:17:029 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:39:27:109 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:39:37:205 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:39:47:410 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:39:57:414 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:40:07:416 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:40:17:418 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:40:27:421 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:40:37:433 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:40:47:435 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:40:57:452 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:41:07:454 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Oct-15 11:41:17:456 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE

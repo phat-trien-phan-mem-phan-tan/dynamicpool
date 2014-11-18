@@ -11,4 +11,6 @@ public interface BusinessLogicLayer {
 	
 	
 	void intialDevide(DevideInfor devideInfor,PresentationBooleanCallback callback);
+	
+	void addDevide(DevideInfor devideInfor,PresentationBooleanCallback callback);
 }

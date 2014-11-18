@@ -10,4 +10,6 @@ public interface DataAccessLayer {
 	void createHost(BusinessLogicDataCallback callback);
 	
 	void intialDevide(DevideInfor devideInfor,BusinessLogicDataCallback callback);
+	
+	void addDevide(DevideInfor devideInfor,BusinessLogicDataCallback callback);
 }
