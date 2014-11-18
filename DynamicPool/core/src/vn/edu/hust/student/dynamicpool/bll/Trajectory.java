@@ -1,8 +1,9 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
 public abstract class Trajectory {
-	private float timeState = 0f;
-	private IFishPosition fishPosition;
+	
+	protected float timeState = 0f;
+	protected IFishPosition fishPosition;
 
 	public Trajectory(IFishPosition fishPosition) {
 		this.setFishPosition(fishPosition);

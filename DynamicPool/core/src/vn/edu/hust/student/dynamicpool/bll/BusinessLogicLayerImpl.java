@@ -99,7 +99,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 	@Override
 	public List<IFish> getFishs() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
