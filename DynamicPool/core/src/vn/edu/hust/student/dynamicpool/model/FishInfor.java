@@ -36,7 +36,7 @@ public class FishInfor implements IFishState {
 
 		double pointAboveBoundY = point.getY() + this.getDy();
 		double pointUnderBoundY = point.getY() - this.getDy();
-
+/*
 		// check hit with oy
 		if (pointAboveBoundX == pool.getWidth_limit() || pointUnderBoundX == 0) {
 
@@ -83,7 +83,7 @@ public class FishInfor implements IFishState {
 					return FishState.HIT_X;
 				}
 			}
-		}
+		}*/
 		return FishState.NONE;
 	}
 
