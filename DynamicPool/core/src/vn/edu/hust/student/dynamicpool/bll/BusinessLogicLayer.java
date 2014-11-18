@@ -1,6 +1,6 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
-import com.badlogic.gdx.scenes.scene2d.ui.List;
+import java.util.List;
 
 import vn.edu.hust.student.dynamicpool.model.DevideInfor;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
@@ -17,4 +17,6 @@ public interface BusinessLogicLayer {
 	void addDevide(DevideInfor devideInfor,PresentationBooleanCallback callback);
 	
 	List<IFish> getFishs();
+
+	void update(float deltaTime);
 }

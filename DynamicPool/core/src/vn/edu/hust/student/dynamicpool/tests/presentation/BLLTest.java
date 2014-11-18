@@ -1,6 +1,5 @@
 package vn.edu.hust.student.dynamicpool.tests.presentation;
 
-import com.badlogic.gdx.scenes.scene2d.ui.List;
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 
@@ -49,9 +48,14 @@ public class BLLTest implements BusinessLogicLayer {
 	}
 
 	@Override
-	public List<IFish> getFishs() {
+	public java.util.List<IFish> getFishs() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
+	public void update(float deltaTime) {
+		// TODO Auto-generated method stub
+		
+	}
 }

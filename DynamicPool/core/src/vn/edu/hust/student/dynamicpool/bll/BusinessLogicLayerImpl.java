@@ -1,6 +1,6 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
-import com.badlogic.gdx.scenes.scene2d.ui.List;
+import java.util.List;
 
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayerImpl;
@@ -101,5 +101,11 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	public List<IFish> getFishs() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void update(float deltaTime) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -1,8 +1,12 @@
 package vn.edu.hust.student.dynamicpool.presentation;
 
+import java.util.List;
+
 import vn.edu.hust.student.dynamicpool.GameCenter;
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayer;
+import vn.edu.hust.student.dynamicpool.bll.IFish;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
+import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUICollection;
 import vn.edu.hust.student.dynamicpool.presentation.screen.GameScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.LoadingScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.MainMenuScreen;
@@ -15,12 +19,13 @@ import com.badlogic.gdx.utils.Timer.Task;
 
 public class WorldController {
 	private Timer timer = new Timer();
-	private GameCenter game;
-	private BusinessLogicLayer businessLogicLayer;
-	private SplashScreen splashScreen;
-	private MainMenuScreen mainMenuScreen;
-	private LoadingScreen loadingScreen;
-	private GameScreen gameScreen;
+	private GameCenter game = null;
+	private BusinessLogicLayer businessLogicLayer = null;
+	private SplashScreen splashScreen = null;
+	private MainMenuScreen mainMenuScreen = null;
+	private LoadingScreen loadingScreen = null;
+	private GameScreen gameScreen = null;
+	private FishUICollection fishUICollection = new FishUICollection();
 	
 	public WorldController(GameCenter game) {
 		this.game = game;
@@ -109,5 +114,15 @@ public class WorldController {
 
 	protected void createHostCallbackHander(boolean isSuccess, Exception error) {
 		showGameScreen();
+	}
+
+	public FishUICollection getFishUICollection() {
+		return fishUICollection;
+	}
+
+	public List<IFish> getFishsAndUpdate(float deltaTime) {
+		List<IFish> fishs = businessLogicLayer.getFishs();		
+		businessLogicLayer.update(deltaTime);
+		return fishs;
 	}
 }
