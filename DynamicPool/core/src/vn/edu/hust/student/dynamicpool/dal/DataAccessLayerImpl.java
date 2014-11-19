@@ -54,4 +54,10 @@ public class DataAccessLayerImpl implements DataAccessLayer {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void synchronization() {
+		
+		
+	}
 }

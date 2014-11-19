@@ -11,6 +11,8 @@ public class FishPosition implements IFishPosition {
 	}
 
 	public FishPosition() {
+		this.x = 0;
+		this.y = 0;
 	}
 
 	@Override
