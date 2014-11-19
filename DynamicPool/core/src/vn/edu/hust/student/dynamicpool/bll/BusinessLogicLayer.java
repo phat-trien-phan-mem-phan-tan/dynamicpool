@@ -23,4 +23,7 @@ public interface BusinessLogicLayer {
 	void exit();
 
 	void createFish(FishType fishType, ETrajectoryType trajectoryType, int width, int height);
+	
+	
+	
 }
