@@ -134,19 +134,8 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		newFish.setTrajectoryType(trajectoryType);
 		newFish.setFishType(fishType);
 		
-		//
-		//pool.getFishCollection().addFish(newFish);
+		pool.getFishCollection().addFish(newFish);
 		// call data access  layer
-		
-		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
-
-			@Override
-			public void callback(Object data, Exception ex) {
-
-			}
-		};
-		
-		this.dataAccessLayer.createFish(newFish,logicDataCallBack);
 		
 	}
 }
