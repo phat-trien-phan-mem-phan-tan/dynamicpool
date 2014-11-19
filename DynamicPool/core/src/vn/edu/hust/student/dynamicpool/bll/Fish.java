@@ -63,9 +63,7 @@ public class Fish implements IFish {
 		return this.trajectory.updateCoordinate(deltaTime);
 	}
 	
-	public void setPosition(IFishPosition fishPosition){
-		this.position = fishPosition;
-	}
+	
 	
 	public Trajectory getTrajectory() {
 		return trajectory;

@@ -128,26 +128,14 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 			int width, int height) {
 
 		
-		float x0 = (float) (pool.getCorrdiate().getPosition().getMaxX()/2);
-		float y0 = (float) (pool.getCorrdiate().getPosition().getMaxY()/2);
-		
 		Fish newFish = new Fish();
 		newFish.setDx(width/2);
 		newFish.setDy(height/2);
 		newFish.setTrajectoryType(trajectoryType);
 		newFish.setFishType(fishType);
 		
-		// xet vi tri khoi tao cho ca luc khoi tao la tam be
-		FishPosition fishPosition = new FishPosition();
-		fishPosition.setX(x0);
-		fishPosition.setY(y0);
-		fishPosition.setAngle((float) (Math.PI/4));
-		
-		
-		newFish.setPosition(fishPosition);
 		pool.getFishCollection().addFish(newFish);
 		// call data access  layer
-		
 		
 	}
 }
