@@ -5,7 +5,7 @@ import java.util.List;
 
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayerImpl;
-import vn.edu.hust.student.dynamicpool.model.DevideInfor;
+import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.model.Pool;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
 
@@ -66,7 +66,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	}
 
 	@Override
-	public void intialDevide(DevideInfor devideInfor,
+	public void intialDevide(DeviceInfo devideInfor,
 			PresentationBooleanCallback callback) {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
@@ -83,7 +83,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	}
 
 	@Override
-	public void addDevide(DevideInfor devideInfor,
+	public void addDevide(DeviceInfo devideInfor,
 			PresentationBooleanCallback callback) {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {

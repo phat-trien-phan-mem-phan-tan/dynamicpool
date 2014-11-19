@@ -2,7 +2,7 @@ package vn.edu.hust.student.dynamicpool.bll;
 
 import java.util.List;
 
-import vn.edu.hust.student.dynamicpool.model.DevideInfor;
+import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
 
 public interface BusinessLogicLayer {
@@ -12,9 +12,9 @@ public interface BusinessLogicLayer {
 	void createHost(PresentationBooleanCallback callback);
 	
 	
-	void intialDevide(DevideInfor devideInfor,PresentationBooleanCallback callback);
+	void intialDevide(DeviceInfo devideInfor,PresentationBooleanCallback callback);
 	
-	void addDevide(DevideInfor devideInfor,PresentationBooleanCallback callback);
+	void addDevide(DeviceInfo devideInfor,PresentationBooleanCallback callback);
 	
 	List<IFish> getFishs();
 
