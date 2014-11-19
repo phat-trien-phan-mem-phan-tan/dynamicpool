@@ -2,6 +2,7 @@ package vn.edu.hust.student.dynamicpool.dal;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.ETrajectoryType;
+import vn.edu.hust.student.dynamicpool.bll.Fish;
 import vn.edu.hust.student.dynamicpool.bll.FishType;
 import vn.edu.hust.student.dynamicpool.controller.MainController;
 import vn.edu.hust.student.dynamicpool.exception.NetworkException;
@@ -43,15 +44,26 @@ public class DataAccessLayerImpl implements DataAccessLayer {
 	}
 
 	@Override
-	public void exit() {
-		// TODO Auto-generated method stub
+	public void exit(BusinessLogicDataCallback callback) {
 		
 	}
 
 	@Override
-	public void createFish(FishType fishType, ETrajectoryType trajectoryType,
-			int width, int height) {
-		// TODO Auto-generated method stub
+	public void createFish(Fish fish, BusinessLogicDataCallback callback) {
 		
 	}
+
+	// ong viet giup toi cai event lam sao ma cu 1s thi no tu dong gui ket qua nen 
+	/*
+	 * srever va nhan ket qua tu server duoi dang 1 list danh sach cac diem cua ca trong be
+	 * 
+	 */
+	@Override
+	public void synchronization(BusinessLogicDataCallback callback) {
+		
+	}
+
+
+
+
 }

@@ -23,4 +23,11 @@ public interface BusinessLogicLayer {
 	void exit();
 
 	void createFish(FishType fishType, ETrajectoryType trajectoryType, int width, int height);
+	
+	// ham dong cap nhat ket qua voi server
+	void synchronization();
+	
+	
+	
+	
 }

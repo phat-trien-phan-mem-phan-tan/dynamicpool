@@ -4,4 +4,6 @@ public class DeviceInfo {
 	public DeviceInfo(float screenWidth, float screenHeight, float screenSize) {
 		
 	}
+	
+	
 }

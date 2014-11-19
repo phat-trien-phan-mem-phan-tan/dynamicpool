@@ -90,7 +90,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 			@Override
 			public void callback(Object data, Exception ex) {
-
+					
 			}
 		};
 
@@ -121,21 +121,68 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	public void exit() {
 		
 		// call data access layer
+		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
+
+			@Override
+			public void callback(Object data, Exception ex) {
+
+			}
+		};
+		
+		this.dataAccessLayer.exit(logicDataCallBack);
 	}
 
 	@Override
 	public void createFish(FishType fishType, ETrajectoryType trajectoryType,
 			int width, int height) {
 
-		
-		Fish newFish = new Fish();
+		final Fish newFish = new Fish();
 		newFish.setDx(width/2);
 		newFish.setDy(height/2);
 		newFish.setTrajectoryType(trajectoryType);
 		newFish.setFishType(fishType);
 		
-		pool.getFishCollection().addFish(newFish);
-		// call data access  layer
+		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
+
+			@Override
+			public void callback(Object data, Exception ex) {
+				
+				// check if data is true -> create fish in client
+				Boolean check = (Boolean)data;
+				if(check){
+					pool.getFishCollection().addFish(newFish);
+				}
+
+			}
+		};
+		
+		
+		
+		//pool.getFishCollection().addFish(newFish);
+		
+		this.dataAccessLayer.createFish(newFish, logicDataCallBack);
+		
+	}
+
+	@Override
+	public void synchronization() {
+		
+		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
+
+			@Override
+			public void callback(Object data, Exception ex) {
+				
+				// check if data is true -> create fish in client
+				Boolean check = (Boolean)data;
+				if(check){
+					
+				}
+
+			}
+		};
+		
+		this.dataAccessLayer.synchronization(logicDataCallBack);
+		
 		
 	}
 }
