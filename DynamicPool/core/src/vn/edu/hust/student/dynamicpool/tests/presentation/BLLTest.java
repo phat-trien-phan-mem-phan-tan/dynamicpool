@@ -11,7 +11,7 @@ import vn.edu.hust.student.dynamicpool.bll.ETrajectoryType;
 import vn.edu.hust.student.dynamicpool.bll.FishFactory;
 import vn.edu.hust.student.dynamicpool.bll.FishType;
 import vn.edu.hust.student.dynamicpool.bll.IFish;
-import vn.edu.hust.student.dynamicpool.model.DevideInfor;
+import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
@@ -45,16 +45,21 @@ public class BLLTest implements BusinessLogicLayer {
 	}
 
 	@Override
-	public void intialDevide(DevideInfor devideInfor,
+	public void intialDevide(DeviceInfo devideInfor,
 			PresentationBooleanCallback callback) {
 		// TODO Aut1o-generated method stub
 		
 	}
 
 	@Override
-	public void addDevide(DevideInfor devideInfor,
-			PresentationBooleanCallback callback) {
-		// TODO Auto-generated method stub
+	public void addDevide(DeviceInfo devideInfor,
+			final PresentationBooleanCallback callback) {
+		timmer.scheduleTask(new Task() {
+			@Override
+			public void run() {
+				callback.callback(true, null);
+			}
+		}, 2);
 		
 	}
 

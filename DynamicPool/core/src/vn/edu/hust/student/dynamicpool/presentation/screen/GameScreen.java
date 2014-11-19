@@ -12,13 +12,12 @@ import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUICollection;
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.GameBackgroundUI;
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class GameScreen implements Screen, InputProcessor {
+public class GameScreen implements Screen {
 
 	private WorldRenderer worldRenderer = null;
 	private WorldController worldController = null;
@@ -26,7 +25,12 @@ public class GameScreen implements Screen, InputProcessor {
 	private GameBackgroundUI gameBackground = new GameBackgroundUI();
 	private FishUICollection fishUICollection = null;
 	private Texture exitButtonTexture;
-	private Texture fish1ButtonTexture;
+	private Texture addFishButtonTexture;
+	private Texture selectFishButtonsTexture;
+	private Texture selectTrajectoryButtonTexture;
+	private InputProcessor defaultInputProcessor;
+	private InputProcessor selectFishInputProcessor;
+	private InputProcessor selectTrajectoryInputProcessor;
 
 	public GameScreen(WorldRenderer worldRenderer,
 			WorldController worldController) {
@@ -63,12 +67,16 @@ public class GameScreen implements Screen, InputProcessor {
 	}
 
 	private void renderHubControl() {
-		batch.draw(exitButtonTexture, 10, AppConst.height - 10
-				- AppConst.HUB_BUTTON_HEIGHT, AppConst.HUB_BUTTON_WIDTH,
-				AppConst.HUB_BUTTON_HEIGHT);
-		batch.draw(fish1ButtonTexture, 20 + AppConst.HUB_BUTTON_WIDTH,
-				AppConst.height - 10 - AppConst.HUB_BUTTON_HEIGHT,
-				AppConst.HUB_BUTTON_WIDTH, AppConst.HUB_BUTTON_HEIGHT);
+		batch.draw(exitButtonTexture, 0, 0);
+		batch.draw(addFishButtonTexture, 64, 0);
+		if (worldController.isShowSelectFishButtons())
+			batch.draw(selectFishButtonsTexture, 0, AppConst.height - 100, 480,
+					100);
+		if (worldController.isShowSelectTrajectoryButtons())
+			batch.draw(selectTrajectoryButtonTexture, 0,
+					AppConst.height - 100,
+					selectTrajectoryButtonTexture.getWidth(),
+					selectTrajectoryButtonTexture.getHeight());
 	}
 
 	@Override
@@ -80,8 +88,21 @@ public class GameScreen implements Screen, InputProcessor {
 	public void show() {
 		AssetGameScreen gameAssets = Assets.instance.gameScreen;
 		this.exitButtonTexture = gameAssets.getExitButtonTexture();
-		this.fish1ButtonTexture = gameAssets.getFish1ButtonTexture();
-		Gdx.input.setInputProcessor(this);
+		this.addFishButtonTexture = gameAssets.getAddFishButtonTexture();
+		this.selectFishButtonsTexture = gameAssets
+				.getSelectFishButtonsTexture();
+		this.selectTrajectoryButtonTexture = gameAssets.getSelectTrajectoryButtonTexture();
+		createInputprocessors();
+	}
+
+	private void createInputprocessors() {
+		this.defaultInputProcessor = new GSDefaultInputProcessor(
+				worldController);
+		this.selectFishInputProcessor = new GSSelectFishInputProcessor(
+				worldController);
+		this.selectTrajectoryInputProcessor = new GSSelectTrajectoryInputProcessor(
+				worldController);
+		worldController.setGameInputProcessor(defaultInputProcessor);
 	}
 
 	@Override
@@ -104,59 +125,15 @@ public class GameScreen implements Screen, InputProcessor {
 
 	}
 
-	@Override
-	public boolean keyDown(int keycode) {
-		return false;
+	public InputProcessor getDefaultInputProcessor() {
+		return defaultInputProcessor;
 	}
 
-	@Override
-	public boolean keyUp(int keycode) {
-		return false;
+	public InputProcessor getSelectFishInputProcessor() {
+		return selectFishInputProcessor;
 	}
 
-	@Override
-	public boolean keyTyped(char character) {
-		return false;
-	}
-
-	@Override
-	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-		return false;
-	}
-
-	@Override
-	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-		if (isClickOnExitBtn(screenX, screenY))
-			worldController.exit();
-		if (isTouchOnCreateFishOneBtn(screenX, screenY))
-			worldController.createFish1();
-		return true;
-	}
-
-	private boolean isTouchOnCreateFishOneBtn(int screenX, int screenY) {
-		return screenX > 20 + AppConst.HUB_BUTTON_WIDTH
-				&& screenX < 20 + 2 * AppConst.HUB_BUTTON_WIDTH
-				&& screenY > AppConst.HUB_BUTTON_HEIGHT + 20
-				&& screenY < 20 + 2 * AppConst.HUB_BUTTON_HEIGHT;
-	}
-
-	private boolean isClickOnExitBtn(int screenX, int screenY) {
-		return screenX > 10 && screenX < 10 + AppConst.HUB_BUTTON_WIDTH
-				&& screenY > 10 && screenY < 10 + AppConst.HUB_BUTTON_HEIGHT;
-	}
-
-	@Override
-	public boolean touchDragged(int screenX, int screenY, int pointer) {
-		return false;
-	}
-
-	@Override
-	public boolean mouseMoved(int screenX, int screenY) {
-		return false;
-	}
-
-	@Override
-	public boolean scrolled(int amount) {
-		return false;
+	public InputProcessor getSelectTrajectoryInputProcessor() {
+		return selectTrajectoryInputProcessor;
 	}
 }

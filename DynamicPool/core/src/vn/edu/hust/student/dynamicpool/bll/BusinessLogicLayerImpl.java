@@ -5,7 +5,7 @@ import java.util.List;
 
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayerImpl;
-import vn.edu.hust.student.dynamicpool.model.DevideInfor;
+import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.model.Pool;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
 
@@ -66,7 +66,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	}
 
 	@Override
-	public void intialDevide(DevideInfor devideInfor,
+	public void intialDevide(DeviceInfo devideInfor,
 			PresentationBooleanCallback callback) {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
@@ -83,14 +83,14 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	}
 
 	@Override
-	public void addDevide(DevideInfor devideInfor,
+	public void addDevide(DeviceInfo devideInfor,
 			PresentationBooleanCallback callback) {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
 			@Override
 			public void callback(Object data, Exception ex) {
-
+					
 			}
 		};
 
@@ -113,24 +113,76 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	@Override
 	public void update(float deltaTime) {
 
-		List<IFish> fishes = getFishs();
-
-		for (int i = 0; i < fishes.size(); i++) {
-			fishes.get(i).update(deltaTime);
-		}
+		pool.updatePosition(deltaTime);
 
 	}
 
 	@Override
 	public void exit() {
-		// TODO Auto-generated method stub
 		
+		// call data access layer
+		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
+
+			@Override
+			public void callback(Object data, Exception ex) {
+
+			}
+		};
+		
+		this.dataAccessLayer.exit(logicDataCallBack);
 	}
 
 	@Override
 	public void createFish(FishType fishType, ETrajectoryType trajectoryType,
 			int width, int height) {
-		// TODO Auto-generated method stub
+
+		final Fish newFish = new Fish();
+		newFish.setDx(width/2);
+		newFish.setDy(height/2);
+		newFish.setTrajectoryType(trajectoryType);
+		newFish.setFishType(fishType);
+		
+		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
+
+			@Override
+			public void callback(Object data, Exception ex) {
+				
+				// check if data is true -> create fish in client
+				Boolean check = (Boolean)data;
+				if(check){
+					pool.getFishCollection().addFish(newFish);
+				}
+
+			}
+		};
+		
+		
+		
+		//pool.getFishCollection().addFish(newFish);
+		
+		this.dataAccessLayer.createFish(newFish, logicDataCallBack);
+		
+	}
+
+	@Override
+	public void synchronization() {
+		
+		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
+
+			@Override
+			public void callback(Object data, Exception ex) {
+				
+				// check if data is true -> create fish in client
+				Boolean check = (Boolean)data;
+				if(check){
+					
+				}
+
+			}
+		};
+		
+		this.dataAccessLayer.synchronization(logicDataCallBack);
+		
 		
 	}
 }

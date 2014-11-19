@@ -19,13 +19,35 @@ public class AppConst {
 	public static final String LOADING_TEXT = "Loading";
 	public static final int LOADING_FONT_SIZE = 50;
 	public static final String LOADING_FONT_NAME = "size"+ LOADING_FONT_SIZE + ".ttf";
-	public static final int HUB_BUTTON_WIDTH = 64;
-	public static final int HUB_BUTTON_HEIGHT = 64;
 	public static final String EXIT_BUTTON_TEXTURE = "exit-btn.png";
-	public static final String FISH1_BUTTON_TEXTURE = "fish1button.png";
-	
+	public static final String SELECT_FISH_BUTTONS_TEXTURE = "create-fish-buttons.png";
+	public static final String ADD_FISH_BUTTON_TEXTURE = "add-fish.png";
+	public static final String SELECT_TRAJECTORY_TEXTURE = "trajectory.png";
+	public static final int FISH_ONE_WIDTH = 100;
+	public static final int FISH_ONE_HEIGHT = 51;
+	public static final int FISH_TWO_WIDTH = 100;
+	public static final int FISH_TWO_HEIGHT = 51;
+	public static final int FISH_THREE_WIDTH = 100;
+	public static final int FISH_THREE_HEIGHT = 51;
+	public static final int FISH_FOUR_WIDTH = 100;
+	public static final int FISH_FOUR_HEIGHT = 51;
+	public static final int FISH_FIVE_WIDTH = 100;
+	public static final int FISH_FIVE_HEIGHT = 51;
+	public static final int FISH_SIX_WIDTH = 100;
+	public static final int FISH_SIX_HEIGHT = 51;
+	public static final int FISH_SEVEN_WIDTH = 100;
+	public static final int FISH_SEVEN_HEIGHT = 51;
+	public static final int FISH_EIGHT_WIDTH = 100;
+	public static final int FISH_EIGHT_HEIGHT = 51;
+	public static final int FISH_NINE_WIDTH = 100;
+	public static final int FISH_NINE_HEIGHT = 51;
+	public static final int FISH_TEN_WIDTH = 100;
+	public static final int FISH_TEN_HEIGHT = 51;
 	public static int width = 800;
 	public static int height = 480;
+	
+	
+	public static float timePass = 0.5f;
 	
 	private AppConst() {
 		

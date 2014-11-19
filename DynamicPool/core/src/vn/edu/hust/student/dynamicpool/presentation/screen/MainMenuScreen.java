@@ -101,7 +101,7 @@ public class MainMenuScreen implements Screen {
 				joinHostAction(text);
 			}
 		};
-		Gdx.input.getTextInput(new TokenKeyInputListener(joinHostInputCallback), "Please enter key of host", "");
+		Gdx.input.getTextInput(new StringKeyInputListener(joinHostInputCallback), "Please enter key of host", "");
 	}
 	
 	public void joinHostAction(String key) {

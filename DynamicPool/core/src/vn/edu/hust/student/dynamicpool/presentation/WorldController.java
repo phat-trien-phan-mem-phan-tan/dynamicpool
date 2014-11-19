@@ -7,8 +7,11 @@ import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayer;
 import vn.edu.hust.student.dynamicpool.bll.ETrajectoryType;
 import vn.edu.hust.student.dynamicpool.bll.FishType;
 import vn.edu.hust.student.dynamicpool.bll.IFish;
+import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUICollection;
+import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUIFactory;
+import vn.edu.hust.student.dynamicpool.presentation.screen.DeviceInfoScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.GameScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.LoadingScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.MainMenuScreen;
@@ -18,6 +21,7 @@ import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Graphics.DisplayMode;
+import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 
@@ -29,7 +33,11 @@ public class WorldController {
 	private MainMenuScreen mainMenuScreen = null;
 	private LoadingScreen loadingScreen = null;
 	private GameScreen gameScreen = null;
+	private DeviceInfoScreen deviceInfoScreen;
 	private FishUICollection fishUICollection = new FishUICollection();
+	private int addingFishStep = 0;
+	private FishType selectedFishType = FishType.FISH1;
+	private float size;
 
 	public WorldController(GameCenter game) {
 		this.game = game;
@@ -82,13 +90,13 @@ public class WorldController {
 			}
 		};
 		this.businessLogicLayer.joinHost(key, callback);
-		showFullScreen();
 		showLoadingScreen();
-		loadGameResources();
 	}
 
 	protected void joinHostCallbackHander(boolean isSuccess, Exception error) {
-		showGameScreen();
+		loadDeviceInfoScreenResource();
+		showDeviceInforScreen();
+		loadGameResources();
 	}
 
 	private void showGameScreen() {
@@ -98,11 +106,11 @@ public class WorldController {
 	private void showLoadingScreen() {
 		game.setScreen(loadingScreen);
 	}
-	
+
 	private void showFullScreen() {
 		DisplayMode desktopDisplayMode = Gdx.graphics.getDesktopDisplayMode();
-//		Gdx.graphics.setDisplayMode(desktopDisplayMode.width,
-//				desktopDisplayMode.height, true);
+		Gdx.graphics.setDisplayMode(desktopDisplayMode.width,
+				desktopDisplayMode.height, true);
 	}
 
 	private void loadGameResources() {
@@ -119,13 +127,54 @@ public class WorldController {
 			}
 		};
 		this.businessLogicLayer.createHost(callback);
-		showFullScreen();
-		showLoadingScreen();
-		loadGameResources();
 	}
 
 	protected void createHostCallbackHander(boolean isSuccess, Exception error) {
-		showGameScreen();
+		loadDeviceInfoScreenResource();
+		showDeviceInforScreen();
+		loadGameResources();
+	}
+
+	private void loadDeviceInfoScreenResource() {
+		WorldRenderer worldRenderer = game.getWorldRenderer();
+		deviceInfoScreen = new DeviceInfoScreen(worldRenderer, this);
+	}
+
+	private void showDeviceInforScreen() {
+		game.setScreen(deviceInfoScreen);
+	}
+
+	public boolean saveScreenSizeByInch(String screenSize) {
+		if (isValidScreenSize(screenSize)) {
+			sendDeviceInfoToServer();
+			showFullScreen();
+			showLoadingScreen();
+			return true;
+		}
+		return false;
+	}
+
+	private void sendDeviceInfoToServer() {
+		DisplayMode desktopDisplayMode = Gdx.graphics.getDesktopDisplayMode();
+		PresentationBooleanCallback sendDeviceInfoCallback = new PresentationBooleanCallback() {
+			@Override
+			public void callback(boolean isSuccess, Exception error) {
+				showGameScreen();
+			}
+		};
+		DeviceInfo deviceInfo = new DeviceInfo(desktopDisplayMode.width, desktopDisplayMode.height, this.size);
+		businessLogicLayer.addDevide(deviceInfo, sendDeviceInfoCallback);
+	}
+
+	private boolean isValidScreenSize(String screenSize) {
+		try {
+			size = Float.parseFloat(screenSize);
+			if (size < 0 || size > 30)
+				return false;
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
 	}
 
 	public FishUICollection getFishUICollection() {
@@ -146,7 +195,51 @@ public class WorldController {
 		Gdx.app.exit();
 	}
 
-	public void createFish1() {
-		businessLogicLayer.createFish(FishType.FISH1, ETrajectoryType.LINE, 100, 100);
+	public void addFishButtonClick() {
+		if (this.addingFishStep == 0) {
+			this.addingFishStep = 1;
+		} else {
+			this.addingFishStep = 0;
+		}
+		InputProcessor selectFishInputProcessor = gameScreen
+				.getSelectFishInputProcessor();
+		this.setGameInputProcessor(selectFishInputProcessor);
 	}
+
+	public boolean isShowSelectFishButtons() {
+		return addingFishStep == 1;
+	}
+
+	public void setGameInputProcessor(InputProcessor inputProcessor) {
+		Gdx.input.setInputProcessor(inputProcessor);
+	}
+
+	public void cancelAddFish() {
+		this.addingFishStep = 0;
+		this.selectedFishType = FishType.FISH1;
+	}
+
+	public void selectFish(FishType fishType) {
+		this.selectedFishType = fishType;
+		this.addingFishStep = 2;
+		InputProcessor selectTrajectoryInputProcessor = gameScreen
+				.getSelectTrajectoryInputProcessor();
+		this.setGameInputProcessor(selectTrajectoryInputProcessor);
+	}
+
+	public boolean isShowSelectTrajectoryButtons() {
+		return addingFishStep == 2;
+	}
+
+	public void selectTrajectory(ETrajectoryType trajectoryType) {
+		createFish(selectedFishType, trajectoryType);
+		cancelAddFish();
+	}
+
+	private void createFish(FishType fishType, ETrajectoryType trajectoryType) {
+		businessLogicLayer.createFish(fishType, trajectoryType,
+				FishUIFactory.getWith(fishType),
+				FishUIFactory.getHeight(fishType));
+	}
+
 }
