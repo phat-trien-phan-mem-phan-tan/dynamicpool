@@ -155,8 +155,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 			}
 		};
-		
-		
+
 		
 		//pool.getFishCollection().addFish(newFish);
 		
