@@ -6,11 +6,11 @@ import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayerImpl;
 import vn.edu.hust.student.dynamicpool.exception.BLLException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
+import vn.edu.hust.student.dynamicpool.model.FishState;
 import vn.edu.hust.student.dynamicpool.model.Pool;
 import vn.edu.hust.student.dynamicpool.model.Segment;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
-
 
 public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
@@ -35,31 +35,37 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 				joinHostCallBack(callback, data, ex);
 			}
 		};
+		// tro thanh sua data access layer
+		/*
+		 * this.dataAccessLayer.joinHost(key, logicDataCallBack);
+		 */
+	}
 
-		try {
-			int keyJoin = Integer.parseInt(key);
+	private void joinHostCallBack(final PresentationBooleanCallback callback,
+			Object data, Exception ex) {
 
-			dataAccessLayer.joinHost(keyJoin, logicDataCallBack);
+		if (ex == null) {
+			try {
+				if (data != null) {
+					Boolean joinResult = (Boolean) data;
+					if (joinResult) {
+						callback.callback(true, null);
 
-			// check number format
-		} catch (NumberFormatException e) {
+					} else {
+						callback.callback(false, null);
+					}
 
-			callback.callback(false, e);
-			System.out.println(e.getMessage());
-			e.printStackTrace();
+				}
 
-			throw new NumberFormatException(key);
+			} catch (Exception castEx) {
+				callback.callback(false, new BLLException("Join host failed !",
+						castEx));
+			}
+		} else {
+			callback.callback(false, new BLLException("Join host failed !", ex));
 		}
+	}
 
-	}
-	
-	private void joinHostCallBack(final PresentationBooleanCallback callback, Object data,
-			Exception ex){
-		
-		
-		
-	}
-	
 	@Override
 	public void createHost(final PresentationBooleanCallback callback) {
 
@@ -105,18 +111,16 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		dataAccessLayer.addDevice(devideInfor, logicDataCallBack);
 	}
 
-	
 	private void addDeviceCallback(final PresentationBooleanCallback callback,
 			final Object data, final Exception ex) {
 
 		if (ex == null) {
 			try {
 
-				if(data != null){
+				if (data != null) {
 					ArrayList<Segment> segments = (ArrayList<Segment>) data;
 					this.pool.setSegments(segments);
 				}
-				
 
 				// set size for pool
 				this.pool.getCorrdiate().getPosition()
@@ -138,10 +142,9 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		ArrayList<IFish> fishes = new ArrayList<IFish>();
 
 		if (pool.getFishCollection() != null) {
-			fishes =  (ArrayList<IFish>) pool.getFishCollection();
+			fishes = (ArrayList<IFish>) pool.getFishCollection();
 		}
 
-		
 		return fishes;
 	}
 
@@ -168,14 +171,17 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	}
 
 	@Override
-	public void createFish(FishType fishType, ETrajectoryType trajectoryType,
-			int width, int height) {
+	public void createFish(final FishType fishType,
+			final ETrajectoryType trajectoryType, final int width,
+			final int height) {
 
 		final Fish newFish = new Fish();
 		newFish.setDx(width / 2);
 		newFish.setDy(height / 2);
 		newFish.setTrajectoryType(trajectoryType);
 		newFish.setFishType(fishType);
+		newFish.getPoint().setX(AppConst.width/2);
+		
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
@@ -183,17 +189,29 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 			public void callback(Object data, Exception ex) {
 
 				// check if data is true -> create fish in client
-				Boolean check = (Boolean) data;
-				if (check) {
-					pool.getFishCollection().addFish(newFish);
-				}
+				createFishCallBack(newFish, data, ex);
 
 			}
 		};
 
-		// pool.getFishCollection().addFish(newFish);
-
 		this.dataAccessLayer.createFish(newFish, logicDataCallBack);
+
+	}
+
+	private void createFishCallBack(Fish fish, Object data, final Exception ex) {
+
+		if (ex == null) {
+
+			if (data != null) {
+				Boolean resultCreateFish = (Boolean) data;
+
+				if (resultCreateFish) {
+
+				}
+
+			}
+
+		}
 
 	}
 
