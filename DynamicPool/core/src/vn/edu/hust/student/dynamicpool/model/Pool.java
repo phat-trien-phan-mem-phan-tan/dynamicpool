@@ -147,4 +147,10 @@ public class Pool implements IPool {
 		return fishes;
 	}
 
+	@Override
+	public void setPosition(Rectangle rectangle) {
+		this.getCorrdiate().setPosition(rectangle);
+		
+	}
+
 }

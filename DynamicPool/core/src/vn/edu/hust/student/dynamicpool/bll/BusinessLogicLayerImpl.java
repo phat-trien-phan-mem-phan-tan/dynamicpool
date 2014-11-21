@@ -1,14 +1,16 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayerImpl;
 import vn.edu.hust.student.dynamicpool.exception.BLLException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.model.Pool;
+import vn.edu.hust.student.dynamicpool.model.Segment;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
+import vn.edu.hust.student.dynamicpool.utils.AppConst;
+
 
 public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
@@ -30,6 +32,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 			public void callback(Object data, Exception ex) {
 				callback.callback((Boolean) data, ex);
 
+				joinHostCallBack(callback, data, ex);
 			}
 		};
 
@@ -49,7 +52,14 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		}
 
 	}
-
+	
+	private void joinHostCallBack(final PresentationBooleanCallback callback, Object data,
+			Exception ex){
+		
+		
+		
+	}
+	
 	@Override
 	public void createHost(final PresentationBooleanCallback callback) {
 
@@ -82,29 +92,56 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 	@Override
 	public void addDevide(DeviceInfo devideInfor,
-			PresentationBooleanCallback callback) {
+			final PresentationBooleanCallback callback) {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
 			@Override
 			public void callback(Object data, Exception ex) {
-
+				addDeviceCallback(callback, data, ex);
 			}
 		};
 
 		dataAccessLayer.addDevice(devideInfor, logicDataCallBack);
+	}
 
+	
+	private void addDeviceCallback(final PresentationBooleanCallback callback,
+			final Object data, final Exception ex) {
+
+		if (ex == null) {
+			try {
+
+				if(data != null){
+					ArrayList<Segment> segments = (ArrayList<Segment>) data;
+					this.pool.setSegments(segments);
+				}
+				
+
+				// set size for pool
+				this.pool.getCorrdiate().getPosition()
+						.setRect(0, 0, AppConst.width, AppConst.height);
+
+			} catch (final Exception castEx) {
+				callback.callback(false, new BLLException("Cannot add device ",
+						ex));
+			}
+		} else {
+
+			callback.callback(false, new BLLException("Cannot create host", ex));
+		}
 	}
 
 	@Override
-	public List<IFish> getFishs() {
+	public ArrayList<IFish> getFishs() {
 
-		List<IFish> fishes = new ArrayList<IFish>();
+		ArrayList<IFish> fishes = new ArrayList<IFish>();
 
 		if (pool.getFishCollection() != null) {
-			fishes = (List<IFish>) pool.getFishCollection();
+			fishes =  (ArrayList<IFish>) pool.getFishCollection();
 		}
 
+		
 		return fishes;
 	}
 
@@ -180,4 +217,29 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		this.dataAccessLayer.synchronization(logicDataCallBack);
 
 	}
+
+	public DataAccessLayer getDataAccessLayer() {
+		return dataAccessLayer;
+	}
+
+	public void setDataAccessLayer(DataAccessLayer dataAccessLayer) {
+		this.dataAccessLayer = dataAccessLayer;
+	}
+
+	public Pool getPool() {
+		return pool;
+	}
+
+	public void setPool(Pool pool) {
+		this.pool = pool;
+	}
+
+	public int getKeyOfHost() {
+		return keyOfHost;
+	}
+
+	public void setKeyOfHost(int keyOfHost) {
+		this.keyOfHost = keyOfHost;
+	}
+
 }

@@ -18,7 +18,7 @@ public class PoolPosition implements IPoolPosition{
 		this.position = position;
 	}
 	
-	
+	@Override
 	public void setPosition(Rectangle position) {
 		this.position = position;
 	}
