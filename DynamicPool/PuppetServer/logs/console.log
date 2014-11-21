@@ -1,27 +1,121 @@
-2014-Nov-16 18:14:23:524 [main] DEBUG Main  - Starting Puppet Server.........
-2014-Nov-16 18:14:23:805 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
-2014-Nov-16 18:14:24:899 [AWT-EventQueue-0] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
-2014-Nov-16 18:14:25:814 [main] DEBUG Main  - Puppet Server Started Successfully
-2014-Nov-16 18:14:27:309 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
-2014-Nov-16 18:16:41:221 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
-2014-Nov-16 18:16:41:221 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
-2014-Nov-16 18:16:51:274 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
-2014-Nov-16 18:16:58:521 [NioProcessor-2] WARN  org.apache.mina.filter.logging.LoggingFilter  - EXCEPTION :
-java.io.IOException: An existing connection was forcibly closed by the remote host
-	at sun.nio.ch.SocketDispatcher.read0(Native Method)
-	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
-	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
-	at sun.nio.ch.IOUtil.read(Unknown Source)
-	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
-	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:273)
-	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:44)
-	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:690)
-	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:664)
-	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:653)
-	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
-	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1124)
-	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-2014-Nov-16 18:16:58:533 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CLOSED
+2014-Nov-21 18:28:41:594 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 18:29:33:136 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 18:32:58:187 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 18:32:58:624 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 0.0, y: 0.0
+2014-Nov-21 18:32:58:624 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 1366.0, y: 0.0
+2014-Nov-21 18:44:30:865 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 18:44:31:318 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 0.0, y: 0.0
+2014-Nov-21 18:44:31:318 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 0 location 0.0 0.0
+2014-Nov-21 18:44:31:318 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 1366.0, y: 0.0
+2014-Nov-21 18:44:31:318 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 1 location 1366.0 0.0
+2014-Nov-21 18:49:08:971 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 18:49:09:409 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 0.0, y: 0.0
+2014-Nov-21 18:49:09:409 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 0 location 0.0 0.0
+2014-Nov-21 18:49:09:409 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 1366.0, y: 0.0
+2014-Nov-21 18:49:09:409 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 1 location 1366.0 0.0
+2014-Nov-21 18:49:09:409 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x[i] = 0.0, x[j] = 1366.0
+2014-Nov-21 18:49:09:409 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x[i][1] = 122.03488, x[j][1] = 1488.0349
+2014-Nov-21 18:49:09:409 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - y[i][0] = 0.0, y[j][3] = 68.61112
+2014-Nov-21 18:49:09:409 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - y[i][3] = 68.61112, y[j][0] = 0.0
+2014-Nov-21 18:49:09:409 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x[i] = 1366.0, x[j] = 0.0
+2014-Nov-21 18:49:09:409 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x[i][1] = 1488.0349, x[j][1] = 122.03488
+2014-Nov-21 18:49:09:409 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - y[i][0] = 0.0, y[j][3] = 68.61112
+2014-Nov-21 18:49:09:409 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - y[i][3] = 68.61112, y[j][0] = 0.0
+2014-Nov-21 18:55:26:829 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 18:55:27:266 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 0.0, y: 0.0
+2014-Nov-21 18:55:27:266 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 0 location 0.0 0.0
+2014-Nov-21 18:55:27:266 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 122.03488, y: 0.0
+2014-Nov-21 18:55:27:266 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 1 location 122.0 0.0
+2014-Nov-21 18:55:27:266 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x[i] = 0.0, x[j] = 122.0
+2014-Nov-21 18:55:27:266 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x[i][1] = 122.03488, x[j][1] = 244.03488
+2014-Nov-21 18:55:27:266 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - y[i][0] = 0.0, y[j][3] = 68.61112
+2014-Nov-21 18:55:27:266 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - y[i][3] = 68.61112, y[j][0] = 0.0
+2014-Nov-21 18:55:27:266 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x[i] = 122.0, x[j] = 0.0
+2014-Nov-21 18:55:27:266 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x[i][1] = 244.03488, x[j][1] = 122.03488
+2014-Nov-21 18:55:27:266 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - y[i][0] = 0.0, y[j][3] = 68.61112
+2014-Nov-21 18:55:27:266 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - y[i][3] = 68.61112, y[j][0] = 0.0
+2014-Nov-21 18:56:12:584 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 18:56:13:022 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 0.0, y: 0.0
+2014-Nov-21 18:56:13:022 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 0 location 0.0 0.0
+2014-Nov-21 18:56:13:022 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 122.03488, y: 0.0
+2014-Nov-21 18:56:13:022 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 1 location 122.0 0.0
+2014-Nov-21 18:56:13:022 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x[i] = 0.0, x[j] = 122.0
+2014-Nov-21 18:56:13:022 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x[i][1] = 122.03488, x[j][1] = 244.03488
+2014-Nov-21 18:56:13:022 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - y[i][0] = 0.0, y[j][3] = 68.61112
+2014-Nov-21 18:56:13:022 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - y[i][3] = 68.61112, y[j][0] = 0.0
+2014-Nov-21 18:56:13:022 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x[i] = 122.0, x[j] = 0.0
+2014-Nov-21 18:56:13:022 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x[i][1] = 244.03488, x[j][1] = 122.03488
+2014-Nov-21 18:56:13:022 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - y[i][0] = 0.0, y[j][3] = 68.61112
+2014-Nov-21 18:56:13:022 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - y[i][3] = 68.61112, y[j][0] = 0.0
+2014-Nov-21 19:00:40:864 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 19:00:41:302 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 0.0, y: 0.0
+2014-Nov-21 19:00:41:302 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 0 location 0.0 0.0
+2014-Nov-21 19:00:41:302 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 122.03488, y: 0.0
+2014-Nov-21 19:00:41:302 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 1 location 122.0 0.0
+2014-Nov-21 19:00:41:302 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x[i] = 0.0, x[j] = 244.03488
+2014-Nov-21 19:00:41:302 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x[i][1] = 122.03488, x[j][1] = 122.0
+2014-Nov-21 19:00:41:302 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - y[i][0] = 0.0, y[j][3] = 68.61112
+2014-Nov-21 19:00:41:302 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - y[i][3] = 68.61112, y[j][0] = 0.0
+2014-Nov-21 19:00:41:302 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x[i] = 122.0, x[j] = 122.03488
+2014-Nov-21 19:00:41:302 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x[i][1] = 244.03488, x[j][1] = 0.0
+2014-Nov-21 19:00:41:302 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - y[i][0] = 0.0, y[j][3] = 68.61112
+2014-Nov-21 19:00:41:302 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - y[i][3] = 68.61112, y[j][0] = 0.0
+2014-Nov-21 19:05:29:971 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 19:05:30:409 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 0.0, y: 0.0
+2014-Nov-21 19:05:30:409 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 0 location 0.0 0.0
+2014-Nov-21 19:05:30:409 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 122.03488, y: 0.0
+2014-Nov-21 19:05:30:409 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 1 location 122.0 0.0
+2014-Nov-21 19:17:24:616 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 19:17:25:148 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 0.0, y: 0.0
+2014-Nov-21 19:17:25:148 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 0 location 0.0 0.0
+2014-Nov-21 19:17:25:148 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 122.03488, y: 0.0
+2014-Nov-21 19:17:25:148 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 1 location 122.0 0.0
+2014-Nov-21 19:18:34:322 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 19:18:34:759 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 0.0, y: 0.0
+2014-Nov-21 19:18:34:759 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 0 location 0.0 0.0
+2014-Nov-21 19:18:34:759 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 122.03488, y: 0.0
+2014-Nov-21 19:18:34:759 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 1 location 122.0 0.0
+2014-Nov-21 19:18:34:759 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 244.06976, y: 0.0
+2014-Nov-21 19:18:34:759 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 2 location 244.0 0.0
+2014-Nov-21 19:22:49:891 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 19:22:50:562 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 0.0, y: 0.0
+2014-Nov-21 19:22:50:569 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 0 location 0.0 0.0
+2014-Nov-21 19:22:50:569 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 122.03488, y: 0.0
+2014-Nov-21 19:22:50:569 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 1 location 122.0 0.0
+2014-Nov-21 19:22:50:569 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 244.06976, y: 0.0
+2014-Nov-21 19:22:50:569 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 2 location 244.0 0.0
+2014-Nov-21 19:23:54:505 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 19:23:54:942 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 0.0, y: 0.0
+2014-Nov-21 19:23:54:942 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 0 location 0.0 0.0
+2014-Nov-21 19:23:54:942 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 122.03488, y: 0.0
+2014-Nov-21 19:23:54:942 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 1 location 122.0 0.0
+2014-Nov-21 19:23:54:942 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 244.06976, y: 0.0
+2014-Nov-21 19:23:54:942 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 2 location 244.0 0.0
+2014-Nov-21 19:25:41:904 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 19:25:43:004 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 0.0, y: 0.0
+2014-Nov-21 19:25:43:035 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 0 location 0.0 0.0
+2014-Nov-21 19:25:43:035 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 122.03488, y: 0.0
+2014-Nov-21 19:25:43:035 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 1 location 122.0 0.0
+2014-Nov-21 19:25:43:035 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 244.06976, y: 0.0
+2014-Nov-21 19:25:43:035 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 2 location 244.0 0.0
+2014-Nov-21 19:27:21:565 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 19:27:22:363 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 0.0, y: 0.0
+2014-Nov-21 19:27:22:395 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 0 location 0.0 0.0
+2014-Nov-21 19:27:22:395 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 122.03488, y: 0.0
+2014-Nov-21 19:27:22:395 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 1 location 122.0 0.0
+2014-Nov-21 19:27:22:395 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 244.06976, y: 0.0
+2014-Nov-21 19:27:22:395 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 2 location 244.0 0.0
+2014-Nov-21 19:27:30:525 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 19:27:31:009 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 0.0, y: 0.0
+2014-Nov-21 19:27:31:009 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 0 location 0.0 0.0
+2014-Nov-21 19:27:31:009 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 122.03488, y: 0.0
+2014-Nov-21 19:27:31:009 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 1 location 122.0 0.0
+2014-Nov-21 19:27:31:009 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 244.06976, y: 0.0
+2014-Nov-21 19:27:31:009 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 2 location 244.0 0.0
+2014-Nov-21 19:28:11:001 [main] INFO  org.puppet.server.controller.MainController  - Reading config file from path conf/server.xml
+2014-Nov-21 19:28:11:454 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 0.0, y: 0.0
+2014-Nov-21 19:28:11:454 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 0 location 0.0 0.0
+2014-Nov-21 19:28:11:454 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 122.03488, y: 0.0
+2014-Nov-21 19:28:11:454 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 1 location 122.0 0.0
+2014-Nov-21 19:28:11:454 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - x: 244.06976, y: 0.0
+2014-Nov-21 19:28:11:454 [main] DEBUG org.puppet.server.bussinesslayer.FindCommonEdgeFunction  - pool 2 location 244.0 0.0

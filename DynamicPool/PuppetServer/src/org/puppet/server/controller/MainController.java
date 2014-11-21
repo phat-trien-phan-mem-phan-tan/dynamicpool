@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.puppet.client.http.HttpClientController;
 import org.puppet.client.socket.SocketClientController;
+import org.puppet.server.bussinesslayer.PoolManager;
 import org.puppet.server.manager.RoomManager;
 import org.puppet.server.manager.UserManager;
 import org.puppet.server.processor.Processor;
@@ -30,6 +31,7 @@ public class MainController {
 	private RoomManager roomManager;
 	private HttpClientController httpClientController;
 	private SocketClientController socketClientController;
+	private PoolManager poolManager;
 
 	private Logger logger = LoggerFactory.getLogger(MainController.class);
 
@@ -65,6 +67,7 @@ public class MainController {
 		userManager = new UserManager();
 		roomManager = new RoomManager();
 		socketClientController = new SocketClientController();
+		setPoolManager(new PoolManager());
 	}
 
 	public void start() {
@@ -132,5 +135,13 @@ public class MainController {
 
 	public void setSocketClientController(SocketClientController socketClientController) {
 		this.socketClientController = socketClientController;
+	}
+
+	public PoolManager getPoolManager() {
+		return poolManager;
+	}
+
+	public void setPoolManager(PoolManager poolManager) {
+		this.poolManager = poolManager;
 	}
 }

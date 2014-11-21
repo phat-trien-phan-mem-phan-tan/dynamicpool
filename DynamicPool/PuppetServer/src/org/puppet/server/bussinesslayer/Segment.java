@@ -1,21 +1,35 @@
 package org.puppet.server.bussinesslayer;
 
+import java.awt.Point;
+
 public class Segment {
+	private Point pointStart;
+	private Point pointEnd;
+
+	public Segment(Point start, Point end) {
+		pointStart = start;
+		pointEnd = end;
+	}
+
+	public Point getPointStart() {
+		return pointStart;
+	}
+
+	public void setPointStart(Point pointStart) {
+		this.pointStart = pointStart;
+	}
+
+	public Point getPointEnd() {
+		return pointEnd;
+	}
+
+	public void setPointEnd(Point pointEnd) {
+		this.pointEnd = pointEnd;
+	}
 	
-	public Point pointS;
-	public Point pointE;
-	public Point getPointS(){
-		return pointS;
-	}
-	public Point getPointE(){
-		return pointE;
-	}
-	public void setPointSE(Point pointS, Point pointE){
-		this.pointS=pointS;
-		this.pointE=pointE;
-	}
-	public Segment(Point pointS, Point pointE){
-		this.pointS=pointS;
-		this.pointE=pointE;	
+	@Override
+	public String toString() {
+		String s = "Start: [%s,%s] End: [%s,%s]";
+		return String.format(s, pointStart.getX(), pointStart.getLocation().getY(), pointEnd.getLocation().getX(), pointEnd.getLocation().getY());
 	}
 }

@@ -1,26 +1,41 @@
-import org.puppet.client.socket.SocketClientController;
-import org.puppet.client.socket.SocketClientHandler;
+import java.io.FileInputStream;
+import java.util.List;
+import java.util.Properties;
 
-public class MainTest implements SocketClientHandler {
+import org.apache.log4j.PropertyConfigurator;
+import org.puppet.server.bussinesslayer.DeviceInfo;
+import org.puppet.server.bussinesslayer.Pool;
+import org.puppet.server.bussinesslayer.Segment;
+import org.puppet.server.controller.MainController;
 
-	private SocketClientController socketController;
-	
-	public MainTest(){
-		socketController = new SocketClientController(this);
-	}
-	
-	public static void main(String[] args) {
-		MainTest main = new MainTest();
-		main.start();
-	}
-	
-	public void start(){
-		socketController.start("127.0.0.1", 2225);
-	}
+public class MainTest {
+	public static void main(String[] argv) {
+		String log4JPropertyFile = "conf/log4j.properties";
+		Properties p = new Properties();
 
-	@Override
-	public void messageReceive(String s) {
-		// TODO Auto-generated method stub
-		System.out.println(s);
+		try {
+			p.load(new FileInputStream(log4JPropertyFile));
+			PropertyConfigurator.configure(p);
+		} catch (Exception e) {
+
+		}
+		MainController.getInstance().getPoolManager()
+				.add(new Pool(new DeviceInfo(1366, 768, 14)));
+
+		MainController.getInstance().getPoolManager()
+				.add(new Pool(new DeviceInfo(1366, 768, 14)));
+		
+		MainController.getInstance().getPoolManager()
+		.add(new Pool(new DeviceInfo(1366, 768, 14)));
+		
+		MainController.getInstance().getPoolManager().calculate();
+
+		List<Segment> segments = MainController.getInstance().getPoolManager()
+				.getPools().get(1).getSegments();
+		
+		for (Segment segment : segments) {
+			System.out.println(segment.toString());
+		}
+		System.out.println(segments.size());
 	}
 }
