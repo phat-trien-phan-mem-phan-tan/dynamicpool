@@ -45,13 +45,6 @@ public class BLLTest implements BusinessLogicLayer {
 	}
 
 	@Override
-	public void intialDevide(DeviceInfo devideInfor,
-			PresentationBooleanCallback callback) {
-		// TODO Aut1o-generated method stub
-		
-	}
-
-	@Override
 	public void addDevide(DeviceInfo devideInfor,
 			final PresentationBooleanCallback callback) {
 		timmer.scheduleTask(new Task() {
