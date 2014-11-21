@@ -54,6 +54,7 @@ public class FindCommonEdge {
 		// canh
 		// dua tap hop cac canh chung cua tung hinh vao mot danh sach
 		for (int i = 0; i < n; i++) {
+			int countCommonEdge = 0;
 			ArrayList<Segment> seglist = new ArrayList<>();
 			for (int j = 0; j < n; j++) {
 
@@ -72,10 +73,25 @@ public class FindCommonEdge {
 									.println(xCoordinate[i][1] + ":" + starty);
 							System.out.println(xCoordinate[i][1] + ":" + endy);
 							Point pointS = new Point(xCoordinate[i][0], starty);
+							Point pointSConvert = new Point(
+									(int) (xCoordinate[i][0]
+											* pool.get(i).pHeight / pool.get(i).height),
+									(int) (starty * pool.get(i).pHeight / pool
+											.get(i).height));
 							Point pointE = new Point(xCoordinate[i][0], endy);
+							Point pointEConvert = new Point(
+									(int) (xCoordinate[i][0]
+											* pool.get(i).pHeight / pool.get(i).height),
+									(int) (endy * pool.get(i).pHeight / pool
+											.get(i).height));
 							Segment segment = new Segment(pointS, pointE);
 
 							seglist.add(segment);
+							ListPool.listPool.get(i).returnPointStart.set(
+									countCommonEdge, pointSConvert);
+							ListPool.listPool.get(i).returnPointEnd.set(
+									countCommonEdge, pointEConvert);
+							countCommonEdge++;
 
 						}
 					}
@@ -93,16 +109,25 @@ public class FindCommonEdge {
 							 * System.out.println(x[i][1]+":"+endy);
 							 */
 							Point pointS = new Point(xCoordinate[i][1], starty);
+							Point pointSConvert = new Point(
+									(int) (xCoordinate[i][1]
+											* pool.get(i).pHeight / pool.get(i).height),
+									(int) (starty * pool.get(i).pHeight / pool
+											.get(i).height));
 							Point pointE = new Point(xCoordinate[i][1], endy);
-							// Segment segment=new Segment(pointS,pointE);
-							/*
-							 * System.out.println(pointS.x);
-							 * System.out.println(pointS.y);
-							 */
-							// arraylist[i].add(segment);
+							Point pointEConvert = new Point(
+									(int) (xCoordinate[i][1]
+											* pool.get(i).pHeight / pool.get(i).height),
+									(int) (endy * pool.get(i).pHeight / pool
+											.get(i).height));
 							Segment segment = new Segment(pointS, pointE);
 
 							seglist.add(segment);
+							ListPool.listPool.get(i).returnPointStart.set(
+									countCommonEdge, pointSConvert);
+							ListPool.listPool.get(i).returnPointEnd.set(
+									countCommonEdge, pointEConvert);
+							countCommonEdge++;
 
 						}
 					}
@@ -116,8 +141,23 @@ public class FindCommonEdge {
 						if (startx <= endx) {
 							Point pointS = new Point(startx, yCoordinate[i][0]);
 							Point pointE = new Point(endx, yCoordinate[i][0]);
+							Point pointSConvert = new Point(
+									(int) (startx * pool.get(i).pWidth / pool
+											.get(i).width),
+									(int) (yCoordinate[i][0]
+											* pool.get(i).pWidth / pool.get(i).width));
+							Point pointEConvert = new Point(
+									(int) (endx * pool.get(i).pWidth / pool
+											.get(i).width),
+									(int) (yCoordinate[i][0]
+											* pool.get(i).pWidth / pool.get(i).width));
 							Segment segment = new Segment(pointS, pointE);
 							seglist.add(segment);
+							ListPool.listPool.get(i).returnPointStart.set(
+									countCommonEdge, pointSConvert);
+							ListPool.listPool.get(i).returnPointEnd.set(
+									countCommonEdge, pointEConvert);
+							countCommonEdge++;
 
 						}
 					}
@@ -131,8 +171,23 @@ public class FindCommonEdge {
 						if (startx <= endx) {
 							Point pointS = new Point(startx, yCoordinate[i][3]);
 							Point pointE = new Point(endx, yCoordinate[i][3]);
+							Point pointSConvert = new Point(
+									(int) (startx * pool.get(i).pWidth / pool
+											.get(i).width),
+									(int) (yCoordinate[i][3]
+											* pool.get(i).pWidth / pool.get(i).width));
+							Point pointEConvert = new Point(
+									(int) (endx * pool.get(i).pWidth / pool
+											.get(i).width),
+									(int) (yCoordinate[i][3]
+											* pool.get(i).pWidth / pool.get(i).width));
 							Segment segment = new Segment(pointS, pointE);
 							seglist.add(segment);
+							ListPool.listPool.get(i).returnPointStart.set(
+									countCommonEdge, pointSConvert);
+							ListPool.listPool.get(i).returnPointEnd.set(
+									countCommonEdge, pointEConvert);
+							countCommonEdge++;
 
 						}
 					}
@@ -140,6 +195,7 @@ public class FindCommonEdge {
 
 			}
 			arraylist.add(seglist);
+
 		}
 	}
 
