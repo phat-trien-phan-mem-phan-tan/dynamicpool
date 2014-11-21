@@ -3,10 +3,10 @@ package vn.edu.hust.student.dynamicpool.dal.controller;
 import java.util.Map;
 
 import org.eclipse.jetty.util.ajax.JSON;
-import org.puppet.client.http.HttpClientController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import vn.edu.hust.dynamicpool.dal.client.http.HttpClientController;
 import vn.edu.hust.student.dynamicpool.dal.processor.Processor;
 import vn.edu.hust.student.dynamicpool.dal.server.socket.SocketServerController;
 import vn.edu.hust.student.dynamicpool.dal.statics.Field;

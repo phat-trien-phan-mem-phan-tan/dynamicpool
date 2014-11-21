@@ -31,6 +31,7 @@ public class Main {
 		logger = LoggerFactory.getLogger(Main.class);
 		logger.debug("Starting Puppet Server.........");
 		HostMainController.getInstance().start();
+		
 		logger.debug("Puppet Server Started Successfully");
 	}
 

@@ -71,3 +71,7 @@ java.lang.IllegalStateException: Unexpected 'u while seeking  "false"
 2014-Nov-21 21:05:17:361 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
 2014-Nov-21 21:05:27:410 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
 2014-Nov-21 21:05:37:446 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-21 21:31:10:900 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-21 21:31:10:915 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-21 21:33:14:302 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-21 21:33:14:318 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
