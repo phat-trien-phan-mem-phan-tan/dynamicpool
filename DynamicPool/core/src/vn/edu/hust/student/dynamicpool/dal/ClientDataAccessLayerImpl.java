@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
+import vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController;
 import vn.edu.hust.student.dynamicpool.dal.controller.HostMainController;
 import vn.edu.hust.student.dynamicpool.dal.statics.Field;
 import vn.edu.hust.student.dynamicpool.exception.NetworkException;
@@ -29,7 +30,7 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	@Override
 	public void joinHost(int key, BusinessLogicDataCallback callback) {
 		try {
-			HostMainController.getInstance().start(key);
+			ClientMainController.getInstance().start(key);
 			callback.callback(true, null);
 		} catch (NetworkException e) {
 			callback.callback(false, e);
@@ -39,7 +40,7 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	@Override
 	public void createHost(BusinessLogicDataCallback callback) {
 		try {
-			int created = HostMainController.getInstance().createHost();
+			int created = ClientMainController.getInstance().createHost();
 			callback.callback(created, null);
 		} catch (NetworkException e) {
 			callback.callback(0, e);

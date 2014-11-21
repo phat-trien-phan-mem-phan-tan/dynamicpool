@@ -23,12 +23,12 @@ public class ClientMainController {
 
 	private ClientMainController() {
 
-		getLogger().info("Reading config file from path conf/server.xml");
+		getLogger().info("Reading config file from path conf/client.xml");
 		ServerXMLConfigReader configReader;
 		try {
 			configReader = new ServerXMLConfigReader("conf/client.xml");
-			socketServerController = new SocketServerController(
-					configReader.getSocketClientConfig());
+			/*socketServerController = new SocketServerController(
+					configReader.getSocketServerConfig().getNetworkConfigs());*/
 			Map<String, Class<? extends Processor>> processorMap = configReader
 					.getProcessorMap();
 			this.getSocketServerController().initProcessor(processorMap);
