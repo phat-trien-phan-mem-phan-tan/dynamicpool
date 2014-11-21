@@ -73,7 +73,6 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 			@Override
 			public void callback(Object data, Exception ex) {
-				// TODO Auto-generated method stub
 
 			}
 		};
@@ -91,6 +90,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 			@Override
 			public void callback(Object data, Exception ex) {
 					
+				
 			}
 		};
 
