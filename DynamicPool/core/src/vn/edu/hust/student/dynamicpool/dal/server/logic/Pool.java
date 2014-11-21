@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pool implements IPool  {
-
+	private String clientName;
 	private DeviceInfo deviceInfo;
 	private Retangle retangle;
 	private List<Segment> segments;
@@ -52,4 +52,17 @@ public class Pool implements IPool  {
 	public void convertDeviceInfoToRect() {
 		setRetangle(converter.convertDeviceInfoToRect(deviceInfo));
 	}
+
+	@Override
+	public String getClientName() {
+		return this.clientName;
+		
+	}
+
+	@Override
+	public void setClientName(String clientName) {
+		this.clientName=clientName;
+		
+	}
+	
 }
