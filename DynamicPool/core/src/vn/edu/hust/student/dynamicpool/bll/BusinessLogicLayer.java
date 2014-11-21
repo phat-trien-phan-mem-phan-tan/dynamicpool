@@ -12,9 +12,6 @@ public interface BusinessLogicLayer {
 
 	void createHost(PresentationBooleanCallback callback);
 	
-	
-	void intialDevide(DeviceInfo devideInfor,PresentationBooleanCallback callback);
-	
 	void addDevide(DeviceInfo devideInfor,PresentationBooleanCallback callback);
 	
 	List<IFish> getFishs();

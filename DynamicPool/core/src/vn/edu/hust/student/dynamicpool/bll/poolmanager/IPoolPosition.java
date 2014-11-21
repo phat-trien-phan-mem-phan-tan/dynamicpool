@@ -5,4 +5,5 @@ import java.awt.Rectangle;
 public interface IPoolPosition {
 
 	Rectangle getPosition();
+	void setPosition(Rectangle position);
 }

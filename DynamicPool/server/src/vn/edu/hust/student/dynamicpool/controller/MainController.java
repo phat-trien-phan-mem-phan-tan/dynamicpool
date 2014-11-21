@@ -75,7 +75,7 @@ public class MainController {
 			if (map.get(Field.ERROR) != null) {
 				throw new NetworkException((String) map.get("error"));
 			} else {
-				int key = (int)(long) map.get(Field.KEY);
+				int key = Integer.parseInt((String)map.get(Field.KEY));
 				@SuppressWarnings("unused")
 				String ip = (String)map.get(Field.IP);
 				return key;
