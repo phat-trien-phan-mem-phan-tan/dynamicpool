@@ -7,6 +7,7 @@ import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayer;
 import vn.edu.hust.student.dynamicpool.bll.ETrajectoryType;
 import vn.edu.hust.student.dynamicpool.bll.FishType;
 import vn.edu.hust.student.dynamicpool.bll.IFish;
+import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUICollection;
@@ -17,7 +18,6 @@ import vn.edu.hust.student.dynamicpool.presentation.screen.LoadingScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.MainMenuScreen;
 import vn.edu.hust.student.dynamicpool.presentation.screen.SplashScreen;
 import vn.edu.hust.student.dynamicpool.tests.presentation.BLLTest;
-import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Graphics.DisplayMode;

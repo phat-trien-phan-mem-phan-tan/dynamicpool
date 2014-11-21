@@ -6,10 +6,10 @@ import java.util.UUID;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
-import vn.edu.hust.student.dynamicpool.controller.HostMainController;
+import vn.edu.hust.student.dynamicpool.dal.controller.HostMainController;
+import vn.edu.hust.student.dynamicpool.dal.statics.Field;
 import vn.edu.hust.student.dynamicpool.exception.NetworkException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
-import vn.edu.hust.student.dynamicpool.statics.Field;
 
 public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	private String clientName;
@@ -47,18 +47,6 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	}
 
 	@Override
-	public void intialDevide(DeviceInfo devideInfor,
-			BusinessLogicDataCallback callback) {
-		Map<String, Object> data = new HashMap<String, Object>();
-		data.put(Field.COMMAND, "dp_initDevice");
-		data.put("width", devideInfor.getScreenWidth());
-		data.put("height", devideInfor.getScreenHeight());
-		data.put("size", devideInfor.getScreenSize());
-		HostMainController.getInstance().getSocketServerController()
-				.sendMessage(data);
-	}
-
-	@Override
 	public void addDevide(DeviceInfo devideInfor,
 			BusinessLogicDataCallback callback) {
 		Map<String, Object> data = new HashMap<String, Object>();
@@ -67,8 +55,7 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 		data.put("height", devideInfor.getScreenHeight());
 		data.put("size", devideInfor.getScreenSize());
 		data.put("clientName", getClientName());
-		HostMainController.getInstance().getSocketServerController()
-				.sendMessage(data);
+		
 	}
 
 	@Override

@@ -1,2 +1,1 @@
-2014-Nov-16 18:16:40:454 [main] INFO  vn.edu.hust.student.dynamicpool.controller.MainController  - Reading config file from path conf/server.xml
-2014-Nov-16 18:16:41:190 [main] INFO  org.puppet.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-21 20:17:24:778 [main] DEBUG Main  - Starting Puppet Server.........

@@ -2,7 +2,7 @@ package vn.edu.hust.student.dynamicpool.presentation.gameobject;
 
 import vn.edu.hust.student.dynamicpool.bll.FishType;
 import vn.edu.hust.student.dynamicpool.bll.IFish;
-import vn.edu.hust.student.dynamicpool.utils.AppConst;
+import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
 
 public class FishUIFactory {
 	public static FishUI createFishUI(IFish fish) {
