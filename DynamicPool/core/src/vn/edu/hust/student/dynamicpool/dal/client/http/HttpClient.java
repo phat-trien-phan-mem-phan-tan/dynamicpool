@@ -1,4 +1,4 @@
-package vn.edu.hust.dynamicpool.dal.client.http;
+package vn.edu.hust.student.dynamicpool.dal.client.http;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

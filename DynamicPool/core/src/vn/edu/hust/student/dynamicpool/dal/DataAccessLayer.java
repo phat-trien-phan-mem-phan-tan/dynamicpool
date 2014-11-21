@@ -5,6 +5,7 @@ import vn.edu.hust.student.dynamicpool.bll.Fish;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 
 public interface DataAccessLayer {
+	String getClientName();
 	
 	void joinHost(int key, BusinessLogicDataCallback callback);
 

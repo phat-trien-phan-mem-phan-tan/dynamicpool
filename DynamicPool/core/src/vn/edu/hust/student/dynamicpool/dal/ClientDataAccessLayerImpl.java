@@ -7,7 +7,6 @@ import java.util.UUID;
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
 import vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController;
-import vn.edu.hust.student.dynamicpool.dal.controller.HostMainController;
 import vn.edu.hust.student.dynamicpool.dal.statics.Field;
 import vn.edu.hust.student.dynamicpool.exception.NetworkException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
