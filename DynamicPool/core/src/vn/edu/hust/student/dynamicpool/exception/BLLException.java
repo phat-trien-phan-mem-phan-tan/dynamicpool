@@ -14,6 +14,12 @@ public class BLLException extends Exception{
 	
 
 	
+	public BLLException(String message, Exception innerExeption) {
+		super(message, innerExeption);
+	}
+
+
+
 	public String getKey() {
 		return key;
 	}

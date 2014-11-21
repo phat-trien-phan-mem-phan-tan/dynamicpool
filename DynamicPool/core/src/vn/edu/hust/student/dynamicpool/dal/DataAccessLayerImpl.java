@@ -32,19 +32,11 @@ public class DataAccessLayerImpl implements DataAccessLayer {
 	}
 
 	@Override
-	public void intialDevide(DeviceInfo devideInfor,
+	public void addDevice(DeviceInfo devideInfor,
 			BusinessLogicDataCallback callback) {
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put(Field.COMMAND, "initDevice");
-		MainController.getInstance().getSocketServerController()
-	}
-
-	@Override
-	public void addDevide(DeviceInfo devideInfor,
-			BusinessLogicDataCallback callback) {
-		
-		
-		
+		MainController.getInstance().getSocketServerController();
 	}
 
 	@Override

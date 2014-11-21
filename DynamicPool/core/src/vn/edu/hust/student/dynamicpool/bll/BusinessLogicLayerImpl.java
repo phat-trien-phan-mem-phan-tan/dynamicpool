@@ -5,6 +5,7 @@ import java.util.List;
 
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayerImpl;
+import vn.edu.hust.student.dynamicpool.exception.BLLException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.model.Pool;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
@@ -13,6 +14,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 	private DataAccessLayer dataAccessLayer;
 	private Pool pool;
+	private int keyOfHost;
 
 	public BusinessLogicLayerImpl() {
 		this.dataAccessLayer = new DataAccessLayerImpl();
@@ -52,33 +54,30 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	public void createHost(final PresentationBooleanCallback callback) {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
-
 			@Override
 			public void callback(Object data, Exception ex) {
-				// TODO Auto-generated method stub
-				callback.callback((Boolean) data, ex);
-
+				creatHostDALCalback(callback, data, ex);
 			}
 		};
-
 		dataAccessLayer.createHost(logicDataCallBack);
-
 	}
 
-	@Override
-	public void intialDevide(DeviceInfo devideInfor,
-			PresentationBooleanCallback callback) {
-
-		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
-
-			@Override
-			public void callback(Object data, Exception ex) {
-
+	private void creatHostDALCalback(
+			final PresentationBooleanCallback callback, Object data,
+			Exception ex) {
+		if (ex == null) {
+			try {
+				int key = Integer.parseInt(data.toString());
+				this.keyOfHost = key;
+				callback.callback(true, null);
+			} catch (Exception castEx) {
+				callback.callback(false, new BLLException(
+						"Cannot cast key of host", ex));
 			}
-		};
 
-		dataAccessLayer.intialDevide(devideInfor, logicDataCallBack);
-
+		} else {
+			callback.callback(false, new BLLException("Cannot create host", ex));
+		}
 	}
 
 	@Override
@@ -89,12 +88,11 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 			@Override
 			public void callback(Object data, Exception ex) {
-					
-				
+
 			}
 		};
 
-		dataAccessLayer.addDevide(devideInfor, logicDataCallBack);
+		dataAccessLayer.addDevice(devideInfor, logicDataCallBack);
 
 	}
 
@@ -119,7 +117,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 	@Override
 	public void exit() {
-		
+
 		// call data access layer
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
@@ -128,7 +126,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 			}
 		};
-		
+
 		this.dataAccessLayer.exit(logicDataCallBack);
 	}
 
@@ -137,51 +135,49 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 			int width, int height) {
 
 		final Fish newFish = new Fish();
-		newFish.setDx(width/2);
-		newFish.setDy(height/2);
+		newFish.setDx(width / 2);
+		newFish.setDy(height / 2);
 		newFish.setTrajectoryType(trajectoryType);
 		newFish.setFishType(fishType);
-		
+
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
 			@Override
 			public void callback(Object data, Exception ex) {
-				
+
 				// check if data is true -> create fish in client
-				Boolean check = (Boolean)data;
-				if(check){
+				Boolean check = (Boolean) data;
+				if (check) {
 					pool.getFishCollection().addFish(newFish);
 				}
 
 			}
 		};
 
-		
-		//pool.getFishCollection().addFish(newFish);
-		
+		// pool.getFishCollection().addFish(newFish);
+
 		this.dataAccessLayer.createFish(newFish, logicDataCallBack);
-		
+
 	}
 
 	@Override
 	public void synchronization() {
-		
+
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
 			@Override
 			public void callback(Object data, Exception ex) {
-				
+
 				// check if data is true -> create fish in client
-				Boolean check = (Boolean)data;
-				if(check){
-					
+				Boolean check = (Boolean) data;
+				if (check) {
+
 				}
 
 			}
 		};
-		
+
 		this.dataAccessLayer.synchronization(logicDataCallBack);
-		
-		
+
 	}
 }
