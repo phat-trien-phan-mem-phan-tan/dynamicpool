@@ -100,4 +100,8 @@ public class HostMainController {
 	public void setPoolManager(PoolManager poolManager) {
 		this.poolManager = poolManager;
 	}
+
+	public void start() {
+		this.getSocketController().start();
+	}
 }

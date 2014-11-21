@@ -10,5 +10,5 @@ public abstract class AbstractServerController{
 
 	
 	public abstract void initProcessor(Map<String, Class<? extends Processor>> map);
-	public abstract void start(String ip, int port);
+	public abstract void start();
 }

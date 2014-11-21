@@ -22,13 +22,6 @@ public class Main {
 			PropertyConfigurator.configure(p);
 			final Main main = new Main();
 			main.start();
-			
-			Runtime.getRuntime().addShutdownHook(new Thread() {
-				@Override
-				public void run() {
-					main.stop();
-				}
-			});
 		} catch (IOException e) {
 			System.out.println("Opps, cannot load log4j.properties");
 		}
@@ -39,9 +32,6 @@ public class Main {
 		logger.debug("Starting Puppet Server.........");
 		HostMainController.getInstance().start();
 		logger.debug("Puppet Server Started Successfully");
-//		MainController.getInstance().getHttpClientController().regHost();
-//		MainController.getInstance().getSocketClientController()
-//				.start("104.131.13.155", 2225);
 	}
 
 	private void stop() {

@@ -21,7 +21,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import vn.edu.hust.student.dynamicpool.dal.config.SocketServerConfig;
-import vn.edu.hust.student.dynamicpool.dal.controller.HostMainController;
 import vn.edu.hust.student.dynamicpool.dal.processor.Processor;
 import vn.edu.hust.student.dynamicpool.dal.processor.ProcessorExecutionRequest;
 import vn.edu.hust.student.dynamicpool.dal.processor.ProcessorExecutionResponse;
@@ -191,10 +190,5 @@ public class NIOSocketServerController extends SocketServerController implements
 	public void stop() {
 		logger.info("stopping socket server");
 		this.acceptor.unbind();
-	}
-
-	@Override
-	public void start(String ip, int port) {
-		
 	}
 }
