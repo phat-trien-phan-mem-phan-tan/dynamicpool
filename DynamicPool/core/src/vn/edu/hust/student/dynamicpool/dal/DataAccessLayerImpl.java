@@ -67,8 +67,4 @@ public class DataAccessLayerImpl implements DataAccessLayer {
 		// TODO Auto-generated method stub
 		
 	}
-
-
-
-
 }

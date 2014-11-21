@@ -1,0 +1,32 @@
+<server>
+	
+	<processors>
+		<command name="hello_world">org.puppet.server.processor.HelloProcessor</command>
+		<command name="schedule">org.puppet.server.processor.ScheduleHelloProcessor</command>
+	</processors>
+	
+	<http>
+		<network>
+			<entry>
+				<path>/*</path>
+				<port>6969</port>
+			</entry>
+		</network>
+		<handlers>
+			<handler>hello_world</handler>
+		</handlers>
+	</http>
+	
+	<socket>
+		<network>
+			<entry>
+				<port>9696</port>
+			</entry>
+		</network>
+		<handlers>
+			<handler>hello_world</handler>
+			<handler>schedule</handler>
+		</handlers>
+	</socket>
+	
+</server>
