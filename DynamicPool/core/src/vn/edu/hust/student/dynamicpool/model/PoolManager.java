@@ -2,12 +2,16 @@ package vn.edu.hust.student.dynamicpool.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 import vn.edu.hust.student.dynamicpool.bll.poolmanager.IPool;
 import vn.edu.hust.student.dynamicpool.bll.poolmanager.IPoolManager;
 
 public class PoolManager extends ArrayList<IPool> implements IPoolManager {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3763574719258188028L;
 
 	public PoolManager(){
 		super();

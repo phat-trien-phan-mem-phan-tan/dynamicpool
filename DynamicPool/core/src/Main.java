@@ -6,7 +6,7 @@ import org.apache.log4j.PropertyConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import vn.edu.hust.student.dynamicpool.controller.MainController;
+import vn.edu.hust.student.dynamicpool.controller.HostMainController;
 
 
 public class Main {
@@ -37,7 +37,7 @@ public class Main {
 	private void start() {
 		logger = LoggerFactory.getLogger(Main.class);
 		logger.debug("Starting Puppet Server.........");
-		MainController.getInstance().start();
+		HostMainController.getInstance().start();
 		logger.debug("Puppet Server Started Successfully");
 //		MainController.getInstance().getHttpClientController().regHost();
 //		MainController.getInstance().getSocketClientController()
@@ -46,6 +46,6 @@ public class Main {
 
 	private void stop() {
 		logger.info("stopping socket server and http server...");
-		MainController.getInstance().stop();
+		HostMainController.getInstance().stop();
 	}
 }

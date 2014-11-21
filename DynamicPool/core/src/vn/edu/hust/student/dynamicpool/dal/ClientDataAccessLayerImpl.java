@@ -6,7 +6,7 @@ import java.util.UUID;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
-import vn.edu.hust.student.dynamicpool.controller.MainController;
+import vn.edu.hust.student.dynamicpool.controller.HostMainController;
 import vn.edu.hust.student.dynamicpool.exception.NetworkException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.statics.Field;
@@ -29,7 +29,7 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	@Override
 	public void joinHost(int key, BusinessLogicDataCallback callback) {
 		try {
-			MainController.getInstance().start(key);
+			HostMainController.getInstance().start(key);
 			callback.callback(true, null);
 		} catch (NetworkException e) {
 			callback.callback(false, e);
@@ -39,7 +39,7 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	@Override
 	public void createHost(BusinessLogicDataCallback callback) {
 		try {
-			int created = MainController.getInstance().createHost();
+			int created = HostMainController.getInstance().createHost();
 			callback.callback(created, null);
 		} catch (NetworkException e) {
 			callback.callback(0, e);
@@ -54,7 +54,7 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 		data.put("width", devideInfor.getScreenWidth());
 		data.put("height", devideInfor.getScreenHeight());
 		data.put("size", devideInfor.getScreenSize());
-		MainController.getInstance().getSocketServerController()
+		HostMainController.getInstance().getSocketServerController()
 				.sendMessage(data);
 	}
 
@@ -67,7 +67,7 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 		data.put("height", devideInfor.getScreenHeight());
 		data.put("size", devideInfor.getScreenSize());
 		data.put("clientName", getClientName());
-		MainController.getInstance().getSocketServerController()
+		HostMainController.getInstance().getSocketServerController()
 				.sendMessage(data);
 	}
 

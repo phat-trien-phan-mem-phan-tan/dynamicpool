@@ -9,15 +9,16 @@ import org.slf4j.LoggerFactory;
 
 import vn.edu.hust.student.dynamicpool.processor.Processor;
 import vn.edu.hust.student.dynamicpool.server.logic.PoolManager;
+import vn.edu.hust.student.dynamicpool.server.socket.NIOSocketServerController;
 import vn.edu.hust.student.dynamicpool.server.socket.SocketServerController;
 import vn.edu.hust.student.dynamicpool.utils.xml.ServerXMLConfigReader;
 
-public class MainController {
-	private static MainController _instance;
+public class HostMainController {
+	private static HostMainController _instance;
 
-	public static MainController getInstance() {
+	public static HostMainController getInstance() {
 		if (_instance == null) {
-			_instance = new MainController();
+			_instance = new HostMainController();
 		}
 		return _instance;
 	}
@@ -27,9 +28,9 @@ public class MainController {
 	private SocketClientController socketClientController;
 	private PoolManager poolManager;
 
-	private Logger logger = LoggerFactory.getLogger(MainController.class);
+	private Logger logger = LoggerFactory.getLogger(HostMainController.class);
 
-	private MainController() {
+	private HostMainController() {
 		if (_instance != null) {
 			throw new IllegalAccessError(
 					"MainController is singleton Class, use MainController.getInstance() instead");
@@ -41,12 +42,9 @@ public class MainController {
 
 			setSocketController(new NIOSocketServerController(
 					configReader.getSocketServerConfig()));
-			setHttpController(new HttpServerController(
-					configReader.getHttpServerConfig()));
 
 			Map<String, Class<? extends Processor>> processorMap = configReader
 					.getProcessorMap();
-			this.getHttpController().initProcessor(processorMap);
 			this.getSocketController().initProcessor(processorMap);
 
 			httpClientController = new HttpClientController();
@@ -58,15 +56,8 @@ public class MainController {
 			e.printStackTrace();
 		}
 
-		userManager = new UserManager();
-		roomManager = new RoomManager();
 		socketClientController = new SocketClientController();
 		setPoolManager(new PoolManager());
-	}
-
-	public void start() {
-		getHttpController().start();
-		getSocketController().start();
 	}
 
 	public SocketServerController getSocketController() {
@@ -75,14 +66,6 @@ public class MainController {
 
 	public void setSocketController(SocketServerController socketController) {
 		this.socketController = socketController;
-	}
-
-	public HttpServerController getHttpController() {
-		return httpController;
-	}
-
-	public void setHttpController(HttpServerController httpController) {
-		this.httpController = httpController;
 	}
 
 	public Logger getLogger() {
@@ -95,34 +78,13 @@ public class MainController {
 
 	public void stop() {
 		this.socketController.stop();
-		this.httpController.stop();
-	}
-
-	public RoomManager getRoomManager() {
-		return roomManager;
-	}
-
-	public void setRoomManager(RoomManager roomManager) {
-		this.roomManager = roomManager;
-	}
-
-	public HttpClientController getHttpClientController() {
-		return httpClientController;
 	}
 
 	public void setHttpClientController(
 			HttpClientController httpClientController) {
 		this.httpClientController = httpClientController;
 	}
-
-	public UserManager getUserManager() {
-		return userManager;
-	}
-
-	public void setUserManager(UserManager userManager) {
-		this.userManager = userManager;
-	}
-
+	
 	public SocketClientController getSocketClientController() {
 		return socketClientController;
 	}
