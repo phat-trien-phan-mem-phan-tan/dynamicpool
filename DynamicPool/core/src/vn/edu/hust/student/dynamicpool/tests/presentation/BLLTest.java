@@ -45,13 +45,6 @@ public class BLLTest implements BusinessLogicLayer {
 	}
 
 	@Override
-	public void intialDevide(DeviceInfo devideInfor,
-			PresentationBooleanCallback callback) {
-		// TODO Aut1o-generated method stub
-		
-	}
-
-	@Override
 	public void addDevide(DeviceInfo devideInfor,
 			final PresentationBooleanCallback callback) {
 		timmer.scheduleTask(new Task() {
@@ -81,6 +74,11 @@ public class BLLTest implements BusinessLogicLayer {
 	@Override
 	public void createFish(FishType fishType, ETrajectoryType trajectoryType,
 			int width, int height) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void synchronization() {
 		// TODO Auto-generated method stub
 		
 	}
