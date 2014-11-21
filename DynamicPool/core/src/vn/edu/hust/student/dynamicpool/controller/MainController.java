@@ -2,86 +2,108 @@ package vn.edu.hust.student.dynamicpool.controller;
 
 import java.util.Map;
 
-import org.eclipse.jetty.util.ajax.JSON;
 import org.puppet.client.http.HttpClientController;
+import org.puppet.client.socket.SocketClientController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import vn.edu.hust.student.dynamicpool.exception.NetworkException;
 import vn.edu.hust.student.dynamicpool.processor.Processor;
+import vn.edu.hust.student.dynamicpool.server.logic.PoolManager;
 import vn.edu.hust.student.dynamicpool.server.socket.SocketServerController;
-import vn.edu.hust.student.dynamicpool.statics.Field;
 import vn.edu.hust.student.dynamicpool.utils.xml.ServerXMLConfigReader;
 
 public class MainController {
 	private static MainController _instance;
 
-	private HttpClientController httpClientController;
-	private SocketServerController socketServerController;
-	private JSON json;
-	private Logger logger = LoggerFactory.getLogger(MainController.class);
-
-	private MainController() {
-
-		getLogger().info("Reading config file from path conf/server.xml");
-		ServerXMLConfigReader configReader;
-		try {
-			configReader = new ServerXMLConfigReader("conf/server.xml");
-			socketServerController = new SocketServerController(
-					configReader.getSocketClientConfig());
-			Map<String, Class<? extends Processor>> processorMap = configReader
-					.getProcessorMap();
-			this.getSocketServerController().initProcessor(processorMap);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		httpClientController = new HttpClientController();
-		json = new JSON();
-	}
-
 	public static MainController getInstance() {
-		if (_instance == null)
+		if (_instance == null) {
 			_instance = new MainController();
+		}
 		return _instance;
 	}
 
-	public void start(int key) throws NetworkException {
-		String response = httpClientController.authentication(key);
-		@SuppressWarnings("unchecked")
-		Map<String, Object> params = (Map<String, Object>) json
-				.fromJSON(response);
-		if (params.containsKey(Field.ERROR)) {
-			if (params.get(Field.ERROR) != null) {
-				throw new NetworkException((String) params.get(Field.ERROR));
-			} else {
-				String ip = (String) params.get("ip");
-				int port = (int) (long) params.get("port");
-				socketServerController.start(ip, port);
-			}
+	private SocketServerController socketController;
+	private HttpClientController httpClientController;
+	private SocketClientController socketClientController;
+	private PoolManager poolManager;
+
+	private Logger logger = LoggerFactory.getLogger(MainController.class);
+
+	private MainController() {
+		if (_instance != null) {
+			throw new IllegalAccessError(
+					"MainController is singleton Class, use MainController.getInstance() instead");
 		}
+		try {
+			getLogger().info("Reading config file from path conf/server.xml");
+			ServerXMLConfigReader configReader = new ServerXMLConfigReader(
+					"conf/server.xml");
+
+			setSocketController(new NIOSocketServerController(
+					configReader.getSocketServerConfig()));
+			setHttpController(new HttpServerController(
+					configReader.getHttpServerConfig()));
+
+			Map<String, Class<? extends Processor>> processorMap = configReader
+					.getProcessorMap();
+			this.getHttpController().initProcessor(processorMap);
+			this.getSocketController().initProcessor(processorMap);
+
+			httpClientController = new HttpClientController();
+			httpClientController.setSocketPort(configReader
+					.getSocketServerConfig().getNetworkConfigs().get(0)
+					.getPort());
+		} catch (Exception e) {
+			getLogger().error("Cannot start Main controller: ", e);
+			e.printStackTrace();
+		}
+
+		userManager = new UserManager();
+		roomManager = new RoomManager();
+		socketClientController = new SocketClientController();
+		setPoolManager(new PoolManager());
+	}
+
+	public void start() {
+		getHttpController().start();
+		getSocketController().start();
+	}
+
+	public SocketServerController getSocketController() {
+		return socketController;
+	}
+
+	public void setSocketController(SocketServerController socketController) {
+		this.socketController = socketController;
+	}
+
+	public HttpServerController getHttpController() {
+		return httpController;
+	}
+
+	public void setHttpController(HttpServerController httpController) {
+		this.httpController = httpController;
+	}
+
+	public Logger getLogger() {
+		return logger;
+	}
+
+	public void setLogger(Logger logger) {
+		this.logger = logger;
 	}
 
 	public void stop() {
-		socketServerController.stop();
+		this.socketController.stop();
+		this.httpController.stop();
 	}
 
-	public int createHost() throws NetworkException {
-		String response = httpClientController.regHost();
-		@SuppressWarnings("unchecked")
-		Map<String, Object> map = (Map<String, Object>) json.fromJSON(response);
-		if (map.containsKey(Field.ERROR)) {
-			if (map.get(Field.ERROR) != null) {
-				throw new NetworkException((String) map.get("error"));
-			} else {
-				int key = (int)(long) map.get(Field.KEY);
-				@SuppressWarnings("unused")
-				String ip = (String)map.get(Field.IP);
-				return key;
-			}
-		}
-		return 0;
+	public RoomManager getRoomManager() {
+		return roomManager;
+	}
+
+	public void setRoomManager(RoomManager roomManager) {
+		this.roomManager = roomManager;
 	}
 
 	public HttpClientController getHttpClientController() {
@@ -93,20 +115,27 @@ public class MainController {
 		this.httpClientController = httpClientController;
 	}
 
-	public Logger getLogger() {
-		return logger;
+	public UserManager getUserManager() {
+		return userManager;
 	}
 
-	public void setLogger(Logger logger) {
-		this.logger = logger;
+	public void setUserManager(UserManager userManager) {
+		this.userManager = userManager;
 	}
 
-	public SocketServerController getSocketServerController() {
-		return socketServerController;
+	public SocketClientController getSocketClientController() {
+		return socketClientController;
 	}
 
-	public void setSocketServerController(
-			SocketServerController socketServerController) {
-		this.socketServerController = socketServerController;
+	public void setSocketClientController(SocketClientController socketClientController) {
+		this.socketClientController = socketClientController;
+	}
+
+	public PoolManager getPoolManager() {
+		return poolManager;
+	}
+
+	public void setPoolManager(PoolManager poolManager) {
+		this.poolManager = poolManager;
 	}
 }
