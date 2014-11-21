@@ -1,10 +1,14 @@
 package vn.edu.hust.student.dynamicpool.dal;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
 import vn.edu.hust.student.dynamicpool.controller.MainController;
 import vn.edu.hust.student.dynamicpool.exception.NetworkException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
+import vn.edu.hust.student.dynamicpool.statics.Field;
 
 public class DataAccessLayerImpl implements DataAccessLayer {
 	@Override
@@ -30,8 +34,9 @@ public class DataAccessLayerImpl implements DataAccessLayer {
 	@Override
 	public void intialDevide(DeviceInfo devideInfor,
 			BusinessLogicDataCallback callback) {
-		// TODO Auto-generated method stub
-		
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put(Field.COMMAND, "initDevice");
+		MainController.getInstance().getSocketServerController()
 	}
 
 	@Override

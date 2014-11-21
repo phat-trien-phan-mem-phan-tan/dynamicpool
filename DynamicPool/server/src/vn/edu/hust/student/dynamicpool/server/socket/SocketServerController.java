@@ -12,16 +12,17 @@ import vn.edu.hust.student.dynamicpool.config.SocketClientConfig;
 import vn.edu.hust.student.dynamicpool.processor.Processor;
 import vn.edu.hust.student.dynamicpool.server.AbstractServerController;
 
-public class SocketServerController extends AbstractServerController implements SocketClientHandler {
-	
+public class SocketServerController extends AbstractServerController implements
+		SocketClientHandler {
+
 	private SocketClientConfig config;
 	private SocketClientController socketClientController;
-	
-	public SocketServerController(SocketClientConfig config){
+
+	public SocketServerController(SocketClientConfig config) {
 		setConfig(config);
 		socketClientController = new SocketClientController(this);
 	}
-	
+
 	@Override
 	public void messageReceive(String message) {
 		System.out.println(message);
@@ -70,8 +71,12 @@ public class SocketServerController extends AbstractServerController implements 
 		socketClientController.start(ip, port);
 	}
 
+	public void sendMessage(Object data) {
+		this.socketClientController.send(data);
+	}
+
 	public void stop() {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
