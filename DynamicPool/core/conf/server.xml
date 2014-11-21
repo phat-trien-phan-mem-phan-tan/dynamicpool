@@ -1,0 +1,24 @@
+<server>
+	<processors>
+		<command name="hello_world">org.puppet.server.processor.HelloProcessor</command>
+		<command name="schedule">org.puppet.server.processor.ScheduleHelloProcessor</command>
+		<command name="initDevice">org.puppet.server.processor.InitDeviceProcessor</command>
+		<command name="addDevice">org.puppet.server.processor.AddDeviceProcessor</command>
+	</processors>
+	
+	<http>
+		<handlers>
+			<handler>hello_world</handler>
+		</handlers>
+	</http>
+	
+	<socket>
+		<handlers>
+			<handler>hello_world</handler>
+			<handler>schedule</handler>
+			<handler>initDevice</handler>
+			<handler>addDevice</handler>
+		</handlers>
+	</socket>
+	
+</server>
