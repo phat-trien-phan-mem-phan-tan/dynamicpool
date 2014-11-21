@@ -1,5 +1,7 @@
 <server>
 	<processors>
+		<command name="hello_world">org.puppet.server.processor.HelloProcessor</command>
+		<command name="schedule">org.puppet.server.processor.ScheduleHelloProcessor</command>
 	</processors>
 	
 	<http>

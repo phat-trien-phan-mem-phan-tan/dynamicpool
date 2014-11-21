@@ -10,10 +10,7 @@ public interface DataAccessLayer {
 
 	void createHost(BusinessLogicDataCallback callback);
 	
-	void intialDevide(DeviceInfo devideInfor,BusinessLogicDataCallback callback);
-	
-	// them thiet bi va dua ket qua tra ve cua server la mot mang danh sach cac Segment cua be
-	void addDevide(DeviceInfo devideInfor,BusinessLogicDataCallback callback);
+	void addDevice(DeviceInfo devideInfor,BusinessLogicDataCallback callback);
 	
 	void exit(BusinessLogicDataCallback callback);
 
