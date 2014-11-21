@@ -63,6 +63,12 @@ public class DataAccessLayerImpl implements DataAccessLayer {
 		
 	}
 
+	@Override
+	public void removeFish(Fish fish, BusinessLogicDataCallback callback) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 
 
