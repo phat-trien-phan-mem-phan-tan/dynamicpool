@@ -1,12 +1,13 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
 import java.util.List;
+import java.util.UUID;
 
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
 
 public interface BusinessLogicLayer {
-
+	
 	void joinHost(String key, PresentationBooleanCallback callback);
 
 	void createHost(PresentationBooleanCallback callback);

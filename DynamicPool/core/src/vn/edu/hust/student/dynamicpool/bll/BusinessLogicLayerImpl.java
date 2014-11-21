@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
-import vn.edu.hust.student.dynamicpool.dal.DataAccessLayerImpl;
+import vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.model.Pool;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
@@ -15,7 +15,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	private Pool pool;
 
 	public BusinessLogicLayerImpl() {
-		this.dataAccessLayer = new DataAccessLayerImpl();
+		this.dataAccessLayer = new ClientDataAccessLayerImpl();
 		this.pool = new Pool();
 	}
 
