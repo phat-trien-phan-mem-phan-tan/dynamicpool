@@ -5,7 +5,6 @@ import java.util.Properties;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.puppet.gui.MainFrame;
-import org.puppet.gui.test;
 import org.puppet.server.controller.MainController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
