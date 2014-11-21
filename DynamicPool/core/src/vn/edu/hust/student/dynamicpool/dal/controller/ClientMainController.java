@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import vn.edu.hust.dynamicpool.dal.client.http.HttpClientController;
 import vn.edu.hust.student.dynamicpool.dal.processor.Processor;
-import vn.edu.hust.student.dynamicpool.dal.server.socket.SocketServerController;
+import vn.edu.hust.student.dynamicpool.dal.server.socket.ClientSocketController;
 import vn.edu.hust.student.dynamicpool.dal.statics.Field;
 import vn.edu.hust.student.dynamicpool.dal.utils.xml.ServerXMLConfigReader;
 import vn.edu.hust.student.dynamicpool.exception.NetworkException;
@@ -17,7 +17,7 @@ public class ClientMainController {
 	private static ClientMainController _instance;
 
 	private HttpClientController httpClientController;
-	private SocketServerController socketServerController;
+	private ClientSocketController clientSocketController;
 	private JSON json;
 	private Logger logger = LoggerFactory.getLogger(ClientMainController.class);
 
@@ -27,11 +27,11 @@ public class ClientMainController {
 		ServerXMLConfigReader configReader;
 		try {
 			configReader = new ServerXMLConfigReader("conf/client.xml");
-			/*socketServerController = new SocketServerController(
-					configReader.getSocketServerConfig().getNetworkConfigs());*/
+			clientSocketController = new ClientSocketController(
+					configReader.getSocketServerConfig());
 			Map<String, Class<? extends Processor>> processorMap = configReader
 					.getProcessorMap();
-			this.getSocketServerController().initProcessor(processorMap);
+			this.getClientSocketController().initProcessor(processorMap);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -58,13 +58,13 @@ public class ClientMainController {
 			} else {
 				String ip = (String) params.get("ip");
 				int port = (int) (long) params.get("port");
-				socketServerController.start(ip, port);
+				this.getClientSocketController().start(ip, port);
 			}
 		}
 	}
 
 	public void stop() {
-		socketServerController.stop();
+		this.getClientSocketController().stop();
 	}
 
 	public int createHost() throws NetworkException {
@@ -101,12 +101,11 @@ public class ClientMainController {
 		this.logger = logger;
 	}
 
-	public SocketServerController getSocketServerController() {
-		return socketServerController;
+	public ClientSocketController getClientSocketController() {
+		return clientSocketController;
 	}
 
-	public void setSocketServerController(
-			SocketServerController socketServerController) {
-		this.socketServerController = socketServerController;
+	public void setClientSocketController(ClientSocketController clientSocketController) {
+		this.clientSocketController = clientSocketController;
 	}
 }
