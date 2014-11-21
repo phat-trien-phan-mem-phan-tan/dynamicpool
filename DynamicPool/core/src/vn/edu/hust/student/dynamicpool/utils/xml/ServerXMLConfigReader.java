@@ -8,8 +8,8 @@ import java.util.Map;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import vn.edu.hust.student.dynamicpool.config.HttpClientConfig;
-import vn.edu.hust.student.dynamicpool.config.SocketClientConfig;
+import vn.edu.hust.student.dynamicpool.config.ServerNetworkConfig;
+import vn.edu.hust.student.dynamicpool.config.SocketServerConfig;
 import vn.edu.hust.student.dynamicpool.processor.Processor;
 
 public class ServerXMLConfigReader extends XMLReader {
@@ -42,35 +42,32 @@ public class ServerXMLConfigReader extends XMLReader {
 		return null;
 	}
 
-	public SocketClientConfig getSocketClientConfig() {
+	public SocketServerConfig getSocketServerConfig() {
 		NodeList nodeList = readPath("socket");
 		if (nodeList != null && nodeList.getLength() > 0) {
 			int i;
+			String pattern = "^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\." + "([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\."
+					+ "([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\." + "([01]?\\d\\d?|2[0-4]\\d|25[0-5])$";
 			Node socketConfigNode = nodeList.item(0);
-			SocketClientConfig result = new SocketClientConfig();
-			// Retrieve handler list
-			NodeList handlerConfigNodeList = this.querySelectorAll(socketConfigNode, "handlers/handler");
-			if (handlerConfigNodeList != null && handlerConfigNodeList.getLength() > 0) {
-				List<String> handlers = new ArrayList<String>();
-				for (i=0; i<handlerConfigNodeList.getLength(); i++) {
-					handlers.add(handlerConfigNodeList.item(i).getTextContent().trim());
+			SocketServerConfig result = new SocketServerConfig();
+			// get network config
+			NodeList networkConfigNodeList = this.querySelectorAll(socketConfigNode, "network/entry");
+			for (i = 0; i < networkConfigNodeList.getLength(); i++) {
+				Node entry = networkConfigNodeList.item(i);
+				String portStr = this.query(entry, "port").trim();
+				String host = this.query(entry, "host");
+				if (portStr.length() > 0) {
+					int port = Integer.valueOf(portStr);
+					ServerNetworkConfig networkConfig = new ServerNetworkConfig();
+					networkConfig.setPort(port);
+					if (host.trim().length() > 0 && host.trim().matches(pattern)) {
+						networkConfig.setHost(host);
+					}
+					result.addNetworkConfig(networkConfig);
 				}
-				result.setHandlers(handlers);
-				System.out.println(handlers);
 			}
-			return result;
-		}
-		return null;
-	}
-	
-	public HttpClientConfig getHttpClientConfig() {
-		NodeList nodeList = readPath("http");
-		if (nodeList != null && nodeList.getLength() > 0) {
-			int i;
-			Node httpConfigNode = nodeList.item(0);
-			HttpClientConfig result = new HttpClientConfig();
-			// Retrieve handler list
-			NodeList handlerConfigNodeList = this.querySelectorAll(httpConfigNode, "handlers/handler");
+			// retrive handler list
+			NodeList handlerConfigNodeList = this.querySelectorAll(socketConfigNode, "handlers/handler");
 			if (handlerConfigNodeList != null && handlerConfigNodeList.getLength() > 0) {
 				List<String> handlers = new ArrayList<String>();
 				for (i=0; i<handlerConfigNodeList.getLength(); i++) {

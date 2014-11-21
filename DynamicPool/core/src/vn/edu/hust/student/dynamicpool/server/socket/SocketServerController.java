@@ -5,9 +5,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Map;
 
-import org.puppet.client.socket.SocketClientController;
-import org.puppet.client.socket.SocketClientHandler;
 
+import vn.edu.hust.student.dynamicpool.client.socket.SocketClientController;
+import vn.edu.hust.student.dynamicpool.client.socket.SocketClientHandler;
 import vn.edu.hust.student.dynamicpool.config.SocketClientConfig;
 import vn.edu.hust.student.dynamicpool.processor.Processor;
 import vn.edu.hust.student.dynamicpool.server.AbstractServerController;
