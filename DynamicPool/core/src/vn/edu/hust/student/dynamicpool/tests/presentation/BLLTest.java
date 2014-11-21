@@ -84,4 +84,9 @@ public class BLLTest implements BusinessLogicLayer {
 		// TODO Auto-generated method stub
 		
 	}
+	@Override
+	public void synchronization() {
+		// TODO Auto-generated method stub
+		
+	}
 }
