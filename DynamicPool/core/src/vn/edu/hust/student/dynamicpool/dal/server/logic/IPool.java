@@ -9,4 +9,6 @@ public interface IPool {
 	List<Segment> getSegments();
 	void setRetangle(Retangle rect);
 	void convertDeviceInfoToRect();
+	String getClientName();
+	void setClientName(String clientName);
 }
