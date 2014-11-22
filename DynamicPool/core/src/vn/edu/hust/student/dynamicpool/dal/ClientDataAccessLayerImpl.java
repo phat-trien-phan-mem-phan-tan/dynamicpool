@@ -39,12 +39,7 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 
 	@Override
 	public void createHost(BusinessLogicDataCallback callback) {
-		try {
-			int created = ClientMainController.getInstance().createHost();
-			callback.callback(created, null);
-		} catch (NetworkException e) {
-			callback.callback(0, e);
-		}
+		callback.callback(false, new Exception("Default client cannot create host"));
 	}
 
 	@Override
