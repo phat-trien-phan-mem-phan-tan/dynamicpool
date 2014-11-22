@@ -1,7 +1,5 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
-import java.awt.Point;
-
 import vn.edu.hust.student.dynamicpool.equation.vector.Oxy;
 import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
 import vn.edu.hust.student.dynamicpool.model.Rectangle;
@@ -16,7 +14,7 @@ public class LineTrajectory extends Trajectory {
 
 	// vector chi phuong
 	private Vector u;
-	private static final int A = 5;
+	private static final int A = 20;
 	
 	public LineTrajectory(Rectangle fishPosition) {
 		super(fishPosition);

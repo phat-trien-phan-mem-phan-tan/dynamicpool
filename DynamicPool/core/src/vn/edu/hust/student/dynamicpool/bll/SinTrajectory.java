@@ -12,7 +12,7 @@ public class SinTrajectory extends Trajectory {
 	 * 
 	 * @see com.myapp.equation.Equation#move(float)
 	 * 
-	 * x = x0+t; y = y0 + a*sin(t+angle)
+	 * x = x0+n*t; y = y0 + a*sin(t+angle)
 	 */
 
 	private float x0;
@@ -20,12 +20,15 @@ public class SinTrajectory extends Trajectory {
 
 	private float a;
 	private float t;
+	private static final int n = 10;
 
 	private float angle;
+	private int direction;
 
 	public SinTrajectory(Rectangle fishPosition) {
 		super(fishPosition);
 
+		this.direction = 1;
 		this.x0 = 0;
 		this.y0 = 0;
 		this.a = 50;
@@ -41,9 +44,9 @@ public class SinTrajectory extends Trajectory {
 
 	@Override
 	public Rectangle updateCoordinate(float deltaTime) {
-		t = t+deltaTime;
+		t = t+direction*deltaTime;
 		
-		float x = (float) x0+t;
+		float x = (float) x0+n*t;
 		float y = (float) (y0 + a*Math.sin(t + angle));
 		fishPosition.setLocation(new Point(x, y));
 		
@@ -52,7 +55,8 @@ public class SinTrajectory extends Trajectory {
 
 	@Override
 	public void setDirection(Vector vector) {
-
+		
+		
 		if (vector.equals(Oxy.ox)) {
 
 			this.angle = (float) + (Math.PI - 2*(t+angle));
@@ -62,13 +66,22 @@ public class SinTrajectory extends Trajectory {
 			
 			this.t = -t;
 			this.angle = -angle;
+			x0 = (float) x0+n*t;
+			direction = -1;
 			
-			float checkSinValue = (float) Math.sin(t+angle);
-			if(checkSinValue > 0){
+			float anpha = t+angle;
+			
+			float sinValue = (float) Math.sin(anpha);
+			float cosValue = (float) Math.cos(anpha);
+			
+			
+			if(sinValue  > 0){
 			
 				y0 = y0+2*a;
-			}else if(checkSinValue <0){
+				
+			}else if(sinValue  <0){
 				y0 = y0- 2*a;
+				
 			}else{
 				y0 = -y0;
 			}
@@ -107,4 +120,25 @@ public class SinTrajectory extends Trajectory {
 		this.t = t;
 	}
 
+	public float getAngle() {
+		return angle;
+	}
+
+	public void setAngle(float angle) {
+		this.angle = angle;
+	}
+
+	public int getDirection() {
+		return direction;
+	}
+
+	public void setDirection(int direction) {
+		this.direction = direction;
+	}
+
+	public static int getN() {
+		return n;
+	}
+
+	
 }

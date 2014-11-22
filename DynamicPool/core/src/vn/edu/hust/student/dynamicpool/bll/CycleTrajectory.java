@@ -75,18 +75,23 @@ public class CycleTrajectory extends Trajectory {
 
 		//
 		float anpha = (float) (n*t+angle);
-		float detaAngle = (float)(2*anpha - Math.PI);
+		
+		float temp = (float) (Math.PI - 2*anpha);
+		
+		float detaAngle = temp;
 		
 		// increase angle
 		//setAngle(2 * beta + angle);
+		float sinValue = (float) Math.sin(anpha);
+		float cosValue = (float) Math.cos(anpha);
 
 		if (vector.equals(Oxy.ox)) {
 			// check cos  to set center point
-			float cosValue = (float) Math.cos(n*t + angle);
+			
 
 			x0 = x0 + 2 * a * cosValue;
 
-			if (cosValue < 0) {
+			if ( sinValue < 0) {
 					
 				angle = angle+Math.abs(detaAngle);
 				
@@ -100,13 +105,13 @@ public class CycleTrajectory extends Trajectory {
 		} else if (vector.equals(Oxy.oy)) {
 
 			// check sin (anphal) to set center point
-			float sinValue = (float) Math.sin( n*t + angle);
+			
 	
 
 			// move center point of circle
 			y0 = y0 + 2 * a * sinValue;
 
-			if (sinValue < 0) {
+			if (cosValue < 0) {
 
 				angle = angle+Math.abs(detaAngle);
 				
@@ -115,7 +120,6 @@ public class CycleTrajectory extends Trajectory {
 				angle = angle - Math.abs(detaAngle);
 				
 			}
-
 
 		}
 
