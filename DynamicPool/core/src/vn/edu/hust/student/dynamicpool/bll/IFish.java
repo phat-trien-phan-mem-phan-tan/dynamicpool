@@ -1,23 +1,14 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
 import vn.edu.hust.student.dynamicpool.model.FishState;
+import vn.edu.hust.student.dynamicpool.model.Rectangle;
 
 public interface IFish {
 	int getFishId();
-	
-	IFishPosition getPoint();
-	IFishPosition update(float deltaTime);
-	
-	void setDx(float dx);
-	float getDx();
-	
-	void setDy(float dy);
-	float getDy();
-	
+	Rectangle getPosition();
+	Rectangle update(float deltaTime);	
 	FishState getFishState();
 	void setFishState(FishState fishState);
-	
-	
-	
-	
+	void setAngle(float angle);
+	float getAngle();
 }

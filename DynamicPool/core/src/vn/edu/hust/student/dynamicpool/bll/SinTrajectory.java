@@ -2,6 +2,8 @@ package vn.edu.hust.student.dynamicpool.bll;
 
 import vn.edu.hust.student.dynamicpool.equation.vector.Oxy;
 import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
+import vn.edu.hust.student.dynamicpool.model.Point;
+import vn.edu.hust.student.dynamicpool.model.Rectangle;
 
 public class SinTrajectory extends Trajectory {
 
@@ -21,11 +23,11 @@ public class SinTrajectory extends Trajectory {
 
 	private float angle;
 
-	public SinTrajectory(IFishPosition fishPosition) {
+	public SinTrajectory(Rectangle fishPosition) {
 		super(fishPosition);
 
-		this.x0 = fishPosition.getX();
-		this.y0 = fishPosition.getY();
+		this.x0 = fishPosition.getMinX();
+		this.y0 = fishPosition.getMinY();
 		this.a = 50;
 		this.angle = (float) (Math.PI / 2);
 		this.t = 0;
@@ -38,17 +40,11 @@ public class SinTrajectory extends Trajectory {
 	}
 
 	@Override
-	public IFishPosition updateCoordinate(float deltaTime) {
-		float x = (float) fishPosition.getX() + deltaTime;
-
-		float y = (float) (fishPosition.getY() + a
+	public Rectangle updateCoordinate(float deltaTime) {
+		float x = (float) fishPosition.getMinX() + deltaTime;
+		float y = (float) (fishPosition.getMinY() + a
 				* Math.sin(deltaTime + angle));
-
-		fishPosition.setX(x);
-		fishPosition.setY(y);
-
-		System.out.println("LineTrajectory: " + "X :" + x + " Y :" + y);
-
+		fishPosition.setLocation(new Point(x, y));
 		return getFishPosition();
 	}
 

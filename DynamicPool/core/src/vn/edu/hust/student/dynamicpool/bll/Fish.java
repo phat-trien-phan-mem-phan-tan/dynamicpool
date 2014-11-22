@@ -1,64 +1,53 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
-import java.awt.Point;
-import java.util.ArrayList;
-
 import vn.edu.hust.student.dynamicpool.model.FishState;
 import vn.edu.hust.student.dynamicpool.model.Pool;
-import vn.edu.hust.student.dynamicpool.model.Segment;
+import vn.edu.hust.student.dynamicpool.model.Rectangle;
 
 public class Fish implements IFish {
-	private IFishPosition position;
+	private Rectangle position;
 	private Trajectory trajectory;
-	
-	
 	private int id;
-	private float dx;
-	private float dy;
 	private ETrajectoryType trajectoryType;
 	private FishType fishType;
 	
-	private FishState fishState;	
+	private FishState fishState;
+	private float angle;	
 	
-	public Fish(IFishPosition fishPosition, Trajectory trajectory) {
+	public Fish(Rectangle fishPosition, Trajectory trajectory) {
 		this.position = fishPosition;
 		this.trajectory = trajectory;
-		this.id = 0;
-		this.dx = 0;
-		this.dy = 0;
 		this.fishState = FishState.NONE;
 		trajectoryType = ETrajectoryType.LINE;
 		this.fishType = FishType.FISH1;
 	}
 
 	
-	public Fish(IFishPosition fishPosition) {
+	public Fish(Rectangle fishPosition) {
 		this(fishPosition, new NoneTrajectory());
 	}
 	
 	public Fish() {
-		this(new FishPosition(), new NoneTrajectory());
+		this(new Rectangle(), new NoneTrajectory());
 	}
 
 	public Fish(int id){
-		this(new FishPosition(), new NoneTrajectory());
+		this(new Rectangle(), new NoneTrajectory());
 		this.id = id;
 	}
 	
 	@Override
-	public IFishPosition getPoint() {
+	public Rectangle getPosition() {
 		return position;
 	}
 
 	@Override
-	public IFishPosition update(float deltaTime) {
-	
+	public Rectangle update(float deltaTime) {
 		position = this.trajectory.updateCoordinate(deltaTime);
 		return position;
-		
 	}
 	
-	public IFishPosition checkPosition(float deltaTime){
+	public Rectangle checkPosition(float deltaTime){
 		
 		return this.trajectory.updateCoordinate(deltaTime);
 	}
@@ -76,7 +65,6 @@ public class Fish implements IFish {
 
 	@Override
 	public int getFishId() {
-		// TODO Auto-generated method stub
 		return id;
 	}
 	
@@ -84,52 +72,18 @@ public class Fish implements IFish {
 		this.id = id;
 	}
 
-
-	@Override
-	public void setDx(float dx) {
-		// TODO Auto-generated method stub
-		
-		this.dx = dx;
-	}
-
-
-	@Override
-	public float getDx() {
-		// TODO Auto-generated method stub
-		return dx;
-	}
-
-
-	@Override
-	public void setDy(float dy) {
-		// TODO Auto-generated method stub
-		this.dy = dy;
-	}
-
-
-	@Override
-	public float getDy() {
-		// TODO Auto-generated method stub
-		return dy;
-	}
-
-
 	@Override
 	public FishState getFishState() {
-		// TODO Auto-generated method stub
 		return fishState;
 	}
 
-	public FishState getFishState(IFishPosition fishPosition){
-		
+	public FishState getFishState(Rectangle fishPosition){
 		return fishState;
 		
 	}
 
 	@Override
 	public void setFishState(FishState fishState) {
-		// TODO Auto-generated method stub
-		
 		this.fishState = fishState;
 	}
 
@@ -159,7 +113,7 @@ public class Fish implements IFish {
 	  */
 	
 	
-	public void setFishState(Pool pool,FishPosition position)
+	public void setFishState(Pool pool, Rectangle position)
 	{
 	/*	float x = (float) position.getX();
 		float y = (float) position.getY();
@@ -223,5 +177,15 @@ public class Fish implements IFish {
 
 		}*/
 		fishState = FishState.NONE;
+	}
+	
+	@Override
+	public void setAngle(float angle) {
+		this.angle = angle;
+	}
+	
+	@Override
+	public float getAngle() {
+		return angle;
 	}
 }

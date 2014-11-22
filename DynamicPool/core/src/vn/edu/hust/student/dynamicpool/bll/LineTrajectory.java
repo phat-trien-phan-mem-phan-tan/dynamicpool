@@ -4,6 +4,7 @@ import java.awt.Point;
 
 import vn.edu.hust.student.dynamicpool.equation.vector.Oxy;
 import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
+import vn.edu.hust.student.dynamicpool.model.Rectangle;
 
 public class LineTrajectory extends Trajectory {
 
@@ -17,14 +18,10 @@ public class LineTrajectory extends Trajectory {
 	private Vector u;
 	private static final int A = 2;
 	
-
-	public LineTrajectory(IFishPosition fishPosition) {
-
+	public LineTrajectory(Rectangle fishPosition) {
 		super(fishPosition);
 		this.timeState = 0;
 		u = new Vector(1, 1);
-
-		// TODO Auto-generated constructor stub
 	}
 
 	/*
@@ -40,7 +37,7 @@ public class LineTrajectory extends Trajectory {
 	 * }
 	 */
 
-	public LineTrajectory(IFishPosition fishPosition, Vector u, float timeState) {
+	public LineTrajectory(Rectangle fishPosition, Vector u, float timeState) {
 		super(fishPosition);
 		this.timeState = timeState;
 		this.u = u;
@@ -74,19 +71,10 @@ public class LineTrajectory extends Trajectory {
 	}
 
 	@Override
-	public IFishPosition updateCoordinate(float deltaTime) {
-		// TODO Auto-generated method stub
-
-		float x = (float) (fishPosition.getX() +A* u.getX() * deltaTime);
-		float y = (float) (fishPosition.getY() +A* u.getY() * deltaTime);
-
-		
-		fishPosition.setX(x);
-		fishPosition.setY(y);
-
-		System.out.println("LineTrajectory: " + "X :" + x + " Y :" + y);
-
-		
+	public Rectangle updateCoordinate(float deltaTime) {
+		float x = (float) (fishPosition.getMinX() +A* u.getX() * deltaTime);
+		float y = (float) (fishPosition.getMinY() +A* u.getY() * deltaTime);
+		fishPosition.setLocation(new vn.edu.hust.student.dynamicpool.model.Point(x, y));
 		return fishPosition;
 	}
 
