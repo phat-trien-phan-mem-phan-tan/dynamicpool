@@ -1,22 +1,29 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
+import java.awt.Point;
 import java.util.ArrayList;
-import java.util.List;
 
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
-import vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl;
+import vn.edu.hust.student.dynamicpool.dal.DataAccessLayerImpl;
+import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
+import vn.edu.hust.student.dynamicpool.exception.BLLException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.model.Pool;
+import vn.edu.hust.student.dynamicpool.model.Segment;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
+import vn.edu.hust.student.dynamicpool.tests.dal.DalTest;
+import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 	private DataAccessLayer dataAccessLayer;
-	private Pool pool;
+	private Pool pool = new Pool();
+	private int keyOfHost;
 
 	public BusinessLogicLayerImpl() {
-		this.dataAccessLayer = new ClientDataAccessLayerImpl();
-		this.pool = new Pool();
+		this.dataAccessLayer = new DalTest();
+		
+
 	}
 
 	@Override
@@ -28,83 +35,120 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 			public void callback(Object data, Exception ex) {
 				callback.callback((Boolean) data, ex);
 
+				joinHostCallBack(callback, data, ex);
 			}
 		};
+		// tro thanh sua data access layer
+		/*
+		 * this.dataAccessLayer.joinHost(key, logicDataCallBack);
+		 */
+	}
 
-		try {
-			int keyJoin = Integer.parseInt(key);
+	private void joinHostCallBack(final PresentationBooleanCallback callback,
+			Object data, Exception ex) {
 
-			dataAccessLayer.joinHost(keyJoin, logicDataCallBack);
+		if (ex == null) {
+			try {
+				if (data != null) {
+					Boolean joinResult = (Boolean) data;
+					if (joinResult) {
+						callback.callback(true, null);
 
-			// check number format
-		} catch (NumberFormatException e) {
+					} else {
+						callback.callback(false, null);
+					}
 
-			callback.callback(false, e);
-			System.out.println(e.getMessage());
-			e.printStackTrace();
+				}
 
-			throw new NumberFormatException(key);
+			} catch (Exception castEx) {
+				callback.callback(false, new BLLException("Join host failed !",
+						castEx));
+			}
+		} else {
+			callback.callback(false, new BLLException("Join host failed !", ex));
 		}
-
 	}
 
 	@Override
 	public void createHost(final PresentationBooleanCallback callback) {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
-
 			@Override
 			public void callback(Object data, Exception ex) {
-				// TODO Auto-generated method stub
-				callback.callback((Boolean) data, ex);
-
+				creatHostDALCalback(callback, data, ex);
 			}
 		};
-
 		dataAccessLayer.createHost(logicDataCallBack);
-
 	}
 
-	@Override
-	public void intialDevide(DeviceInfo devideInfor,
-			PresentationBooleanCallback callback) {
-
-		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
-
-			@Override
-			public void callback(Object data, Exception ex) {
-
+	private void creatHostDALCalback(
+			final PresentationBooleanCallback callback, Object data,
+			Exception ex) {
+		if (ex == null) {
+			try {
+				int key = Integer.parseInt(data.toString());
+				this.keyOfHost = key;
+				callback.callback(true, null);
+			} catch (Exception castEx) {
+				callback.callback(false, new BLLException(
+						"Cannot cast key of host", ex));
 			}
-		};
 
-		dataAccessLayer.intialDevide(devideInfor, logicDataCallBack);
-
+		} else {
+			callback.callback(false, new BLLException("Cannot create host", ex));
+		}
 	}
 
 	@Override
 	public void addDevide(DeviceInfo devideInfor,
-			PresentationBooleanCallback callback) {
+			final PresentationBooleanCallback callback) {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
 			@Override
 			public void callback(Object data, Exception ex) {
-					
-				
+				addDeviceCallback(callback, data, ex);
 			}
 		};
 
-		dataAccessLayer.addDevide(devideInfor, logicDataCallBack);
-
+		dataAccessLayer.addDevice(devideInfor, logicDataCallBack);
 	}
 
+	private void addDeviceCallback(final PresentationBooleanCallback callback,
+			final Object data, final Exception ex) {
+
+		if (ex == null) {
+			try {
+
+				if (data != null) {
+					ArrayList<Segment> segments = (ArrayList<Segment>) data;
+					this.pool.setSegments(segments);
+				}
+
+				// set size for pool
+				this.pool.getCorrdiate().getPosition()
+						.setRect(0, 0, AppConst.width, AppConst.height);
+
+			} catch (final Exception castEx) {
+				callback.callback(false, new BLLException("Cannot add device ",
+						ex));
+			}
+		} else {
+
+			callback.callback(false, new BLLException("Cannot add device", ex));
+		}
+	}
+
+	@SuppressWarnings("unchecked")
 	@Override
-	public List<IFish> getFishs() {
+	public ArrayList<IFish> getFishs() {
 
-		List<IFish> fishes = new ArrayList<IFish>();
-
-		if (pool.getFishCollection() != null) {
-			fishes = (List<IFish>) pool.getFishCollection();
+		ArrayList<IFish> fishes = new ArrayList<IFish>();
+		try {
+				Object a = pool.getFishCollection();
+				fishes = (ArrayList<IFish>) a;
+		} catch (Exception e) {
+			System.err.println("Error: BLL "+ e.getMessage());
 		}
 
 		return fishes;
@@ -119,7 +163,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 	@Override
 	public void exit() {
-		
+
 		// call data access layer
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
@@ -128,60 +172,121 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 			}
 		};
-		
+
 		this.dataAccessLayer.exit(logicDataCallBack);
 	}
 
 	@Override
-	public void createFish(FishType fishType, ETrajectoryType trajectoryType,
-			int width, int height) {
+	public void createFish(final FishType fishType,
+			final ETrajectoryType trajectoryType, final int width,
+			final int height) {
 
 		final Fish newFish = new Fish();
-		newFish.setDx(width/2);
-		newFish.setDy(height/2);
+		newFish.setDx(width);
+		newFish.setDy(height);
 		newFish.setTrajectoryType(trajectoryType);
 		newFish.setFishType(fishType);
+
+		// set corridate for fish at center of screen size
+		FishPosition fishPosition = new FishPosition();
+		Point fishCorridate = new Point();
 		
+		fishCorridate.setLocation(AppConst.width / 2, AppConst.height / 2);
+		fishPosition.setPosition(fishCorridate);
+		
+		// check trajectory type
+		if (trajectoryType == ETrajectoryType.LINE) {
+
+			fishPosition.setAngle((float) (Math.PI / 4));
+
+			LineTrajectory lineTrajectory = new LineTrajectory(fishPosition);
+			lineTrajectory.setDirection(new Vector(1, 1));
+
+			newFish.setTrajectory(lineTrajectory);
+		} else if (trajectoryType == ETrajectoryType.CYCLE) {
+			fishPosition.setAngle(0);
+
+			CycleTrajectory cycleTrajectory = new CycleTrajectory(fishPosition);
+
+			newFish.setTrajectory(cycleTrajectory);
+		}
+
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
 			@Override
 			public void callback(Object data, Exception ex) {
-				
+
 				// check if data is true -> create fish in client
-				Boolean check = (Boolean)data;
-				if(check){
-					pool.getFishCollection().addFish(newFish);
-				}
+				createFishCallBack(newFish, data, ex);
 
 			}
 		};
 
-		
-		//pool.getFishCollection().addFish(newFish);
-		
 		this.dataAccessLayer.createFish(newFish, logicDataCallBack);
-		
+
+	}
+
+	private void createFishCallBack(Fish fish, Object data, final Exception ex) {
+
+		if (ex == null) {
+
+			if (data != null) {
+				Boolean resultCreateFish = (Boolean) data;
+
+				if (resultCreateFish) {
+
+					this.pool.getFishCollection().addFish(fish);
+				}
+
+			}
+
+		}
+
 	}
 
 	@Override
 	public void synchronization() {
-		
+
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
 			@Override
 			public void callback(Object data, Exception ex) {
-				
+
 				// check if data is true -> create fish in client
-				Boolean check = (Boolean)data;
-				if(check){
-					
+				Boolean check = (Boolean) data;
+				if (check) {
+
 				}
 
 			}
 		};
-		
+
 		this.dataAccessLayer.synchronization(logicDataCallBack);
-		
-		
+
 	}
+
+	public DataAccessLayer getDataAccessLayer() {
+		return dataAccessLayer;
+	}
+
+	public void setDataAccessLayer(DataAccessLayer dataAccessLayer) {
+		this.dataAccessLayer = dataAccessLayer;
+	}
+
+	public Pool getPool() {
+		return pool;
+	}
+
+	public void setPool(Pool pool) {
+		this.pool = pool;
+	}
+
+	public int getKeyOfHost() {
+		return keyOfHost;
+	}
+
+	public void setKeyOfHost(int keyOfHost) {
+		this.keyOfHost = keyOfHost;
+	}
+
 }

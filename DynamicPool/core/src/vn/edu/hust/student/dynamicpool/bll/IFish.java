@@ -4,6 +4,7 @@ import vn.edu.hust.student.dynamicpool.model.FishState;
 
 public interface IFish {
 	int getFishId();
+	
 	IFishPosition getPoint();
 	IFishPosition update(float deltaTime);
 	
@@ -15,6 +16,8 @@ public interface IFish {
 	
 	FishState getFishState();
 	void setFishState(FishState fishState);
+	
+	
 	
 	
 }
