@@ -47,6 +47,7 @@ public class BusinessLogicLayerServerImpl extends BusinessLogicLayerImpl {
 			try {
 				String key = (String) data;
 				if (key != null && key != "") {
+					this.saveKey(key);
 					booleanCallback.callback(true, null);
 				}
 			} catch (Exception e) {
