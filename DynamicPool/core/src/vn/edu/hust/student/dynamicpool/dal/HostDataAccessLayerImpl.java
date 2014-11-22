@@ -2,10 +2,9 @@ package vn.edu.hust.student.dynamicpool.dal;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
-import vn.edu.hust.student.dynamicpool.dal.adapter.ModelAdapter;
 import vn.edu.hust.student.dynamicpool.dal.client.entity.Client;
 import vn.edu.hust.student.dynamicpool.dal.controller.HostMainController;
-import vn.edu.hust.student.dynamicpool.dal.server.logic.Pool;
+import vn.edu.hust.student.dynamicpool.dal.server.logic.PoolServer;
 import vn.edu.hust.student.dynamicpool.exception.NetworkException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 
@@ -37,7 +36,8 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 	public void addDevice(DeviceInfo deviceInfo,BusinessLogicDataCallback callback){
 		Client client = new Client();
 		client.setClientName(this.getClientName());
-		client.setPool(new Pool(ModelAdapter.convert(deviceInfo)));
+		PoolServer poolServer = new PoolServer(getClientName(), deviceInfo);
+		client.setPool(poolServer);
 		HostMainController.getInstance().getClientManager().addClient(client);
 		callback.callback(null, null);
 	}

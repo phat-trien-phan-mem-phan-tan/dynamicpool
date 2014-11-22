@@ -130,10 +130,10 @@ public class Pool implements IPool {
 		double fishMaxX = fish.getPoint().getX() + fish.getDx();
 		double fishMaxY = fish.getPoint().getY() + fish.getDy();
 
-		double minY = poolPosition.getPoint().getY();
+		double minY = poolPosition.getLocation().getY();
 		double maxY = AppConst.height + minY;
 		
-		double minX = poolPosition.getPoint().getX();
+		double minX = poolPosition.getLocation().getX();
 		double maxX = AppConst.width + minX;
 
 		System.out.println("Pool: fisX: " + fishMinX + ", fishY: " + fishMinY
@@ -158,7 +158,7 @@ public class Pool implements IPool {
 		Rectangle oldRectangle = this.position.getPosition();
 		oldRectangle.setHeight(rectangle.getHeight());
 		oldRectangle.setWidth(rectangle.getWidth());
-		oldRectangle.setPoint(rectangle.getPoint());
+		oldRectangle.setLocation(rectangle.getLocation());
 
 	}
 

@@ -4,22 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PoolManager{
-	private List<IPool> pools;
-	private IFindCommonEgde findCommonEdgeFunction;
+	private List<PoolServer> pools;
 	
 	public PoolManager(){
-		pools = new ArrayList<IPool>();
-		findCommonEdgeFunction = new FindCommonEdgeFunction();
+		pools = new ArrayList<PoolServer>();
 	}
 	
-	public List<IPool> getPools() {
+	public List<PoolServer> getPools() {
 		return pools;
 	}
-	public void setPools(List<IPool> pools) {
+	public void setPools(List<PoolServer> pools) {
 		this.pools = pools;
 	}
 	
-	public void add(IPool pool){
+	public void add(PoolServer pool){
 		this.pools.add(pool);
 	}
 	
@@ -28,6 +26,6 @@ public class PoolManager{
 	}
 	
 	public void calculate() {
-		findCommonEdgeFunction.findCommonEdge(this.pools);
+		FindCommonEdgeFunction.findCommonEdge(this.pools);
 	}
 }

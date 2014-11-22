@@ -1,20 +1,20 @@
 package vn.edu.hust.student.dynamicpool.dal.server.logic;
 
-public class PoolConverter implements IConverter {
-	private final int MUL = 10;
+import vn.edu.hust.student.dynamicpool.model.*;
 
-	@Override
-	public Retangle convertDeviceInfoToRect(DeviceInfo deviceInfo) {
-		
-		float height = (float) (MUL * Math.sqrt(Math.pow(deviceInfo.getSize(),
-				2)
-				/ (1 + Math.pow(deviceInfo.getWidth() / deviceInfo.getHeight(),
-						2))));
+public class PoolConverter {
+	private static final int MUL = 10;
 
-		float width = (float) (height * deviceInfo.getWidth() / deviceInfo
-				.getHeight());
-		
-		Retangle rec = new Retangle(width, height);
-		return rec;
+	public static Rectangle convertDeviceInfoToRect(DeviceInfo deviceInfo) {
+
+		float height = (float) (MUL * Math.sqrt(Math.pow(
+				deviceInfo.getScreenSize(), 2)
+				/ (1 + Math.pow(
+						deviceInfo.getScreenWidth()
+								/ deviceInfo.getScreenHeight(), 2))));
+
+		float width = (float) (height * deviceInfo.getScreenWidth() / deviceInfo
+				.getScreenHeight());
+		return new Rectangle(width, height);
 	}
 }

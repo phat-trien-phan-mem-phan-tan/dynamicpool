@@ -130,7 +130,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 				// set size for pool
 				Rectangle poolPosition = this.pool.getCorrdiate();
 				
-				poolPosition.setPoint(new Point(0,0));
+				poolPosition.setLocation(new Point(0,0));
 				poolPosition.setHeight(AppConst.height);
 				poolPosition.setWidth(AppConst.width);
 				

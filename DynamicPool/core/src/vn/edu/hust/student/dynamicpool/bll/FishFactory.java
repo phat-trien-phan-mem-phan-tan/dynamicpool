@@ -1,7 +1,5 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
-import com.sun.org.apache.regexp.internal.recompile;
-
 public class FishFactory {
 	public static Fish createFishWithLineTrajectory(float screenWidth, float screenHeight) {
 		// center of screen

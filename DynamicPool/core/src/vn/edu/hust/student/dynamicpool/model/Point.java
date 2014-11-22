@@ -30,6 +30,11 @@ public class Point {
 	public void setY(float y) {
 		this.y = y;
 	}
+
+	public void setLocation(float x, float y) {
+		this.setX(x);
+		this.setY(y);
+	}
 	
 	
 
