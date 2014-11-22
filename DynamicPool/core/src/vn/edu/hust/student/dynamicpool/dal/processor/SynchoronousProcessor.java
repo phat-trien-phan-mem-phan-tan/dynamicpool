@@ -2,10 +2,11 @@ package vn.edu.hust.student.dynamicpool.dal.processor;
 
 import java.util.Map;
 
-import flexjson.JSONDeserializer;
-import flexjson.JSONSerializer;
-
 import vn.edu.hust.student.dynamicpool.bll.FishManager;
+import vn.edu.hust.student.dynamicpool.dal.controller.HostMainController;
+import vn.edu.hust.student.dynamicpool.dal.statics.EventType;
+import vn.edu.hust.student.dynamicpool.events.SynchoronousEvent;
+import flexjson.JSONDeserializer;
 
 public class SynchoronousProcessor extends Processor {
 
@@ -17,9 +18,11 @@ public class SynchoronousProcessor extends Processor {
 			String json = params.get("fishManager").toString();
 			FishManager fishManager = deSerializer.deserialize(json,
 					FishManager.class);
-			
+			HostMainController.getInstance().dispatchAll(
+					new SynchoronousEvent(EventType.SYNCHORONOUS_EVENT,
+							fishManager));
 		}
-		
+
 		return null;
 	}
 }
