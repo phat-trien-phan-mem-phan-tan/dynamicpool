@@ -2,7 +2,6 @@ package vn.edu.hust.student.dynamicpool.dal.controller;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.UnknownHostException;
 import java.util.Map;
 
 import org.eclipse.jetty.util.ajax.JSON;
@@ -76,34 +75,6 @@ public class ClientMainController {
 
 	public void stop() {
 		this.getClientSocketController().stop();
-	}
-
-	@SuppressWarnings("unchecked")
-	public int createHost() throws NetworkException {
-		String response;
-		try {
-			response = httpClientController.regHost();
-			Map<String, Object> map = (Map<String, Object>) json
-					.fromJSON(response);
-			if (map.containsKey(Field.ERROR)) {
-				if (map.get(Field.ERROR) != null) {
-					throw new NetworkException((String) map.get("error"), null);
-				} else {
-					int key = (int) (long) map.get(Field.KEY);
-					String ip = (String) map.get(Field.IP);
-					return key;
-				}
-			} else {
-				throw new NetworkException("message receive not contain error",
-						null);
-			}
-		} catch (MalformedURLException e) {
-			throw new NetworkException("URL invalid", e);
-		} catch (UnknownHostException e) {
-			throw new NetworkException("IPv4 not found", e);
-		} catch (IOException e) {
-			throw new NetworkException("IO connect to server", e);
-		}
 	}
 
 	public HttpClientController getHttpClientController() {
