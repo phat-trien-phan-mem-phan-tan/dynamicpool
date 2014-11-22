@@ -1,7 +1,5 @@
 package vn.edu.hust.student.dynamicpool.model;
 
-import java.awt.Point;
-import java.awt.Rectangle;
 import java.util.ArrayList;
 
 import vn.edu.hust.student.dynamicpool.bll.Fish;
@@ -19,6 +17,7 @@ public class Pool implements IPool {
 
 	private int id;
 	private ArrayList<Segment> segmentsX;
+
 	private ArrayList<Segment> segmentsY;
 	private IPoolPosition position;
 
@@ -111,46 +110,52 @@ public class Pool implements IPool {
 	public ArrayList<IFish> updatePosition(float detatime) {
 
 		ArrayList<IFish> fishes = (ArrayList<IFish>) fishManager.getFishs();
-		Rectangle poolPosition = position.getPosition()
+		Rectangle poolPosition = position.getPosition();
 
 		for (int i = 0; i < fishes.size(); i++) {
 
 			Fish fish = (Fish) fishes.get(i);
 
 			fish.update(detatime);
-			if (fish.getFishState() == FishState.HIT_X) {
-
-				if (fish.getPoint().getY() == poolPosition.getMinY()
-						|| fish.getPoint().getY() == poolPosition.getMaxY()) {
-
-					fish.getTrajectory().setDirection(Oxy.ox);
-				}
-
-			} else if (fish.getFishState() == FishState.HIT_Y) {
-				if (fish.getPoint().getX() == poolPosition.getMinX()
-						|| fish.getPoint().getX() == poolPosition.getMaxX()) {
-
-					fish.getTrajectory().setDirection(Oxy.oy);
-				}
-			} else if (fish.getFishState() == FishState.NOT_PASS) {
-
-				// xu ly phan cho ca chuyen dong tren vung co the di qua
-			}
-
-			FishPosition nextPosition = (FishPosition) fish
-					.checkPosition(detatime + AppConst.timePass);
-
-			fish.setFishState(this, nextPosition);
+			checkHit(detatime, poolPosition, fish);
 
 		}
 
 		return fishes;
 	}
 
+	private void checkHit(float detatime, Rectangle poolPosition, Fish fish) {
+		double fishMinX = fish.getPoint().getX();
+		double fishMinY = fish.getPoint().getY();
+		double fishMaxX = fish.getPoint().getX() + fish.getDx();
+		double fishMaxY = fish.getPoint().getY() + fish.getDy();
+
+		double minY = poolPosition.getPoint().getY();
+		double maxY = AppConst.height + minY;
+		
+		double minX = poolPosition.getPoint().getX();
+		double maxX = AppConst.width + minX;
+
+		System.out.println("Pool: fisX: " + fishMinX + ", fishY: " + fishMinY
+				+ ", minX: " + minX + ", minY: " + minY + ", maxX: " + maxX
+				+ ", maxY: " + maxY);
+		
+		if (fishMinX <= minX || fishMaxX >= maxX){
+			fish.getTrajectory().setDirection(Oxy.oy);
+			float newAngle = (float) (Math.PI - fish.getPoint().getAngle()); 
+			fish.getPoint().setAngle(newAngle);
+		}
+		if (fishMinY <= minY || fishMaxY >= maxY) fish.getTrajectory().setDirection(Oxy.ox);
+		FishPosition nextPosition = (FishPosition) fish.checkPosition(detatime
+				+ AppConst.timePass);
+		
+
+	}
+
 	@Override
 	public void setPosition(Rectangle rectangle) {
 		this.getCorrdiate().setPosition(rectangle);
-		
+
 	}
 
 }

@@ -42,17 +42,7 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 		callback.callback(false, new Exception("Default client cannot create host"));
 	}
 
-	@Override
-	public void addDevide(DeviceInfo devideInfor,
-			BusinessLogicDataCallback callback) {
-		Map<String, Object> data = new HashMap<String, Object>();
-		data.put(Field.COMMAND, "dp_addDevice");
-		data.put("width", devideInfor.getScreenWidth());
-		data.put("height", devideInfor.getScreenHeight());
-		data.put("size", devideInfor.getScreenSize());
-		data.put("clientName", getClientName());
-		ClientMainController.getInstance().getClientSocketController().sendMessage(data);
-	}
+	
 
 	@Override
 	public void exit(BusinessLogicDataCallback callback) {
@@ -79,5 +69,19 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	public void removeFish(Fish fish, BusinessLogicDataCallback callback) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void addDevice(DeviceInfo deviceInfor,
+			BusinessLogicDataCallback callback) {
+	
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put(Field.COMMAND, "dp_addDevice");
+		data.put("width", deviceInfor.getScreenWidth());
+		data.put("height", deviceInfor.getScreenHeight());
+		data.put("size", deviceInfor.getScreenSize());
+		data.put("clientName", getClientName());
+		ClientMainController.getInstance().getClientSocketController().sendMessage(data);
+		
 	}
 }

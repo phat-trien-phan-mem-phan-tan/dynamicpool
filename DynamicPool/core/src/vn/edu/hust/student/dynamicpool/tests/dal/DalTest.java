@@ -43,7 +43,7 @@ public class DalTest implements DataAccessLayer {
 	}
 
 	@Override
-	public void addDevice(DeviceInfo devideInfor,
+	public void addDevice(DeviceInfo deviceInfo,
 			BusinessLogicDataCallback callback) {
 
 		final BusinessLogicDataCallback newCallback = callback;
@@ -97,6 +97,12 @@ public class DalTest implements DataAccessLayer {
 				newCallback.callback(new Boolean(true), null);
 			}
 		}, 1);
+	}
+
+	@Override
+	public String getClientName() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

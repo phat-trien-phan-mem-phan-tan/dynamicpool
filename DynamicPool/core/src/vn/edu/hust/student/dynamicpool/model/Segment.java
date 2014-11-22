@@ -1,6 +1,5 @@
 package vn.edu.hust.student.dynamicpool.model;
 
-import java.awt.Point;
 
 public class Segment {
 

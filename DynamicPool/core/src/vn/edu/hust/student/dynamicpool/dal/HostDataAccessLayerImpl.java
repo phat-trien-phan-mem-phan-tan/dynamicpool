@@ -34,11 +34,10 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 	}
 
 	@Override
-	public void addDevide(DeviceInfo devideInfor,
-			BusinessLogicDataCallback callback) {
+	public void addDevice(DeviceInfo deviceInfo,BusinessLogicDataCallback callback){
 		Client client = new Client();
 		client.setClientName(this.getClientName());
-		client.setPool(new Pool(ModelAdapter.convert(devideInfor)));
+		client.setPool(new Pool(ModelAdapter.convert(deviceInfo)));
 		HostMainController.getInstance().getClientManager().addClient(client);
 		callback.callback(null, null);
 	}
