@@ -22,8 +22,8 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	private int keyOfHost;
 
 	public BusinessLogicLayerImpl() {
-		this.dataAccessLayer = new ClientDataAccessLayerImpl();
-		/* this.dataAccessLayer = new DalTest(); */
+	/*	this.dataAccessLayer = new ClientDataAccessLayerImpl();*/
+	 this.dataAccessLayer = new DalTest(); 
 
 	}
 
@@ -72,33 +72,9 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 	@Override
 	public void createHost(final PresentationBooleanCallback callback) {
-
-		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
-			@Override
-			public void callback(Object data, Exception ex) {
-				creatHostDALCalback(callback, data, ex);
-			}
-		};
-		dataAccessLayer.createHost(logicDataCallBack);
+		callback.callback(false, new BLLException("Cannot create host"));
 	}
 
-	private void creatHostDALCalback(
-			final PresentationBooleanCallback callback, Object data,
-			Exception ex) {
-		if (ex == null) {
-			try {
-				int key = Integer.parseInt(data.toString());
-				this.keyOfHost = key;
-				callback.callback(true, null);
-			} catch (Exception castEx) {
-				callback.callback(false, new BLLException(
-						"Cannot cast key of host", ex));
-			}
-
-		} else {
-			callback.callback(false, new BLLException("Cannot create host", ex));
-		}
-	}
 
 	@Override
 	public void addDevide(DeviceInfo deviceInfo,
