@@ -4,6 +4,7 @@
 		<command name="hello_world">vn.edu.hust.student.dynamicpool.dal.processor.HelloProcessor</command>
 		<command name="schedule">vn.edu.hust.student.dynamicpool.dal.processor.ScheduleHelloProcessor</command>
 		<command name="addDevice">vn.edu.hust.student.dynamicpool.dal.processor.AddDeviceProcessor</command>
+		
 	</processors>
 	
 	<http>
