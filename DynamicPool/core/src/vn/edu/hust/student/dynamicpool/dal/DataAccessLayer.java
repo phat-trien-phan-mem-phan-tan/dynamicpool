@@ -1,7 +1,10 @@
 package vn.edu.hust.student.dynamicpool.dal;
 
+import java.util.List;
+
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
+import vn.edu.hust.student.dynamicpool.bll.FishManager;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 
 public interface DataAccessLayer {
@@ -23,4 +26,6 @@ public interface DataAccessLayer {
 	
 	// gui thong tin ca nen server  khi chuan bi ra khoi be
 	void removeFish(Fish fish,BusinessLogicDataCallback callback);
+	
+	void synchronous(FishManager fishManager, String clientName);
 }

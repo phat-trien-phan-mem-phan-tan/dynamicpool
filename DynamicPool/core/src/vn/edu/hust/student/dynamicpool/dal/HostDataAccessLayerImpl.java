@@ -1,11 +1,15 @@
 package vn.edu.hust.student.dynamicpool.dal;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
+import vn.edu.hust.student.dynamicpool.bll.FishManager;
 import vn.edu.hust.student.dynamicpool.dal.client.entity.Client;
 import vn.edu.hust.student.dynamicpool.dal.controller.HostMainController;
 import vn.edu.hust.student.dynamicpool.dal.server.logic.PoolServer;
-import vn.edu.hust.student.dynamicpool.exception.NetworkException;
+import vn.edu.hust.student.dynamicpool.exception.DALException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 
 public class HostDataAccessLayerImpl implements DataAccessLayer {
@@ -17,8 +21,8 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 
 	@Override
 	public void joinHost(int key, BusinessLogicDataCallback callback) {
-		callback.callback(false, new Exception(
-				"host instance cannot join to another host"));
+		callback.callback(false, new DALException(
+				"host instance cannot join to another host", null));
 	}
 
 	@Override
@@ -27,13 +31,14 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 			String key = HostMainController.getInstance().connectServer();
 			HostMainController.getInstance().start();
 			callback.callback(key, null);
-		} catch (NetworkException e) {
+		} catch (DALException e) {
 			callback.callback(null, e);
 		}
 	}
 
 	@Override
-	public void addDevice(DeviceInfo deviceInfo,BusinessLogicDataCallback callback){
+	public void addDevice(DeviceInfo deviceInfo,
+			BusinessLogicDataCallback callback) {
 		Client client = new Client();
 		client.setClientName(this.getClientName());
 		PoolServer poolServer = new PoolServer(getClientName(), deviceInfo);
@@ -64,6 +69,16 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 	public void removeFish(Fish fish, BusinessLogicDataCallback callback) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void synchronous(FishManager fishManager, String clientName) {
+		Client client = HostMainController.getInstance().getClientManager()
+				.getClient(clientName);
+
+		if (client != null) {
+
+		}
 	}
 
 }

@@ -13,7 +13,7 @@ import vn.edu.hust.student.dynamicpool.dal.processor.Processor;
 import vn.edu.hust.student.dynamicpool.dal.server.socket.ClientSocketController;
 import vn.edu.hust.student.dynamicpool.dal.statics.Field;
 import vn.edu.hust.student.dynamicpool.dal.utils.xml.ServerXMLConfigReader;
-import vn.edu.hust.student.dynamicpool.exception.NetworkException;
+import vn.edu.hust.student.dynamicpool.exception.DALException;
 
 public class ClientMainController {
 	private static ClientMainController _instance;
@@ -50,7 +50,7 @@ public class ClientMainController {
 	}
 
 	@SuppressWarnings("unchecked")
-	public void start(int key) throws NetworkException {
+	public void start(int key) throws DALException {
 		String response;
 		try {
 			response = httpClientController.authentication(key);
@@ -58,7 +58,7 @@ public class ClientMainController {
 					.fromJSON(response);
 			if (params.containsKey(Field.ERROR)) {
 				if (params.get(Field.ERROR) != null) {
-					throw new NetworkException(
+					throw new DALException(
 							(String) params.get(Field.ERROR), null);
 				} else {
 					String ip = (String) params.get("ip");
@@ -67,11 +67,11 @@ public class ClientMainController {
 				}
 			}
 		} catch (NumberFormatException e) {
-			throw new NetworkException("port is not integer", e);
+			throw new DALException("port is not integer", e);
 		} catch (MalformedURLException e) {
-			throw new NetworkException("URL invalide", e);
+			throw new DALException("URL invalide", e);
 		} catch (IOException e) {
-			throw new NetworkException("cannot connect to server", e);
+			throw new DALException("cannot connect to server", e);
 		}
 	}
 

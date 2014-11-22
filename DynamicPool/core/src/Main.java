@@ -2,7 +2,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import vn.edu.hust.student.dynamicpool.dal.controller.HostMainController;
-import vn.edu.hust.student.dynamicpool.exception.NetworkException;
+import vn.edu.hust.student.dynamicpool.exception.DALException;
 
 
 public class Main {
@@ -17,7 +17,7 @@ public class Main {
 		HostMainController.getInstance().start();
 		try {
 			HostMainController.getInstance().connectServer();
-		} catch (NetworkException e) {
+		} catch (DALException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

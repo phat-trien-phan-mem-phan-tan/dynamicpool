@@ -7,5 +7,4 @@ public class AddDeviceProcessor extends Processor {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

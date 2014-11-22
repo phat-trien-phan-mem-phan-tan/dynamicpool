@@ -20,7 +20,7 @@ import vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerControll
 import vn.edu.hust.student.dynamicpool.dal.server.socket.SocketServerController;
 import vn.edu.hust.student.dynamicpool.dal.statics.Field;
 import vn.edu.hust.student.dynamicpool.dal.utils.xml.ServerXMLConfigReader;
-import vn.edu.hust.student.dynamicpool.exception.NetworkException;
+import vn.edu.hust.student.dynamicpool.exception.DALException;
 
 public class HostMainController {
 	private static HostMainController _instance;
@@ -141,7 +141,7 @@ public class HostMainController {
 	}
 
 	@SuppressWarnings("unchecked")
-	public String connectServer() throws NetworkException {
+	public String connectServer() throws DALException {
 		String res;
 		try {
 			res = this.httpClientController.regHost();
@@ -153,12 +153,12 @@ public class HostMainController {
 				this.socketClientController.start("104.131.13.155", 2225);
 				return key;
 			} else {
-				throw new NetworkException((String) hostInfo.get("error"), null);
+				throw new DALException((String) hostInfo.get("error"), null);
 			}
 		} catch (MalformedURLException e) {
-			throw new NetworkException("URL không hợp lệ", e);
+			throw new DALException("URL không hợp lệ", e);
 		} catch (IOException e) {
-			throw new NetworkException("Không kết nối được đến server", e);
+			throw new DALException("Không kết nối được đến server", e);
 		}
 	}
 }

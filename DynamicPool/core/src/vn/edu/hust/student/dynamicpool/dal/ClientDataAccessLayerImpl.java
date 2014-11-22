@@ -6,9 +6,10 @@ import java.util.UUID;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
+import vn.edu.hust.student.dynamicpool.bll.FishManager;
 import vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController;
 import vn.edu.hust.student.dynamicpool.dal.statics.Field;
-import vn.edu.hust.student.dynamicpool.exception.NetworkException;
+import vn.edu.hust.student.dynamicpool.exception.DALException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 
 public class ClientDataAccessLayerImpl implements DataAccessLayer {
@@ -32,14 +33,14 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 		try {
 			ClientMainController.getInstance().start(key);
 			callback.callback(true, null);
-		} catch (NetworkException e) {
+		} catch (DALException e) {
 			callback.callback(false, e);
 		}
 	}
 
 	@Override
 	public void createHost(BusinessLogicDataCallback callback) {
-		callback.callback(false, new Exception("Default client cannot create host"));
+		callback.callback(false, new DALException("Default client cannot create host", null));
 	}
 
 	
@@ -82,6 +83,11 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 		data.put("size", deviceInfor.getScreenSize());
 		data.put("clientName", getClientName());
 		ClientMainController.getInstance().getClientSocketController().sendMessage(data);
+		
+	}
+
+	@Override
+	public void synchronous(FishManager fishManager, String clientName) {
 		
 	}
 }
