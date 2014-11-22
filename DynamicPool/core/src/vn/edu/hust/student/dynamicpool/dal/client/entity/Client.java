@@ -2,8 +2,9 @@ package vn.edu.hust.student.dynamicpool.dal.client.entity;
 
 import org.apache.mina.core.session.IoSession;
 
-import vn.edu.hust.student.dynamicpool.dal.server.logic.PoolServer;
+import flexjson.JSONSerializer;
 
+import vn.edu.hust.student.dynamicpool.dal.server.logic.PoolServer;
 
 public class Client {
 	private PoolServer pool;
@@ -32,5 +33,15 @@ public class Client {
 
 	public void setSession(IoSession session) {
 		this.session = session;
+	}
+
+	public void send(Object data) {
+		if (data instanceof String) {
+			this.getSession().write(data);
+		} else {
+			JSONSerializer serializer = new JSONSerializer();
+			String message = serializer.exclude("*.class").serialize(data);
+			this.getSession().write(message);
+		}
 	}
 }

@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import com.eposi.eventdriven.implementors.BaseEventDispatcher;
+
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
 import vn.edu.hust.student.dynamicpool.bll.FishManager;
@@ -12,7 +14,11 @@ import vn.edu.hust.student.dynamicpool.dal.statics.Field;
 import vn.edu.hust.student.dynamicpool.exception.DALException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 
-public class ClientDataAccessLayerImpl implements DataAccessLayer {
+public class ClientDataAccessLayerImpl extends DataAccessLayer {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7685205083926173715L;
 	private String clientName;
 
 	@Override
@@ -88,6 +94,12 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 
 	@Override
 	public void synchronous(FishManager fishManager, String clientName) {
+		
+	}
+
+	@Override
+	public void registerEvent(BaseEventDispatcher target) {
+		// TODO Auto-generated method stub
 		
 	}
 }

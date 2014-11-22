@@ -1,15 +1,26 @@
 package vn.edu.hust.student.dynamicpool.dal;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import com.eposi.eventdriven.implementors.BaseEventDispatcher;
+
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
 import vn.edu.hust.student.dynamicpool.bll.FishManager;
 import vn.edu.hust.student.dynamicpool.dal.client.entity.Client;
 import vn.edu.hust.student.dynamicpool.dal.controller.HostMainController;
 import vn.edu.hust.student.dynamicpool.dal.server.logic.PoolServer;
+import vn.edu.hust.student.dynamicpool.dal.statics.Field;
 import vn.edu.hust.student.dynamicpool.exception.DALException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 
-public class HostDataAccessLayerImpl implements DataAccessLayer {
+public class HostDataAccessLayerImpl extends DataAccessLayer {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6710175512739230910L;
 
 	@Override
 	public String getClientName() {
@@ -72,10 +83,16 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 	public void synchronous(FishManager fishManager, String clientName) {
 		Client client = HostMainController.getInstance().getClientManager()
 				.getClient(clientName);
-
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put(Field.COMMAND, "synchoronous");
+		data.put("fishManager", fishManager);
 		if (client != null) {
-
+			client.send(data);
 		}
 	}
 
+	@Override
+	public void registerEvent(BaseEventDispatcher target) {
+		//
+	}
 }
