@@ -1,7 +1,7 @@
 package vn.edu.hust.student.dynamicpool.dal.manager;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import vn.edu.hust.student.dynamicpool.dal.client.entity.Client;
 
@@ -9,14 +9,19 @@ public class ClientManager {
 	private Map<String, Client> clientManager;
 	
 	public ClientManager(){
-		clientManager = new HashMap<String, Client>();
+		clientManager = new ConcurrentHashMap<String, Client>();
 	}
-
-	public Map<String, Client> getClientManager() {
-		return clientManager;
+	
+	public boolean addClient(Client client){
+		Client old = this.clientManager.put(client.getClientName(), client);
+		return old == null;
 	}
-
-	public void setClientManager(Map<String, Client> clientManager) {
-		this.clientManager = clientManager;
+	
+	public Client getClient(String clientName){
+		return this.clientManager.get(clientName);
+	}
+	
+	public int size(){
+		return this.clientManager.size();
 	}
 }
