@@ -45,6 +45,7 @@ public class SinTrajectory extends Trajectory {
 		float y = (float) (fishPosition.getMinY() + a
 				* Math.sin(deltaTime + angle));
 		fishPosition.setLocation(new Point(x, y));
+		
 		return getFishPosition();
 	}
 
@@ -58,10 +59,19 @@ public class SinTrajectory extends Trajectory {
 
 		} else if (vector.equals(Oxy.oy)) {
 			
+			this.t = -t;
+			this.angle = -angle;
 			
-
+			float checkSinValue = (float) Math.sin(t+angle);
+			if(checkSinValue > 0){
+			
+				y0 = y0+2*a;
+			}else if(checkSinValue <0){
+				y0 = y0- 2*a;
+			}else{
+				y0 = -y0;
+			}
 		}
-
 	}
 
 	public double getX0() {

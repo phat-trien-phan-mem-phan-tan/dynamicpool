@@ -24,18 +24,7 @@ public class LineTrajectory extends Trajectory {
 		u = new Vector(1, 1);
 	}
 
-	/*
-	 * private float amplitude = 1f; private float dx = 1f; private float dy =
-	 * 1f;
-	 * 
-	 * public LineTrajectory(IFishPosition fishPosition) { super(fishPosition);
-	 * }
-	 * 
-	 * @Override public IFishPosition updateCoordinate(float deltaTime) {
-	 * IFishPosition position = getFishPosition(); position.increaseX(dx *
-	 * amplitude); position.increaseY(dy * amplitude); return getFishPosition();
-	 * }
-	 */
+
 
 	public LineTrajectory(Rectangle fishPosition, Vector u, float timeState) {
 		super(fishPosition);

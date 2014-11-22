@@ -85,7 +85,7 @@ public class CycleTrajectory extends Trajectory {
 				
 			}
 
-			setX0(x0);
+		
 
 		} else if (vector.equals(Oxy.oy)) {
 
@@ -106,7 +106,6 @@ public class CycleTrajectory extends Trajectory {
 				
 			}
 
-			setY0(y0);
 
 		}
 
