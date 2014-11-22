@@ -1,7 +1,5 @@
 package vn.edu.hust.student.dynamicpool.dal;
 
-import java.util.List;
-
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
 import vn.edu.hust.student.dynamicpool.bll.FishManager;
