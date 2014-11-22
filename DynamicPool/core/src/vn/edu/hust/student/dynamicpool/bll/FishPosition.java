@@ -1,16 +1,23 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
+import java.awt.Point;
+
 public class FishPosition implements IFishPosition {
 	private float x;
 	private float y;
 	private float angle;
 
 	public FishPosition(float x, float y) {
+		this.angle = 0;
 		this.increaseX(x);
 		this.increaseY(y);
+		
 	}
 
 	public FishPosition() {
+		this.x = 0;
+		this.y = 0;
+		this.angle = 0;
 	}
 
 	@Override
@@ -31,10 +38,7 @@ public class FishPosition implements IFishPosition {
 		this.y = y;
 	}
 	
-	@Override
-	public float getAngle() {
-		return angle;
-	}
+
 
 	@Override
 	public void setAngle(float angle) {
@@ -53,6 +57,22 @@ public class FishPosition implements IFishPosition {
 		y += dy;
 		return dy;
 	}
+
+	@Override
+	public float getAngle() {
+		
+		return angle;
+	}
+
+	@Override
+	public void setPosition(Point point) {
+		
+		this.x = (float) point.getX();
+		this.y = (float) point.getY();
+		
+	}
+
+
 
 	
 }

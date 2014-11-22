@@ -1,26 +1,29 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
+import java.awt.Point;
 import java.util.ArrayList;
 
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayerImpl;
+import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
 import vn.edu.hust.student.dynamicpool.exception.BLLException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
-import vn.edu.hust.student.dynamicpool.model.FishState;
 import vn.edu.hust.student.dynamicpool.model.Pool;
 import vn.edu.hust.student.dynamicpool.model.Segment;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
+import vn.edu.hust.student.dynamicpool.tests.dal.DalTest;
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 	private DataAccessLayer dataAccessLayer;
-	private Pool pool;
+	private Pool pool = new Pool();
 	private int keyOfHost;
 
 	public BusinessLogicLayerImpl() {
-		this.dataAccessLayer = new DataAccessLayerImpl();
-		this.pool = new Pool();
+		this.dataAccessLayer = new DalTest();
+		
+
 	}
 
 	@Override
@@ -132,17 +135,20 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 			}
 		} else {
 
-			callback.callback(false, new BLLException("Cannot create host", ex));
+			callback.callback(false, new BLLException("Cannot add device", ex));
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<IFish> getFishs() {
 
 		ArrayList<IFish> fishes = new ArrayList<IFish>();
-
-		if (pool.getFishCollection() != null) {
-			fishes = (ArrayList<IFish>) pool.getFishCollection();
+		try {
+				Object a = pool.getFishCollection();
+				fishes = (ArrayList<IFish>) a;
+		} catch (Exception e) {
+			System.err.println("Error: BLL "+ e.getMessage());
 		}
 
 		return fishes;
@@ -176,12 +182,34 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 			final int height) {
 
 		final Fish newFish = new Fish();
-		newFish.setDx(width / 2);
-		newFish.setDy(height / 2);
+		newFish.setDx(width);
+		newFish.setDy(height);
 		newFish.setTrajectoryType(trajectoryType);
 		newFish.setFishType(fishType);
-		newFish.getPoint().setX(AppConst.width/2);
+
+		// set corridate for fish at center of screen size
+		FishPosition fishPosition = new FishPosition();
+		Point fishCorridate = new Point();
 		
+		fishCorridate.setLocation(AppConst.width / 2, AppConst.height / 2);
+		fishPosition.setPosition(fishCorridate);
+		
+		// check trajectory type
+		if (trajectoryType == ETrajectoryType.LINE) {
+
+			fishPosition.setAngle((float) (Math.PI / 4));
+
+			LineTrajectory lineTrajectory = new LineTrajectory(fishPosition);
+			lineTrajectory.setDirection(new Vector(1, 1));
+
+			newFish.setTrajectory(lineTrajectory);
+		} else if (trajectoryType == ETrajectoryType.CYCLE) {
+			fishPosition.setAngle(0);
+
+			CycleTrajectory cycleTrajectory = new CycleTrajectory(fishPosition);
+
+			newFish.setTrajectory(cycleTrajectory);
+		}
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
@@ -207,6 +235,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 				if (resultCreateFish) {
 
+					this.pool.getFishCollection().addFish(fish);
 				}
 
 			}
