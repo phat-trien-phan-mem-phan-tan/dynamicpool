@@ -7,7 +7,7 @@ import vn.edu.hust.student.dynamicpool.model.*;
 public class PoolServer extends Pool implements IPoolServer  {
 	private String clientName;
 	private DeviceInfo deviceInfo;
-	private List<Segment> segments = new ArrayList<>();
+	private List<Segment> segments = new ArrayList<Segment>();
 	
 	public PoolServer(String clientName, DeviceInfo device){
 		this.setClientName(clientName);
