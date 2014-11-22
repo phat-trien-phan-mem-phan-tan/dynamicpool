@@ -1,15 +1,15 @@
 package vn.edu.hust.student.dynamicpool.model;
 
-
 public class Rectangle {
 
 	private float width;
 	private float height;
+	private Point point = new Point();
 	
-	private Point point;
-	
-	
-	
+	public Rectangle(float width, float height) {
+		this.width = width;
+		this.height = height;
+	}
 
 	public float getWidth() {
 		return width;
