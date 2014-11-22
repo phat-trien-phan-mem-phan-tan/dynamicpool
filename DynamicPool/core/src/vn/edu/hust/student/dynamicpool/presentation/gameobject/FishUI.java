@@ -13,15 +13,15 @@ public abstract class FishUI {
 	}
 
 	public float getX() {
-		return fishBLL.getPoint().getX();
+		return fishBLL.getPosition().getMinX();
 	}
 
 	public float getY() {
-		return fishBLL.getPoint().getY();
+		return fishBLL.getPosition().getMinY();
 	}
 
 	public float getAngle() {
-		return fishBLL.getPoint().getAngle();
+		return fishBLL.getAngle();
 	}
 
 	public EDirection getDirection() {

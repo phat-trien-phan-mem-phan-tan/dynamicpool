@@ -1,11 +1,12 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
 import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
+import vn.edu.hust.student.dynamicpool.model.Rectangle;
 
 public class NoneTrajectory extends Trajectory {
 
 	public NoneTrajectory() {
-		super(new FishPosition());
+		super();
 	}
 
 	@Override
@@ -14,7 +15,7 @@ public class NoneTrajectory extends Trajectory {
 	}
 
 	@Override
-	public IFishPosition updateCoordinate(float deltaTime) {
+	public Rectangle updateCoordinate(float deltaTime) {
 		return getFishPosition();
 	}
 

@@ -4,11 +4,14 @@ public class Rectangle {
 
 	private float width;
 	private float height;
-	private Point point = new Point();
+	private Point location = new Point();
 	
 	public Rectangle(float width, float height) {
 		this.width = width;
 		this.height = height;
+	}
+
+	public Rectangle() {
 	}
 
 	public float getWidth() {
@@ -27,14 +30,27 @@ public class Rectangle {
 		this.height = height;
 	}
 
-	public Point getPoint() {
-		return point;
+	public Point getLocation() {
+		return location;
 	}
 
-	public void setPoint(Point point) {
-		this.point = point;
+	public void setLocation(Point point) {
+		this.location = point;
+	}
+
+	public float getMinX() {
+		return location.getX();
+	}
+
+	public float getMinY() {
+		return location.getY();
 	}
 	
+	public float getMaxX() {
+		return location.getX() + getWidth();
+	}
 	
-	
+	public float getMaxY() {
+		return location.getY() + getHeight();
+	}
 }

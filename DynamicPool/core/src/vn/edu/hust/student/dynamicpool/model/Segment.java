@@ -1,42 +1,41 @@
 package vn.edu.hust.student.dynamicpool.model;
 
-
 public class Segment {
 
-	private Point point1;
-	private Point point2;
+	private Point beginPoint;
+	private Point endPoint;
 	
 	
 	public Segment(){
-		this.point1 = new Point(0, 0);
-		this.point2 = new Point(0,0);
+		this.beginPoint = new Point(0, 0);
+		this.endPoint = new Point(0,0);
 	}
 	
 	public Segment(Point beginPoint,Point endPoint){
-		this.point1 = beginPoint;
-		this.point2 = endPoint;
+		this.beginPoint = beginPoint;
+		this.endPoint = endPoint;
 		
 	}
 	
 	public Point getBeginPoint() {
 		
-		if(point1.getX() < point2.getX() || point1.getY() < point2.getY()){
-			return point1;
+		if(beginPoint.getX() < endPoint.getX() || beginPoint.getY() < endPoint.getY()){
+			return beginPoint;
 		}
-		return point2;
+		return endPoint;
 	}
 	public void setBeginPoint(Point beginPoint) {
-		this.point1 = beginPoint;
+		this.beginPoint = beginPoint;
 	}
 	public Point getEndPoint() {
 		
-		if(point1.getX() < point2.getX() || point1.getY() < point2.getY()){
-			return point2;
+		if(beginPoint.getX() < endPoint.getX() || beginPoint.getY() < endPoint.getY()){
+			return endPoint;
 		}
-		return point1;
+		return beginPoint;
 	}
 	public void setEndPoint(Point endPoint) {
-		this.point2 = endPoint;
+		this.endPoint = endPoint;
 	}
 	
 	

@@ -130,7 +130,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 				// set size for pool
 				Rectangle poolPosition = this.pool.getCorrdiate();
 				
-				poolPosition.setPoint(new Point(0,0));
+				poolPosition.setLocation(new Point(0,0));
 				poolPosition.setHeight(AppConst.height);
 				poolPosition.setWidth(AppConst.width);
 				
@@ -188,28 +188,23 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 			final int height) {
 
 		final Fish newFish = new Fish();
-		newFish.setDx(width);
-		newFish.setDy(height);
+		Rectangle fishPosition = newFish.getPosition();
+		fishPosition.setLocation(new Point(AppConst.width/2, AppConst.height/2)); 
+		fishPosition.setWidth(width);
+		fishPosition.setHeight(height);
 		newFish.setTrajectoryType(trajectoryType);
 		newFish.setFishType(fishType);
-
-		// set corridate for fish at center of screen size
-		FishPosition fishPosition = new FishPosition();
-		Point fishCorridate = new Point(AppConst.width / 2, AppConst.height / 2);
-		
-		fishPosition.setPosition(fishCorridate);
-		
 		// check trajectory type
 		if (trajectoryType == ETrajectoryType.LINE) {
 
-			fishPosition.setAngle((float) (Math.PI / 4));
+			newFish.setAngle((float) (Math.PI / 4));
 
 			LineTrajectory lineTrajectory = new LineTrajectory(fishPosition);
 			lineTrajectory.setDirection(new Vector(1, 1));
 
 			newFish.setTrajectory(lineTrajectory);
 		} else if (trajectoryType == ETrajectoryType.CYCLE) {
-			fishPosition.setAngle(0);
+			newFish.setAngle(0);
 
 			CycleTrajectory cycleTrajectory = new CycleTrajectory(fishPosition);
 

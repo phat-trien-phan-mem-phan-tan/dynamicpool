@@ -2,19 +2,19 @@ package vn.edu.hust.student.dynamicpool.dal.client.entity;
 
 import org.apache.mina.core.session.IoSession;
 
-import vn.edu.hust.student.dynamicpool.dal.server.logic.Pool;
+import vn.edu.hust.student.dynamicpool.dal.server.logic.PoolServer;
 
 
 public class Client {
-	private Pool pool;
+	private PoolServer pool;
 	private String clientName;
 	private IoSession session;
 
-	public Pool getPool() {
+	public PoolServer getPool() {
 		return pool;
 	}
 
-	public void setPool(Pool pool) {
+	public void setPool(PoolServer pool) {
 		this.pool = pool;
 	}
 

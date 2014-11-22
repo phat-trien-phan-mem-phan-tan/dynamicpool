@@ -2,6 +2,8 @@ package vn.edu.hust.student.dynamicpool.bll;
 
 import vn.edu.hust.student.dynamicpool.equation.vector.Oxy;
 import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
+import vn.edu.hust.student.dynamicpool.model.Point;
+import vn.edu.hust.student.dynamicpool.model.Rectangle;
 
 public class CycleTrajectory extends Trajectory {
 
@@ -25,7 +27,7 @@ public class CycleTrajectory extends Trajectory {
 	private float t;
 	
 	
-	public CycleTrajectory(IFishPosition fishPosition) {
+	public CycleTrajectory(Rectangle fishPosition) {
 		super(fishPosition);
 		
 		this.x0 = 30;
@@ -43,17 +45,10 @@ public class CycleTrajectory extends Trajectory {
 	}
 
 	@Override
-	public IFishPosition updateCoordinate(float deltaTime) {
-
+	public Rectangle updateCoordinate(float deltaTime) {
 		float y = (float) (x0 + a*Math.sin(t+angle));
 		float x = (float) (y0 + a*Math.cos(t+angle));
-		
-		fishPosition.setX(x);
-		fishPosition.setY(y);
-
-		System.out.println("LineTrajectory: " + "X :" + x + " Y :" + y);
-
-		
+		fishPosition.setLocation(new Point(x, y));
 		return fishPosition;
 	}
 
@@ -90,7 +85,7 @@ public class CycleTrajectory extends Trajectory {
 				
 			}
 
-			setX0(x0);
+		
 
 		} else if (vector.equals(Oxy.oy)) {
 
@@ -111,7 +106,6 @@ public class CycleTrajectory extends Trajectory {
 				
 			}
 
-			setY0(y0);
 
 		}
 
