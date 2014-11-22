@@ -16,7 +16,7 @@ public class LineTrajectory extends Trajectory {
 
 	// vector chi phuong
 	private Vector u;
-	private static final int A = 2;
+	private static final int A = 5;
 	
 	public LineTrajectory(Rectangle fishPosition) {
 		super(fishPosition);

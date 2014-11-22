@@ -1,6 +1,5 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
-import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
 import vn.edu.hust.student.dynamicpool.equation.vector.Oxy;
 import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
 import vn.edu.hust.student.dynamicpool.model.Point;
@@ -13,7 +12,7 @@ public class SinTrajectory extends Trajectory {
 	 * 
 	 * @see com.myapp.equation.Equation#move(float)
 	 * 
-	 * x = x0 + t; y = y0 + a*sin(t+angle)
+	 * x = x0+t; y = y0 + a*sin(t+angle)
 	 */
 
 	private float x0;
@@ -42,9 +41,10 @@ public class SinTrajectory extends Trajectory {
 
 	@Override
 	public Rectangle updateCoordinate(float deltaTime) {
-		float x = (float) fishPosition.getMinX() + deltaTime;
-		float y = (float) (fishPosition.getMinY() + a
-				* Math.sin(deltaTime + angle));
+		t = t+deltaTime;
+		
+		float x = (float) x0+t;
+		float y = (float) (y0 + a*Math.sin(t + angle));
 		fishPosition.setLocation(new Point(x, y));
 		
 		return getFishPosition();
