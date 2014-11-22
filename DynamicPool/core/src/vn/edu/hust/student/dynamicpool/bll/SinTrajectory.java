@@ -1,5 +1,6 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
+import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
 import vn.edu.hust.student.dynamicpool.equation.vector.Oxy;
 import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
 import vn.edu.hust.student.dynamicpool.model.Point;
@@ -26,8 +27,8 @@ public class SinTrajectory extends Trajectory {
 	public SinTrajectory(Rectangle fishPosition) {
 		super(fishPosition);
 
-		this.x0 = fishPosition.getMinX();
-		this.y0 = fishPosition.getMinY();
+		this.x0 = 0;
+		this.y0 = 0;
 		this.a = 50;
 		this.angle = (float) (Math.PI / 2);
 		this.t = 0;

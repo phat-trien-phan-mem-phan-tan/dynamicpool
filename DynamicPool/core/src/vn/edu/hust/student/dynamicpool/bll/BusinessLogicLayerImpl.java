@@ -17,14 +17,13 @@ import vn.edu.hust.student.dynamicpool.tests.dal.DalTest;
 
 public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
-	private DataAccessLayer dataAccessLayer;
+	protected DataAccessLayer dataAccessLayer;
 	private Pool pool = new Pool();
 	private int keyOfHost;
 
 	public BusinessLogicLayerImpl() {
-		this.dataAccessLayer = new ClientDataAccessLayerImpl();
-		/*this.dataAccessLayer = new DalTest();*/
-		
+	/*	this.dataAccessLayer = new ClientDataAccessLayerImpl();*/
+	 this.dataAccessLayer = new DalTest(); 
 
 	}
 
@@ -73,33 +72,9 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 	@Override
 	public void createHost(final PresentationBooleanCallback callback) {
-
-		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
-			@Override
-			public void callback(Object data, Exception ex) {
-				creatHostDALCalback(callback, data, ex);
-			}
-		};
-		dataAccessLayer.createHost(logicDataCallBack);
+		callback.callback(false, new BLLException("Cannot create host"));
 	}
 
-	private void creatHostDALCalback(
-			final PresentationBooleanCallback callback, Object data,
-			Exception ex) {
-		if (ex == null) {
-			try {
-				int key = Integer.parseInt(data.toString());
-				this.keyOfHost = key;
-				callback.callback(true, null);
-			} catch (Exception castEx) {
-				callback.callback(false, new BLLException(
-						"Cannot cast key of host", ex));
-			}
-
-		} else {
-			callback.callback(false, new BLLException("Cannot create host", ex));
-		}
-	}
 
 	@Override
 	public void addDevide(DeviceInfo deviceInfo,
@@ -129,11 +104,10 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 				// set size for pool
 				Rectangle poolPosition = this.pool.getCorrdiate();
-				
-				poolPosition.setLocation(new Point(0,0));
+
+				poolPosition.setLocation(new Point(0, 0));
 				poolPosition.setHeight(AppConst.height);
 				poolPosition.setWidth(AppConst.width);
-				
 
 			} catch (final Exception castEx) {
 				callback.callback(false, new BLLException("Cannot add device ",
@@ -151,10 +125,10 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 		ArrayList<IFish> fishes = new ArrayList<IFish>();
 		try {
-				Object a = pool.getFishCollection();
-				fishes = (ArrayList<IFish>) a;
+			Object a = pool.getFishCollection();
+			fishes = (ArrayList<IFish>) a;
 		} catch (Exception e) {
-			System.err.println("Error: BLL "+ e.getMessage());
+			System.err.println("Error: BLL " + e.getMessage());
 		}
 
 		return fishes;
@@ -189,13 +163,17 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 		final Fish newFish = new Fish();
 		Rectangle fishPosition = newFish.getPosition();
-		fishPosition.setLocation(new Point(AppConst.width/2, AppConst.height/2)); 
+		fishPosition.setLocation(new Point(AppConst.width / 2,
+				AppConst.height / 2));
 		fishPosition.setWidth(width);
 		fishPosition.setHeight(height);
 		newFish.setTrajectoryType(trajectoryType);
 		newFish.setFishType(fishType);
+
 		// check trajectory type
-		if (trajectoryType == ETrajectoryType.LINE) {
+
+		if (trajectoryType == ETrajectoryType.LINE
+				|| trajectoryType == ETrajectoryType.NONE) {
 
 			newFish.setAngle((float) (Math.PI / 4));
 
@@ -204,11 +182,25 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 			newFish.setTrajectory(lineTrajectory);
 		} else if (trajectoryType == ETrajectoryType.CYCLE) {
+
 			newFish.setAngle(0);
 
 			CycleTrajectory cycleTrajectory = new CycleTrajectory(fishPosition);
 
 			newFish.setTrajectory(cycleTrajectory);
+			// set location for fish
+			Point newPoint = cycleTrajectory.updateCoordinate(0).getLocation();
+			fishPosition.setLocation(newPoint);
+
+		} else if (trajectoryType == ETrajectoryType.SIN) {
+
+			SinTrajectory sinTrajectory = new SinTrajectory(fishPosition);
+
+			sinTrajectory.setX0(AppConst.width / 2);
+			sinTrajectory.setY0(AppConst.height / 2);
+
+			newFish.setTrajectory(sinTrajectory);
+
 		}
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {

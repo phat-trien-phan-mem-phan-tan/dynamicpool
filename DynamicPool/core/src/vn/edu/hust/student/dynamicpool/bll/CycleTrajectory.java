@@ -14,7 +14,7 @@ public class CycleTrajectory extends Trajectory {
 	 * 
 	 * x0,y0 toa goc a he so t goc
 	 * 
-	 * y = y0+aSin(nt + angle) x = x0+aCos(nt + angle)
+	 * y = y0+aSin(t + angle) x = x0+aCos(t + angle)
 	 */
 	
 	private float x0;
