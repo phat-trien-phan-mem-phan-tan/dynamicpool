@@ -134,4 +134,9 @@ public class HostMainController {
 			System.out.println("Opps, cannot load log4j.properties");
 		}
 	}
+	
+	public void connectServer(){
+		this.httpClientController.regHost();
+		this.socketClientController.start("104.131.13.155", 2225);
+	}
 }

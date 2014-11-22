@@ -14,6 +14,7 @@ public class Main {
 
 	private void start() {
 		HostMainController.getInstance().start();
+		HostMainController.getInstance().connectServer();
 	}
 
 	private void stop() {
