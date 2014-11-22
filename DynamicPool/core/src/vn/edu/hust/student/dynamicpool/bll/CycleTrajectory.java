@@ -23,6 +23,7 @@ public class CycleTrajectory extends Trajectory {
 	private float a;
 	
 	private float angle;
+	
 
 	private float t;
 	
@@ -30,8 +31,8 @@ public class CycleTrajectory extends Trajectory {
 	public CycleTrajectory(Rectangle fishPosition) {
 		super(fishPosition);
 		
-		this.x0 = 30;
-		this.y0 = 30;
+		this.x0 = 0;
+		this.y0 = 0;
 		
 		this.a = 80;
 		

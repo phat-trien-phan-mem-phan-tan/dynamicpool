@@ -7,6 +7,7 @@ import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
 import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
 import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
 import vn.edu.hust.student.dynamicpool.exception.BLLException;
+import vn.edu.hust.student.dynamicpool.exception.DALException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.model.Point;
 import vn.edu.hust.student.dynamicpool.model.Pool;
@@ -19,7 +20,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 	protected DataAccessLayer dataAccessLayer;
 	private Pool pool = new Pool();
-	private int keyOfHost;
+	private String keyOfHost;
 
 	public BusinessLogicLayerImpl() {
 	/*	this.dataAccessLayer = new ClientDataAccessLayerImpl();*/
@@ -32,11 +33,13 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
+
 			@Override
-			public void callback(Object data, Exception ex) {
+			public void callback(Object data, DALException ex) {
 				callback.callback((Boolean) data, ex);
 
 				joinHostCallBack(callback, data, ex);
+				
 			}
 		};
 		// tro thanh sua data access layer
@@ -82,9 +85,13 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
+		
+
 			@Override
-			public void callback(Object data, Exception ex) {
+			public void callback(Object data, DALException ex) {
 				addDeviceCallback(callback, data, ex);
+
+				
 			}
 		};
 
@@ -147,9 +154,12 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		// call data access layer
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
-			@Override
-			public void callback(Object data, Exception ex) {
+			
 
+			@Override
+			public void callback(Object data, DALException ex) {
+				// TODO Auto-generated method stub
+				
 			}
 		};
 
@@ -187,6 +197,9 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 			CycleTrajectory cycleTrajectory = new CycleTrajectory(fishPosition);
 
+			cycleTrajectory.setX0(AppConst.width/2);
+			cycleTrajectory.setY0(AppConst.height/2);
+			
 			newFish.setTrajectory(cycleTrajectory);
 			// set location for fish
 			Point newPoint = cycleTrajectory.updateCoordinate(0).getLocation();
@@ -206,11 +219,9 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
 			@Override
-			public void callback(Object data, Exception ex) {
-
-				// check if data is true -> create fish in client
+			public void callback(Object data, DALException ex) {
 				createFishCallBack(newFish, data, ex);
-
+				
 			}
 		};
 
@@ -241,15 +252,10 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
+
 			@Override
-			public void callback(Object data, Exception ex) {
-
-				// check if data is true -> create fish in client
-				Boolean check = (Boolean) data;
-				if (check) {
-
-				}
-
+			public void callback(Object data, DALException ex) {
+				
 			}
 		};
 
@@ -273,11 +279,11 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		this.pool = pool;
 	}
 
-	public int getKeyOfHost() {
+	public String getKeyOfHost() {
 		return keyOfHost;
 	}
 
-	public void setKeyOfHost(int keyOfHost) {
+	public void saveKey(String keyOfHost) {
 		this.keyOfHost = keyOfHost;
 	}
 

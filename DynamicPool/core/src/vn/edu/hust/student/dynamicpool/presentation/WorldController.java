@@ -4,6 +4,7 @@ import java.util.List;
 
 import vn.edu.hust.student.dynamicpool.GameCenter;
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayer;
+import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayerImpl;
 import vn.edu.hust.student.dynamicpool.bll.ETrajectoryType;
 import vn.edu.hust.student.dynamicpool.bll.FishType;
 import vn.edu.hust.student.dynamicpool.bll.IFish;
@@ -41,7 +42,8 @@ public class WorldController {
 
 	public WorldController(GameCenter game) {
 		this.game = game;
-		this.businessLogicLayer = new BLLTest();
+	/*	this.businessLogicLayer = new BLLTest();*/
+		this.businessLogicLayer = new BusinessLogicLayerImpl();
 	}
 
 	public void init() {
@@ -108,9 +110,9 @@ public class WorldController {
 	}
 
 	private void showFullScreen() {
-		DisplayMode desktopDisplayMode = Gdx.graphics.getDesktopDisplayMode();
+/*		DisplayMode desktopDisplayMode = Gdx.graphics.getDesktopDisplayMode();
 		Gdx.graphics.setDisplayMode(desktopDisplayMode.width,
-				desktopDisplayMode.height, true);
+				desktopDisplayMode.height, true);*/
 	}
 
 	private void loadGameResources() {

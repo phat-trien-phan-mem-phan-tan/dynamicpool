@@ -5,6 +5,7 @@ import com.badlogic.gdx.utils.Timer.Task;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
+import vn.edu.hust.student.dynamicpool.bll.FishManager;
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 
@@ -103,6 +104,12 @@ public class DalTest implements DataAccessLayer {
 	public String getClientName() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void synchronous(FishManager fishManager, String clientName) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
