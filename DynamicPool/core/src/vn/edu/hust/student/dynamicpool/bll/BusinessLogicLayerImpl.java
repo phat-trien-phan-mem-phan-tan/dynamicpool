@@ -1,18 +1,19 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
-import java.awt.Point;
 import java.util.ArrayList;
 
+import vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl;
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
-import vn.edu.hust.student.dynamicpool.dal.DataAccessLayerImpl;
+import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
 import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
 import vn.edu.hust.student.dynamicpool.exception.BLLException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
+import vn.edu.hust.student.dynamicpool.model.Point;
 import vn.edu.hust.student.dynamicpool.model.Pool;
+import vn.edu.hust.student.dynamicpool.model.Rectangle;
 import vn.edu.hust.student.dynamicpool.model.Segment;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
 import vn.edu.hust.student.dynamicpool.tests.dal.DalTest;
-import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
@@ -21,6 +22,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	private int keyOfHost;
 
 	public BusinessLogicLayerImpl() {
+		/*this.dataAccessLayer = new ClientDataAccessLayerImpl();*/
 		this.dataAccessLayer = new DalTest();
 		
 
@@ -111,7 +113,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 			}
 		};
 
-		dataAccessLayer.addDevice(devideInfor, logicDataCallBack);
+		dataAccessLayer.addDevide(devideInfor, logicDataCallBack);
 	}
 
 	private void addDeviceCallback(final PresentationBooleanCallback callback,
@@ -126,8 +128,12 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 				}
 
 				// set size for pool
-				this.pool.getCorrdiate().getPosition()
-						.setRect(0, 0, AppConst.width, AppConst.height);
+				Rectangle poolPosition = this.pool.getCorrdiate().getPosition();
+				
+				poolPosition.setPoint(new Point(0,0));
+				poolPosition.setHeight(AppConst.height);
+				poolPosition.setWidth(AppConst.width);
+				
 
 			} catch (final Exception castEx) {
 				callback.callback(false, new BLLException("Cannot add device ",
@@ -189,9 +195,8 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 		// set corridate for fish at center of screen size
 		FishPosition fishPosition = new FishPosition();
-		Point fishCorridate = new Point();
+		Point fishCorridate = new Point(AppConst.width / 2, AppConst.height / 2);
 		
-		fishCorridate.setLocation(AppConst.width / 2, AppConst.height / 2);
 		fishPosition.setPosition(fishCorridate);
 		
 		// check trajectory type

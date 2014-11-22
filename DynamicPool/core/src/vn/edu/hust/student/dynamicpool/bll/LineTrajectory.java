@@ -15,13 +15,14 @@ public class LineTrajectory extends Trajectory {
 
 	// vector chi phuong
 	private Vector u;
+	private static final int A = 2;
 	
 
 	public LineTrajectory(IFishPosition fishPosition) {
 
 		super(fishPosition);
 		this.timeState = 0;
-		u = new Vector(1,1);
+		u = new Vector(1, 1);
 
 		// TODO Auto-generated constructor stub
 	}
@@ -44,28 +45,12 @@ public class LineTrajectory extends Trajectory {
 		this.timeState = timeState;
 		this.u = u;
 	}
-
-	public Point move(float t) {
-
-		float x = (float) (fishPosition.getX() + u.getX() * t);
-		float y = (float) (fishPosition.getY() + u.getY() * t);
-
-		Point point = new Point();
-		point.setLocation(x, y);
-		return point;
-	}
-
-	public void hit(Vector vector) {
-
-		setDirection(vector);
-
-	}
-
+	
 	@Override
 	public void setDirection(Vector vector) {
 		if (vector.equals(Oxy.ox)) {
-			// create new vector u
-			double b = 0 - u.getX();
+			
+			double b = - u.getY();
 			u.setY(b);
 
 		} else if (vector.equals(Oxy.oy)) {
@@ -92,15 +77,17 @@ public class LineTrajectory extends Trajectory {
 	public IFishPosition updateCoordinate(float deltaTime) {
 		// TODO Auto-generated method stub
 
-		float x = (float) (fishPosition.getX() + u.getX() * deltaTime);
-		float y = (float) (fishPosition.getY() + u.getY() * deltaTime);
+		float x = (float) (fishPosition.getX() +A* u.getX() * deltaTime);
+		float y = (float) (fishPosition.getY() +A* u.getY() * deltaTime);
 
-		FishPosition fishPosition = new FishPosition();
+		
 		fishPosition.setX(x);
 		fishPosition.setY(y);
 
+		System.out.println("LineTrajectory: " + "X :" + x + " Y :" + y);
+
+		
 		return fishPosition;
 	}
 
-	
 }

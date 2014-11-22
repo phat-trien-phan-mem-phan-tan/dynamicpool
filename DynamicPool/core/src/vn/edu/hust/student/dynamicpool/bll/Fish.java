@@ -161,20 +161,20 @@ public class Fish implements IFish {
 	
 	public void setFishState(Pool pool,FishPosition position)
 	{
-		float x = (float) position.getX();
+	/*	float x = (float) position.getX();
 		float y = (float) position.getY();
 
 		// if hit
-		double pointAboveBoundX = x + dx;
+		float pointAboveBoundX = x + dx;
 		double pointUnderBoundX = x - dx;
 
 		double pointAboveBoundY = y + dy;
 		double pointUnderBoundY = y - dy;
 
 		
-		double maxX = pool.getCorrdiate().getPosition().getMaxX();
-		double minX = pool.getCorrdiate().getPosition().getMinX();
-
+		double minX = pool.getCorrdiate().getPosition().getHeight();
+		double maxX = pool.getCorrdiate().getPosition().get;
+		
 		double maxY = pool.getCorrdiate().getPosition().getMaxY();
 		double minY = pool.getCorrdiate().getPosition().getMinY();
 
@@ -221,7 +221,7 @@ public class Fish implements IFish {
 				fishState = FishState.HIT_X;;
 			}
 
-		}
+		}*/
 		fishState = FishState.NONE;
 	}
 }

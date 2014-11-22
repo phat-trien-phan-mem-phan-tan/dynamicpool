@@ -111,7 +111,7 @@ public class Pool implements IPool {
 	public ArrayList<IFish> updatePosition(float detatime) {
 
 		ArrayList<IFish> fishes = (ArrayList<IFish>) fishManager.getFishs();
-		Rectangle poolPosition = position.getPosition();
+		Rectangle poolPosition = position.getPosition()
 
 		for (int i = 0; i < fishes.size(); i++) {
 

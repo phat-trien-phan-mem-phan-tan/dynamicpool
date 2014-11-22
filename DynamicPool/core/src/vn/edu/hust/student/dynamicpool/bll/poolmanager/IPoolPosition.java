@@ -1,6 +1,7 @@
 package vn.edu.hust.student.dynamicpool.bll.poolmanager;
 
-import java.awt.Rectangle;
+import vn.edu.hust.student.dynamicpool.model.Rectangle;
+
 
 public interface IPoolPosition {
 

@@ -1,6 +1,7 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
-import java.awt.Point;
+import vn.edu.hust.student.dynamicpool.model.Point;
+
 
 public class FishPosition implements IFishPosition {
 	private float x;
