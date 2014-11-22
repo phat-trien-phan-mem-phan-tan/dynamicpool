@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import com.eposi.eventdriven.implementors.BaseEventDispatcher;
+
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
 import vn.edu.hust.student.dynamicpool.bll.FishManager;
@@ -96,7 +98,7 @@ public class ClientDataAccessLayerImpl extends DataAccessLayer {
 	}
 
 	@Override
-	public void registerEvent(Object target) {
+	public void registerEvent(BaseEventDispatcher target) {
 		// TODO Auto-generated method stub
 		
 	}

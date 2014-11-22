@@ -3,6 +3,8 @@ package vn.edu.hust.student.dynamicpool.dal;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.eposi.eventdriven.implementors.BaseEventDispatcher;
+
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
 import vn.edu.hust.student.dynamicpool.bll.FishManager;
@@ -90,8 +92,7 @@ public class HostDataAccessLayerImpl extends DataAccessLayer {
 	}
 
 	@Override
-	public void registerEvent(Object target) {
-		// TODO Auto-generated method stub
+	public void registerEvent(BaseEventDispatcher target) {
 		
 	}
 }
