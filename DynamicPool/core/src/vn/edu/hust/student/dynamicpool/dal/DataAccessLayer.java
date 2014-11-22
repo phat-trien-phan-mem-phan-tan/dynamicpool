@@ -14,23 +14,23 @@ public abstract class DataAccessLayer extends BaseEventDispatcher  {
 	 */
 	private static final long serialVersionUID = 776252984297076409L;
 
-	abstract String getClientName();
+	public abstract String getClientName();
 	
-	abstract void joinHost(int key, BusinessLogicDataCallback callback);
+	public abstract void joinHost(int key, BusinessLogicDataCallback callback);
 
-	abstract void createHost(BusinessLogicDataCallback callback);
+	public abstract void createHost(BusinessLogicDataCallback callback);
 	
 	// them thiet bi va dua ket qua tra ve cua server la mot mang danh sach cac Segment cua be
-	abstract void addDevice(DeviceInfo deviceInfo,BusinessLogicDataCallback callback);
+	public abstract void addDevice(DeviceInfo deviceInfo,BusinessLogicDataCallback callback);
 	
-	abstract void exit(BusinessLogicDataCallback callback);
+	public abstract void exit(BusinessLogicDataCallback callback);
 
-	abstract void createFish(Fish fish,BusinessLogicDataCallback callback);
+	public abstract void createFish(Fish fish,BusinessLogicDataCallback callback);
 	
-	abstract void synchronization(BusinessLogicDataCallback callback);
+	public abstract void synchronization(BusinessLogicDataCallback callback);
 	
 	// gui thong tin ca nen server  khi chuan bi ra khoi be
-	abstract void removeFish(Fish fish,BusinessLogicDataCallback callback);
+	public abstract void removeFish(Fish fish,BusinessLogicDataCallback callback);
 	
-	abstract void synchronous(FishManager fishManager, String clientName);
+	public abstract void synchronous(FishManager fishManager, String clientName);
 }
