@@ -10,7 +10,7 @@ public class PoolPosition implements IPoolPosition{
 	
 	public PoolPosition(){
 		
-		this.position = new Rectangle();
+		this.position = new Rectangle(0,0);
 		
 	}
 	

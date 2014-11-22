@@ -22,8 +22,8 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	private int keyOfHost;
 
 	public BusinessLogicLayerImpl() {
-		/*this.dataAccessLayer = new ClientDataAccessLayerImpl();*/
-		this.dataAccessLayer = new DalTest();
+		this.dataAccessLayer = new ClientDataAccessLayerImpl();
+		/*this.dataAccessLayer = new DalTest();*/
 		
 
 	}
@@ -102,7 +102,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	}
 
 	@Override
-	public void addDevide(DeviceInfo devideInfor,
+	public void addDevide(DeviceInfo deviceInfo,
 			final PresentationBooleanCallback callback) {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
@@ -113,7 +113,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 			}
 		};
 
-		dataAccessLayer.addDevide(devideInfor, logicDataCallBack);
+		dataAccessLayer.addDevice(deviceInfo, logicDataCallBack);
 	}
 
 	private void addDeviceCallback(final PresentationBooleanCallback callback,
@@ -128,7 +128,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 				}
 
 				// set size for pool
-				Rectangle poolPosition = this.pool.getCorrdiate().getPosition();
+				Rectangle poolPosition = this.pool.getCorrdiate();
 				
 				poolPosition.setPoint(new Point(0,0));
 				poolPosition.setHeight(AppConst.height);

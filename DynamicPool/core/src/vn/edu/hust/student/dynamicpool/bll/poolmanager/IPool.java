@@ -12,7 +12,7 @@ public interface IPool {
 	int getPoolId();
 	void setPosition(Rectangle rectangle);
 	
-	IPoolPosition getCorrdiate();
+	Rectangle getCorrdiate();
 	
 	IFishManager getFishCollection();
 	

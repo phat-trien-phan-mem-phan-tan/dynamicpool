@@ -65,8 +65,8 @@ public class Pool implements IPool {
 	}
 
 	@Override
-	public IPoolPosition getCorrdiate() {
-		return position;
+	public Rectangle getCorrdiate() {
+		return position.getPosition();
 	}
 
 	@Override
@@ -154,7 +154,11 @@ public class Pool implements IPool {
 
 	@Override
 	public void setPosition(Rectangle rectangle) {
-		this.getCorrdiate().setPosition(rectangle);
+		
+		Rectangle oldRectangle = this.position.getPosition();
+		oldRectangle.setHeight(rectangle.getHeight());
+		oldRectangle.setWidth(rectangle.getWidth());
+		oldRectangle.setPoint(rectangle.getPoint());
 
 	}
 
