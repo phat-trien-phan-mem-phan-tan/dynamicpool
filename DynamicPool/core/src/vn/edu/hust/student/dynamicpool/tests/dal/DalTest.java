@@ -2,6 +2,7 @@ package vn.edu.hust.student.dynamicpool.tests.dal;
 
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
+import com.eposi.eventdriven.implementors.BaseEventDispatcher;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
@@ -9,7 +10,7 @@ import vn.edu.hust.student.dynamicpool.bll.FishManager;
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 
-public class DalTest implements DataAccessLayer {
+public class DalTest extends DataAccessLayer {
 
 	private Timer timer = new Timer();
 
@@ -108,6 +109,12 @@ public class DalTest implements DataAccessLayer {
 
 	@Override
 	public void synchronous(FishManager fishManager, String clientName) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void registerEvent(BaseEventDispatcher target) {
 		// TODO Auto-generated method stub
 		
 	}

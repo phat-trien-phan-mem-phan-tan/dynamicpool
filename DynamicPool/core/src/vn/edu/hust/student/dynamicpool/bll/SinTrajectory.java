@@ -72,7 +72,7 @@ public class SinTrajectory extends Trajectory {
 			float anpha = t+angle;
 			
 			float sinValue = (float) Math.sin(anpha);
-			float cosValue = (float) Math.cos(anpha);
+			
 			
 			
 			if(sinValue  > 0){
