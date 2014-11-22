@@ -2,10 +2,12 @@ package vn.edu.hust.student.dynamicpool.dal.controller;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.Map;
 import java.util.Properties;
 
 import org.apache.log4j.PropertyConfigurator;
+import org.eclipse.jetty.util.ajax.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +18,9 @@ import vn.edu.hust.student.dynamicpool.dal.processor.Processor;
 import vn.edu.hust.student.dynamicpool.dal.server.logic.PoolManager;
 import vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController;
 import vn.edu.hust.student.dynamicpool.dal.server.socket.SocketServerController;
+import vn.edu.hust.student.dynamicpool.dal.statics.Field;
 import vn.edu.hust.student.dynamicpool.dal.utils.xml.ServerXMLConfigReader;
+import vn.edu.hust.student.dynamicpool.exception.NetworkException;
 
 public class HostMainController {
 	private static HostMainController _instance;
@@ -92,12 +96,13 @@ public class HostMainController {
 			HttpClientController httpClientController) {
 		this.httpClientController = httpClientController;
 	}
-	
+
 	public SocketClientController getSocketClientController() {
 		return socketClientController;
 	}
 
-	public void setSocketClientController(SocketClientController socketClientController) {
+	public void setSocketClientController(
+			SocketClientController socketClientController) {
 		this.socketClientController = socketClientController;
 	}
 
@@ -122,8 +127,8 @@ public class HostMainController {
 		this.getSocketController().start();
 		logger.debug("Puppet Server Started Successfully");
 	}
-	
-	public void loadLog4j(){
+
+	public void loadLog4j() {
 		String log4JPropertyFile = "conf/log4j.properties";
 		Properties p = new Properties();
 
@@ -134,9 +139,26 @@ public class HostMainController {
 			System.out.println("Opps, cannot load log4j.properties");
 		}
 	}
-	
-	public void connectServer(){
-		this.httpClientController.regHost();
-		this.socketClientController.start("104.131.13.155", 2225);
+
+	@SuppressWarnings("unchecked")
+	public String connectServer() throws NetworkException {
+		String res;
+		try {
+			res = this.httpClientController.regHost();
+			JSON json = new JSON();
+			Map<String, Object> hostInfo = (Map<String, Object>) json
+					.fromJSON(res);
+			if (hostInfo.get(Field.ERROR) == null) {
+				String key = (String) hostInfo.get("key");
+				this.socketClientController.start("104.131.13.155", 2225);
+				return key;
+			} else {
+				throw new NetworkException((String) hostInfo.get("error"), null);
+			}
+		} catch (MalformedURLException e) {
+			throw new NetworkException("URL không hợp lệ", e);
+		} catch (IOException e) {
+			throw new NetworkException("Không kết nối được đến server", e);
+		}
 	}
 }

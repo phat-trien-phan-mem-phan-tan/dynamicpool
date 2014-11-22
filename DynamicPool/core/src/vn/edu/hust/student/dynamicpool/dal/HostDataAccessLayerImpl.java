@@ -2,14 +2,15 @@ package vn.edu.hust.student.dynamicpool.dal;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
+import vn.edu.hust.student.dynamicpool.dal.controller.HostMainController;
+import vn.edu.hust.student.dynamicpool.exception.NetworkException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 
 public class HostDataAccessLayerImpl implements DataAccessLayer {
 
 	@Override
 	public String getClientName() {
-		// TODO Auto-generated method stub
-		return null;
+		return "host";
 	}
 
 	@Override
@@ -20,8 +21,13 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 
 	@Override
 	public void createHost(BusinessLogicDataCallback callback) {
-		// TODO Auto-generated method stub
-		
+		try {
+			String key = HostMainController.getInstance().connectServer();
+			HostMainController.getInstance().start();
+			callback.callback(key, null);
+		} catch (NetworkException e) {
+			callback.callback(null, e);
+		}
 	}
 
 	@Override

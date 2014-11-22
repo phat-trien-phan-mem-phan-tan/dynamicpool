@@ -14,6 +14,7 @@ import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	private String clientName;
 
+	@Override
 	public String getClientName() {
 		return clientName;
 	}
@@ -55,7 +56,7 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 		data.put("height", devideInfor.getScreenHeight());
 		data.put("size", devideInfor.getScreenSize());
 		data.put("clientName", getClientName());
-		
+		ClientMainController.getInstance().getClientSocketController().sendMessage(data);
 	}
 
 	@Override
