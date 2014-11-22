@@ -12,8 +12,8 @@ import vn.edu.hust.student.dynamicpool.bll.IFishManager;
 import vn.edu.hust.student.dynamicpool.bll.poolmanager.IPool;
 import vn.edu.hust.student.dynamicpool.bll.poolmanager.IPoolPosition;
 import vn.edu.hust.student.dynamicpool.bll.poolmanager.PoolPosition;
+import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
 import vn.edu.hust.student.dynamicpool.equation.vector.Oxy;
-import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 public class Pool implements IPool {
 

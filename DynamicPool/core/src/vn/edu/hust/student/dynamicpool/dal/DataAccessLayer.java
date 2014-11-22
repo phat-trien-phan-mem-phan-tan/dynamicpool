@@ -5,12 +5,14 @@ import vn.edu.hust.student.dynamicpool.bll.Fish;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 
 public interface DataAccessLayer {
+	String getClientName();
 	
 	void joinHost(int key, BusinessLogicDataCallback callback);
 
 	void createHost(BusinessLogicDataCallback callback);
 	
-	void addDevice(DeviceInfo devideInfor,BusinessLogicDataCallback callback);
+	// them thiet bi va dua ket qua tra ve cua server la mot mang danh sach cac Segment cua be
+	void addDevide(DeviceInfo devideInfor,BusinessLogicDataCallback callback);
 	
 	void exit(BusinessLogicDataCallback callback);
 

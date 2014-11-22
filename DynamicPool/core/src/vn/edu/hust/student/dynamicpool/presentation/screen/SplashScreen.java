@@ -1,8 +1,8 @@
 package vn.edu.hust.student.dynamicpool.presentation.screen;
 
+import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
 import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
-import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;

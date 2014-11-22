@@ -1,4 +1,4 @@
-package vn.edu.hust.student.dynamicpool.utils;
+package vn.edu.hust.student.dynamicpool.dal.utils;
 
 public class AppConst {
 	// Chieu rong khung hinh

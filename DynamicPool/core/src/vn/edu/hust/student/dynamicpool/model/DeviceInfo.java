@@ -37,7 +37,4 @@ public class DeviceInfo {
 		this.screenSize = screenSize;
 	}
 	
-	
-	
-	
 }

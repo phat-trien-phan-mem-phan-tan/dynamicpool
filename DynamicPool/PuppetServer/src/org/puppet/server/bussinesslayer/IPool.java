@@ -1,11 +1,12 @@
 package org.puppet.server.bussinesslayer;
 
-import java.util.ArrayList;
+import java.util.List;
+
 
 public interface IPool {
-	public static int key=0;
-	public  ArrayList<Point> returnPointStart=null;
-	public  ArrayList<Point> returnPointEnd=null;
-	public void definePool(int width,int height, float diagonal);
-	
+	DeviceInfo getDeviceInfo();
+	Retangle getRetangle();
+	List<Segment> getSegments();
+	void setRetangle(Retangle rect);
+	void convertDeviceInfoToRect();
 }

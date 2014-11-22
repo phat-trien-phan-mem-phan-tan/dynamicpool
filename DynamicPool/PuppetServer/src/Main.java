@@ -50,9 +50,9 @@ public class Main {
 		logger.debug("Starting Puppet Server.........");
 		MainController.getInstance().start();
 		logger.debug("Puppet Server Started Successfully");
-		MainController.getInstance().getHttpClientController().regHost();
-		MainController.getInstance().getSocketClientController()
-				.start("104.131.13.155", 2225);
+//		MainController.getInstance().getHttpClientController().regHost();
+//		MainController.getInstance().getSocketClientController()
+//				.start("104.131.13.155", 2225);
 	}
 
 	private void stop() {

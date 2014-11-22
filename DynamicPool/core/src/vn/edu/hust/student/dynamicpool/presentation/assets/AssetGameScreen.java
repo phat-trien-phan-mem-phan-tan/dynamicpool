@@ -4,7 +4,7 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
-import vn.edu.hust.student.dynamicpool.utils.AppConst;
+import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
 
 public class AssetGameScreen {
 	private AssetBackground background = new AssetBackground();

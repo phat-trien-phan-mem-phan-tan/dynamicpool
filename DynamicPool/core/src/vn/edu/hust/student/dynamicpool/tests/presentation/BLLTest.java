@@ -11,9 +11,9 @@ import vn.edu.hust.student.dynamicpool.bll.ETrajectoryType;
 import vn.edu.hust.student.dynamicpool.bll.FishFactory;
 import vn.edu.hust.student.dynamicpool.bll.FishType;
 import vn.edu.hust.student.dynamicpool.bll.IFish;
+import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
-import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 public class BLLTest implements BusinessLogicLayer {
 	private Timer timmer = new Timer();
@@ -42,13 +42,6 @@ public class BLLTest implements BusinessLogicLayer {
 				newcallback.callback(true, null);
 			}
 		}, 3);
-	}
-
-	@Override
-	public void intialDevide(DeviceInfo devideInfor,
-			PresentationBooleanCallback callback) {
-		// TODO Aut1o-generated method stub
-		
 	}
 
 	@Override

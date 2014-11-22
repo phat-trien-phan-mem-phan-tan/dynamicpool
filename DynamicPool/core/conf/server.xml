@@ -1,0 +1,34 @@
+<server>
+	
+	<processors>
+		<command name="hello_world">vn.edu.hust.student.dynamicpool.dal.processor.HelloProcessor</command>
+		<command name="schedule">vn.edu.hust.student.dynamicpool.dal.processor.ScheduleHelloProcessor</command>
+		<command name="addDevice">vn.edu.hust.student.dynamicpool.dal.processor.AddDeviceProcessor</command>
+	</processors>
+	
+	<http>
+		<network>
+			<entry>
+				<path>/*</path>
+				<port>6969</port>
+			</entry>
+		</network>
+		<handlers>
+			<handler>hello_world</handler>
+		</handlers>
+	</http>
+	
+	<socket>
+		<network>
+			<entry>
+				<port>9696</port>
+			</entry>
+		</network>
+		<handlers>
+		    <handler>addDevice</handler>
+			<handler>hello_world</handler>
+			<handler>schedule</handler>
+		</handlers>
+	</socket>
+	
+</server>
