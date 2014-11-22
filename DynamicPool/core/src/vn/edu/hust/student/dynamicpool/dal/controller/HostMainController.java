@@ -1,12 +1,17 @@
 package vn.edu.hust.student.dynamicpool.dal.controller;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Map;
+import java.util.Properties;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import vn.edu.hust.student.dynamicpool.dal.client.http.HttpClientController;
 import vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController;
+import vn.edu.hust.student.dynamicpool.dal.manager.ClientManager;
 import vn.edu.hust.student.dynamicpool.dal.processor.Processor;
 import vn.edu.hust.student.dynamicpool.dal.server.logic.PoolManager;
 import vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController;
@@ -27,6 +32,7 @@ public class HostMainController {
 	private HttpClientController httpClientController;
 	private SocketClientController socketClientController;
 	private PoolManager poolManager;
+	private ClientManager clientManager;
 
 	private Logger logger = LoggerFactory.getLogger(HostMainController.class);
 
@@ -36,6 +42,7 @@ public class HostMainController {
 					"MainController is singleton Class, use MainController.getInstance() instead");
 		}
 		try {
+			loadLog4j();
 			getLogger().info("Reading config file from path conf/server.xml");
 			ServerXMLConfigReader configReader = new ServerXMLConfigReader(
 					"conf/server.xml");
@@ -58,6 +65,7 @@ public class HostMainController {
 
 		socketClientController = new SocketClientController();
 		setPoolManager(new PoolManager());
+		setClientManager(new ClientManager());
 	}
 
 	public SocketServerController getSocketController() {
@@ -101,7 +109,29 @@ public class HostMainController {
 		this.poolManager = poolManager;
 	}
 
+	public ClientManager getClientManager() {
+		return clientManager;
+	}
+
+	public void setClientManager(ClientManager clientManager) {
+		this.clientManager = clientManager;
+	}
+
 	public void start() {
+		logger.debug("Starting Puppet Server.........");
 		this.getSocketController().start();
+		logger.debug("Puppet Server Started Successfully");
+	}
+	
+	public void loadLog4j(){
+		String log4JPropertyFile = "conf/log4j.properties";
+		Properties p = new Properties();
+
+		try {
+			p.load(new FileInputStream(log4JPropertyFile));
+			PropertyConfigurator.configure(p);
+		} catch (IOException e) {
+			System.out.println("Opps, cannot load log4j.properties");
+		}
 	}
 }

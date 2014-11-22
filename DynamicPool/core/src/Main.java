@@ -1,8 +1,3 @@
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
-
-import org.apache.log4j.PropertyConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,29 +8,16 @@ public class Main {
 	private Logger logger;
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String log4JPropertyFile = "conf/log4j.properties";
-		Properties p = new Properties();
-
-		try {
-			p.load(new FileInputStream(log4JPropertyFile));
-			PropertyConfigurator.configure(p);
-			final Main main = new Main();
-			main.start();
-		} catch (IOException e) {
-			System.out.println("Opps, cannot load log4j.properties");
-		}
+		final Main main = new Main();
+		main.start();
 	}
 
 	private void start() {
-		logger = LoggerFactory.getLogger(Main.class);
-		logger.debug("Starting Puppet Server.........");
 		HostMainController.getInstance().start();
-		
-		logger.debug("Puppet Server Started Successfully");
 	}
 
 	private void stop() {
+		logger = LoggerFactory.getLogger(Main.class);
 		logger.info("stopping socket server and http server...");
 		HostMainController.getInstance().stop();
 	}

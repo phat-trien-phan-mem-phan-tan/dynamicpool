@@ -1,84 +1,17 @@
-2014-Nov-21 20:17:24:778 [main] DEBUG Main  - Starting Puppet Server.........
-2014-Nov-21 20:50:34:748 [main] DEBUG Main  - Starting Puppet Server.........
-2014-Nov-21 20:50:34:826 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
-2014-Nov-21 20:50:35:185 [main] DEBUG Main  - Puppet Server Started Successfully
-2014-Nov-21 20:50:35:185 [Thread-0] INFO  Main  - stopping socket server and http server...
-2014-Nov-21 20:50:35:185 [Thread-0] INFO  vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - stopping socket server
-2014-Nov-21 20:52:07:805 [main] DEBUG Main  - Starting Puppet Server.........
-2014-Nov-21 20:52:07:821 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
-2014-Nov-21 20:52:08:040 [main] DEBUG Main  - Puppet Server Started Successfully
-2014-Nov-21 20:52:08:040 [Thread-0] INFO  Main  - stopping socket server and http server...
-2014-Nov-21 20:52:08:040 [Thread-0] INFO  vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - stopping socket server
-2014-Nov-21 20:52:31:686 [main] DEBUG Main  - Starting Puppet Server.........
-2014-Nov-21 20:52:31:686 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
-2014-Nov-21 20:52:31:921 [main] DEBUG Main  - Puppet Server Started Successfully
-2014-Nov-21 20:52:31:921 [Thread-0] INFO  Main  - stopping socket server and http server...
-2014-Nov-21 20:52:31:921 [Thread-0] INFO  vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - stopping socket server
-2014-Nov-21 20:54:35:202 [main] DEBUG Main  - Starting Puppet Server.........
-2014-Nov-21 20:54:35:217 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
-2014-Nov-21 20:54:35:436 [main] DEBUG Main  - Puppet Server Started Successfully
-2014-Nov-21 21:03:18:836 [main] DEBUG Main  - Starting Puppet Server.........
-2014-Nov-21 21:03:18:836 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
-2014-Nov-21 21:03:19:102 [main] DEBUG Main  - Puppet Server Started Successfully
-2014-Nov-21 21:03:30:274 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
-2014-Nov-21 21:03:30:274 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
-2014-Nov-21 21:03:32:770 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=6 cap=2048: 66 75 63 6B 0D 0A]
-2014-Nov-21 21:03:32:770 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
-2014-Nov-21 21:03:32:782 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - data recieved: fuck
-2014-Nov-21 21:03:32:782 [NioProcessor-2] WARN  org.apache.mina.filter.logging.LoggingFilter  - EXCEPTION :
-java.lang.IllegalStateException: Unexpected 'u while seeking  "false"
-	at org.eclipse.jetty.util.ajax.JSON.complete(JSON.java:1303)
-	at org.eclipse.jetty.util.ajax.JSON.parse(JSON.java:883)
-	at org.eclipse.jetty.util.ajax.JSON.fromJSON(JSON.java:277)
-	at vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController.messageReceived(NIOSocketServerController.java:108)
-	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:690)
-	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
-	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
-	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
-	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:407)
-	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:236)
-	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
-	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
-	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
-	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
-	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
-	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
-	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
-	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
-	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
-	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:410)
-	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:710)
-	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:664)
-	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:653)
-	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
-	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1124)
-	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-2014-Nov-21 21:03:42:860 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
-2014-Nov-21 21:03:46:972 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=20 cap=2048: 7B 22 63 6F 6D 6D 61 6E 64 22 3A 22 66 75 63 6B...]
-2014-Nov-21 21:03:46:972 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
-2014-Nov-21 21:03:46:983 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - data recieved: {"command":"fuck"}
-2014-Nov-21 21:03:57:046 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
-2014-Nov-21 21:04:07:114 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
-2014-Nov-21 21:04:17:163 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
-2014-Nov-21 21:04:27:181 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
-2014-Nov-21 21:04:37:222 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
-2014-Nov-21 21:04:47:238 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
-2014-Nov-21 21:04:57:256 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
-2014-Nov-21 21:05:07:312 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
-2014-Nov-21 21:05:17:361 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
-2014-Nov-21 21:05:27:410 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
-2014-Nov-21 21:05:37:446 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
-2014-Nov-21 21:31:10:900 [main] DEBUG Main  - Starting Puppet Server.........
-2014-Nov-21 21:31:10:915 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
-2014-Nov-21 21:33:14:302 [main] DEBUG Main  - Starting Puppet Server.........
-2014-Nov-21 21:33:14:318 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
-2014-Nov-21 21:36:05:915 [main] DEBUG Main  - Starting Puppet Server.........
-2014-Nov-21 21:36:05:931 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
-2014-Nov-21 21:36:44:056 [main] DEBUG Main  - Starting Puppet Server.........
-2014-Nov-21 21:36:44:056 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
-2014-Nov-21 21:37:02:891 [main] DEBUG Main  - Starting Puppet Server.........
-2014-Nov-21 21:37:02:891 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
-2014-Nov-21 21:37:03:141 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-22 08:37:43:158 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 08:37:43:486 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-22 08:38:30:974 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 08:38:31:208 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-22 08:39:29:177 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-22 08:39:29:193 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 08:39:29:427 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-22 08:40:13:049 [main] DEBUG Main  - Starting Puppet Server.........
+2014-Nov-22 08:40:13:064 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 08:40:13:283 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-22 08:41:39:963 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 08:41:40:182 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-22 08:41:58:045 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 08:41:58:264 [main] DEBUG Main  - Puppet Server Started Successfully
+2014-Nov-22 08:44:29:820 [main] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 08:44:30:039 [main] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-22 08:44:30:070 [main] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
