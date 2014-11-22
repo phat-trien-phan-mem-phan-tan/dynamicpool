@@ -1,17 +1,32 @@
 package vn.edu.hust.student.dynamicpool.dal.server.logic;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.eposi.eventdriven.Event;
+import com.eposi.eventdriven.implementors.BaseEventListener;
+
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayerImpl;
 import vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl;
+import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
+import vn.edu.hust.student.dynamicpool.events.RegisterClientEvent;
 import vn.edu.hust.student.dynamicpool.exception.BLLException;
 import vn.edu.hust.student.dynamicpool.exception.DALException;
+import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
+import vn.edu.hust.student.dynamicpool.presentation.PresentationVoidCallback;
 
 public class BusinessLogicLayerServerImpl extends BusinessLogicLayerImpl {
 	private PoolManager poolManager = new PoolManager();
+	private Logger logger = LoggerFactory.getLogger(BusinessLogicLayerServerImpl.class);
+	private PresentationVoidCallback haveNewClientCallback;
 
-	public BusinessLogicLayerServerImpl() {
+	public BusinessLogicLayerServerImpl(PresentationVoidCallback haveNewClientCallback) {
 		this.dataAccessLayer = new HostDataAccessLayerImpl();
+		this.dataAccessLayer.registerEvent(dataAccessLayer);
+		this.dataAccessLayer.addEventListener(AppConst.REGISTER_EVENT_NAME, new BaseEventListener(this, "onRegisterClientEventCallback"));
+		this.haveNewClientCallback = haveNewClientCallback;
 	}
 
 	@Override
@@ -40,6 +55,25 @@ public class BusinessLogicLayerServerImpl extends BusinessLogicLayerImpl {
 			}
 		}
 		booleanCallback.callback(false, new BLLException(
-				"Cannot ceate host", ex));
+				"Cannot ceate host", ex));;
+	}
+	
+	@Deprecated
+	private void onRegisterClientEventCallback(Event e) {
+		try {
+			RegisterClientEvent clientEvent = (RegisterClientEvent) e;
+			DeviceInfo deviceInfo = (DeviceInfo) clientEvent.getDiviceInfo();
+			String clientName = clientEvent.getClientName();
+			addClientAndShowSetting(clientName, deviceInfo);
+		} catch (Exception error) {
+			logger.error("Cannot cast to device info");
+		}
+		
+	}
+
+	private void addClientAndShowSetting(String clientName, DeviceInfo deviceInfo) {
+		PoolServer pool = new PoolServer(clientName, deviceInfo);
+		poolManager.add(pool);
+		haveNewClientCallback.callback();
 	}
 }

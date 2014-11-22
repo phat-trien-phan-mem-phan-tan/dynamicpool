@@ -43,6 +43,7 @@ public class AppConst {
 	public static final int FISH_NINE_HEIGHT = 51;
 	public static final int FISH_TEN_WIDTH = 100;
 	public static final int FISH_TEN_HEIGHT = 51;
+	public static final String REGISTER_EVENT_NAME = "RegisterClient";
 	public static int width = 800;
 	public static int height = 480;
 	
