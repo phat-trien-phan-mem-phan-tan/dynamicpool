@@ -94,4 +94,10 @@ public class ClientDataAccessLayerImpl extends DataAccessLayer {
 	public void synchronous(FishManager fishManager, String clientName) {
 		
 	}
+
+	@Override
+	public void registerEvent(Object target) {
+		// TODO Auto-generated method stub
+		
+	}
 }

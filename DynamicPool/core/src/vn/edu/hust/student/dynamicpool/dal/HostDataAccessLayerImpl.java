@@ -88,4 +88,10 @@ public class HostDataAccessLayerImpl extends DataAccessLayer {
 			client.send(data);
 		}
 	}
+
+	@Override
+	public void registerEvent(Object target) {
+		// TODO Auto-generated method stub
+		
+	}
 }

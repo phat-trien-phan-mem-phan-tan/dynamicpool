@@ -33,4 +33,6 @@ public abstract class DataAccessLayer extends BaseEventDispatcher  {
 	public abstract void removeFish(Fish fish,BusinessLogicDataCallback callback);
 	
 	public abstract void synchronous(FishManager fishManager, String clientName);
+	
+	public abstract void registerEvent(Object target);
 }
