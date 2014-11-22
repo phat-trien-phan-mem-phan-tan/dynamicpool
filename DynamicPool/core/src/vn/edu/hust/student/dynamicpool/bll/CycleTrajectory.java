@@ -12,15 +12,15 @@ public class CycleTrajectory extends Trajectory {
 	 * 
 	 * x0,y0 toa goc a he so t goc
 	 * 
-	 * x = x0+aSin(nt + angle) y = y0+aCos(nt + angle)
+	 * y = y0+aSin(nt + angle) x = x0+aCos(nt + angle)
 	 */
 	
-	private double x0;
-	private double y0;
+	private float x0;
+	private float y0;
 
 	private float a;
-	private float n;
-	private double angle;
+	
+	private float angle;
 
 	private float t;
 	
@@ -32,8 +32,8 @@ public class CycleTrajectory extends Trajectory {
 		this.y0 = 30;
 		
 		this.a = 80;
-		this.n = 1;
-		this.angle = -Math.PI/2;
+		
+		this.angle = (float) (-Math.PI/2);
 	}
 
 	@Override
@@ -44,8 +44,17 @@ public class CycleTrajectory extends Trajectory {
 
 	@Override
 	public IFishPosition updateCoordinate(float deltaTime) {
-		// TODO Auto-generated method stub
-		return getFishPosition();
+
+		float y = (float) (x0 + a*Math.sin(t+angle));
+		float x = (float) (y0 + a*Math.cos(t+angle));
+		
+		fishPosition.setX(x);
+		fishPosition.setY(y);
+
+		System.out.println("LineTrajectory: " + "X :" + x + " Y :" + y);
+
+		
+		return fishPosition;
 	}
 
 
@@ -53,14 +62,14 @@ public class CycleTrajectory extends Trajectory {
 	public void setDirection(Vector vector) {
 
 		// alpha < 2PI
-		float T = (float) ((n * t + angle) / (2 * Math.PI));
+		float T = (float) ((t + angle) / (2 * Math.PI));
 		T = (int) T + 1;
 
 		// tinh goc bu
-		float beta = (float) (T * 2 * Math.PI - (n * t + angle));
+	/*	float beta = (float) (T * 2 * Math.PI - ( t + angle));*/
 
 		//
-		float anpha = (float) (n*t+angle);
+		float anpha = (float) (t+angle);
 		float detaAngle = (float)(2*anpha - Math.PI);
 		
 		// increase angle
@@ -68,7 +77,7 @@ public class CycleTrajectory extends Trajectory {
 
 		if (vector.equals(Oxy.ox)) {
 			// check cos  to set center point
-			float cosValue = (float) Math.cos(n * t + angle);
+			float cosValue = (float) Math.cos(t + angle);
 
 			x0 = x0 + 2 * a * cosValue;
 
@@ -86,7 +95,7 @@ public class CycleTrajectory extends Trajectory {
 		} else if (vector.equals(Oxy.oy)) {
 
 			// check sin (anphal) to set center point
-			float sinValue = (float) Math.sin(n * t + angle);
+			float sinValue = (float) Math.sin( t + angle);
 	
 
 			// move center point of circle
@@ -113,7 +122,7 @@ public class CycleTrajectory extends Trajectory {
 		return x0;
 	}
 
-	public void setX0(double x0) {
+	public void setX0(float x0) {
 		this.x0 = x0;
 	}
 
@@ -121,7 +130,7 @@ public class CycleTrajectory extends Trajectory {
 		return y0;
 	}
 
-	public void setY0(double y0) {
+	public void setY0(float y0) {
 		this.y0 = y0;
 	}
 
@@ -141,19 +150,11 @@ public class CycleTrajectory extends Trajectory {
 		this.t = t;
 	}
 
-	public float getN() {
-		return n;
-	}
-
-	public void setN(float n) {
-		this.n = n;
-	}
-
 	public double getAngle() {
 		return angle;
 	}
 
-	public void setAngle(double angle) {
+	public void setAngle(float angle) {
 		this.angle = angle;
 	}
 
