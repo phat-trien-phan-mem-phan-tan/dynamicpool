@@ -20,7 +20,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class GameScreen implements Screen {
 
 	private WorldRenderer worldRenderer = null;
-	private WorldController worldController = null;
+	protected WorldController worldController = null;
 	private SpriteBatch batch = null;
 	private GameBackgroundUI gameBackground = new GameBackgroundUI();
 	private FishUICollection fishUICollection = null;
@@ -28,9 +28,9 @@ public class GameScreen implements Screen {
 	private Texture addFishButtonTexture;
 	private Texture selectFishButtonsTexture;
 	private Texture selectTrajectoryButtonTexture;
-	private InputProcessor defaultInputProcessor;
-	private InputProcessor selectFishInputProcessor;
-	private InputProcessor selectTrajectoryInputProcessor;
+	protected InputProcessor defaultInputProcessor;
+	protected InputProcessor selectFishInputProcessor;
+	protected InputProcessor selectTrajectoryInputProcessor;
 
 	public GameScreen(WorldRenderer worldRenderer,
 			WorldController worldController) {
@@ -93,15 +93,19 @@ public class GameScreen implements Screen {
 				.getSelectFishButtonsTexture();
 		this.selectTrajectoryButtonTexture = gameAssets.getSelectTrajectoryButtonTexture();
 		createInputprocessors();
+		setDefaultInputProcessor();
 	}
 
-	private void createInputprocessors() {
+	protected void createInputprocessors() {
 		this.defaultInputProcessor = new GSDefaultInputProcessor(
 				worldController);
 		this.selectFishInputProcessor = new GSSelectFishInputProcessor(
 				worldController);
 		this.selectTrajectoryInputProcessor = new GSSelectTrajectoryInputProcessor(
 				worldController);
+	}
+
+	private void setDefaultInputProcessor() {
 		worldController.setGameInputProcessor(defaultInputProcessor);
 	}
 
