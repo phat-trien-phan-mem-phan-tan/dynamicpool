@@ -62,14 +62,16 @@ public class ClientMainController {
 							(String) params.get(Field.ERROR), null);
 				} else {
 					String ip = (String) params.get("ip");
-					int port = (int) (long) params.get("port");
+					int port = Integer.parseInt(params.get("port").toString());
 					this.getClientSocketController().start(ip, port);
 				}
 			}
+		} catch (NumberFormatException e) {
+			throw new NetworkException("port is not integer", e);
 		} catch (MalformedURLException e) {
-			throw new NetworkException("URL không hợp lê", e);
+			throw new NetworkException("URL invalide", e);
 		} catch (IOException e) {
-			throw new NetworkException("không kết được đến server", e);
+			throw new NetworkException("cannot connect to server", e);
 		}
 	}
 
