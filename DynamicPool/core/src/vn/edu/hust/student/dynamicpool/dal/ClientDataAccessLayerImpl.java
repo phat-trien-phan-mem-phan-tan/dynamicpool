@@ -12,7 +12,11 @@ import vn.edu.hust.student.dynamicpool.dal.statics.Field;
 import vn.edu.hust.student.dynamicpool.exception.DALException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 
-public class ClientDataAccessLayerImpl implements DataAccessLayer {
+public class ClientDataAccessLayerImpl extends DataAccessLayer {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7685205083926173715L;
 	private String clientName;
 
 	@Override
