@@ -9,9 +9,9 @@ public class PoolServer extends Pool implements IPoolServer  {
 	private DeviceInfo deviceInfo;
 	private List<Segment> segments = new ArrayList<Segment>();
 	
-	public PoolServer(String clientName, DeviceInfo device){
+	public PoolServer(String clientName, DeviceInfo deviceInfo){
 		this.setClientName(clientName);
-		setDeviceInfo(device);
+		setDeviceInfo(deviceInfo);
 	}
 
 	public void setDeviceInfo(DeviceInfo deviceInfo) {

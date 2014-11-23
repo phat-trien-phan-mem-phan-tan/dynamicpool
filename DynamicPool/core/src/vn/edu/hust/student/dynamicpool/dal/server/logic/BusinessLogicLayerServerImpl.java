@@ -77,4 +77,12 @@ public class BusinessLogicLayerServerImpl extends BusinessLogicLayerImpl {
 		poolManager.add(pool);
 		haveNewClientCallback.callback();
 	}
+
+	@Override
+	public void addDevide(DeviceInfo deviceInfo,
+			PresentationBooleanCallback callback) {
+		PoolServer poolServer = new PoolServer(AppConst.DEFAULT_HOST_NAME, deviceInfo);
+		this.poolManager.add(poolServer);
+		callback.callback(true, null);
+	}
 }
