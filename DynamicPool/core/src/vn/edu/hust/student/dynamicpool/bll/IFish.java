@@ -11,4 +11,5 @@ public interface IFish {
 	void setFishState(FishState fishState);
 	void setAngle(float angle);
 	float getAngle();
+	FishType getFishType();
 }

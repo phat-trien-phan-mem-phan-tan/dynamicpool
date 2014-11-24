@@ -1,0 +1,132 @@
+2014-Nov-22 20:25:08:345 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 20:25:08:783 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Cannot start Main controller: 
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at vn.edu.hust.student.dynamicpool.dal.controller.HostMainController.<init>(HostMainController.java:63)
+	at vn.edu.hust.student.dynamicpool.dal.controller.HostMainController.getInstance(HostMainController.java:30)
+	at vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl.createHost(HostDataAccessLayerImpl.java:28)
+	at vn.edu.hust.student.dynamicpool.dal.server.logic.BusinessLogicLayerServerImpl.createHost(BusinessLogicLayerServerImpl.java:20)
+	at vn.edu.hust.student.dynamicpool.presentation.WorldController.createHost(WorldController.java:129)
+	at vn.edu.hust.student.dynamicpool.presentation.screen.MainMenuScreen.createHostClickHander(MainMenuScreen.java:78)
+	at vn.edu.hust.student.dynamicpool.presentation.screen.MainMenuScreen$1.clicked(MainMenuScreen.java:72)
+	at com.badlogic.gdx.scenes.scene2d.utils.ClickListener.touchUp(ClickListener.java:89)
+	at com.badlogic.gdx.scenes.scene2d.InputListener.handle(InputListener.java:57)
+	at com.badlogic.gdx.scenes.scene2d.Stage.touchUp(Stage.java:346)
+	at com.badlogic.gdx.backends.lwjgl.LwjglInput.processEvents(LwjglInput.java:326)
+	at com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:199)
+	at com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+2014-Nov-22 20:25:09:465 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=0&iplan=192.168.0.15
+2014-Nov-22 20:25:09:479 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"0778","ip":"101.99.7.249"}
+2014-Nov-22 20:25:09:799 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-22 20:25:09:806 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-22 20:28:19:976 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 20:28:20:118 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Cannot start Main controller: 
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at vn.edu.hust.student.dynamicpool.dal.controller.HostMainController.<init>(HostMainController.java:63)
+	at vn.edu.hust.student.dynamicpool.dal.controller.HostMainController.getInstance(HostMainController.java:30)
+	at vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl.createHost(HostDataAccessLayerImpl.java:28)
+	at vn.edu.hust.student.dynamicpool.dal.server.logic.BusinessLogicLayerServerImpl.createHost(BusinessLogicLayerServerImpl.java:20)
+	at vn.edu.hust.student.dynamicpool.presentation.WorldController.createHost(WorldController.java:129)
+	at vn.edu.hust.student.dynamicpool.presentation.screen.MainMenuScreen.createHostClickHander(MainMenuScreen.java:78)
+	at vn.edu.hust.student.dynamicpool.presentation.screen.MainMenuScreen$1.clicked(MainMenuScreen.java:72)
+	at com.badlogic.gdx.scenes.scene2d.utils.ClickListener.touchUp(ClickListener.java:89)
+	at com.badlogic.gdx.scenes.scene2d.InputListener.handle(InputListener.java:57)
+	at com.badlogic.gdx.scenes.scene2d.Stage.touchUp(Stage.java:346)
+	at com.badlogic.gdx.backends.lwjgl.LwjglInput.processEvents(LwjglInput.java:326)
+	at com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:199)
+	at com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+2014-Nov-22 20:28:20:842 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=0&iplan=192.168.0.15
+2014-Nov-22 20:28:20:851 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"6747","ip":"101.99.7.249"}
+2014-Nov-22 20:28:21:171 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-22 20:28:21:173 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-22 20:29:09:189 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 20:29:09:329 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Cannot start Main controller: 
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at vn.edu.hust.student.dynamicpool.dal.controller.HostMainController.<init>(HostMainController.java:63)
+	at vn.edu.hust.student.dynamicpool.dal.controller.HostMainController.getInstance(HostMainController.java:30)
+	at vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl.createHost(HostDataAccessLayerImpl.java:28)
+	at vn.edu.hust.student.dynamicpool.dal.server.logic.BusinessLogicLayerServerImpl.createHost(BusinessLogicLayerServerImpl.java:20)
+	at vn.edu.hust.student.dynamicpool.presentation.WorldController.createHost(WorldController.java:129)
+	at vn.edu.hust.student.dynamicpool.presentation.screen.MainMenuScreen.createHostClickHander(MainMenuScreen.java:78)
+	at vn.edu.hust.student.dynamicpool.presentation.screen.MainMenuScreen$1.clicked(MainMenuScreen.java:72)
+	at com.badlogic.gdx.scenes.scene2d.utils.ClickListener.touchUp(ClickListener.java:89)
+	at com.badlogic.gdx.scenes.scene2d.InputListener.handle(InputListener.java:57)
+	at com.badlogic.gdx.scenes.scene2d.Stage.touchUp(Stage.java:346)
+	at com.badlogic.gdx.backends.lwjgl.LwjglInput.processEvents(LwjglInput.java:326)
+	at com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:199)
+	at com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+2014-Nov-22 20:29:09:988 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=0&iplan=192.168.0.15
+2014-Nov-22 20:29:10:004 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"8537","ip":"101.99.7.249"}
+2014-Nov-22 20:29:10:319 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-22 20:29:10:320 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-22 20:31:44:694 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 20:31:45:793 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.15
+2014-Nov-22 20:31:45:799 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"4243","ip":"101.99.7.249"}
+2014-Nov-22 20:31:46:133 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-22 20:31:46:135 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-22 20:31:46:226 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-22 20:49:53:431 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 20:49:54:275 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.15
+2014-Nov-22 20:49:54:283 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"3532","ip":"101.99.7.249"}
+2014-Nov-22 20:49:55:581 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-22 20:49:55:583 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-22 20:49:55:605 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-22 21:56:32:032 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 21:56:32:949 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.15
+2014-Nov-22 21:56:32:957 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"9108","ip":"101.99.7.249"}
+2014-Nov-22 21:56:33:278 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-22 21:56:33:280 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-22 21:56:33:303 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-22 21:58:01:092 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 21:58:01:947 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.15
+2014-Nov-22 21:58:01:955 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"7626","ip":"101.99.7.249"}
+2014-Nov-22 21:58:02:288 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-22 21:58:02:290 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-22 21:58:02:309 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-22 21:59:23:892 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 21:59:25:196 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.15
+2014-Nov-22 21:59:25:202 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"9836","ip":"101.99.7.249"}
+2014-Nov-22 21:59:26:916 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-22 21:59:26:918 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-22 21:59:26:940 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-22 22:01:49:612 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 22:01:50:439 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.15
+2014-Nov-22 22:01:50:444 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"2875","ip":"101.99.7.249"}
+2014-Nov-22 22:01:50:782 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-22 22:01:50:785 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-22 22:01:50:812 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-22 22:04:47:523 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 22:04:49:568 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.15
+2014-Nov-22 22:04:49:576 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"5024","ip":"101.99.7.249"}
+2014-Nov-22 22:04:49:898 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-22 22:04:49:900 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-22 22:04:49:922 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-22 22:10:06:031 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 22:10:06:921 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.15
+2014-Nov-22 22:10:06:932 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"2921","ip":"101.99.7.249"}
+2014-Nov-22 22:10:07:290 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-22 22:10:07:292 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-22 22:10:07:320 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-22 22:11:03:630 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 22:11:04:484 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.15
+2014-Nov-22 22:11:04:493 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"2999","ip":"101.99.7.249"}
+2014-Nov-22 22:11:04:798 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-22 22:11:04:800 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-22 22:11:04:830 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-22 22:11:44:555 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 22:11:45:414 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.15
+2014-Nov-22 22:11:45:421 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"4659","ip":"101.99.7.249"}
+2014-Nov-22 22:11:45:762 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-22 22:11:45:764 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-22 22:11:45:786 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-22 22:15:09:985 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-22 22:15:11:163 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.15
+2014-Nov-22 22:15:11:171 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"7412","ip":"101.99.7.249"}
+2014-Nov-22 22:15:11:490 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-22 22:15:11:492 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-22 22:15:11:516 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully

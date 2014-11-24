@@ -6,7 +6,31 @@ import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
 
 public class FishUIFactory {
 	public static FishUI createFishUI(IFish fish) {
-		return new FishOneUI(fish);
+		FishType fishType = fish.getFishType();
+		switch (fishType) {
+		case FISH1:
+			return new FishOneUI(fish);
+		case FISH2:
+			return new FishTwoUI(fish);
+		case FISH3:
+			return new FishThreeUI(fish);
+		case FISH4:
+			return new FishFourUI(fish);
+		case FISH5:
+			return new FishFiveUI(fish);
+		case FISH6:
+			return new FishSixUI(fish);
+		case FISH7:
+			return new FishSevenUI(fish);
+		case FISH8:
+			return new FishEightUI(fish);
+		case FISH9:
+			return new FishNineUI(fish);
+		case FISH10:
+			return new FishTenUI(fish);
+		default:
+			return new FishOneUI(fish);
+		}
 	}
 
 
