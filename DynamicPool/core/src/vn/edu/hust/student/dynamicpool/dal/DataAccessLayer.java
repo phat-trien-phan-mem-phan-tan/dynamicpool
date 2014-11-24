@@ -1,7 +1,5 @@
 package vn.edu.hust.student.dynamicpool.dal;
 
-import jdk.nashorn.internal.ir.BaseNode;
-
 import com.eposi.eventdriven.implementors.BaseEventDispatcher;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
