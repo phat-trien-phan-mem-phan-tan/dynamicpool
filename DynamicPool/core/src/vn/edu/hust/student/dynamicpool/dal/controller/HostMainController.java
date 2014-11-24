@@ -14,11 +14,6 @@ import org.eclipse.jetty.util.ajax.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.eposi.eventdriven.Event;
-import com.eposi.eventdriven.exceptions.InvalidHandlerMethod;
-import com.eposi.eventdriven.exceptions.NoContextToExecute;
-import com.eposi.eventdriven.implementors.BaseEventDispatcher;
-
 import vn.edu.hust.student.dynamicpool.dal.client.http.HttpClientController;
 import vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController;
 import vn.edu.hust.student.dynamicpool.dal.manager.ClientManager;
@@ -29,6 +24,11 @@ import vn.edu.hust.student.dynamicpool.dal.server.socket.SocketServerController;
 import vn.edu.hust.student.dynamicpool.dal.statics.Field;
 import vn.edu.hust.student.dynamicpool.dal.utils.xml.ServerXMLConfigReader;
 import vn.edu.hust.student.dynamicpool.exception.DALException;
+
+import com.eposi.eventdriven.Event;
+import com.eposi.eventdriven.exceptions.InvalidHandlerMethod;
+import com.eposi.eventdriven.exceptions.NoContextToExecute;
+import com.eposi.eventdriven.implementors.BaseEventDispatcher;
 
 public class HostMainController {
 	private static HostMainController _instance;
