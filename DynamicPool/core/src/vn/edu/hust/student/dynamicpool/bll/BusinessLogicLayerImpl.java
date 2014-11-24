@@ -23,8 +23,8 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	private String keyOfHost;
 
 	public BusinessLogicLayerImpl() {
-	/*	this.dataAccessLayer = new ClientDataAccessLayerImpl();*/
-	 this.dataAccessLayer = new DalTest(); 
+		/* this.dataAccessLayer = new ClientDataAccessLayerImpl(); */
+		this.dataAccessLayer = new DalTest();
 
 	}
 
@@ -33,19 +33,18 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
-
 			@Override
 			public void callback(Object data, DALException ex) {
 				callback.callback((Boolean) data, ex);
 
 				joinHostCallBack(callback, data, ex);
-				
+
 			}
 		};
 		// tro thanh sua data access layer
-		
-		 this.dataAccessLayer.joinHost(key, logicDataCallBack);
-		 
+
+		this.dataAccessLayer.joinHost(key, logicDataCallBack);
+
 	}
 
 	private void joinHostCallBack(final PresentationBooleanCallback callback,
@@ -78,28 +77,25 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		callback.callback(false, new BLLException("Cannot create host"));
 	}
 
-
 	@Override
 	public void addDevide(DeviceInfo deviceInfo,
 			final PresentationBooleanCallback callback) {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
-		
-
 			@Override
 			public void callback(Object data, DALException ex) {
 				addDeviceCallback(callback, data, ex);
 
-				
 			}
 		};
 
 		dataAccessLayer.addDevice(deviceInfo, logicDataCallBack);
 	}
 
-	protected void addDeviceCallback(final PresentationBooleanCallback callback,
-			final Object data, final Exception ex) {
+	protected void addDeviceCallback(
+			final PresentationBooleanCallback callback, final Object data,
+			final Exception ex) {
 
 		if (ex == null) {
 			try {
@@ -154,12 +150,10 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		// call data access layer
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
-			
-
 			@Override
 			public void callback(Object data, DALException ex) {
 				// TODO Auto-generated method stub
-				
+
 			}
 		};
 
@@ -171,62 +165,40 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 			final ETrajectoryType trajectoryType, final int width,
 			final int height) {
 
-		final Fish newFish = new Fish();
-		Rectangle fishPosition = newFish.getPosition();
-		fishPosition.setLocation(new Point(AppConst.width / 2,
-				AppConst.height / 2));
-		fishPosition.setWidth(width);
-		fishPosition.setHeight(height);
-		newFish.setTrajectoryType(trajectoryType);
-		newFish.setFishType(fishType);
-
-		// check trajectory type
+		Fish newFish = null;
 
 		if (trajectoryType == ETrajectoryType.LINE
 				|| trajectoryType == ETrajectoryType.NONE) {
 
-			newFish.setAngle((float) (Math.PI / 4));
-
-			LineTrajectory lineTrajectory = new LineTrajectory(fishPosition);
-			lineTrajectory.setDirection(new Vector(1, 1));
-
-			newFish.setTrajectory(lineTrajectory);
+			newFish = FishFactory.createFishWithLineTrajectory(width, height,
+					fishType);
 		} else if (trajectoryType == ETrajectoryType.CYCLE) {
 
-			newFish.setAngle(0);
-
-			CycleTrajectory cycleTrajectory = new CycleTrajectory(fishPosition);
-
-			cycleTrajectory.setX0(AppConst.width/2);
-			cycleTrajectory.setY0(AppConst.height/2);
-			
-			newFish.setTrajectory(cycleTrajectory);
-			// set location for fish
-			Point newPoint = cycleTrajectory.updateCoordinate(0).getLocation();
-			fishPosition.setLocation(newPoint);
+			newFish = FishFactory.createFishWithCycleTrajectory(width, height,
+					fishType);
 
 		} else if (trajectoryType == ETrajectoryType.SIN) {
 
-			SinTrajectory sinTrajectory = new SinTrajectory(fishPosition);
-
-			sinTrajectory.setX0(AppConst.width / 2);
-			sinTrajectory.setY0(AppConst.height / 2);
-
-			newFish.setTrajectory(sinTrajectory);
+			newFish = FishFactory.createFishWithSinTrajectory(width, height,
+					fishType);
 
 		}
 
+		createFishCallBackAction(newFish);
+
+	}
+
+	protected void createFishCallBackAction(final Fish newFish) {
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
 			@Override
 			public void callback(Object data, DALException ex) {
 				createFishCallBack(newFish, data, ex);
-				
+
 			}
 		};
 
 		this.dataAccessLayer.createFish(newFish, logicDataCallBack);
-
 	}
 
 	private void createFishCallBack(Fish fish, Object data, final Exception ex) {
@@ -252,10 +224,9 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
 
-
 			@Override
 			public void callback(Object data, DALException ex) {
-				
+
 			}
 		};
 
@@ -287,7 +258,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		this.keyOfHost = keyOfHost;
 	}
 
-	public String getKey(){
+	public String getKey() {
 		return keyOfHost;
 	}
 }

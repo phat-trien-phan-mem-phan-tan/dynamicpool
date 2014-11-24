@@ -20,7 +20,7 @@ public class BLLTest implements BusinessLogicLayer {
 	private List<IFish> fishs = new ArrayList<IFish>();
 	
 	public BLLTest() {
-		fishs.add(FishFactory.createFishWithLineTrajectory(AppConst.width, AppConst.height));
+		fishs.add(FishFactory.createFishWithLineTrajectory(AppConst.FISH_ONE_WIDTH, AppConst.FISH_ONE_HEIGHT, FishType.FISH1));
 	}
 	@Override
 	public void joinHost(String key, PresentationBooleanCallback callback) {
