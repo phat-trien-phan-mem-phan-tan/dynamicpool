@@ -25,6 +25,8 @@ public interface BusinessLogicLayer {
 	void synchronization();
 
 	String getKeyOfHost();
+
+	void removeFish(Fish fish);
 	
 	
 	

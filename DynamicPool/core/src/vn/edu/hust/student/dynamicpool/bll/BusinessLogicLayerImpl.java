@@ -2,10 +2,11 @@ package vn.edu.hust.student.dynamicpool.bll;
 
 import java.util.ArrayList;
 
+import vn.edu.hust.student.dynamicpool.bll.fishEvent.FishStateEvent;
+import vn.edu.hust.student.dynamicpool.bll.statics.EventType;
 import vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl;
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
 import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
-import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
 import vn.edu.hust.student.dynamicpool.exception.BLLException;
 import vn.edu.hust.student.dynamicpool.exception.DALException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
@@ -14,7 +15,9 @@ import vn.edu.hust.student.dynamicpool.model.Pool;
 import vn.edu.hust.student.dynamicpool.model.Rectangle;
 import vn.edu.hust.student.dynamicpool.model.Segment;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
-import vn.edu.hust.student.dynamicpool.tests.dal.DalTest;
+
+import com.eposi.eventdriven.Event;
+import com.eposi.eventdriven.implementors.BaseEventListener;
 
 public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
@@ -23,7 +26,9 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	private String keyOfHost;
 
 	public BusinessLogicLayerImpl() {
-		 this.dataAccessLayer = new ClientDataAccessLayerImpl(); 
+		 this.dataAccessLayer = new ClientDataAccessLayerImpl();
+		 pool.addEventListener(EventType.COLISSION, new BaseEventListener(this,
+					"onColission"));
 		/*this.dataAccessLayer = new DalTest();*/
 
 	}
@@ -221,6 +226,28 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		}
 
 	}
+	
+	@Override
+	public void removeFish(Fish fish) {
+		
+		
+		BusinessLogicDataCallback logicDataCallBack = new BusinessLogicDataCallback() {
+
+			@Override
+			public void callback(Object data, DALException ex) {
+			
+
+			}
+		};
+		// tro thanh sua data access layer
+		this.dataAccessLayer.removeFish(fish,logicDataCallBack);
+		pool.getFishCollection().getFishs().remove(fish);
+		
+	}
+	
+	
+	
+
 
 	@Override
 	public void synchronization() {
@@ -236,7 +263,23 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		this.dataAccessLayer.synchronization(logicDataCallBack);
 
 	}
-
+	
+	
+	
+	@Deprecated
+	public void onCollision(Event e){
+		try{
+			FishStateEvent fishStateEvent = (FishStateEvent) e;
+			
+			Fish fish = fishStateEvent.getFish();
+			
+		}catch(Exception ex){
+			
+		}
+		
+	}
+	
+	
 	public DataAccessLayer getDataAccessLayer() {
 		return dataAccessLayer;
 	}
@@ -265,4 +308,6 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	public String getKey() {
 		return keyOfHost;
 	}
+
+	
 }

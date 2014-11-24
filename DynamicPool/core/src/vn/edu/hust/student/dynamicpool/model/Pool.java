@@ -1,13 +1,21 @@
 package vn.edu.hust.student.dynamicpool.model;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
+import com.eposi.eventdriven.Event;
+import com.eposi.eventdriven.exceptions.InvalidHandlerMethod;
+import com.eposi.eventdriven.exceptions.NoContextToExecute;
+import com.eposi.eventdriven.implementors.BaseEventListener;
+
 import vn.edu.hust.student.dynamicpool.bll.*;
+import vn.edu.hust.student.dynamicpool.bll.fishEvent.FishStateEvent;
 import vn.edu.hust.student.dynamicpool.bll.poolmanager.IPool;
+import vn.edu.hust.student.dynamicpool.bll.statics.EventType;
 import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
 import vn.edu.hust.student.dynamicpool.equation.vector.Oxy;
 
-public class Pool implements IPool {
+public class Pool extends IPool {
 
 	private int id;
 	private ArrayList<Segment> segmentsX = new ArrayList<>();
@@ -24,6 +32,9 @@ public class Pool implements IPool {
 		this.position = position;
 		this.fishManager = fishManager;
 		this.diagonal = 0;
+		
+		fishManager.addEventListener(EventType.COLISSION,
+				new BaseEventListener(this, "onCollision"));
 
 	}
 
@@ -191,6 +202,20 @@ public class Pool implements IPool {
 		oldRectangle.setWidth(rectangle.getWidth());
 		oldRectangle.setLocation(rectangle.getLocation());
 
+	}
+	
+	@Deprecated
+	public void onCollision(Event e){
+		try {
+			this.dispatchEvent(e);
+		} catch (InvocationTargetException | IllegalAccessException
+				| NoSuchMethodException | InvalidHandlerMethod
+				| NoContextToExecute e1) {
+			// TODO Auto-generated catch block
+			
+			e1.printStackTrace();
+		}
+		
 	}
 
 }

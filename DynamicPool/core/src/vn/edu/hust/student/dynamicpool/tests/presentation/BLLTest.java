@@ -8,6 +8,7 @@ import com.badlogic.gdx.utils.Timer.Task;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayer;
 import vn.edu.hust.student.dynamicpool.bll.ETrajectoryType;
+import vn.edu.hust.student.dynamicpool.bll.Fish;
 import vn.edu.hust.student.dynamicpool.bll.FishFactory;
 import vn.edu.hust.student.dynamicpool.bll.FishType;
 import vn.edu.hust.student.dynamicpool.bll.IFish;
@@ -86,5 +87,10 @@ public class BLLTest implements BusinessLogicLayer {
 	public String getKeyOfHost() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	@Override
+	public void removeFish(Fish fish) {
+		// TODO Auto-generated method stub
+		
 	}
 }

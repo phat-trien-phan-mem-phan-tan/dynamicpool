@@ -5,7 +5,7 @@ import java.util.List;
 import vn.edu.hust.student.dynamicpool.bll.IFish;
 import vn.edu.hust.student.dynamicpool.bll.IFishManager;
 
-public class FishManager implements IFishManager{
+public class FishManager extends IFishManager{
 
 	@Override
 	public List<IFish> getFishs() {

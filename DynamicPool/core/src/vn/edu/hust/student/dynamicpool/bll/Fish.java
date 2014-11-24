@@ -1,7 +1,13 @@
 package vn.edu.hust.student.dynamicpool.bll;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
+import com.eposi.eventdriven.exceptions.InvalidHandlerMethod;
+import com.eposi.eventdriven.exceptions.NoContextToExecute;
+
+import vn.edu.hust.student.dynamicpool.bll.fishEvent.FishStateEvent;
+import vn.edu.hust.student.dynamicpool.bll.statics.EventType;
 import vn.edu.hust.student.dynamicpool.model.FishState;
 import vn.edu.hust.student.dynamicpool.model.Pool;
 import vn.edu.hust.student.dynamicpool.model.Rectangle;
@@ -77,6 +83,7 @@ public class Fish extends IFish {
 	}
 
 	public FishState getFishState(Rectangle fishPosition) {
+		
 		return fishState;
 
 	}
@@ -84,6 +91,16 @@ public class Fish extends IFish {
 	@Override
 	public void setFishState(FishState fishState) {
 		this.fishState = fishState;
+		if(fishState == FishState.NOT_PASS){
+			try {
+				this.dispatchEvent(new FishStateEvent(EventType.COLISSION,this));
+			} catch (InvocationTargetException | IllegalAccessException
+					| NoSuchMethodException | InvalidHandlerMethod
+					| NoContextToExecute e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 	public ETrajectoryType getTrajectoryType() {

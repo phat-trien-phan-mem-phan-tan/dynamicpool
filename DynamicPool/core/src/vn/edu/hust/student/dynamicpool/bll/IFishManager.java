@@ -2,9 +2,16 @@ package vn.edu.hust.student.dynamicpool.bll;
 
 import java.util.List;
 
-public interface IFishManager {
+import com.eposi.eventdriven.implementors.BaseEventDispatcher;
+
+public abstract class IFishManager extends BaseEventDispatcher {
 	
-	List<IFish> getFishs();
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3058982944888783318L;
+
+	public abstract List<IFish> getFishs();
 	
-	void addFish(IFish fish);
+	public abstract void addFish(IFish fish);
 }

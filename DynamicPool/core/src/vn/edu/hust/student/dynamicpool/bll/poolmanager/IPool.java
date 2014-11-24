@@ -2,24 +2,26 @@ package vn.edu.hust.student.dynamicpool.bll.poolmanager;
 
 import java.util.ArrayList;
 
+import com.eposi.eventdriven.implementors.BaseEventDispatcher;
+
 import vn.edu.hust.student.dynamicpool.bll.IFish;
 import vn.edu.hust.student.dynamicpool.bll.IFishManager;
 import vn.edu.hust.student.dynamicpool.model.Rectangle;
 import vn.edu.hust.student.dynamicpool.model.Segment;
 
-public interface IPool {
+public abstract class IPool extends BaseEventDispatcher{
 
-	int getPoolId();
-	void setPosition(Rectangle rectangle);
+	public abstract int getPoolId();
+	public abstract void setPosition(Rectangle rectangle);
 	
-	Rectangle getCorrdiate();
+	public abstract Rectangle getCorrdiate();
 	
-	IFishManager getFishCollection();
+	public abstract IFishManager getFishCollection();
 	
-	ArrayList<Segment> getSegmentsX();
-	ArrayList<Segment> getSegmentsY();
-	void setSegments(ArrayList<Segment> segments);
+	public abstract ArrayList<Segment> getSegmentsX();
+	public abstract ArrayList<Segment> getSegmentsY();
+	public abstract void setSegments(ArrayList<Segment> segments);
 	
-	ArrayList<IFish> updatePosition(float detatime);
+	public abstract ArrayList<IFish> updatePosition(float detatime);
 	
 }
