@@ -161,9 +161,9 @@ public class Pool implements IPool {
 		float minX = poolPosition.getLocation().getX();
 		float maxX = AppConst.width + minX;
 
-		System.out.println("Pool: fisX: " + fishMinX + ", fishY: " + fishMinY
-				+ ", minX: " + minX + ", minY: " + minY + ", maxX: " + maxX
-				+ ", maxY: " + maxY);
+//		System.out.println("Pool: fisX: " + fishMinX + ", fishY: " + fishMinY
+//				+ ", minX: " + minX + ", minY: " + minY + ", maxX: " + maxX
+//				+ ", maxY: " + maxY);
 
 		if (fishMinX <= minX || fishMaxX >= maxX) {
 			fish.getTrajectory().setDirection(Oxy.oy);
