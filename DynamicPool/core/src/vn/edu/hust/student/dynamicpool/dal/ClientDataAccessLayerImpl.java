@@ -8,7 +8,6 @@ import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
 import vn.edu.hust.student.dynamicpool.bll.FishManager;
 import vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController;
-import vn.edu.hust.student.dynamicpool.dal.controller.HostMainController;
 import vn.edu.hust.student.dynamicpool.dal.statics.Field;
 import vn.edu.hust.student.dynamicpool.exception.DALException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
@@ -68,18 +67,25 @@ public class ClientDataAccessLayerImpl extends DataAccessLayer {
 	 */
 	@Override
 	public void synchronization(BusinessLogicDataCallback callback) {
-
+		callback.callback(true, null);
 	}
 
 	@Override
 	public void removeFish(Fish fish, BusinessLogicDataCallback callback) {
-		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put(Field.COMMAND, Field.REMOVE_FISH);
+		map.put("fish", fish);
+		ClientMainController.getInstance().getClientSocketController().sendMessage(map);
 	}
 
 	@Override
 	public void addDevice(DeviceInfo deviceInfor,
 			BusinessLogicDataCallback callback) {
-		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put(Field.COMMAND, Field.ADD_DEVICE);
+		map.put("device", deviceInfor);
+		map.put("clientName", this.getClientName());
+		ClientMainController.getInstance().getClientSocketController().sendMessage(map);
 	}
 
 	@Override

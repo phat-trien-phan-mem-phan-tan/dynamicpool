@@ -70,7 +70,7 @@ public class HostDataAccessLayerImpl extends DataAccessLayer {
 		Client client = HostMainController.getInstance().getClientManager()
 				.getClient(clientName);
 		Map<String, Object> data = new HashMap<String, Object>();
-		data.put(Field.COMMAND, "synchoronous");
+		data.put(Field.COMMAND, Field.SYNCHORONOUS);
 		data.put("fishManager", fishManager);
 		if (client != null) {
 			client.send(data);

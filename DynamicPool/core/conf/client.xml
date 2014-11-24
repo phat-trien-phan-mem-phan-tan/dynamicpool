@@ -1,6 +1,6 @@
 <server>
 	<processors>
-		
+		<command name="synchoronous">vn.edu.hust.student.dynamicpool.dal.processor.SynchoronousProcessor</command>
 	</processors>
 	
 	<http>
@@ -11,7 +11,7 @@
 			</entry>
 		</network>
 		<handlers>
-			<handler>hello_world</handler>
+			
 		</handlers>
 	</http>
 	

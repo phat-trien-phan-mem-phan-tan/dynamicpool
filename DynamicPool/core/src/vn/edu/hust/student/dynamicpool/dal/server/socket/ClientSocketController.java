@@ -5,6 +5,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Map;
 
+import flexjson.JSONSerializer;
+
 import vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController;
 import vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientHandler;
 import vn.edu.hust.student.dynamicpool.dal.config.SocketServerConfig;
@@ -15,10 +17,12 @@ public class ClientSocketController implements SocketClientHandler {
 	private SocketClientController socketClientController;
 	private SocketServerConfig config;
 	private ProcessorManager processorManager;
+	private JSONSerializer jsonSerializer;
 	
 	public ClientSocketController(SocketServerConfig config){
 		socketClientController = new SocketClientController(this);
 		this.config = config;
+		jsonSerializer = new JSONSerializer();
 	}
 	
 	public void initProcessor(Map<String, Class<? extends Processor>> map) {
@@ -55,7 +59,8 @@ public class ClientSocketController implements SocketClientHandler {
 	}
 
 	public void sendMessage(Object data) {
-		this.socketClientController.send(data);
+		String message = jsonSerializer.exclude("*.class").serialize(data);
+		this.socketClientController.send(message);
 	}
 	
 	@Override

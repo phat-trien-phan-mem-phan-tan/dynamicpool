@@ -4,6 +4,9 @@
 		<command name="hello_world">vn.edu.hust.student.dynamicpool.dal.processor.HelloProcessor</command>
 		<command name="schedule">vn.edu.hust.student.dynamicpool.dal.processor.ScheduleHelloProcessor</command>
 		<command name="addDevice">vn.edu.hust.student.dynamicpool.dal.processor.AddDeviceProcessor</command>
+		<command name="createFish">vn.edu.hust.student.dynamicpool.dal.processor.CreateFishProcessor</command>
+		<command name="removeFish">vn.edu.hust.student.dynamicpool.dal.processor.RemoveFishProcessor</command>
+		<command name="moveOverFish">vn.edu.hust.student.dynamicpool.dal.processor.MoveOverFishProcessor</command>
 	</processors>
 	
 	<http>
@@ -28,6 +31,9 @@
 		    <handler>addDevice</handler>
 			<handler>hello_world</handler>
 			<handler>schedule</handler>
+			<handler>createFish</handler>
+			<handler>removeFish</handler>
+			<handler>moveOverFish</handler>
 		</handlers>
 	</socket>
 	
