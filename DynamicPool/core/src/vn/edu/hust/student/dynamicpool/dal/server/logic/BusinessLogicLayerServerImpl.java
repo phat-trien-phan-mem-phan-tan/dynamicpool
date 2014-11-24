@@ -22,13 +22,16 @@ import vn.edu.hust.student.dynamicpool.presentation.PresentationVoidCallback;
 
 public class BusinessLogicLayerServerImpl extends BusinessLogicLayerImpl {
 	private PoolManager poolManager = new PoolManager();
-	private Logger logger = LoggerFactory.getLogger(BusinessLogicLayerServerImpl.class);
+	private Logger logger = LoggerFactory
+			.getLogger(BusinessLogicLayerServerImpl.class);
 	private PresentationVoidCallback haveNewClientCallback;
 
-	public BusinessLogicLayerServerImpl(PresentationVoidCallback haveNewClientCallback) {
+	public BusinessLogicLayerServerImpl(
+			PresentationVoidCallback haveNewClientCallback) {
 		this.dataAccessLayer = new HostDataAccessLayerImpl();
 		this.dataAccessLayer.registerEvent(dataAccessLayer);
-		this.dataAccessLayer.addEventListener(AppConst.REGISTER_EVENT_NAME, new BaseEventListener(this, "onRegisterClientEventCallback"));
+		this.dataAccessLayer.addEventListener(AppConst.REGISTER_EVENT_NAME,
+				new BaseEventListener(this, "onRegisterClientEventCallback"));
 		this.haveNewClientCallback = haveNewClientCallback;
 	}
 
@@ -57,11 +60,12 @@ public class BusinessLogicLayerServerImpl extends BusinessLogicLayerImpl {
 				booleanCallback.callback(false, new BLLException(
 						"Cannot Create Host", e));
 			}
+		} else {
+			booleanCallback.callback(false, new BLLException(
+					"Cannot ceate host", ex));
 		}
-		booleanCallback.callback(false, new BLLException(
-				"Cannot ceate host", ex));;
 	}
-	
+
 	@Deprecated
 	private void onRegisterClientEventCallback(Event e) {
 		try {
@@ -72,10 +76,11 @@ public class BusinessLogicLayerServerImpl extends BusinessLogicLayerImpl {
 		} catch (Exception error) {
 			logger.error("Cannot cast to device info");
 		}
-		
+
 	}
 
-	private void addClientAndShowSetting(String clientName, DeviceInfo deviceInfo) {
+	private void addClientAndShowSetting(String clientName,
+			DeviceInfo deviceInfo) {
 		PoolServer pool = new PoolServer(clientName, deviceInfo);
 		poolManager.add(pool);
 		haveNewClientCallback.callback();
@@ -84,12 +89,13 @@ public class BusinessLogicLayerServerImpl extends BusinessLogicLayerImpl {
 	@Override
 	public void addDevide(DeviceInfo deviceInfo,
 			PresentationBooleanCallback callback) {
-		PoolServer poolServer = new PoolServer(AppConst.DEFAULT_HOST_NAME, deviceInfo);
+		PoolServer poolServer = new PoolServer(AppConst.DEFAULT_HOST_NAME,
+				deviceInfo);
 		this.poolManager.add(poolServer);
-		super.addDeviceCallback(new PresentationBooleanCallback() {			
+		super.addDeviceCallback(new PresentationBooleanCallback() {
 			@Override
 			public void callback(boolean isSuccess, Exception error) {
-				
+
 			}
 		}, new ArrayList<Segment>(), null);
 		callback.callback(true, null);
