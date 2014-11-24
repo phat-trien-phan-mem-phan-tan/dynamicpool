@@ -9,14 +9,14 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
-public class FishOneUI extends FishUIWithTwoAnimation {
-	public FishOneUI(IFish fish) {
+public class FishTenUI extends FishUIWithTwoAnimation {
+	public FishTenUI(IFish fish) {
 		super(fish);
 	}
 
 	@Override
 	public void initFishAsset() {
 		AssetGameScreen gameScreen = Assets.instance.gameScreen;
-		fishAsset = gameScreen.getFish1Asset();
+		fishAsset = gameScreen.getFish10Asset();
 	}
 }

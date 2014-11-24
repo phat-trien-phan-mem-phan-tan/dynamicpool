@@ -98,7 +98,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		dataAccessLayer.addDevice(deviceInfo, logicDataCallBack);
 	}
 
-	private void addDeviceCallback(final PresentationBooleanCallback callback,
+	protected void addDeviceCallback(final PresentationBooleanCallback callback,
 			final Object data, final Exception ex) {
 
 		if (ex == null) {

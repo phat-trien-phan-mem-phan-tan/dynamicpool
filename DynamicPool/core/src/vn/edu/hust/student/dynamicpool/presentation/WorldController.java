@@ -42,7 +42,6 @@ public class WorldController {
 		this.game = game;
 	}
 
-
 	public void init() {
 		showSplashScreen();
 	}
@@ -91,7 +90,6 @@ public class WorldController {
 		};
 		this.businessLogicLayer.joinHost(key, callback);
 		showLoadingScreen();
-		loadDeviceInfoScreenResource();
 	}
 
 	private void creatClientBusinessLogicLayer() {
@@ -100,10 +98,12 @@ public class WorldController {
 
 	protected void joinHostCallbackHander(boolean isSuccess, Exception error) {
 		if (isSuccess) {
+			loadDeviceInfoScreenResource();
 			showDeviceInforScreen();
 			loadGameResources();
 		} else {
-			setErrorMessage(error == null ? "Cannot join host" : error.getMessage());
+			setErrorMessage(error == null ? "Cannot join host" : error
+					.getMessage());
 			showMainMenuScreen();
 		}
 	}
@@ -130,7 +130,7 @@ public class WorldController {
 		WorldRenderer worldRenderer = game.getWorldRenderer();
 		gameScreen = new GameScreen(worldRenderer, this);
 	}
-	
+
 	private void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
 	}
@@ -145,19 +145,22 @@ public class WorldController {
 		};
 		this.businessLogicLayer.createHost(callback);
 		showLoadingScreen();
-		loadDeviceInfoScreenResource();
 	}
 
 	private void createHostBusinessLogicLayer() {
-		this.businessLogicLayer = new BusinessLogicLayerServerImpl(this.newClientRegisterEventCallback);
+		this.businessLogicLayer = new BusinessLogicLayerServerImpl(
+				this.newClientRegisterEventCallback);
 	}
 
 	protected void createHostCallbackHander(boolean isSuccess, Exception error) {
+		System.out.println("Create host callback: " + isSuccess);
 		if (isSuccess) {
+			loadDeviceInfoScreenResource();
 			showDeviceInforScreen();
 			loadGameResources();
 		} else {
-			setErrorMessage(error == null ? "Cannot create host" : error.getMessage());
+			setErrorMessage(error == null ? "Cannot create host" : error
+					.getMessage());
 			showMainMenuScreen();
 		}
 	}
@@ -271,6 +274,6 @@ public class WorldController {
 	}
 
 	protected void newClientRegisterCallbackHander() {
-		
+		System.out.println("new client registered");
 	}
 }
