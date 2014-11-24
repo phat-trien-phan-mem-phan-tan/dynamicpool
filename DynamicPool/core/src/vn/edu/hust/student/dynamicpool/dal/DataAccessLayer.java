@@ -1,13 +1,5 @@
 package vn.edu.hust.student.dynamicpool.dal;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 4aa3cd03695b2a746545fbff4eb38d3feeb685ee
-import com.eposi.eventdriven.implementors.BaseEventDispatcher;
-
->>>>>>> 4aa3cd03695b2a746545fbff4eb38d3feeb685ee
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
 import vn.edu.hust.student.dynamicpool.bll.FishManager;
