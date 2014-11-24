@@ -19,5 +19,4 @@ public class SynchoronousEvent extends Event {
 	public void setFishManager(FishManager fishManager) {
 		this.fishManager = fishManager;
 	}
-
 }

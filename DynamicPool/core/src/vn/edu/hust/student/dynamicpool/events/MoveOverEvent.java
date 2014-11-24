@@ -7,9 +7,17 @@ import com.eposi.eventdriven.Event;
 public class MoveOverEvent extends Event {
 	private Fish fish;
 	
-	public MoveOverEvent(String type) {
+	public MoveOverEvent(String type, Fish fish) {
 		super(type);
-		// TODO Auto-generated constructor stub
+		setFish(fish);
+	}
+
+	public Fish getFish() {
+		return fish;
+	}
+
+	public void setFish(Fish fish) {
+		this.fish = fish;
 	}
 
 }
