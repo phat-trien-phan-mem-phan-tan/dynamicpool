@@ -17,8 +17,8 @@ public class PoolManager{
 	}
 	
 	public void add(PoolServer pool){
-		this.pools.add(pool);
 		initDefaultPosition(pool);
+		this.pools.add(pool);
 	}
 	
 	private void initDefaultPosition(PoolServer poolServer) {

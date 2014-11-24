@@ -459,7 +459,7 @@ public class WorldController {
 		if (isValidScreenSize(screenSize)) {
 			sendDeviceInfoToServer();
 			showFullScreen();
-			showLoadingScreen();
+//			showLoadingScreen();
 			return true;
 		}
 		return false;
