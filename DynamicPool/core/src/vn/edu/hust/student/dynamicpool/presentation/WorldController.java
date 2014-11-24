@@ -442,7 +442,7 @@ public class WorldController {
 		} else {
 			setErrorMessage(error == null ? "Cannot create host" : error
 					.getMessage());
-			showMainMenuScreen();
+//			showMainMenuScreen();
 		}
 	}
 
