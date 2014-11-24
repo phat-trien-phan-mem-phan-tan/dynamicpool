@@ -1,12 +1,15 @@
 package vn.edu.hust.student.dynamicpool.dal.controller;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.eclipse.jetty.util.ajax.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,9 +34,9 @@ public class ClientMainController {
 	private JSON json;
 	private Logger logger = LoggerFactory.getLogger(ClientMainController.class);
 	private List<BaseEventDispatcher> dispatchers;
-	
-	private ClientMainController() {
 
+	private ClientMainController() {
+		loadLog4j();
 		getLogger().info("Reading config file from path conf/client.xml");
 		ServerXMLConfigReader configReader;
 		try {
@@ -59,6 +62,18 @@ public class ClientMainController {
 		return _instance;
 	}
 
+	public void loadLog4j() {
+		String log4JPropertyFile = "conf/log4j.properties";
+		Properties p = new Properties();
+
+		try {
+			p.load(new FileInputStream(log4JPropertyFile));
+			PropertyConfigurator.configure(p);
+		} catch (IOException e) {
+			System.out.println("Opps, cannot load log4j.properties");
+		}
+	}
+
 	@SuppressWarnings("unchecked")
 	public void start(String key) throws DALException {
 		String response;
@@ -68,8 +83,8 @@ public class ClientMainController {
 					.fromJSON(response);
 			if (params.containsKey(Field.ERROR)) {
 				if (params.get(Field.ERROR) != null) {
-					throw new DALException(
-							(String) params.get(Field.ERROR), null);
+					throw new DALException((String) params.get(Field.ERROR),
+							null);
 				} else {
 					String ip = (String) params.get("ip");
 					int port = Integer.parseInt(params.get("port").toString());
@@ -114,7 +129,7 @@ public class ClientMainController {
 			ClientSocketController clientSocketController) {
 		this.clientSocketController = clientSocketController;
 	}
-	
+
 	public void addDispatcher(BaseEventDispatcher target) {
 		this.dispatchers.add(target);
 	}
@@ -126,8 +141,8 @@ public class ClientMainController {
 	public void setDispatchers(List<BaseEventDispatcher> dispatchers) {
 		this.dispatchers = dispatchers;
 	}
-	
-	public void dispatchAll(Event e){
+
+	public void dispatchAll(Event e) {
 		for (BaseEventDispatcher dispatcher : this.dispatchers) {
 			try {
 				dispatcher.dispatchEvent(e);
