@@ -43,7 +43,7 @@ public class HostGameScreen extends GameScreen {
 		renderKey();
 		renderHubControl();
 		worldRenderer.endRender();
-		renderWidePool();
+//		renderWidePool();
 	}
 
 	private void renderKey() {
