@@ -136,7 +136,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 		ArrayList<IFish> fishes = new ArrayList<IFish>();
 		try {
-			Object a = pool.getFishCollection();
+			Object a = pool.getFishCollection().getFishs();
 			fishes = (ArrayList<IFish>) a;
 		} catch (Exception e) {
 			System.err.println("Error: BLL " + e.getMessage());
