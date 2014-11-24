@@ -1,13 +1,11 @@
 package vn.edu.hust.student.dynamicpool.dal;
 
-import jdk.nashorn.internal.ir.BaseNode;
-
-import com.eposi.eventdriven.implementors.BaseEventDispatcher;
-
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
 import vn.edu.hust.student.dynamicpool.bll.FishManager;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
+
+import com.eposi.eventdriven.implementors.BaseEventDispatcher;
 
 public abstract class DataAccessLayer extends BaseEventDispatcher  {
 	
@@ -37,4 +35,6 @@ public abstract class DataAccessLayer extends BaseEventDispatcher  {
 	public abstract void synchronous(FishManager fishManager, String clientName);
 	
 	public abstract void registerEvent(BaseEventDispatcher target);
+	
+	public abstract void registerDone(boolean state);
 }
