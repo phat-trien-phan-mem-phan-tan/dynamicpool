@@ -56,14 +56,15 @@ public class GameScreen implements Screen {
 	protected void renderFishsUIAndUpdate(float deltaTime) {
 		List<IFish> fishs = worldController.getFishs();
 		for (IFish fish : fishs) {
-			renderAFishUI(fish);
+			renderAFishUI(fish, deltaTime);
 		}
 		worldController.updateFishsCordinate(deltaTime);
 	}
 
-	private void renderAFishUI(IFish fish) {
+	private void renderAFishUI(IFish fish, float deltaTime) {
 		FishUI fishUI = fishUICollection.getFishUI(fish);
 		fishUI.render(batch);
+		fishUI.update(deltaTime);
 	}
 
 	protected void renderHubControl() {

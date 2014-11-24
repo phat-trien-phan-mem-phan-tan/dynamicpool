@@ -65,4 +65,8 @@ public class WorldRenderer implements Disposable {
 		return batch;
 	}
 
+	public OrthographicCamera getCamera() {
+		return camera;
+	}
+
 }

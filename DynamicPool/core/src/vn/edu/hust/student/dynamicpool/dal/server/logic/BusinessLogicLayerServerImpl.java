@@ -68,13 +68,14 @@ public class BusinessLogicLayerServerImpl extends BusinessLogicLayerImpl {
 
 	@Deprecated
 	private void onRegisterClientEventCallback(Event e) {
+		System.out.println("BusinessLogicLayerServer: event");
 		try {
 			RegisterClientEvent clientEvent = (RegisterClientEvent) e;
 			DeviceInfo deviceInfo = (DeviceInfo) clientEvent.getDiviceInfo();
 			String clientName = clientEvent.getClientName();
 			addClientAndShowSetting(clientName, deviceInfo);
 		} catch (Exception error) {
-			logger.error("Cannot cast to device info");
+			logger.error("BusinessLogicLayerServer: Cannot cast to device info");
 		}
 
 	}
@@ -100,4 +101,5 @@ public class BusinessLogicLayerServerImpl extends BusinessLogicLayerImpl {
 		}, new ArrayList<Segment>(), null);
 		callback.callback(true, null);
 	}
+	
 }

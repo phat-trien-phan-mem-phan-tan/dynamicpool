@@ -1,6 +1,9 @@
 package vn.edu.hust.student.dynamicpool.presentation.screen;
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
+import com.sun.prism.GraphicsPipeline.ShaderType;
 
 import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
 import vn.edu.hust.student.dynamicpool.presentation.WorldController;
@@ -14,6 +17,12 @@ public class HostGameScreen extends GameScreen {
 	public HostGameScreen(WorldRenderer worldRenderer,
 			WorldController worldController) {
 		super(worldRenderer, worldController);
+	}
+	
+	@Override
+	public void show() {
+		super.show();
+		this.defaultFont = Assets.instance.gameScreen.getDefaultFont();
 	}
 	
 	@Override
@@ -34,14 +43,7 @@ public class HostGameScreen extends GameScreen {
 		renderKey();
 		renderHubControl();
 		worldRenderer.endRender();
-	}
-	
-	
-
-	@Override
-	public void show() {
-		super.show();
-		this.defaultFont = Assets.instance.gameScreen.getDefaultFont();
+		renderWidePool();
 	}
 
 	private void renderKey() {
@@ -52,5 +54,12 @@ public class HostGameScreen extends GameScreen {
 //		System.out.println(String.format("HostGameScreen: width %d, height %d, key %s", AppConst.width, AppConst.height, key));
 	}
 	
-	
+	ShapeRenderer shapeRenderer = new ShapeRenderer();
+	private void renderWidePool() {
+		shapeRenderer.setProjectionMatrix(worldRenderer.getCamera().combined);
+		shapeRenderer.begin(ShapeType.Filled);
+		shapeRenderer.setColor(0, 1, 0, 1);
+		shapeRenderer.circle(AppConst.width/2, AppConst.height/2, 20);
+		shapeRenderer.end();
+	}
 }
