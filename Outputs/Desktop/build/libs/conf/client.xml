@@ -1,0 +1,29 @@
+<server>
+	<processors>
+		<command name="synchoronous">vn.edu.hust.student.dynamicpool.dal.processor.SynchoronousProcessor</command>
+	</processors>
+	
+	<http>
+		<network>
+			<entry>
+				<path>/*</path>
+				<port>6969</port>
+			</entry>
+		</network>
+		<handlers>
+			
+		</handlers>
+	</http>
+	
+	<socket>
+		<network>
+			<entry>
+				<port>9696</port>
+			</entry>
+		</network>
+		<handlers>
+		  
+		</handlers>
+	</socket>
+	
+</server>

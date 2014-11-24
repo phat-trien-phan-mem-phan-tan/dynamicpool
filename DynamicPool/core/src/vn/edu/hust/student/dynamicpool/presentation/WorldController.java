@@ -117,12 +117,10 @@ public class WorldController {
 	}
 
 	private void showFullScreen() {
-		/*
-		 * DisplayMode desktopDisplayMode =
-		 * Gdx.graphics.getDesktopDisplayMode();
-		 * Gdx.graphics.setDisplayMode(desktopDisplayMode.width,
-		 * desktopDisplayMode.height, true);
-		 */
+		DisplayMode desktopDisplayMode =
+		Gdx.graphics.getDesktopDisplayMode();
+		Gdx.graphics.setDisplayMode(desktopDisplayMode.width,
+		desktopDisplayMode.height, true);
 	}
 
 	private void loadGameResources() {

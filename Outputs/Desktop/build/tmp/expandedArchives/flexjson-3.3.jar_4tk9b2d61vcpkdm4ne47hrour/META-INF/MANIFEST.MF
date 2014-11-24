@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Export-Package: flexjson;uses:="flexjson.transformer";version="3.3.0",
+ flexjson.factories;uses:=flexjson;version="3.3.0",flexjson.locators;u
+ ses:=flexjson;version="3.3.0",flexjson.transformer;uses:=flexjson;ver
+ sion="3.3.0"
+Built-By: charlie
+Tool: Bnd-2.1.0.20130426-122213
+Bundle-Name: flexjson
+Created-By: Apache Maven Bundle Plugin
+Build-Jdk: 1.6.0_65
+Bundle-Version: 3.3.0
+Bnd-LastModified: 1414439245613
+Bundle-ManifestVersion: 2
+Bundle-Description: Sonatype helps open source projects to set up Mave
+ n repositories on https://oss.sonatype.org/
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: net.sf.flexjson
+Archiver-Version: Plexus Archiver
+
