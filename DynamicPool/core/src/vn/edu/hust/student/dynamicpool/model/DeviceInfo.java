@@ -6,6 +6,8 @@ public class DeviceInfo {
 	private float screenHeight;
 	private float screenSize;
 	
+	public DeviceInfo(){}
+	
 	public DeviceInfo(float screenWidth, float screenHeight, float screenSize) {
 		
 		this.screenWidth = screenWidth;

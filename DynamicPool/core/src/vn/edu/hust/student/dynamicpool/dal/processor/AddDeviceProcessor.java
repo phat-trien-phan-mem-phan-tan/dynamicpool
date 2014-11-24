@@ -19,7 +19,7 @@ public class AddDeviceProcessor extends Processor {
 			JSONDeserializer<DeviceInfo> json = new JSONDeserializer<DeviceInfo>();
 			JSONSerializer serilizer = new JSONSerializer();
 			String device = serilizer.exclude("*.class").serialize(params.get("device"));
-			DeviceInfo deviceInfo = json.deserialize(device);
+			DeviceInfo deviceInfo = json.deserialize(device, DeviceInfo.class);
 			String clientName = (String) params.get("clientName");
 			HostMainController.getInstance().dispatchAll(
 					new RegisterClientEvent(AppConst.REGISTER_EVENT_NAME,

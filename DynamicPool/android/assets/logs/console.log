@@ -176,3 +176,60 @@ java.io.IOException: An existing connection was forcibly closed by the remote ho
 2014-Nov-24 20:30:32:854 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
 2014-Nov-24 20:30:32:857 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - start socket successful
 2014-Nov-24 20:30:36:187 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - SEND MESSAGE {"clientName":"cc041fe0-604f-443e-950e-767cfe764b34","cmd":"addDevice","device":{"screenHeight":768.0,"screenSize":14.0,"screenWidth":1366.0}}
+2014-Nov-24 20:40:54:008 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-24 20:40:54:147 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-24 20:40:55:098 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=6770
+2014-Nov-24 20:40:55:107 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":"host cannot found by key 6770"}
+2014-Nov-24 20:41:19:239 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-24 20:41:19:363 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-24 20:41:24:380 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=6670
+2014-Nov-24 20:41:24:389 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"port":9696,"error":null,"ip":"192.168.0.30"}
+2014-Nov-24 20:41:24:442 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-24 20:41:24:525 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - start socket successful
+2014-Nov-24 20:41:28:036 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - SEND MESSAGE {"clientName":"8ada3628-dd55-4c7a-b10c-bde7ad34c23d","cmd":"addDevice","device":{"screenHeight":768.0,"screenSize":14.0,"screenWidth":1366.0}}
+2014-Nov-24 20:43:50:847 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-24 20:43:51:876 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.33
+2014-Nov-24 20:43:51:885 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"1401","ip":"101.99.7.249"}
+2014-Nov-24 20:43:52:204 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-24 20:43:52:207 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-24 20:43:52:235 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-24 20:44:04:167 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-24 20:44:04:171 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-24 20:44:07:567 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=144 cap=2048: 7B 22 63 6C 69 65 6E 74 4E 61 6D 65 22 3A 22 62...]
+2014-Nov-24 20:44:07:568 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-24 20:44:07:575 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - data recieved: {"clientName":"bca9daac-067d-48f1-91af-396fdf085430","cmd":"addDevice","device":{"screenHeight":768.0,"screenSize":14.0,"screenWidth":1366.0}}
+2014-Nov-24 20:44:07:805 [NioProcessor-2] WARN  org.apache.mina.filter.logging.LoggingFilter  - EXCEPTION :
+java.lang.ClassCastException: java.util.HashMap cannot be cast to vn.edu.hust.student.dynamicpool.model.DeviceInfo
+	at vn.edu.hust.student.dynamicpool.dal.processor.AddDeviceProcessor.execute(AddDeviceProcessor.java:23)
+	at vn.edu.hust.student.dynamicpool.dal.processor.ProcessorManager.processCommand(ProcessorManager.java:17)
+	at vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController.messageReceived(NIOSocketServerController.java:116)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:690)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:407)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:236)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
+	at org.apache.mina.filter.logging.LoggingFilter.messageReceived(LoggingFilter.java:208)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1200(DefaultIoFilterChain.java:47)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:765)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.messageReceived(IoFilterAdapter.java:109)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:417)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireMessageReceived(DefaultIoFilterChain.java:410)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:710)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:664)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:653)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1124)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2014-Nov-24 20:44:17:824 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-24 20:44:27:826 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-24 20:44:37:827 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-24 20:44:47:827 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-24 20:44:53:149 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CLOSED
