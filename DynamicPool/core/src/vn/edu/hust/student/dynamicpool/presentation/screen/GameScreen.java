@@ -19,9 +19,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class GameScreen implements Screen {
 
-	private WorldRenderer worldRenderer = null;
+	protected WorldRenderer worldRenderer = null;
 	protected WorldController worldController = null;
-	private SpriteBatch batch = null;
+	protected SpriteBatch batch = null;
 	private GameBackgroundUI gameBackground = new GameBackgroundUI();
 	private FishUICollection fishUICollection = null;
 	private Texture exitButtonTexture;
@@ -49,11 +49,11 @@ public class GameScreen implements Screen {
 		worldRenderer.endRender();
 	}
 
-	private void renderGameBackground() {
+	protected void renderGameBackground() {
 		gameBackground.render(batch);
 	}
 
-	private void renderFishsUIAndUpdate(float deltaTime) {
+	protected void renderFishsUIAndUpdate(float deltaTime) {
 		List<IFish> fishs = worldController.getFishs();
 		for (IFish fish : fishs) {
 			renderAFishUI(fish);
@@ -66,7 +66,7 @@ public class GameScreen implements Screen {
 		fishUI.render(batch);
 	}
 
-	private void renderHubControl() {
+	protected void renderHubControl() {
 		batch.draw(exitButtonTexture, 0, 0);
 		batch.draw(addFishButtonTexture, 64, 0);
 		if (worldController.isShowSelectFishButtons())

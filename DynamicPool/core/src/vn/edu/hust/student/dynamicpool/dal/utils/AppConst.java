@@ -64,6 +64,8 @@ public class AppConst {
 	public static final int FISH_TEN_HEIGHT = 25;
 	public static final String REGISTER_EVENT_NAME = "RegisterClient";
 	public static final String DEFAULT_HOST_NAME = "host";
+	public static final int KEY_FONT_SIZE = 14;
+	public static final String KEY_FONT_NAME = "size"+ KEY_FONT_SIZE + ".ttf";
 	public static int width = 800;
 	public static int height = 480;
 	
