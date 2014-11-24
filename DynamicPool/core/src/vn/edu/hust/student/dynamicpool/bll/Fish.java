@@ -7,7 +7,7 @@ import vn.edu.hust.student.dynamicpool.model.Pool;
 import vn.edu.hust.student.dynamicpool.model.Rectangle;
 import vn.edu.hust.student.dynamicpool.model.Segment;
 
-public class Fish implements IFish {
+public class Fish extends IFish {
 	private Rectangle position;
 	private Trajectory trajectory;
 	private int id;
