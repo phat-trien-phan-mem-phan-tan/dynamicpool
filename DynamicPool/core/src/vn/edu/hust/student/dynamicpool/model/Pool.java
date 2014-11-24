@@ -23,7 +23,7 @@ public class Pool implements IPool {
 		this.id = 0;
 		this.position = position;
 		this.fishManager = fishManager;
-		this.diagonal = diagonal;
+		this.diagonal = 0;
 
 	}
 
@@ -36,8 +36,8 @@ public class Pool implements IPool {
 
 	}
 
-	public Pool(Rectangle position, IFishManager fishManager,
-			float diagnoal, int id) {
+	public Pool(Rectangle position, IFishManager fishManager, float diagnoal,
+			int id) {
 		this.id = id;
 		this.position = position;
 		this.fishManager = fishManager;
@@ -87,6 +87,42 @@ public class Pool implements IPool {
 		}
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public IFishManager getFishManager() {
+		return fishManager;
+	}
+
+	public void setFishManager(IFishManager fishManager) {
+		this.fishManager = fishManager;
+	}
+
+	public float getDiagonal() {
+		return diagonal;
+	}
+
+	public void setDiagonal(float diagonal) {
+		this.diagonal = diagonal;
+	}
+
+	public Rectangle getPosition() {
+		return position;
+	}
+
+	public void setSegmentsX(ArrayList<Segment> segmentsX) {
+		this.segmentsX = segmentsX;
+	}
+
+	public void setSegmentsY(ArrayList<Segment> segmentsY) {
+		this.segmentsY = segmentsY;
+	}
+
 	@Override
 	public ArrayList<Segment> getSegmentsX() {
 
@@ -113,7 +149,7 @@ public class Pool implements IPool {
 		return fishes;
 	}
 
-	private void checkHit(float detatime, Rectangle poolPosition, Fish fish) {
+	private boolean checkHit(float detatime, Rectangle poolPosition, Fish fish) {
 		float fishMinX = fish.getPosition().getMinX();
 		float fishMinY = fish.getPosition().getMinY();
 		float fishMaxX = fish.getPosition().getMaxX();
@@ -121,28 +157,30 @@ public class Pool implements IPool {
 
 		float minY = poolPosition.getLocation().getY();
 		float maxY = AppConst.height + minY;
-		
+
 		float minX = poolPosition.getLocation().getX();
 		float maxX = AppConst.width + minX;
 
 		System.out.println("Pool: fisX: " + fishMinX + ", fishY: " + fishMinY
 				+ ", minX: " + minX + ", minY: " + minY + ", maxX: " + maxX
 				+ ", maxY: " + maxY);
-		
-		if (fishMinX <= minX || fishMaxX >= maxX){
+
+		if (fishMinX <= minX || fishMaxX >= maxX) {
 			fish.getTrajectory().setDirection(Oxy.oy);
-			float newAngle = (float)Math.PI - fish.getAngle(); 
+			float newAngle = (float) Math.PI - fish.getAngle();
 			fish.setAngle(newAngle);
+			fish.setFishState(this, 1);
+			return true;
 		}
 		if (fishMinY <= minY || fishMaxY >= maxY) {
-			
+
 			fish.getTrajectory().setDirection(Oxy.ox);
+			fish.setFishState(this, 0);
+			return true;
 		}
-	
-		
-	/*	FishPosition nextPosition = (FishPosition) fish.checkPosition(detatime
-				+ AppConst.timePass);*/
-		
+		fish.setFishState(FishState.NONE);
+
+		return false;
 
 	}
 

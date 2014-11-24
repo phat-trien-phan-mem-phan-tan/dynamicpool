@@ -1,3 +1,4 @@
+
 package vn.edu.hust.student.dynamicpool.bll;
 
 import vn.edu.hust.student.dynamicpool.model.FishState;
@@ -12,4 +13,5 @@ public interface IFish {
 	void setAngle(float angle);
 	float getAngle();
 	FishType getFishType();
+
 }

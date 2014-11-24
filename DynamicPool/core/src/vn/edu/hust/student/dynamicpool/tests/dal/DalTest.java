@@ -119,10 +119,4 @@ public class DalTest extends DataAccessLayer {
 		
 	}
 
-	@Override
-	public void registerDone(boolean state) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
