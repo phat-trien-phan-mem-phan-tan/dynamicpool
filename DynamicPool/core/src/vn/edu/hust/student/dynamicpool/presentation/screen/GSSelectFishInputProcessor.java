@@ -17,7 +17,8 @@ public class GSSelectFishInputProcessor extends GSDefaultInputProcessor {
 			if (screenX >= 55 && screenX < 105) worldController.selectFish(FishType.FISH2);
 			if (screenX >= 105 && screenX < 145) worldController.selectFish(FishType.FISH3);
 			if (screenX >= 145 && screenX < 205) worldController.selectFish(FishType.FISH4);
-			if (screenX >= 205 && screenX < 295) worldController.selectFish(FishType.FISH6);
+			if (screenX >= 205 && screenX < 245) worldController.selectFish(FishType.FISH5);
+			if (screenX >= 245 && screenX < 295) worldController.selectFish(FishType.FISH6);
 			if (screenX >= 295 && screenX < 350) worldController.selectFish(FishType.FISH7);
 			if (screenX >= 350 && screenX < 395) worldController.selectFish(FishType.FISH8);
 			if (screenX >= 395 && screenX < 440) worldController.selectFish(FishType.FISH9);

@@ -15,6 +15,6 @@ public class GameBackgroundUI {
 		backgroundRegion = Assets.instance.gameScreen.getGameBackgroundRegion();
 	}
 	public void render(SpriteBatch batch) {
-		batch.draw(backgroundRegion, 0f, 0f);
+//		batch.draw(backgroundRegion, 0f, 0f);
 	}
 }

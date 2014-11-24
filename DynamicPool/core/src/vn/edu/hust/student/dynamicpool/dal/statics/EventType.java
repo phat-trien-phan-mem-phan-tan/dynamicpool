@@ -6,4 +6,5 @@ public class EventType {
 	public static String RECEIVE_NEW_FISH_EVENT = "receiveNewFish";
 	public static String REGISTER_CLIENT_EVENT = "registerClient";
 	public static String CREATE_FISH = "createFish";
+	public static String REMOVE_FISH = "removeFish";
 }

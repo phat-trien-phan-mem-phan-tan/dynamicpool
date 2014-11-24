@@ -10,9 +10,9 @@ import vn.edu.hust.student.dynamicpool.equation.vector.Oxy;
 public class Pool implements IPool {
 
 	private int id;
-	private ArrayList<Segment> segmentsX;
+	private ArrayList<Segment> segmentsX = new ArrayList<>();
 
-	private ArrayList<Segment> segmentsY;
+	private ArrayList<Segment> segmentsY = new ArrayList<>();
 	private Rectangle position;
 
 	private IFishManager fishManager;
@@ -161,9 +161,9 @@ public class Pool implements IPool {
 		float minX = poolPosition.getLocation().getX();
 		float maxX = AppConst.width + minX;
 
-		System.out.println("Pool: fisX: " + fishMinX + ", fishY: " + fishMinY
-				+ ", minX: " + minX + ", minY: " + minY + ", maxX: " + maxX
-				+ ", maxY: " + maxY);
+//		System.out.println("Pool: fisX: " + fishMinX + ", fishY: " + fishMinY
+//				+ ", minX: " + minX + ", minY: " + minY + ", maxX: " + maxX
+//				+ ", maxY: " + maxY);
 
 		if (fishMinX <= minX || fishMaxX >= maxX) {
 			fish.getTrajectory().setDirection(Oxy.oy);

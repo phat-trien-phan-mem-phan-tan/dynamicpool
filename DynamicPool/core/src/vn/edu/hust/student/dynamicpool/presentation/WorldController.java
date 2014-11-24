@@ -157,12 +157,18 @@ public class WorldController {
 		if (isSuccess) {
 			loadDeviceInfoScreenResource();
 			showDeviceInforScreen();
-			loadGameResources();
+			loadHostGameResources();
 		} else {
 			setErrorMessage(error == null ? "Cannot create host" : error
 					.getMessage());
 //			showMainMenuScreen();
 		}
+	}
+
+	private void loadHostGameResources() {
+		Assets.instance.initGameAssets();
+		WorldRenderer worldRenderer = game.getWorldRenderer();
+		gameScreen = new HostGameScreen(worldRenderer, this);
 	}
 
 	private void loadDeviceInfoScreenResource() {
@@ -275,5 +281,9 @@ public class WorldController {
 
 	protected void newClientRegisterCallbackHander() {
 		System.out.println("new client registered");
+	}
+
+	public String getKey() {
+		return businessLogicLayer.getKeyOfHost();
 	}
 }
