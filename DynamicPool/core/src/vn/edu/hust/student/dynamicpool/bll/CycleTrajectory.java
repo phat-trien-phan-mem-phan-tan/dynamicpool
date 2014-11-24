@@ -82,8 +82,8 @@ public class CycleTrajectory extends Trajectory {
 		float sinValue = (float) Math.sin(anpha);
 		float cosValue = (float) Math.cos(anpha);
 
-		System.out.println("CycleTrajectory: Cos Value: "+cosValue);
-		System.out.println("CycleTrajectory: Sin Value: "+sinValue);
+		/*System.out.println("CycleTrajectory: Cos Value: "+cosValue);
+		System.out.println("CycleTrajectory: Sin Value: "+sinValue);*/
 		if (vector.equals(Oxy.ox)) {
 			// check cos  to set center point
 			
