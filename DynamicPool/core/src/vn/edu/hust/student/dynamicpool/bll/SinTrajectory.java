@@ -63,9 +63,10 @@ public class SinTrajectory extends Trajectory {
 			
 
 		} else if (vector.equals(Oxy.oy)) {
-			
+		/*	
 			this.t = -t;
-			this.angle = -angle;
+			this.angle = -angle;*/
+			this.a = -a;
 			x0 = (float) x0+n*t;
 			direction = -1;
 			

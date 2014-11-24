@@ -43,9 +43,9 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 			}
 		};
 		// tro thanh sua data access layer
-		/*
-		 * this.dataAccessLayer.joinHost(key, logicDataCallBack);
-		 */
+		
+		 this.dataAccessLayer.joinHost(key, logicDataCallBack);
+		 
 	}
 
 	private void joinHostCallBack(final PresentationBooleanCallback callback,
@@ -287,4 +287,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		this.keyOfHost = keyOfHost;
 	}
 
+	public String getKey(){
+		return keyOfHost;
+	}
 }
