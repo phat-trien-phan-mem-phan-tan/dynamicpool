@@ -1,24 +1,15 @@
 package vn.edu.hust.student.dynamicpool.presentation;
 
-import java.util.List;
+import java.util.*;
 
-import vn.edu.hust.student.dynamicpool.GameCenter;
-import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayer;
-import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayerImpl;
-import vn.edu.hust.student.dynamicpool.bll.ETrajectoryType;
-import vn.edu.hust.student.dynamicpool.bll.FishType;
-import vn.edu.hust.student.dynamicpool.bll.IFish;
-import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
-import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
-import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
-import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUICollection;
-import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUIFactory;
-import vn.edu.hust.student.dynamicpool.presentation.screen.DeviceInfoScreen;
-import vn.edu.hust.student.dynamicpool.presentation.screen.GameScreen;
-import vn.edu.hust.student.dynamicpool.presentation.screen.LoadingScreen;
-import vn.edu.hust.student.dynamicpool.presentation.screen.MainMenuScreen;
-import vn.edu.hust.student.dynamicpool.presentation.screen.SplashScreen;
-import vn.edu.hust.student.dynamicpool.tests.presentation.BLLTest;
+import vn.edu.hust.student.dynamicpool.*;
+import vn.edu.hust.student.dynamicpool.bll.*;
+import vn.edu.hust.student.dynamicpool.dal.server.logic.*;
+import vn.edu.hust.student.dynamicpool.dal.utils.*;
+import vn.edu.hust.student.dynamicpool.model.*;
+import vn.edu.hust.student.dynamicpool.presentation.assets.*;
+import vn.edu.hust.student.dynamicpool.presentation.gameobject.*;
+import vn.edu.hust.student.dynamicpool.presentation.screen.*;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Graphics.DisplayMode;
@@ -39,11 +30,16 @@ public class WorldController {
 	private int addingFishStep = 0;
 	private FishType selectedFishType = FishType.FISH1;
 	private float size;
+	private String errorMessage = "";
+	private PresentationVoidCallback newClientRegisterEventCallback = new PresentationVoidCallback() {
+		@Override
+		public void callback() {
+			newClientRegisterCallbackHander();
+		}
+	};
 
 	public WorldController(GameCenter game) {
 		this.game = game;
-	/*	this.businessLogicLayer = new BLLTest();*/
-		this.businessLogicLayer = new BusinessLogicLayerImpl();
 	}
 
 	public void init() {
@@ -85,6 +81,7 @@ public class WorldController {
 	}
 
 	public void joinHost(String key) {
+		creatClientBusinessLogicLayer();
 		PresentationBooleanCallback callback = new PresentationBooleanCallback() {
 			@Override
 			public void callback(boolean isSuccess, Exception error) {
@@ -95,10 +92,20 @@ public class WorldController {
 		showLoadingScreen();
 	}
 
+	private void creatClientBusinessLogicLayer() {
+		this.businessLogicLayer = new BusinessLogicLayerImpl();
+	}
+
 	protected void joinHostCallbackHander(boolean isSuccess, Exception error) {
-		loadDeviceInfoScreenResource();
-		showDeviceInforScreen();
-		loadGameResources();
+		if (isSuccess) {
+			loadDeviceInfoScreenResource();
+			showDeviceInforScreen();
+			loadGameResources();
+		} else {
+			setErrorMessage(error == null ? "Cannot join host" : error
+					.getMessage());
+			showMainMenuScreen();
+		}
 	}
 
 	private void showGameScreen() {
@@ -110,9 +117,12 @@ public class WorldController {
 	}
 
 	private void showFullScreen() {
-/*		DisplayMode desktopDisplayMode = Gdx.graphics.getDesktopDisplayMode();
-		Gdx.graphics.setDisplayMode(desktopDisplayMode.width,
-				desktopDisplayMode.height, true);*/
+		/*
+		 * DisplayMode desktopDisplayMode =
+		 * Gdx.graphics.getDesktopDisplayMode();
+		 * Gdx.graphics.setDisplayMode(desktopDisplayMode.width,
+		 * desktopDisplayMode.height, true);
+		 */
 	}
 
 	private void loadGameResources() {
@@ -121,7 +131,12 @@ public class WorldController {
 		gameScreen = new GameScreen(worldRenderer, this);
 	}
 
+	private void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public void createHost() {
+		createHostBusinessLogicLayer();
 		PresentationBooleanCallback callback = new PresentationBooleanCallback() {
 			@Override
 			public void callback(boolean isSuccess, Exception error) {
@@ -129,12 +144,25 @@ public class WorldController {
 			}
 		};
 		this.businessLogicLayer.createHost(callback);
+		showLoadingScreen();
+	}
+
+	private void createHostBusinessLogicLayer() {
+		this.businessLogicLayer = new BusinessLogicLayerServerImpl(
+				this.newClientRegisterEventCallback);
 	}
 
 	protected void createHostCallbackHander(boolean isSuccess, Exception error) {
-		loadDeviceInfoScreenResource();
-		showDeviceInforScreen();
-		loadGameResources();
+		System.out.println("Create host callback: " + isSuccess);
+		if (isSuccess) {
+			loadDeviceInfoScreenResource();
+			showDeviceInforScreen();
+			loadGameResources();
+		} else {
+			setErrorMessage(error == null ? "Cannot create host" : error
+					.getMessage());
+//			showMainMenuScreen();
+		}
 	}
 
 	private void loadDeviceInfoScreenResource() {
@@ -164,7 +192,8 @@ public class WorldController {
 				showGameScreen();
 			}
 		};
-		DeviceInfo deviceInfo = new DeviceInfo(desktopDisplayMode.width, desktopDisplayMode.height, this.size);
+		DeviceInfo deviceInfo = new DeviceInfo(desktopDisplayMode.width,
+				desktopDisplayMode.height, this.size);
 		businessLogicLayer.addDevide(deviceInfo, sendDeviceInfoCallback);
 	}
 
@@ -244,4 +273,7 @@ public class WorldController {
 				FishUIFactory.getHeight(fishType));
 	}
 
+	protected void newClientRegisterCallbackHander() {
+		System.out.println("new client registered");
+	}
 }
