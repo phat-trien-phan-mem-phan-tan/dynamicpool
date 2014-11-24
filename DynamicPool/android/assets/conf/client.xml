@@ -22,7 +22,7 @@
 			</entry>
 		</network>
 		<handlers>
-		  	<handler>synchoronous</handler>
+		  
 		</handlers>
 	</socket>
 	
