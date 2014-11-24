@@ -10,9 +10,9 @@ import vn.edu.hust.student.dynamicpool.equation.vector.Oxy;
 public class Pool implements IPool {
 
 	private int id;
-	private ArrayList<Segment> segmentsX;
+	private ArrayList<Segment> segmentsX = new ArrayList<>();
 
-	private ArrayList<Segment> segmentsY;
+	private ArrayList<Segment> segmentsY = new ArrayList<>();
 	private Rectangle position;
 
 	private IFishManager fishManager;
