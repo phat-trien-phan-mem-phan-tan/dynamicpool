@@ -82,4 +82,9 @@ public class BLLTest implements BusinessLogicLayer {
 		// TODO Auto-generated method stub
 		
 	}
+	@Override
+	public String getKeyOfHost() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

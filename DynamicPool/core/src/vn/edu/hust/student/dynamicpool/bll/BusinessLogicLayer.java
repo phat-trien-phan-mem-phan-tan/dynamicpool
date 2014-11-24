@@ -23,6 +23,8 @@ public interface BusinessLogicLayer {
 	
 	// ham dong cap nhat ket qua voi server
 	void synchronization();
+
+	String getKeyOfHost();
 	
 	
 	

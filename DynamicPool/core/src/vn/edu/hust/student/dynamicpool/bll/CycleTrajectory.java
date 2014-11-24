@@ -57,8 +57,6 @@ public class CycleTrajectory extends Trajectory {
 		System.out.println("Cycle: "+"Time: "+deltaTime +"x: "+x+"y: "+y);
 		fishPosition.setLocation(new Point(x, y));
 		
-	/*	position.setX(x);
-		position.setY(y);*/
 		return fishPosition;
 	}
 
@@ -91,7 +89,7 @@ public class CycleTrajectory extends Trajectory {
 
 			x0 = x0 + 2 * a * cosValue;
 
-			if ( sinValue < 0) {
+			if ( cosValue < 0) {
 					
 				angle = angle+Math.abs(detaAngle);
 				
@@ -104,10 +102,7 @@ public class CycleTrajectory extends Trajectory {
 
 		} else if (vector.equals(Oxy.oy)) {
 
-			// check sin (anphal) to set center point
 			
-	
-
 			// move center point of circle
 			y0 = y0 + 2 * a * sinValue;
 

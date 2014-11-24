@@ -23,8 +23,8 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 	private String keyOfHost;
 
 	public BusinessLogicLayerImpl() {
-		/* this.dataAccessLayer = new ClientDataAccessLayerImpl(); */
-		this.dataAccessLayer = new DalTest();
+		 this.dataAccessLayer = new ClientDataAccessLayerImpl(); 
+		/*this.dataAccessLayer = new DalTest();*/
 
 	}
 
@@ -35,9 +35,10 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 			@Override
 			public void callback(Object data, DALException ex) {
-				callback.callback((Boolean) data, ex);
-
+				
+		
 				joinHostCallBack(callback, data, ex);
+				
 
 			}
 		};
@@ -53,7 +54,9 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		if (ex == null) {
 			try {
 				if (data != null) {
-					Boolean joinResult = (Boolean) data;
+					System.out.println(data.toString());
+					boolean joinResult = (boolean) data;
+					
 					if (joinResult) {
 						callback.callback(true, null);
 
@@ -152,7 +155,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 
 			@Override
 			public void callback(Object data, DALException ex) {
-				// TODO Auto-generated method stub
+				
 
 			}
 		};
@@ -250,6 +253,7 @@ public class BusinessLogicLayerImpl implements BusinessLogicLayer {
 		this.pool = pool;
 	}
 
+	@Override
 	public String getKeyOfHost() {
 		return keyOfHost;
 	}
