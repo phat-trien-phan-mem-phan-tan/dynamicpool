@@ -1,5 +1,7 @@
 package vn.edu.hust.student.dynamicpool.dal.server.logic;
 
+import java.util.ArrayList;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,6 +16,7 @@ import vn.edu.hust.student.dynamicpool.events.RegisterClientEvent;
 import vn.edu.hust.student.dynamicpool.exception.BLLException;
 import vn.edu.hust.student.dynamicpool.exception.DALException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
+import vn.edu.hust.student.dynamicpool.model.Segment;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
 import vn.edu.hust.student.dynamicpool.presentation.PresentationVoidCallback;
 
@@ -83,6 +86,12 @@ public class BusinessLogicLayerServerImpl extends BusinessLogicLayerImpl {
 			PresentationBooleanCallback callback) {
 		PoolServer poolServer = new PoolServer(AppConst.DEFAULT_HOST_NAME, deviceInfo);
 		this.poolManager.add(poolServer);
+		super.addDeviceCallback(new PresentationBooleanCallback() {			
+			@Override
+			public void callback(boolean isSuccess, Exception error) {
+				
+			}
+		}, new ArrayList<Segment>(), null);
 		callback.callback(true, null);
 	}
 }

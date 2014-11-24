@@ -42,7 +42,6 @@ public class WorldController {
 		this.game = game;
 	}
 
-
 	public void init() {
 		showSplashScreen();
 	}
@@ -103,7 +102,8 @@ public class WorldController {
 			showDeviceInforScreen();
 			loadGameResources();
 		} else {
-			setErrorMessage(error == null ? "Cannot join host" : error.getMessage());
+			setErrorMessage(error == null ? "Cannot join host" : error
+					.getMessage());
 			showMainMenuScreen();
 		}
 	}
@@ -130,7 +130,7 @@ public class WorldController {
 		WorldRenderer worldRenderer = game.getWorldRenderer();
 		gameScreen = new GameScreen(worldRenderer, this);
 	}
-	
+
 	private void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
 	}
@@ -148,16 +148,19 @@ public class WorldController {
 	}
 
 	private void createHostBusinessLogicLayer() {
-		this.businessLogicLayer = new BusinessLogicLayerServerImpl(this.newClientRegisterEventCallback);
+		this.businessLogicLayer = new BusinessLogicLayerServerImpl(
+				this.newClientRegisterEventCallback);
 	}
 
 	protected void createHostCallbackHander(boolean isSuccess, Exception error) {
+		System.out.println("Create host callback: " + isSuccess);
 		if (isSuccess) {
 			loadDeviceInfoScreenResource();
 			showDeviceInforScreen();
 			loadGameResources();
 		} else {
-			setErrorMessage(error == null ? "Cannot create host" : error.getMessage());
+			setErrorMessage(error == null ? "Cannot create host" : error
+					.getMessage());
 			showMainMenuScreen();
 		}
 	}
