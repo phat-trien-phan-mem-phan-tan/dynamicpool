@@ -33,7 +33,7 @@ public class HttpClientController {
 		return response;
 	}
 
-	public String authentication(int key) throws MalformedURLException, IOException {
+	public String authentication(String key) throws MalformedURLException, IOException {
 		String url = "http://104.131.13.155:8990/dp_auth";
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("key", key);

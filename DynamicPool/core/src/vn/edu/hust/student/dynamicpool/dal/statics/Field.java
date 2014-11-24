@@ -6,4 +6,5 @@ public class Field {
 	public static final String SUCCESSFUL = "successful";
 	public static final String KEY = "key";
 	public static final String IP = "ip";
+	public static final String CONNECT = "connect";
 }

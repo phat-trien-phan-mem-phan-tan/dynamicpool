@@ -5,6 +5,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.net.InetSocketAddress;
 import java.nio.charset.Charset;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,6 +20,8 @@ import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 import org.eclipse.jetty.util.ajax.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import flexjson.JSONSerializer;
 
 import vn.edu.hust.student.dynamicpool.dal.config.SocketServerConfig;
 import vn.edu.hust.student.dynamicpool.dal.processor.Processor;
@@ -151,7 +154,11 @@ public class NIOSocketServerController extends SocketServerController implements
 
 	@Override
 	public void sessionCreated(IoSession arg0) throws Exception {
-
+//		Map<String, Object> map = new HashMap<String, Object>();
+//		map.put(Field.COMMAND, Field.CONNECT);
+//		map.put(Field.SUCCESSFUL, true);
+//		String message =  json.toJSON(map);
+//		arg0.write(message);
 	}
 
 	@Override

@@ -1,12 +1,20 @@
 package vn.edu.hust.student.dynamicpool.dal.controller;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.jetty.util.ajax.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.eposi.eventdriven.Event;
+import com.eposi.eventdriven.exceptions.InvalidHandlerMethod;
+import com.eposi.eventdriven.exceptions.NoContextToExecute;
+import com.eposi.eventdriven.implementors.BaseEventDispatcher;
 
 import vn.edu.hust.student.dynamicpool.dal.client.http.HttpClientController;
 import vn.edu.hust.student.dynamicpool.dal.processor.Processor;
@@ -22,7 +30,8 @@ public class ClientMainController {
 	private ClientSocketController clientSocketController;
 	private JSON json;
 	private Logger logger = LoggerFactory.getLogger(ClientMainController.class);
-
+	private List<BaseEventDispatcher> dispatchers;
+	
 	private ClientMainController() {
 
 		getLogger().info("Reading config file from path conf/client.xml");
@@ -41,6 +50,7 @@ public class ClientMainController {
 
 		httpClientController = new HttpClientController();
 		json = new JSON();
+		dispatchers = new ArrayList<BaseEventDispatcher>();
 	}
 
 	public static ClientMainController getInstance() {
@@ -50,7 +60,7 @@ public class ClientMainController {
 	}
 
 	@SuppressWarnings("unchecked")
-	public void start(int key) throws DALException {
+	public void start(String key) throws DALException {
 		String response;
 		try {
 			response = httpClientController.authentication(key);
@@ -103,5 +113,29 @@ public class ClientMainController {
 	public void setClientSocketController(
 			ClientSocketController clientSocketController) {
 		this.clientSocketController = clientSocketController;
+	}
+	
+	public void addDispatcher(BaseEventDispatcher target) {
+		this.dispatchers.add(target);
+	}
+
+	public List<BaseEventDispatcher> getDispatchers() {
+		return dispatchers;
+	}
+
+	public void setDispatchers(List<BaseEventDispatcher> dispatchers) {
+		this.dispatchers = dispatchers;
+	}
+	
+	public void dispatchAll(Event e){
+		for (BaseEventDispatcher dispatcher : this.dispatchers) {
+			try {
+				dispatcher.dispatchEvent(e);
+			} catch (InvocationTargetException | IllegalAccessException
+					| NoSuchMethodException | InvalidHandlerMethod
+					| NoContextToExecute e1) {
+				logger.debug("Cannot dispatch event");
+			}
+		}
 	}
 }

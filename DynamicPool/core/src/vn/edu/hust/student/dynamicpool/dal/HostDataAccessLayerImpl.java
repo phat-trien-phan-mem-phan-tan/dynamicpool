@@ -23,7 +23,7 @@ public class HostDataAccessLayerImpl extends DataAccessLayer {
 	}
 
 	@Override
-	public void joinHost(int key, BusinessLogicDataCallback callback) {
+	public void joinHost(String key, BusinessLogicDataCallback callback) {
 		callback.callback(false, new DALException(
 				"host instance cannot join to another host", null));
 	}
@@ -47,26 +47,22 @@ public class HostDataAccessLayerImpl extends DataAccessLayer {
 
 	@Override
 	public void exit(BusinessLogicDataCallback callback) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void createFish(Fish fish, BusinessLogicDataCallback callback) {
-		// TODO Auto-generated method stub
-
+		callback.callback(true, null);
 	}
 
 	@Override
 	public void synchronization(BusinessLogicDataCallback callback) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void removeFish(Fish fish, BusinessLogicDataCallback callback) {
-		// TODO Auto-generated method stub
-
+		callback.callback(true, null);
 	}
 
 	@Override

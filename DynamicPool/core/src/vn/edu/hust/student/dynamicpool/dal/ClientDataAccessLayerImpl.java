@@ -1,11 +1,15 @@
 package vn.edu.hust.student.dynamicpool.dal;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
 import vn.edu.hust.student.dynamicpool.bll.FishManager;
 import vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController;
+import vn.edu.hust.student.dynamicpool.dal.controller.HostMainController;
+import vn.edu.hust.student.dynamicpool.dal.statics.Field;
 import vn.edu.hust.student.dynamicpool.exception.DALException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 
@@ -29,7 +33,7 @@ public class ClientDataAccessLayerImpl extends DataAccessLayer {
 	}
 
 	@Override
-	public void joinHost(int key, BusinessLogicDataCallback callback) {
+	public void joinHost(String key, BusinessLogicDataCallback callback) {
 		try {
 			ClientMainController.getInstance().start(key);
 			callback.callback(true, null);
@@ -42,7 +46,6 @@ public class ClientDataAccessLayerImpl extends DataAccessLayer {
 	public void createHost(BusinessLogicDataCallback callback) {
 		callback.callback(false, new DALException("Default client cannot create host", null));
 	}
-
 	
 
 	@Override
@@ -52,7 +55,9 @@ public class ClientDataAccessLayerImpl extends DataAccessLayer {
 
 	@Override
 	public void createFish(Fish fish, BusinessLogicDataCallback callback) {
-
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("fish", fish);
+		ClientMainController.getInstance().getClientSocketController().sendMessage(data);
 	}
 
 	// ong viet giup toi cai event lam sao ma cu 1s thi no tu dong gui ket qua
@@ -68,8 +73,7 @@ public class ClientDataAccessLayerImpl extends DataAccessLayer {
 
 	@Override
 	public void removeFish(Fish fish, BusinessLogicDataCallback callback) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
@@ -85,8 +89,7 @@ public class ClientDataAccessLayerImpl extends DataAccessLayer {
 
 	@Override
 	public void registerEvent(BaseEventDispatcher target) {
-		// TODO Auto-generated method stub
-		
+		ClientMainController.getInstance().addDispatcher(target);
 	}
 
 	@Override
