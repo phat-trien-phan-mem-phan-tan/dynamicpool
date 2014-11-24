@@ -1,18 +1,18 @@
 package vn.edu.hust.student.dynamicpool.dal;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
 import vn.edu.hust.student.dynamicpool.bll.Fish;
 import vn.edu.hust.student.dynamicpool.bll.FishManager;
 import vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController;
-import vn.edu.hust.student.dynamicpool.dal.statics.Field;
 import vn.edu.hust.student.dynamicpool.exception.DALException;
 import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
 
-public class ClientDataAccessLayerImpl implements DataAccessLayer {
+import com.eposi.eventdriven.implementors.BaseEventDispatcher;
+
+public class ClientDataAccessLayerImpl extends DataAccessLayer {
+	private static final long serialVersionUID = 7685205083926173715L;
 	private String clientName;
 
 	@Override
@@ -75,19 +75,23 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	@Override
 	public void addDevice(DeviceInfo deviceInfor,
 			BusinessLogicDataCallback callback) {
-	
-		Map<String, Object> data = new HashMap<String, Object>();
-		data.put(Field.COMMAND, "dp_addDevice");
-		data.put("width", deviceInfor.getScreenWidth());
-		data.put("height", deviceInfor.getScreenHeight());
-		data.put("size", deviceInfor.getScreenSize());
-		data.put("clientName", getClientName());
-		ClientMainController.getInstance().getClientSocketController().sendMessage(data);
 		
 	}
 
 	@Override
 	public void synchronous(FishManager fishManager, String clientName) {
+		
+	}
+
+	@Override
+	public void registerEvent(BaseEventDispatcher target) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void registerDone(boolean state) {
+		// TODO Auto-generated method stub
 		
 	}
 }

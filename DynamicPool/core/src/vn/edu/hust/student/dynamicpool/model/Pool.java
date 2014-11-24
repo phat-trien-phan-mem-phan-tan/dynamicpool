@@ -134,10 +134,15 @@ public class Pool implements IPool {
 			float newAngle = (float)Math.PI - fish.getAngle(); 
 			fish.setAngle(newAngle);
 		}
-//		if (fishMinY <= minY || fishMaxY >= maxY) fish.getTrajectory().setDirection(Oxy.ox);
-//		FishPosition nextPosition = (FishPosition) fish.checkPosition(detatime
-//				+ AppConst.timePass);
-//		
+		if (fishMinY <= minY || fishMaxY >= maxY) {
+			
+			fish.getTrajectory().setDirection(Oxy.ox);
+		}
+	
+		
+	/*	FishPosition nextPosition = (FishPosition) fish.checkPosition(detatime
+				+ AppConst.timePass);*/
+		
 
 	}
 

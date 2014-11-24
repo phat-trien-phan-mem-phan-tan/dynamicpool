@@ -27,6 +27,8 @@ public class CycleTrajectory extends Trajectory {
 
 	private float t;
 	
+	private static final int n = 1;
+	
 	
 	public CycleTrajectory(Rectangle fishPosition) {
 		super(fishPosition);
@@ -47,9 +49,16 @@ public class CycleTrajectory extends Trajectory {
 
 	@Override
 	public Rectangle updateCoordinate(float deltaTime) {
-		float y = (float) (x0 + a*Math.sin(t+angle));
-		float x = (float) (y0 + a*Math.cos(t+angle));
+		
+		t = t+deltaTime;
+		float y = (float) (x0 + a*Math.sin(n*t+angle));
+		float x = (float) (y0 + a*Math.cos(n*t+angle));
+		
+		System.out.println("Cycle: "+"Time: "+deltaTime +"x: "+x+"y: "+y);
 		fishPosition.setLocation(new Point(x, y));
+		
+	/*	position.setX(x);
+		position.setY(y);*/
 		return fishPosition;
 	}
 
@@ -58,26 +67,31 @@ public class CycleTrajectory extends Trajectory {
 	public void setDirection(Vector vector) {
 
 		// alpha < 2PI
-		float T = (float) ((t + angle) / (2 * Math.PI));
+		float T = (float) ((n*t + angle) / (2 * Math.PI));
 		T = (int) T + 1;
 
 		// tinh goc bu
 	/*	float beta = (float) (T * 2 * Math.PI - ( t + angle));*/
 
 		//
-		float anpha = (float) (t+angle);
-		float detaAngle = (float)(2*anpha - Math.PI);
+		float anpha = (float) (n*t+angle);
+		
+		float temp = (float) (Math.PI - 2*anpha);
+		
+		float detaAngle = temp;
 		
 		// increase angle
 		//setAngle(2 * beta + angle);
+		float sinValue = (float) Math.sin(anpha);
+		float cosValue = (float) Math.cos(anpha);
 
 		if (vector.equals(Oxy.ox)) {
 			// check cos  to set center point
-			float cosValue = (float) Math.cos(t + angle);
+			
 
 			x0 = x0 + 2 * a * cosValue;
 
-			if (cosValue < 0) {
+			if ( sinValue < 0) {
 					
 				angle = angle+Math.abs(detaAngle);
 				
@@ -91,13 +105,13 @@ public class CycleTrajectory extends Trajectory {
 		} else if (vector.equals(Oxy.oy)) {
 
 			// check sin (anphal) to set center point
-			float sinValue = (float) Math.sin( t + angle);
+			
 	
 
 			// move center point of circle
 			y0 = y0 + 2 * a * sinValue;
 
-			if (sinValue < 0) {
+			if (cosValue < 0) {
 
 				angle = angle+Math.abs(detaAngle);
 				
@@ -106,7 +120,6 @@ public class CycleTrajectory extends Trajectory {
 				angle = angle - Math.abs(detaAngle);
 				
 			}
-
 
 		}
 
