@@ -191,7 +191,7 @@ public class HostMainController {
 			} catch (InvocationTargetException | IllegalAccessException
 					| NoSuchMethodException | InvalidHandlerMethod
 					| NoContextToExecute e1) {
-				logger.debug("Cannot dispatch event");
+				logger.debug("Cannot dispatch event {}", e.getType());
 			}
 		}
 	}
