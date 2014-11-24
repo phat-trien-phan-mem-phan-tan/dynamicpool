@@ -76,6 +76,7 @@ public class ClientMainController {
 
 	@SuppressWarnings("unchecked")
 	public void start(String key) throws DALException {
+		logger.info("Starting Socket Client...");
 		String response;
 		try {
 			response = httpClientController.authentication(key);
@@ -89,6 +90,7 @@ public class ClientMainController {
 					String ip = (String) params.get("ip");
 					int port = Integer.parseInt(params.get("port").toString());
 					this.getClientSocketController().start(ip, port);
+					logger.info("start socket successful");
 				}
 			}
 		} catch (NumberFormatException e) {

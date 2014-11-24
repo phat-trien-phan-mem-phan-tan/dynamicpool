@@ -141,3 +141,38 @@ java.io.IOException: An existing connection was forcibly closed by the remote ho
 2014-Nov-24 19:45:57:581 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
 2014-Nov-24 19:45:57:583 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
 2014-Nov-24 19:45:57:604 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-24 20:19:22:008 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-24 20:19:24:778 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.33
+2014-Nov-24 20:19:24:981 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"6218","ip":"101.99.7.249"}
+2014-Nov-24 20:19:25:272 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-24 20:19:25:286 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-24 20:19:25:330 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-24 20:25:24:850 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-24 20:25:24:969 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-24 20:25:25:549 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=7866
+2014-Nov-24 20:25:25:558 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"port":9696,"error":null,"ip":"192.168.0.30"}
+2014-Nov-24 20:25:46:619 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client connot connect to server
+2014-Nov-24 20:25:46:624 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - start socket successful
+2014-Nov-24 20:28:34:273 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-24 20:28:34:391 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-24 20:28:35:332 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=7668
+2014-Nov-24 20:28:35:342 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":"host cannot found by key 7668"}
+2014-Nov-24 20:28:54:148 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-24 20:28:54:275 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-24 20:28:56:123 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=6886
+2014-Nov-24 20:28:56:133 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":"host cannot found by key 6886"}
+2014-Nov-24 20:29:07:039 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-24 20:29:07:161 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-24 20:29:07:742 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=7886
+2014-Nov-24 20:29:07:752 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":"host cannot found by key 7886"}
+2014-Nov-24 20:29:35:215 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-24 20:29:35:333 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-24 20:29:38:932 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=7886
+2014-Nov-24 20:29:39:289 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":"host cannot found by key 7886"}
+2014-Nov-24 20:30:31:142 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-24 20:30:31:271 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-24 20:30:31:935 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=1001
+2014-Nov-24 20:30:31:945 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"port":9696,"error":null,"ip":"192.168.0.30"}
+2014-Nov-24 20:30:32:854 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-24 20:30:32:857 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - start socket successful
+2014-Nov-24 20:30:36:187 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - SEND MESSAGE {"clientName":"cc041fe0-604f-443e-950e-767cfe764b34","cmd":"addDevice","device":{"screenHeight":768.0,"screenSize":14.0,"screenWidth":1366.0}}

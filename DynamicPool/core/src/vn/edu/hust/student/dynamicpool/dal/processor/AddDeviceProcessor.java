@@ -3,6 +3,7 @@ package vn.edu.hust.student.dynamicpool.dal.processor;
 import java.util.Map;
 
 import flexjson.JSONDeserializer;
+import flexjson.JSONSerializer;
 
 import vn.edu.hust.student.dynamicpool.dal.controller.HostMainController;
 import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
@@ -16,8 +17,9 @@ public class AddDeviceProcessor extends Processor {
 		Map<String, Object> params = request.getParameters();
 		if (params.containsKey("device")) {
 			JSONDeserializer<DeviceInfo> json = new JSONDeserializer<DeviceInfo>();
-			DeviceInfo deviceInfo = json.deserialize(params.get("device")
-					.toString());
+			JSONSerializer serilizer = new JSONSerializer();
+			String device = serilizer.exclude("*.class").serialize(params.get("device"));
+			DeviceInfo deviceInfo = json.deserialize(device);
 			String clientName = (String) params.get("clientName");
 			HostMainController.getInstance().dispatchAll(
 					new RegisterClientEvent(AppConst.REGISTER_EVENT_NAME,
