@@ -38,6 +38,7 @@ public class SocketClientController implements SocketClientHandler {
 
 	public void start(String serverIpAddress, int port) {
 		try {
+			log.info("Connect socket to server {}, {}", serverIpAddress, port);
 			socketClient = new Socket(serverIpAddress, port);
 			log.info("Socket Client Start Sucessfully");
 			Thread thread = new Thread(new Runnable() {
