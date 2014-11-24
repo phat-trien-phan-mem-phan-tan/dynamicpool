@@ -15,7 +15,7 @@ public class DalTest extends DataAccessLayer {
 	private Timer timer = new Timer();
 
 	@Override
-	public void joinHost(int key, BusinessLogicDataCallback callback) {
+	public void joinHost(String key, BusinessLogicDataCallback callback) {
 
 		final BusinessLogicDataCallback newCallback = callback;
 
