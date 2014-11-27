@@ -1,40 +1,26 @@
 package vn.edu.hust.student.dynamicpool.dal;
 
-import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
-import vn.edu.hust.student.dynamicpool.bll.Fish;
-import vn.edu.hust.student.dynamicpool.bll.FishManager;
-import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
+import java.util.List;
+import vn.edu.hust.student.dynamicpool.bll.model.*;
 
-import com.eposi.eventdriven.implementors.BaseEventDispatcher;
+public interface DataAccessLayer {
+	String getClientName();
 
-public abstract class DataAccessLayer extends BaseEventDispatcher  {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 776252984297076409L;
+	void createHost();
 
-	public abstract String getClientName();
-	
-	public abstract void joinHost(String key, BusinessLogicDataCallback callback);
+	void joinHost(String key);
 
-	public abstract void createHost(BusinessLogicDataCallback callback);
-	
-	// them thiet bi va dua ket qua tra ve cua server la mot mang danh sach cac Segment cua be
-	public abstract void addDevice(DeviceInfo deviceInfo,BusinessLogicDataCallback callback);
-	
-	public abstract void exit(BusinessLogicDataCallback callback);
+	void addDevice(DeviceInfo deviceInfo);
 
-	public abstract void createFish(Fish fish,BusinessLogicDataCallback callback);
-	
-	public abstract void synchronization(BusinessLogicDataCallback callback);
-	
-	// gui thong tin ca nen server  khi chuan bi ra khoi be
-	public abstract void removeFish(Fish fish,BusinessLogicDataCallback callback);
-	
-	public abstract void synchronous(FishManager fishManager, String clientName);
-	
-	public abstract void registerEvent(BaseEventDispatcher target);
-	
-	public abstract void registerDone(boolean state);
+	void createFish(Fish fish);
+
+	void synchronization();
+
+	void removeFish(Fish fish);
+
+	void synchronous(List<IFish> fishes, String clientName);
+
+	void registerDone(Pool pool);
+
+	void exit();
 }

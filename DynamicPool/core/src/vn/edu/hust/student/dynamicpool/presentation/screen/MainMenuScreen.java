@@ -1,6 +1,5 @@
 package vn.edu.hust.student.dynamicpool.presentation.screen;
 
-import vn.edu.hust.student.dynamicpool.presentation.PresentationStringCallback;
 import vn.edu.hust.student.dynamicpool.presentation.WorldController;
 import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
 import vn.edu.hust.student.dynamicpool.presentation.assets.AssetMainMenuScreen;
@@ -95,13 +94,7 @@ public class MainMenuScreen implements Screen {
 	}
 	
 	protected void joinHostClickHander() {
-		PresentationStringCallback joinHostInputCallback = new PresentationStringCallback() {
-			@Override
-			public void callback(String text) {
-				joinHostAction(text);
-			}
-		};
-		Gdx.input.getTextInput(new StringKeyInputListener(joinHostInputCallback), "Please enter key of host", "");
+		Gdx.input.getTextInput(new StringKeyInputListener(), "Please enter key of host", "");
 	}
 	
 	public void joinHostAction(String key) {

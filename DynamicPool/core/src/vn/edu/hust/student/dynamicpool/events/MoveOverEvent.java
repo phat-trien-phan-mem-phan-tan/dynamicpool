@@ -1,6 +1,6 @@
 package vn.edu.hust.student.dynamicpool.events;
 
-import vn.edu.hust.student.dynamicpool.bll.Fish;
+import vn.edu.hust.student.dynamicpool.bll.model.Fish;
 
 import com.eposi.eventdriven.Event;
 

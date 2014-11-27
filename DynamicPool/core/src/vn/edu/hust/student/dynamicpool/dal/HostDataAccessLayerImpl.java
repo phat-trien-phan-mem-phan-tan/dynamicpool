@@ -1,89 +1,109 @@
 package vn.edu.hust.student.dynamicpool.dal;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-import vn.edu.hust.student.dynamicpool.bll.BusinessLogicDataCallback;
-import vn.edu.hust.student.dynamicpool.bll.Fish;
-import vn.edu.hust.student.dynamicpool.bll.FishManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import vn.edu.hust.student.dynamicpool.bll.model.DeviceInfo;
+import vn.edu.hust.student.dynamicpool.bll.model.Fish;
+import vn.edu.hust.student.dynamicpool.bll.model.IFish;
+import vn.edu.hust.student.dynamicpool.bll.model.Pool;
 import vn.edu.hust.student.dynamicpool.dal.client.entity.Client;
 import vn.edu.hust.student.dynamicpool.dal.controller.HostMainController;
 import vn.edu.hust.student.dynamicpool.dal.statics.Field;
+import vn.edu.hust.student.dynamicpool.events.EventDestination;
+import vn.edu.hust.student.dynamicpool.events.EventType;
 import vn.edu.hust.student.dynamicpool.exception.DALException;
-import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
+import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
-import com.eposi.eventdriven.implementors.BaseEventDispatcher;
+public class HostDataAccessLayerImpl implements DataAccessLayer {
+	private Logger logger = LoggerFactory
+			.getLogger(ClientDataAccessLayerImpl.class);
 
-public class HostDataAccessLayerImpl extends DataAccessLayer {
-	private static final long serialVersionUID = 6710175512739230910L;
+	public HostDataAccessLayerImpl() {
+		logger.debug("Contruct");
+	}
 
 	@Override
 	public String getClientName() {
-		return "host";
+		return AppConst.DEFAULT_HOST_NAME;
 	}
 
 	@Override
-	public void joinHost(String key, BusinessLogicDataCallback callback) {
-		callback.callback(false, new DALException(
-				"host instance cannot join to another host", null));
-	}
-
-	@Override
-	public void createHost(BusinessLogicDataCallback callback) {
+	public void createHost() {
+		logger.debug("create host");
 		try {
 			String key = HostMainController.getInstance().connectServer();
 			HostMainController.getInstance().start();
-			callback.callback(key, null);
+			logger.info("create host success");
+			EventDestination.getInstance().dispatchSuccessEventWithObject(
+					EventType.DAL_CREATE_HOST, key);
 		} catch (DALException e) {
-			callback.callback(null, e);
+			logger.error("cannot create host");
+			EventDestination.getInstance().dispatchFailEventWithObject(
+					EventType.DAL_CREATE_HOST, e);
 		}
 	}
 
 	@Override
-	public void addDevice(DeviceInfo deviceInfo,
-			BusinessLogicDataCallback callback) {
-		callback.callback(true, null);
+	public void joinHost(String key) {
+		logger.error("cannot join host");
+		EventDestination.getInstance().dispatchFailEventWithObject(
+				EventType.DAL_JOIN_HOST,
+				new DALException("host instance cannot join to another host",
+						null));
+	}
+	
+	@Override
+	public void addDevice(DeviceInfo deviceInfo) {
+		logger.info("add device success");
+		EventDestination.getInstance().dispatchSuccessEvent(EventType.DAL_ADD_DEVICE);
+	}
+	
+	@Override
+	public void createFish(Fish fish) {
+		logger.debug("create fish success");
+		EventDestination.getInstance().dispatchSuccessEvent(EventType.DAL_CREATE_FISH);
 	}
 
 	@Override
-	public void exit(BusinessLogicDataCallback callback) {
+	public void synchronization() {
+		logger.debug("synchronization");
+		// TODO Auto-generated method stub
 		
 	}
-
+	
 	@Override
-	public void createFish(Fish fish, BusinessLogicDataCallback callback) {
-		callback.callback(true, null);
+	public void removeFish(Fish fish) {
+		logger.info("remove fish success");
+		EventDestination.getInstance().dispatchSuccessEvent(EventType.DAL_REMOVE_FISH);
 	}
-
+	
 	@Override
-	public void synchronization(BusinessLogicDataCallback callback) {
-		
-	}
-
-	@Override
-	public void removeFish(Fish fish, BusinessLogicDataCallback callback) {
-		callback.callback(true, null);
-	}
-
-	@Override
-	public void synchronous(FishManager fishManager, String clientName) {
+	public void synchronous(List<IFish> fishes, String clientName) {
+		logger.debug("synchronous");
 		Client client = HostMainController.getInstance().getClientManager()
 				.getClient(clientName);
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put(Field.COMMAND, Field.SYNCHORONOUS);
-		data.put("fishManager", fishManager);
+		data.put("fishManager", fishes);
 		if (client != null) {
 			client.send(data);
 		}
 	}
-
+	
 	@Override
-	public void registerEvent(BaseEventDispatcher target) {
-		HostMainController.getInstance().addDispatcher(target);
+	public void registerDone(Pool pool) {
+		logger.debug("register done");
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
-	public void registerDone(boolean state) {
-		
+	public void exit() {
+
 	}
 }

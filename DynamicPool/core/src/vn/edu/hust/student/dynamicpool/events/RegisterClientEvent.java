@@ -2,7 +2,7 @@ package vn.edu.hust.student.dynamicpool.events;
 
 import java.security.InvalidParameterException;
 
-import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
+import vn.edu.hust.student.dynamicpool.bll.model.DeviceInfo;
 
 import com.eposi.eventdriven.Event;
 

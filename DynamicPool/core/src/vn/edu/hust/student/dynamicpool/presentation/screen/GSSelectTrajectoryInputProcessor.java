@@ -1,6 +1,6 @@
 package vn.edu.hust.student.dynamicpool.presentation.screen;
 
-import vn.edu.hust.student.dynamicpool.bll.ETrajectoryType;
+import vn.edu.hust.student.dynamicpool.bll.model.ETrajectoryType;
 import vn.edu.hust.student.dynamicpool.presentation.WorldController;
 
 public class GSSelectTrajectoryInputProcessor extends GSDefaultInputProcessor {

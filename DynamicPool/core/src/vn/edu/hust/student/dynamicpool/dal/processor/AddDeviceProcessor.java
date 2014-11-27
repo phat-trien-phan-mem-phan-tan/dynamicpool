@@ -5,10 +5,10 @@ import java.util.Map;
 import flexjson.JSONDeserializer;
 import flexjson.JSONSerializer;
 
+import vn.edu.hust.student.dynamicpool.bll.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.dal.controller.HostMainController;
-import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
 import vn.edu.hust.student.dynamicpool.events.RegisterClientEvent;
-import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
+import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 public class AddDeviceProcessor extends Processor {
 

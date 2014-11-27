@@ -2,20 +2,27 @@ package vn.edu.hust.student.dynamicpool.presentation;
 
 import java.util.*;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import vn.edu.hust.student.dynamicpool.*;
 import vn.edu.hust.student.dynamicpool.bll.*;
-import vn.edu.hust.student.dynamicpool.dal.server.logic.*;
+import vn.edu.hust.student.dynamicpool.bll.model.*;
 import vn.edu.hust.student.dynamicpool.dal.utils.*;
-import vn.edu.hust.student.dynamicpool.model.*;
+import vn.edu.hust.student.dynamicpool.events.EventDestination;
+import vn.edu.hust.student.dynamicpool.events.EventType;
 import vn.edu.hust.student.dynamicpool.presentation.assets.*;
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.*;
 import vn.edu.hust.student.dynamicpool.presentation.screen.*;
+import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Graphics.DisplayMode;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
+import com.eposi.eventdriven.Event;
+import com.eposi.eventdriven.implementors.BaseEventListener;
 
 public class WorldController {
 	private Timer timer = new Timer();
@@ -30,13 +37,7 @@ public class WorldController {
 	private int addingFishStep = 0;
 	private FishType selectedFishType = FishType.FISH1;
 	private float size;
-	private String errorMessage = "";
-	private PresentationVoidCallback newClientRegisterEventCallback = new PresentationVoidCallback() {
-		@Override
-		public void callback() {
-			newClientRegisterCallbackHander();
-		}
-	};
+	private Logger logger = LoggerFactory.getLogger(WorldController.class);
 
 	public WorldController(GameCenter game) {
 		this.game = game;
@@ -82,28 +83,25 @@ public class WorldController {
 
 	public void joinHost(String key) {
 		creatClientBusinessLogicLayer();
-		PresentationBooleanCallback callback = new PresentationBooleanCallback() {
-			@Override
-			public void callback(boolean isSuccess, Exception error) {
-				joinHostCallbackHander(isSuccess, error);
-			}
-		};
-		this.businessLogicLayer.joinHost(key, callback);
+		EventDestination.getInstance().addEventListener(
+				EventType.BLL_JOIN_HOST_WHITH_A_KEY,
+				new BaseEventListener(this, "onJoinHostCallbackHander"));
+		this.businessLogicLayer.joinHost(key);
 		showLoadingScreen();
 	}
 
 	private void creatClientBusinessLogicLayer() {
-		this.businessLogicLayer = new BusinessLogicLayerImpl();
+		this.businessLogicLayer = new ClientBusinessLogicLayerImpl();
 	}
 
-	protected void joinHostCallbackHander(boolean isSuccess, Exception error) {
-		if (isSuccess) {
+	@Deprecated
+	public void onJoinHostCallbackHander(Event event) {
+		if (EventDestination.parseEventToBoolean(event)) {
 			loadDeviceInfoScreenResource();
 			showDeviceInforScreen();
 			loadGameResources();
 		} else {
-			setErrorMessage(error == null ? "Cannot join host" : error
-					.getMessage());
+			logError("Cannot join host");
 			showMainMenuScreen();
 		}
 	}
@@ -117,10 +115,9 @@ public class WorldController {
 	}
 
 	private void showFullScreen() {
-		DisplayMode desktopDisplayMode =
-		Gdx.graphics.getDesktopDisplayMode();
+		DisplayMode desktopDisplayMode = Gdx.graphics.getDesktopDisplayMode();
 		Gdx.graphics.setDisplayMode(desktopDisplayMode.width,
-		desktopDisplayMode.height, true);
+				desktopDisplayMode.height, true);
 	}
 
 	private void loadGameResources() {
@@ -129,37 +126,33 @@ public class WorldController {
 		gameScreen = new GameScreen(worldRenderer, this);
 	}
 
-	private void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	private void logError(String errorMessage) {
+		logger.error(errorMessage);
 	}
 
 	public void createHost() {
 		createHostBusinessLogicLayer();
-		PresentationBooleanCallback callback = new PresentationBooleanCallback() {
-			@Override
-			public void callback(boolean isSuccess, Exception error) {
-				createHostCallbackHander(isSuccess, error);
-			}
-		};
-		this.businessLogicLayer.createHost(callback);
+		EventDestination.getInstance().addEventListener(
+				EventType.BLL_CREATE_HOST,
+				new BaseEventListener(this, "onCreateHostCallbackHander"));
+		this.businessLogicLayer.createHost();
 		showLoadingScreen();
 	}
 
 	private void createHostBusinessLogicLayer() {
-		this.businessLogicLayer = new BusinessLogicLayerServerImpl(
-				this.newClientRegisterEventCallback);
+		this.businessLogicLayer = new HostBusinessLogicLayerImpl();
 	}
 
-	protected void createHostCallbackHander(boolean isSuccess, Exception error) {
-		System.out.println("Create host callback: " + isSuccess);
-		if (isSuccess) {
+	@Deprecated
+	public void onCreateHostCallbackHander(Event event) {
+		logger.debug("on create host call back hander");
+		if (EventDestination.parseEventToBoolean(event)) {
+			logger.info("create host success");
 			loadDeviceInfoScreenResource();
 			showDeviceInforScreen();
 			loadHostGameResources();
 		} else {
-			setErrorMessage(error == null ? "Cannot create host" : error
-					.getMessage());
-//			showMainMenuScreen();
+			logger.error("cannot create host");
 		}
 	}
 
@@ -182,7 +175,7 @@ public class WorldController {
 		if (isValidScreenSize(screenSize)) {
 			sendDeviceInfoToServer();
 			showFullScreen();
-//			showLoadingScreen();
+			// showLoadingScreen();
 			return true;
 		}
 		return false;
@@ -190,15 +183,17 @@ public class WorldController {
 
 	private void sendDeviceInfoToServer() {
 		DisplayMode desktopDisplayMode = Gdx.graphics.getDesktopDisplayMode();
-		PresentationBooleanCallback sendDeviceInfoCallback = new PresentationBooleanCallback() {
-			@Override
-			public void callback(boolean isSuccess, Exception error) {
-				showGameScreen();
-			}
-		};
 		DeviceInfo deviceInfo = new DeviceInfo(desktopDisplayMode.width,
 				desktopDisplayMode.height, this.size);
-		businessLogicLayer.addDevide(deviceInfo, sendDeviceInfoCallback);
+		EventDestination.getInstance().addEventListener(
+				EventType.BLL_ADD_DEVICE,
+				new BaseEventListener(this, "onAddDeviceCallbackHander"));
+		businessLogicLayer.addDevide(deviceInfo);
+	}
+	
+	public void onAddDeviceCallbackHander(Event event) {
+		logger.debug("on add device call back hander");
+		showGameScreen();
 	}
 
 	private boolean isValidScreenSize(String screenSize) {
@@ -275,10 +270,6 @@ public class WorldController {
 		businessLogicLayer.createFish(fishType, trajectoryType,
 				FishUIFactory.getWith(fishType),
 				FishUIFactory.getHeight(fishType));
-	}
-
-	protected void newClientRegisterCallbackHander() {
-		System.out.println("new client registered");
 	}
 
 	public String getKey() {

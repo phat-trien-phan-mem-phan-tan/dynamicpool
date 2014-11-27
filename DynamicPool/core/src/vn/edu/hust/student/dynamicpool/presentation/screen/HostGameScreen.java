@@ -5,10 +5,10 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.sun.prism.GraphicsPipeline.ShaderType;
 
-import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
 import vn.edu.hust.student.dynamicpool.presentation.WorldController;
 import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
+import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 public class HostGameScreen extends GameScreen {
 

@@ -1,6 +1,6 @@
 package vn.edu.hust.student.dynamicpool.presentation;
 
-import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
+import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;

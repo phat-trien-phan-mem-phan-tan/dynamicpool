@@ -1,6 +1,6 @@
 package vn.edu.hust.student.dynamicpool.presentation.gameobject;
 
-import vn.edu.hust.student.dynamicpool.bll.IFish;
+import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 import vn.edu.hust.student.dynamicpool.presentation.assets.AssetFishAnimated;
 import vn.edu.hust.student.dynamicpool.presentation.assets.AssetGameScreen;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;

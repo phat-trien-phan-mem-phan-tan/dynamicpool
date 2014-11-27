@@ -1,5 +1,11 @@
 package vn.edu.hust.student.dynamicpool;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.apache.log4j.PropertyConfigurator;
+
 import vn.edu.hust.student.dynamicpool.presentation.WorldController;
 import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
@@ -20,6 +26,19 @@ public class GameCenter extends Game {
 		worldRenderer = new WorldRenderer();
 		worldController = new WorldController(this);
 		worldController.init();
+		loadLog4j();
+	}
+	
+	public void loadLog4j() {
+		String log4JPropertyFile = "conf/log4j.properties";
+		Properties p = new Properties();
+
+		try {
+			p.load(new FileInputStream(log4JPropertyFile));
+			PropertyConfigurator.configure(p);
+		} catch (IOException e) {
+			System.out.println("Opps, cannot load log4j.properties");
+		}
 	}
 
 	@Override

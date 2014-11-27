@@ -1,32 +1,26 @@
 package vn.edu.hust.student.dynamicpool.presentation.screen;
 
-import vn.edu.hust.student.dynamicpool.presentation.PresentationStringCallback;
+import vn.edu.hust.student.dynamicpool.events.EventDestination;
+import vn.edu.hust.student.dynamicpool.events.EventType;
 
 import com.badlogic.gdx.Input.TextInputListener;
 
 public class StringKeyInputListener implements TextInputListener {
 
-	private PresentationStringCallback successCallback;
-	private PresentationStringCallback cancelCallback;
-
-	public StringKeyInputListener(PresentationStringCallback joinHostInputCallback) {
-		this.successCallback = joinHostInputCallback;
-	}
-
-	public StringKeyInputListener(PresentationStringCallback successCallback,
-			PresentationStringCallback cancelCallback) {
-		this.successCallback = successCallback;
-		this.cancelCallback = cancelCallback;
+	public StringKeyInputListener() {
+		
 	}
 
 	@Override
 	public void input(String text) {
-		successCallback.callback(text);
+		EventDestination.getInstance().dispatchSuccessEventWithObject(
+				EventType.PRS_ENTER_SCREEN_SIZE, text);
 	}
 
 	@Override
 	public void canceled() {
-		cancelCallback.callback(new String());
+		EventDestination.getInstance().dispatchFailEvent(
+				EventType.PRS_ENTER_SCREEN_SIZE);
 	}
 
 }

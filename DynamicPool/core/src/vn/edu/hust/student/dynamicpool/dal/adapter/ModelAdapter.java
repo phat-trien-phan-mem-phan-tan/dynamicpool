@@ -3,7 +3,7 @@ package vn.edu.hust.student.dynamicpool.dal.adapter;
 import java.util.HashMap;
 import java.util.Map;
 
-import vn.edu.hust.student.dynamicpool.bll.Fish;
+import vn.edu.hust.student.dynamicpool.bll.model.Fish;
 
 public class ModelAdapter {
 	public static Map<String, Object> convertFish(Fish fish){

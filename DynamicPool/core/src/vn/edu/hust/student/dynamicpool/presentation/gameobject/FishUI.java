@@ -1,6 +1,6 @@
 package vn.edu.hust.student.dynamicpool.presentation.gameobject;
 
-import vn.edu.hust.student.dynamicpool.bll.IFish;
+import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -13,11 +13,11 @@ public abstract class FishUI {
 	}
 
 	public float getX() {
-		return fishBLL.getPosition().getMinX();
+		return fishBLL.getBoundary().getMinX();
 	}
 
 	public float getY() {
-		return fishBLL.getPosition().getMinY();
+		return fishBLL.getBoundary().getMinY();
 	}
 
 	public float getAngle() {

@@ -2,8 +2,7 @@ package vn.edu.hust.student.dynamicpool.presentation.screen;
 
 import java.util.List;
 
-import vn.edu.hust.student.dynamicpool.bll.IFish;
-import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
+import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 import vn.edu.hust.student.dynamicpool.presentation.WorldController;
 import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
 import vn.edu.hust.student.dynamicpool.presentation.assets.AssetGameScreen;
@@ -11,6 +10,7 @@ import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUI;
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUICollection;
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.GameBackgroundUI;
+import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;

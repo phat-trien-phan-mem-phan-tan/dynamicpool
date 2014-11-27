@@ -11,7 +11,7 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGeneratorLoader;
 import com.badlogic.gdx.graphics.g2d.freetype.FreetypeFontLoader;
 import com.badlogic.gdx.graphics.g2d.freetype.FreetypeFontLoader.FreeTypeFontLoaderParameter;
 
-import vn.edu.hust.student.dynamicpool.dal.utils.AppConst;
+import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 public class AssetGameScreen {
 	private AssetBackground background = new AssetBackground();

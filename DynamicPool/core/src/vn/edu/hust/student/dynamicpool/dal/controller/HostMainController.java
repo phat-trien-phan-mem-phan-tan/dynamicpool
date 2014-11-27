@@ -14,11 +14,11 @@ import org.eclipse.jetty.util.ajax.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import vn.edu.hust.student.dynamicpool.bll.model.PoolManager;
 import vn.edu.hust.student.dynamicpool.dal.client.http.HttpClientController;
 import vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController;
 import vn.edu.hust.student.dynamicpool.dal.manager.ClientManager;
 import vn.edu.hust.student.dynamicpool.dal.processor.Processor;
-import vn.edu.hust.student.dynamicpool.dal.server.logic.PoolManager;
 import vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController;
 import vn.edu.hust.student.dynamicpool.dal.server.socket.SocketServerController;
 import vn.edu.hust.student.dynamicpool.dal.statics.Field;

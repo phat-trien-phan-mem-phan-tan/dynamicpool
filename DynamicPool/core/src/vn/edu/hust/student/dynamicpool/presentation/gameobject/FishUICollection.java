@@ -3,7 +3,7 @@ package vn.edu.hust.student.dynamicpool.presentation.gameobject;
 import java.util.HashMap;
 import java.util.Map;
 
-import vn.edu.hust.student.dynamicpool.bll.IFish;
+import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 
 public class FishUICollection {
 	private Map<Integer, FishUI> dictionary = new HashMap<Integer, FishUI>();

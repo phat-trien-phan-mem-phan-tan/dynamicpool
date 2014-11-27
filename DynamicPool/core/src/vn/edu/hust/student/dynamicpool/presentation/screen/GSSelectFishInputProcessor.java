@@ -1,6 +1,6 @@
 package vn.edu.hust.student.dynamicpool.presentation.screen;
 
-import vn.edu.hust.student.dynamicpool.bll.FishType;
+import vn.edu.hust.student.dynamicpool.bll.model.FishType;
 import vn.edu.hust.student.dynamicpool.presentation.WorldController;
 
 public class GSSelectFishInputProcessor extends GSDefaultInputProcessor {

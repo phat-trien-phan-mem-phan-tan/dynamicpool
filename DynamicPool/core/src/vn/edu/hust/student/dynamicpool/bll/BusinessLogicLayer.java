@@ -2,16 +2,19 @@ package vn.edu.hust.student.dynamicpool.bll;
 
 import java.util.List;
 
-import vn.edu.hust.student.dynamicpool.model.DeviceInfo;
-import vn.edu.hust.student.dynamicpool.presentation.PresentationBooleanCallback;
+import vn.edu.hust.student.dynamicpool.bll.model.DeviceInfo;
+import vn.edu.hust.student.dynamicpool.bll.model.ETrajectoryType;
+import vn.edu.hust.student.dynamicpool.bll.model.Fish;
+import vn.edu.hust.student.dynamicpool.bll.model.FishType;
+import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 
 public interface BusinessLogicLayer {
 	
-	void joinHost(String key, PresentationBooleanCallback callback);
+	void joinHost(String key);
 
-	void createHost(PresentationBooleanCallback callback);
+	void createHost();
 	
-	void addDevide(DeviceInfo devideInfor,PresentationBooleanCallback callback);
+	void addDevide(DeviceInfo devideInfor);
 	
 	List<IFish> getFishs();
 

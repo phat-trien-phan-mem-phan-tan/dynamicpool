@@ -2,12 +2,11 @@ package vn.edu.hust.student.dynamicpool.equation;
 
 import java.util.ArrayList;
 
-
-import vn.edu.hust.student.dynamicpool.bll.poolmanager.IPool;
-import vn.edu.hust.student.dynamicpool.model.FishState;
-import vn.edu.hust.student.dynamicpool.model.Segment;
+import vn.edu.hust.student.dynamicpool.bll.model.FishState;
+import vn.edu.hust.student.dynamicpool.bll.model.Pool;
+import vn.edu.hust.student.dynamicpool.bll.model.Segment;
 
 public interface IFishState {
 
-	FishState getFishState(ArrayList<Segment>  segmentList,IPool pool);
+	FishState getFishState(ArrayList<Segment>  segmentList,Pool pool);
 }
