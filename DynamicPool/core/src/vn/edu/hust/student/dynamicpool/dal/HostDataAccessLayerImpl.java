@@ -21,7 +21,7 @@ import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 public class HostDataAccessLayerImpl implements DataAccessLayer {
 	private Logger logger = LoggerFactory
-			.getLogger(ClientDataAccessLayerImpl.class);
+			.getLogger(HostDataAccessLayerImpl.class);
 
 	public HostDataAccessLayerImpl() {
 		logger.debug("Contruct");

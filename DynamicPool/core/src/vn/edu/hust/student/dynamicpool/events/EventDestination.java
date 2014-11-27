@@ -68,4 +68,11 @@ public class EventDestination {
 			return false;
 		}
 	}
+
+	public static Object parseEventToTargetObject(Event event) {
+		if (EventResult.class.isInstance(event.getTarget())) {
+			return ((EventResult)event.getTarget()).getTargetObject();
+		}
+		return event.getTarget();
+	}
 }

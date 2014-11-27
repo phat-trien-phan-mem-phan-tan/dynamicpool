@@ -1,10 +1,14 @@
 package vn.edu.hust.student.dynamicpool.presentation.screen;
 
+import vn.edu.hust.student.dynamicpool.events.EventDestination;
+import vn.edu.hust.student.dynamicpool.events.EventType;
 import vn.edu.hust.student.dynamicpool.presentation.WorldController;
 import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.eposi.eventdriven.Event;
+import com.eposi.eventdriven.implementors.BaseEventListener;
 
 public class DeviceInfoScreen implements Screen {
 
@@ -15,6 +19,20 @@ public class DeviceInfoScreen implements Screen {
 			WorldController worldController) {
 		this.worldRenderer = worldRenderer;
 		this.worldController = worldController;
+		registerEventListener();
+	}
+
+	private void registerEventListener() {
+		EventDestination.getInstance().addEventListener(
+				EventType.PRS_ENTER_SCREEN_SIZE,
+				new BaseEventListener(this, "onEnterScreenSizeCallbackHander"));
+	}
+	
+	public void onEnterScreenSizeCallbackHander(Event event) {
+		if (EventDestination.parseEventToBoolean(event)) {
+			String text = EventDestination.parseEventToTargetObject(event).toString();
+			enterScreenSizeCallbakHander(text);
+		}
 	}
 
 	protected void showTextInputWithRequireMessage() {
