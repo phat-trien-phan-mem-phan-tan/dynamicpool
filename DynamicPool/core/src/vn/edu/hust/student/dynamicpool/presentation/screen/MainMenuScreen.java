@@ -1,5 +1,7 @@
 package vn.edu.hust.student.dynamicpool.presentation.screen;
 
+import vn.edu.hust.student.dynamicpool.events.EventDestination;
+import vn.edu.hust.student.dynamicpool.events.EventType;
 import vn.edu.hust.student.dynamicpool.presentation.WorldController;
 import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
 import vn.edu.hust.student.dynamicpool.presentation.assets.AssetMainMenuScreen;
@@ -14,6 +16,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+import com.eposi.eventdriven.Event;
+import com.eposi.eventdriven.implementors.BaseEventListener;
 
 public class MainMenuScreen implements Screen {
 	private WorldRenderer worldRenderer = null;
@@ -23,8 +27,9 @@ public class MainMenuScreen implements Screen {
 	private ImageButton createHostButton = null;
 	private ImageButton joinHostButton = null;
 	private WorldController worldController;
-	
-	public MainMenuScreen(WorldRenderer worldRenderer, WorldController worldController) {
+
+	public MainMenuScreen(WorldRenderer worldRenderer,
+			WorldController worldController) {
 		this.worldRenderer = worldRenderer;
 		this.worldController = worldController;
 	}
@@ -36,7 +41,7 @@ public class MainMenuScreen implements Screen {
 		stage.draw();
 		worldRenderer.endRender();
 	}
-	
+
 	@Override
 	public void resize(int width, int height) {
 		worldRenderer.resize(width, height);
@@ -58,7 +63,8 @@ public class MainMenuScreen implements Screen {
 	}
 
 	private void initCreateButton() {
-		TextureRegionDrawable creatHostImageUp = mainMenuAssets.getCreateHostDrawable();
+		TextureRegionDrawable creatHostImageUp = mainMenuAssets
+				.getCreateHostDrawable();
 		createHostButton = new ImageButton(creatHostImageUp);
 		addCreateClickListener();
 		table.add(createHostButton).row();
@@ -72,13 +78,14 @@ public class MainMenuScreen implements Screen {
 			}
 		});
 	}
-	
+
 	protected void createHostClickHander() {
 		worldController.createHost();
 	}
 
 	private void initJoinButton() {
-		TextureRegionDrawable joinHostImageUp = mainMenuAssets.getJoinHostDrawable();
+		TextureRegionDrawable joinHostImageUp = mainMenuAssets
+				.getJoinHostDrawable();
 		joinHostButton = new ImageButton(joinHostImageUp);
 		addJoinClickListener();
 		table.add(joinHostButton).row();
@@ -92,23 +99,36 @@ public class MainMenuScreen implements Screen {
 			}
 		});
 	}
-	
+
 	protected void joinHostClickHander() {
-		Gdx.input.getTextInput(new StringKeyInputListener(), "Please enter key of host", "");
+		EventDestination.getInstance().addEventListener(
+				EventType.PRS_ENTER_KEY,
+				new BaseEventListener(this, "onEnterKeyCallbackHander"));
+		Gdx.input.getTextInput(new EnterKeyInputListener(),
+				"Please enter key of host", "");
 	}
-	
+
+	public void onEnterKeyCallbackHander(Event event) {
+		Object keyObject = EventDestination.parseEventToTargetObject(event);
+		if (EventDestination.parseEventToBoolean(event)
+				&& keyObject != null) {
+			joinHostAction(keyObject.toString());
+		}
+	}
+
 	public void joinHostAction(String key) {
 		worldController.joinHost(key);
 	}
 
 	private void initBackground() {
-		TextureRegionDrawable background = mainMenuAssets.getMainMenuBackgroundDrawable();
+		TextureRegionDrawable background = mainMenuAssets
+				.getMainMenuBackgroundDrawable();
 		table.setBackground(background);
 	}
-	
+
 	private void configureTableAndStage() {
 		table.setFillParent(true);
-		stage.addActor(table);		
+		stage.addActor(table);
 		Gdx.input.setInputProcessor(stage);
 	}
 
@@ -129,7 +149,7 @@ public class MainMenuScreen implements Screen {
 
 	@Override
 	public void dispose() {
-		
+
 	}
 
 }

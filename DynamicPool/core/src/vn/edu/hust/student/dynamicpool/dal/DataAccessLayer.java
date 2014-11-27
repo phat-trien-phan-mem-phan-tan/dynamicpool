@@ -12,7 +12,7 @@ public interface DataAccessLayer {
 
 	void addDevice(DeviceInfo deviceInfo);
 
-	void createFish(Fish fish);
+	void createFish(IFish fish);
 
 	void synchronization();
 

@@ -74,7 +74,7 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	}
 	
 	@Override
-	public void createFish(Fish fish) {
+	public void createFish(IFish fish) {
 		logger.debug("create fish");
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("fish", fish);

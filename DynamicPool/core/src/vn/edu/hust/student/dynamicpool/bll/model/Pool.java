@@ -64,7 +64,7 @@ public class Pool {
 	}
 	
 	public void setFishes(List<IFish> fishes) {
-		this.fishes = fishes;
+		this.fishes = fishes == null ? new ArrayList<IFish>() : fishes;
 	}
 
 	public List<IFish> updatePosition(float detatime) {

@@ -32,11 +32,13 @@ public class DeviceInfoScreen implements Screen {
 		if (EventDestination.parseEventToBoolean(event)) {
 			String text = EventDestination.parseEventToTargetObject(event).toString();
 			enterScreenSizeCallbakHander(text);
+		} else {
+			showTextInputWithRequireMessage();
 		}
 	}
 
-	protected void showTextInputWithRequireMessage() {
-		Gdx.input.getTextInput(new StringKeyInputListener(), "You must enter your screen size (by inch)", "0");
+	private void showTextInputWithRequireMessage() {
+		Gdx.input.getTextInput(new EnterScreenSizeInputListener(), "You must enter your screen size (by inch)", "0");
 	}
 	
 	private void enterScreenSizeCallbakHander(String text) {
@@ -44,7 +46,7 @@ public class DeviceInfoScreen implements Screen {
 	}
 	
 	private void showTextInputInvalidMessage() {
-		Gdx.input.getTextInput(new StringKeyInputListener(), "You must enter a valid number for screen size (by inch [0, 30])", "0");
+		Gdx.input.getTextInput(new EnterScreenSizeInputListener(), "You must enter a valid number for screen size (by inch [0, 30])", "0");
 	}
 
 	@Override
@@ -62,7 +64,7 @@ public class DeviceInfoScreen implements Screen {
 	
 	@Override
 	public void show() {
-		Gdx.input.getTextInput(new StringKeyInputListener(), "Please enter your screen size (by inch)", "0");
+		Gdx.input.getTextInput(new EnterScreenSizeInputListener(), "Please enter your screen size (by inch)", "0");
 	}
 
 

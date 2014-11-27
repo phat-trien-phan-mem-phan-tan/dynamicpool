@@ -1,19 +1,29 @@
 package vn.edu.hust.student.dynamicpool.presentation;
 
-import java.util.*;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import vn.edu.hust.student.dynamicpool.*;
-import vn.edu.hust.student.dynamicpool.bll.*;
-import vn.edu.hust.student.dynamicpool.bll.model.*;
-import vn.edu.hust.student.dynamicpool.dal.utils.*;
+import vn.edu.hust.student.dynamicpool.GameCenter;
+import vn.edu.hust.student.dynamicpool.bll.BusinessLogicLayer;
+import vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl;
+import vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl;
+import vn.edu.hust.student.dynamicpool.bll.model.DeviceInfo;
+import vn.edu.hust.student.dynamicpool.bll.model.ETrajectoryType;
+import vn.edu.hust.student.dynamicpool.bll.model.FishType;
+import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 import vn.edu.hust.student.dynamicpool.events.EventDestination;
 import vn.edu.hust.student.dynamicpool.events.EventType;
-import vn.edu.hust.student.dynamicpool.presentation.assets.*;
-import vn.edu.hust.student.dynamicpool.presentation.gameobject.*;
-import vn.edu.hust.student.dynamicpool.presentation.screen.*;
+import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
+import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUICollection;
+import vn.edu.hust.student.dynamicpool.presentation.gameobject.FishUIFactory;
+import vn.edu.hust.student.dynamicpool.presentation.screen.DeviceInfoScreen;
+import vn.edu.hust.student.dynamicpool.presentation.screen.GameScreen;
+import vn.edu.hust.student.dynamicpool.presentation.screen.HostGameScreen;
+import vn.edu.hust.student.dynamicpool.presentation.screen.LoadingScreen;
+import vn.edu.hust.student.dynamicpool.presentation.screen.MainMenuScreen;
+import vn.edu.hust.student.dynamicpool.presentation.screen.SplashScreen;
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 import com.badlogic.gdx.Gdx;
@@ -199,7 +209,7 @@ public class WorldController {
 	private boolean isValidScreenSize(String screenSize) {
 		try {
 			size = Float.parseFloat(screenSize);
-			if (size < 0 || size > 30)
+			if (size <= 0 || size > 30)
 				return false;
 		} catch (Exception e) {
 			return false;
