@@ -33,6 +33,7 @@ import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 import com.eposi.eventdriven.Event;
 import com.eposi.eventdriven.implementors.BaseEventListener;
+import com.sun.corba.se.impl.oa.poa.AOMEntry;
 
 public class WorldController {
 	private Timer timer = new Timer();
@@ -192,9 +193,10 @@ public class WorldController {
 	}
 
 	private void sendDeviceInfoToServer() {
-		DisplayMode desktopDisplayMode = Gdx.graphics.getDesktopDisplayMode();
-		DeviceInfo deviceInfo = new DeviceInfo(desktopDisplayMode.width,
-				desktopDisplayMode.height, this.size);
+//		DisplayMode desktopDisplayMode = Gdx.graphics.getDesktopDisplayMode();
+//		DeviceInfo deviceInfo = new DeviceInfo(desktopDisplayMode.width,
+//				desktopDisplayMode.height, this.size);
+		DeviceInfo deviceInfo = new DeviceInfo(AppConst.width, AppConst.height, this.size);
 		EventDestination.getInstance().addEventListener(
 				EventType.BLL_ADD_DEVICE,
 				new BaseEventListener(this, "onAddDeviceCallbackHander"));

@@ -32,35 +32,35 @@ public class AssetGameScreen {
 	private BitmapFont defaultFont;
 	
 	public AssetGameScreen() {
-		fish1 = new AssetFishAnimated(AppConst.HORIZONTAL_FISH_1_TEXTURE, 8,
-				AppConst.VERTICAL_FISH_1_TEXTURE, 8,
+		fish1 = new AssetFishAnimated(AppConst.RIGHT_FISH_1_TEXTURE, 8,
+				AppConst.LEFT_FISH_1_TEXTURE, 8,
 				AppConst.FISH_ANIMATED_DURATION);
-		fish2 = new AssetFishAnimated(AppConst.HORIZONTAL_FISH_2_TEXTURE, 8,
-				AppConst.VERTICAL_FISH_2_TEXTURE, 8,
+		fish2 = new AssetFishAnimated(AppConst.RIGHT_FISH_2_TEXTURE, 8,
+				AppConst.LEFT_FISH_2_TEXTURE, 8,
 				AppConst.FISH_ANIMATED_DURATION);
-		fish3 = new AssetFishAnimated(AppConst.HORIZONTAL_FISH_3_TEXTURE, 8,
-				AppConst.VERTICAL_FISH_3_TEXTURE, 8,
+		fish3 = new AssetFishAnimated(AppConst.RIGHT_FISH_3_TEXTURE, 8,
+				AppConst.LEFT_FISH_3_TEXTURE, 8,
 				AppConst.FISH_ANIMATED_DURATION);
-		fish4 = new AssetFishAnimated(AppConst.HORIZONTAL_FISH_4_TEXTURE, 8,
-				AppConst.VERTICAL_FISH_4_TEXTURE, 8,
+		fish4 = new AssetFishAnimated(AppConst.RIGHT_FISH_4_TEXTURE, 8,
+				AppConst.LEFT_FISH_4_TEXTURE, 8,
 				AppConst.FISH_ANIMATED_DURATION);
-		fish5 = new AssetFishAnimated(AppConst.HORIZONTAL_FISH_5_TEXTURE, 8,
-				AppConst.VERTICAL_FISH_5_TEXTURE, 8,
+		fish5 = new AssetFishAnimated(AppConst.RIGHT_FISH_5_TEXTURE, 8,
+				AppConst.LEFT_FISH_5_TEXTURE, 8,
 				AppConst.FISH_ANIMATED_DURATION);
-		fish6 = new AssetFishAnimated(AppConst.HORIZONTAL_FISH_6_TEXTURE, 8,
-				AppConst.VERTICAL_FISH_6_TEXTURE, 8,
+		fish6 = new AssetFishAnimated(AppConst.RIGHT_FISH_6_TEXTURE, 8,
+				AppConst.LEFT_FISH_6_TEXTURE, 8,
 				AppConst.FISH_ANIMATED_DURATION);
-		fish7 = new AssetFishAnimated(AppConst.HORIZONTAL_FISH_7_TEXTURE, 8,
-				AppConst.VERTICAL_FISH_7_TEXTURE, 8,
+		fish7 = new AssetFishAnimated(AppConst.RIGHT_FISH_7_TEXTURE, 8,
+				AppConst.LEFT_FISH_7_TEXTURE, 8,
 				AppConst.FISH_ANIMATED_DURATION);
-		fish8 = new AssetFishAnimated(AppConst.HORIZONTAL_FISH_8_TEXTURE, 8,
-				AppConst.VERTICAL_FISH_8_TEXTURE, 8,
+		fish8 = new AssetFishAnimated(AppConst.RIGHT_FISH_8_TEXTURE, 8,
+				AppConst.LEFT_FISH_8_TEXTURE, 8,
 				AppConst.FISH_ANIMATED_DURATION);
 		fish9 = new AssetFishAnimated(AppConst.HORIZONTAL_FISH_9_TEXTURE, 8,
-				AppConst.VERTICAL_FISH_9_TEXTURE, 8,
+				AppConst.LEFT_FISH_9_TEXTURE, 8,
 				AppConst.FISH_ANIMATED_DURATION);
 		fish10 = new AssetFishAnimated(AppConst.HORIZONTAL_FISH_10_TEXTURE, 8,
-				AppConst.VERTICAL_FISH_10_TEXTURE, 8,
+				AppConst.LEFT_FISH_10_TEXTURE, 8,
 				AppConst.FISH_ANIMATED_DURATION);
 	}
 	

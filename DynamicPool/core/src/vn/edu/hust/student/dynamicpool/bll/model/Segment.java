@@ -1,42 +1,41 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
+import vn.edu.hust.student.dynamicpool.presentation.gameobject.EDirection;
+
 public class Segment {
 
-	private Point beginPoint;
-	private Point endPoint;
-	
-	
-	public Segment(){
-		this.beginPoint = new Point(0, 0);
-		this.endPoint = new Point(0,0);
-	}
-	
-	public Segment(Point beginPoint,Point endPoint){
-		this.beginPoint = beginPoint;
-		this.endPoint = endPoint;
+	private float beginPoint;
+	private float endPoint;
+	private EDirection segmentDirection;
+	private String neighbourClientName = null;
+
+	public Segment() {
 		
 	}
-	
-	public Point getBeginPoint() {
-		
-		if(beginPoint.getX() < endPoint.getX() || beginPoint.getY() < endPoint.getY()){
-			return beginPoint;
-		}
-		return endPoint;
+
+	public Segment(EDirection sengmentDirection, float beginPoint, float endPoint) {
+		this.segmentDirection = sengmentDirection;
+		this.beginPoint = Math.min(beginPoint, endPoint);
+		this.endPoint = Math.max(beginPoint, endPoint);
 	}
-	public void setBeginPoint(Point beginPoint) {
-		this.beginPoint = beginPoint;
-	}
-	public Point getEndPoint() {
-		
-		if(beginPoint.getX() < endPoint.getX() || beginPoint.getY() < endPoint.getY()){
-			return endPoint;
-		}
+
+	public float getBeginPoint() {
 		return beginPoint;
 	}
-	public void setEndPoint(Point endPoint) {
-		this.endPoint = endPoint;
+
+	public float getEndPoint() {
+		return endPoint;
+	}
+
+	public EDirection getSegmentDirection() {
+		return this.segmentDirection;
 	}
 	
+	public String getNeighbourClientName() {
+		return this.neighbourClientName;		
+	}
 	
+	public void setNeighbourClientName(String clientName) {
+		this.neighbourClientName = clientName;
+	}
 }

@@ -19,9 +19,13 @@ public interface IFish {
 
 	void setFishState(FishState fishState);
 
-	float getAngle();
-
-	void setAngle(float angle);
-
 	void updateLocation(float deltaTime);
+
+	boolean isIgnoreUpdateLocation();
+
+	IFish cloneIgnoreFishState();
+
+	void ignoreUpdateLocation();
+
+	IFish cloneFish();
 }

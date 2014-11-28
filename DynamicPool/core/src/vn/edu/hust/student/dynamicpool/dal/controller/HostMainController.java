@@ -166,9 +166,9 @@ public class HostMainController {
 				throw new DALException((String) hostInfo.get("error"), null);
 			}
 		} catch (MalformedURLException e) {
-			throw new DALException("URL không hợp lệ", e);
+			throw new DALException("Invalid URL", e);
 		} catch (IOException e) {
-			throw new DALException("Không kết nối được đến server", e);
+			throw new DALException("Cannot connect to server", e);
 		}
 	}
 

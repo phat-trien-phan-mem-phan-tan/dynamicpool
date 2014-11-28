@@ -1,6 +1,6 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
-import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
+import vn.edu.hust.student.dynamicpool.presentation.gameobject.EDirection;
 
 public class NoneTrajectory extends Trajectory {
 
@@ -14,14 +14,18 @@ public class NoneTrajectory extends Trajectory {
 	}
 
 	@Override
-	public Boundary updateLocation(float deltaTime) {
-		return getFishPosition();
+	public void updateLocation(float deltaTime) {
+		increaseTimeState(deltaTime);
 	}
 
 	@Override
-	public void setDirection(Vector vector) {
-		// TODO Auto-generated method stub
+	public void changeDirection(EDirection direction) {
 		
+	}
+
+	@Override
+	public EDirection getHorizontalDirection() {
+		return EDirection.RIGHT;
 	}
 
 }

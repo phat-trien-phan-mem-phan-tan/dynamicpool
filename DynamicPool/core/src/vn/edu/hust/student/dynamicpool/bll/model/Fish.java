@@ -1,14 +1,18 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
-public class Fish implements IFish {
-	private int fishId;
-	private Boundary boundary = new Boundary();
-	private Trajectory trajectory = new NoneTrajectory();
-	private FishType fishType = FishType.FISH1;
-	private FishState fishState;
-	private float angle;
+import java.util.Random;
 
-	public Fish(FishType fishType, Trajectory fishTrajectory, Boundary fishBoundary) {
+public class Fish implements IFish {
+	private static Random random = new Random();  
+	private int fishId = random.nextInt();
+	private FishType fishType = FishType.FISH1;
+	private Trajectory trajectory = new NoneTrajectory();
+	private Boundary boundary = new Boundary();
+	private FishState fishState = FishState.INSIDE;
+	private boolean isIgnoreUpdateLocation = false;
+
+	public Fish(FishType fishType, Trajectory fishTrajectory,
+			Boundary fishBoundary) {
 		this.fishType = fishType;
 		this.trajectory = fishTrajectory;
 		this.boundary = fishBoundary;
@@ -60,17 +64,36 @@ public class Fish implements IFish {
 	}
 
 	@Override
-	public float getAngle() {
-		return angle;
-	}
-
-	@Override
-	public void setAngle(float angle) {
-		this.angle = angle;
-	}
-
-	@Override
 	public void updateLocation(float deltaTime) {
-		trajectory.updateLocation(deltaTime);
+		if (!isIgnoreUpdateLocation)
+			trajectory.updateLocation(deltaTime);
+	}
+
+	@Override
+	public boolean isIgnoreUpdateLocation() {
+		return isIgnoreUpdateLocation;
+	}
+
+	@Override
+	public void ignoreUpdateLocation() {
+		isIgnoreUpdateLocation = true;
+	}
+
+	@Override
+	public IFish cloneIgnoreFishState() {
+		IFish fish = new Fish(fishType, trajectory, boundary);
+		fish.setFishId(fishId);
+		fish.setFishState(fishState);
+		fish.ignoreUpdateLocation();
+		return fish;
+	}
+
+	@Override
+	public IFish cloneFish() {
+		IFish fish = new Fish(fishType, trajectory, boundary);
+		fish.setFishId(fishId);
+		fish.setFishState(fishState);
+		fish.ignoreUpdateLocation();
+		return fish;
 	}
 }

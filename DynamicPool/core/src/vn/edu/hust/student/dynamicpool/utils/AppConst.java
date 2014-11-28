@@ -6,26 +6,26 @@ public class AppConst {
     // Chieu cao khung hinh
     public static final float VIEWPORT_HEIGHT = 1f;
     
-    public static final String HORIZONTAL_FISH_1_TEXTURE = "fish1.png";
-	public static final String VERTICAL_FISH_1_TEXTURE = "fish1up.png";
-	public static final String HORIZONTAL_FISH_2_TEXTURE = "fish2.png";
-	public static final String VERTICAL_FISH_2_TEXTURE = "fish2up.png";
-	public static final String HORIZONTAL_FISH_3_TEXTURE = "fish3.png";
-	public static final String VERTICAL_FISH_3_TEXTURE = "fish3up.png";
-	public static final String HORIZONTAL_FISH_4_TEXTURE = "fish4.png";
-	public static final String VERTICAL_FISH_4_TEXTURE = "fish4up.png";
-	public static final String HORIZONTAL_FISH_5_TEXTURE = "fish5.png";
-	public static final String VERTICAL_FISH_5_TEXTURE = "fish5up.png";
-	public static final String HORIZONTAL_FISH_6_TEXTURE = "fish6.png";
-	public static final String VERTICAL_FISH_6_TEXTURE = "fish6up.png";
-	public static final String HORIZONTAL_FISH_7_TEXTURE = "fish7.png";
-	public static final String VERTICAL_FISH_7_TEXTURE = "fish7up.png";
-	public static final String HORIZONTAL_FISH_8_TEXTURE = "fish8.png";
-	public static final String VERTICAL_FISH_8_TEXTURE = "fish8up.png";
+    public static final String RIGHT_FISH_1_TEXTURE = "fish1.png";
+	public static final String LEFT_FISH_1_TEXTURE = "fish1_2.png";
+	public static final String RIGHT_FISH_2_TEXTURE = "fish2.png";
+	public static final String LEFT_FISH_2_TEXTURE = "fish2_2.png";
+	public static final String RIGHT_FISH_3_TEXTURE = "fish3.png";
+	public static final String LEFT_FISH_3_TEXTURE = "fish3_2.png";
+	public static final String RIGHT_FISH_4_TEXTURE = "fish4.png";
+	public static final String LEFT_FISH_4_TEXTURE = "fish4_2.png";
+	public static final String RIGHT_FISH_5_TEXTURE = "fish5.png";
+	public static final String LEFT_FISH_5_TEXTURE = "fish5_2.png";
+	public static final String RIGHT_FISH_6_TEXTURE = "fish6.png";
+	public static final String LEFT_FISH_6_TEXTURE = "fish6_2.png";
+	public static final String RIGHT_FISH_7_TEXTURE = "fish7.png";
+	public static final String LEFT_FISH_7_TEXTURE = "fish7_2.png";
+	public static final String RIGHT_FISH_8_TEXTURE = "fish8.png";
+	public static final String LEFT_FISH_8_TEXTURE = "fish8_2.png";
 	public static final String HORIZONTAL_FISH_9_TEXTURE = "fish9.png";
-	public static final String VERTICAL_FISH_9_TEXTURE = "fish9up.png";
+	public static final String LEFT_FISH_9_TEXTURE = "fish9_2.png";
 	public static final String HORIZONTAL_FISH_10_TEXTURE = "fish10.png";
-	public static final String VERTICAL_FISH_10_TEXTURE = "fish10up.png";
+	public static final String LEFT_FISH_10_TEXTURE = "fish10_2.png";
 
 	public static final String BACKGROUND_TEXTURE = "backgroundshop.png";
 	public static final float FISH_ANIMATED_DURATION = 0.25f;

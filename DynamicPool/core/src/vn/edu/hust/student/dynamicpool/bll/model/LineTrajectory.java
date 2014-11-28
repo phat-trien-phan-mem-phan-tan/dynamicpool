@@ -1,54 +1,28 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
-import vn.edu.hust.student.dynamicpool.equation.vector.Oxy;
-import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
+import vn.edu.hust.student.dynamicpool.presentation.gameobject.EDirection;
 
 public class LineTrajectory extends Trajectory {
-
-	/*
-	 * x = x0+u1t; y = y0+u2t;
-	 * 
-	 * he so goc cua duong thang : k = u2/u1 v(u1,u2) la vec to chi phuong.
-	 */
-
-	// vector chi phuong
-	private Vector u;
+	private float dx = 1, dy = 1;
 	private static final int A = 20;
-	
-	public LineTrajectory(Boundary fishPosition) {
-		super(fishPosition);
-		this.timeState = 0;
-		u = new Vector(1, 1);
+
+	public LineTrajectory(Boundary fishBoundary) {
+		super(fishBoundary);
 	}
 
-
-
-	public LineTrajectory(Boundary fishPosition, Vector u, float timeState) {
-		super(fishPosition);
-		this.timeState = timeState;
-		this.u = u;
-	}
-	
 	@Override
-	public void setDirection(Vector vector) {
-		if (vector.equals(Oxy.ox)) {
-			
-			double b = - u.getY();
-			u.setY(b);
-
-		} else if (vector.equals(Oxy.oy)) {
-			double a = 0 - u.getX();
-			u.setX(a);
-
+	public void changeDirection(EDirection hitTo) {
+		switch (hitTo) {
+		case TOP:
+		case BOTTOM:
+			dy = -dy;
+			break;
+		case LEFT:
+		case RIGHT:
+		default:
+			dx = -dx;
+			break;
 		}
-	}
-
-	public Vector getU() {
-		return u;
-	}
-
-	public void setU(Vector u) {
-		this.u = u;
 	}
 
 	@Override
@@ -57,11 +31,18 @@ public class LineTrajectory extends Trajectory {
 	}
 
 	@Override
-	public Boundary updateLocation(float deltaTime) {
-		float x = (float) (fishPosition.getMinX() +A* u.getX() * deltaTime);
-		float y = (float) (fishPosition.getMinY() +A* u.getY() * deltaTime);
-		fishPosition.setLocation(new vn.edu.hust.student.dynamicpool.bll.model.Point(x, y));
-		return fishPosition;
+	public void updateLocation(float deltaTime) {
+		increaseTimeState(deltaTime);
+		float x = (float) (fishBoundary.getMinX() + A * dx * deltaTime);
+		float y = (float) (fishBoundary.getMinY() + A * dy * deltaTime);
+		fishBoundary.setLocation(new Point(x, y));
+	}
+
+	@Override
+	public EDirection getHorizontalDirection() {
+		if (dx < 0)
+			return EDirection.LEFT;
+		return EDirection.RIGHT;
 	}
 
 }

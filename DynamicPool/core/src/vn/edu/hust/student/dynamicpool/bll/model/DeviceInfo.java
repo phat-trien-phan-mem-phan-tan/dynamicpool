@@ -1,7 +1,9 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
+import java.util.UUID;
+
 public class DeviceInfo {
-	private String clientName;
+	private String clientName = UUID.randomUUID().toString();
 	private float screenWidth;
 	private float screenHeight;
 	private float screenSize;
@@ -11,7 +13,6 @@ public class DeviceInfo {
 	}
 
 	public DeviceInfo(float screenWidth, float screenHeight, float screenSize) {
-
 		this.screenWidth = screenWidth;
 		this.screenHeight = screenHeight;
 		this.screenSize = screenSize;

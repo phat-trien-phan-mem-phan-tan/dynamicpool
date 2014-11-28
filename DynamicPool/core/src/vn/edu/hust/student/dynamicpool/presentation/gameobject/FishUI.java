@@ -20,17 +20,8 @@ public abstract class FishUI {
 		return fishBLL.getBoundary().getMinY();
 	}
 
-	public float getAngle() {
-		return fishBLL.getAngle();
-	}
-
 	public EDirection getDirection() {
-		int a = (int) getAngle();
-		a = a % 360;
-		if (a == 90) return EDirection.TOP;
-		if (a == 270) return EDirection.BOTTOM;
-		if (a > 90 && a < 270) return EDirection.LEFT;
-		return EDirection.RIGHT;
+		return fishBLL.getTrajectory().getHorizontalDirection();
 	}
 	
 	public float getScale() {

@@ -35,16 +35,17 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 	@Override
 	public void createHost() {
 		logger.debug("create host");
+		String key = null;
 		try {
-			String key = HostMainController.getInstance().connectServer();
+			key = HostMainController.getInstance().connectServer();
 			HostMainController.getInstance().start();
 			logger.info("create host success");
 			EventDestination.getInstance().dispatchSuccessEventWithObject(
 					EventType.DAL_CREATE_HOST, key);
 		} catch (DALException e) {
-			logger.error("cannot create host");
-			EventDestination.getInstance().dispatchFailEventWithObject(
-					EventType.DAL_CREATE_HOST, e);
+			logger.error("cannot create host" + e.getMessage());
+			logger.info("retry create host in LAN network");
+			
 		}
 	}
 
@@ -56,32 +57,37 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 				new DALException("host instance cannot join to another host",
 						null));
 	}
-	
+
 	@Override
 	public void addDevice(DeviceInfo deviceInfo) {
 		logger.info("add device success");
-		EventDestination.getInstance().dispatchSuccessEvent(EventType.DAL_ADD_DEVICE);
+		deviceInfo.setClientName(AppConst.DEFAULT_HOST_NAME);
+		Pool pool = new Pool(deviceInfo);
+		EventDestination.getInstance().dispatchSuccessEventWithObject(
+				EventType.DAL_ADD_DEVICE, pool);
 	}
-	
+
 	@Override
 	public void createFish(IFish fish) {
 		logger.debug("create fish success");
-		EventDestination.getInstance().dispatchSuccessEventWithObject(EventType.DAL_CREATE_FISH, fish);
+		EventDestination.getInstance().dispatchSuccessEventWithObject(
+				EventType.DAL_CREATE_FISH, fish);
 	}
 
 	@Override
 	public void synchronization() {
 		logger.debug("synchronization");
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	@Override
 	public void removeFish(Fish fish) {
 		logger.info("remove fish success");
-		EventDestination.getInstance().dispatchSuccessEvent(EventType.DAL_REMOVE_FISH);
+		EventDestination.getInstance().dispatchSuccessEvent(
+				EventType.DAL_REMOVE_FISH);
 	}
-	
+
 	@Override
 	public void synchronous(List<IFish> fishes, String clientName) {
 		logger.debug("synchronous");
@@ -94,12 +100,12 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 			client.send(data);
 		}
 	}
-	
+
 	@Override
 	public void registerDone(Pool pool) {
 		logger.debug("register done");
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override

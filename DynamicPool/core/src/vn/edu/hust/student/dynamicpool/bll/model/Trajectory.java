@@ -1,39 +1,40 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
-import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
+import vn.edu.hust.student.dynamicpool.presentation.gameobject.EDirection;
 
 public abstract class Trajectory {
-
-	protected float timeState = 0f;
-	protected Boundary fishPosition;
+	private double timeState = 0f;
+	protected Boundary fishBoundary;
 
 	public Trajectory(Boundary fishPosition) {
 		this.setFishPosition(fishPosition);
 	}
 
 	public Trajectory() {
-		this.fishPosition = new Boundary();
+		this.fishBoundary = new Boundary();
 	}
 
-	public Boundary getFishPosition() {
-		return fishPosition;
+	public Boundary getFishBoundary() {
+		return fishBoundary;
 	}
 
-	private void setFishPosition(Boundary fishPosition) {
-		this.fishPosition = fishPosition;
+	private void setFishPosition(Boundary fishBoundary) {
+		this.fishBoundary = fishBoundary;
 	}
 
-	public float getTimeState() {
+	public double getTimeState() {
 		return timeState;
 	}
 
-	public void increaseTimeState(float deltaTime) {
-		this.timeState += deltaTime;
+	public void increaseTimeState(double d) {
+		this.timeState += d;
 	}
 
-	public abstract void setDirection(Vector vector);
+	public abstract void changeDirection(EDirection hitTo);
 
 	public abstract ETrajectoryType getTrajectoryType();
 
-	public abstract Boundary updateLocation(float deltaTime);
+	public abstract void updateLocation(float deltaTime);
+
+	public abstract EDirection getHorizontalDirection();
 }
