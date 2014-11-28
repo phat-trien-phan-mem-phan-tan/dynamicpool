@@ -3,14 +3,14 @@ package vn.edu.hust.student.dynamicpool.bll.model;
 import vn.edu.hust.student.dynamicpool.equation.vector.Vector;
 
 public abstract class Trajectory {
-	
+
 	protected float timeState = 0f;
 	protected Boundary fishPosition;
 
 	public Trajectory(Boundary fishPosition) {
 		this.setFishPosition(fishPosition);
 	}
-	
+
 	public Trajectory() {
 		this.fishPosition = new Boundary();
 	}
@@ -30,9 +30,10 @@ public abstract class Trajectory {
 	public void increaseTimeState(float deltaTime) {
 		this.timeState += deltaTime;
 	}
-	
-	public abstract void  setDirection(Vector vector);
-	
+
+	public abstract void setDirection(Vector vector);
+
 	public abstract ETrajectoryType getTrajectoryType();
-	public abstract Boundary updateCoordinate(float deltaTime);
+
+	public abstract Boundary updateLocation(float deltaTime);
 }

@@ -89,15 +89,14 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 		// }
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
-	public List<IFish> getFishs() {
+	public List<IFish> getFishes() {
 		return clientPool.getFishes();
 	}
 
 	@Override
 	public void update(float deltaTime) {
-		clientPool.updatePosition(deltaTime);
+		clientPoolManager.updateLocationOfFishes(deltaTime);
 	}
 
 	@Override
@@ -122,15 +121,22 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 	public void onCreateFishCallbackHander(Event event) {
 		logger.debug("on create fish callback hander");
 		if (EventDestination.parseEventToBoolean(event)) {
-			logger.info("create fish success");
-
-			EventDestination.getInstance().dispatchSuccessEvent(
-					EventType.BLL_CREATE_FISH);
+			Object targetObject = EventDestination
+					.parseEventToTargetObject(event);
+			if (IFish.class.isInstance(targetObject)) {
+				logger.info("create fish success");
+				IFish fish = (IFish) targetObject;
+				clientPool.addFish(fish);
+				EventDestination.getInstance().dispatchSuccessEventWithObject(
+						EventType.BLL_CREATE_FISH, targetObject);
+				return;
+			}
+			logger.error("cannot create fish: target object is not instance of IFish");
 		} else {
 			logger.error("cannot create fish");
-			EventDestination.getInstance().dispatchFailEvent(
-					EventType.BLL_CREATE_FISH);
 		}
+		EventDestination.getInstance().dispatchFailEvent(
+				EventType.BLL_CREATE_FISH);
 	}
 
 	@Override

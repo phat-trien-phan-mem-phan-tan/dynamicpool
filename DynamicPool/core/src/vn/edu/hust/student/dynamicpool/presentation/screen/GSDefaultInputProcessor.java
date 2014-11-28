@@ -3,7 +3,6 @@ package vn.edu.hust.student.dynamicpool.presentation.screen;
 import vn.edu.hust.student.dynamicpool.presentation.WorldController;
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 
 public class GSDefaultInputProcessor implements InputProcessor {
@@ -40,7 +39,6 @@ public class GSDefaultInputProcessor implements InputProcessor {
 			worldController.exit();
 		if (isClickOnAddFishButton(screenX, screenY))
 			worldController.addFishButtonClick();
-		Gdx.app.log("Touch UP: ", screenX + " & " + screenY);
 		return false;
 	}
 

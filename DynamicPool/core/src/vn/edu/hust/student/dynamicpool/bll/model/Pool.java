@@ -67,10 +67,10 @@ public class Pool {
 		this.fishes = fishes == null ? new ArrayList<IFish>() : fishes;
 	}
 
-	public List<IFish> updatePosition(float detatime) {
+	public List<IFish> updateLocationOfFishes(float detatime) {
 		for (int i = 0; i < fishes.size(); i++) {
 			Fish fish = (Fish) fishes.get(i);
-			fish.update(detatime);
+			fish.updateLocation(detatime);
 			checkHit(detatime, boundary, fish);
 		}
 		return fishes;
@@ -107,5 +107,9 @@ public class Pool {
 //		}
 //		fish.setFishState(FishState.NONE);
 		return false;
+	}
+
+	public void addFish(IFish fish) {
+		fishes.add(fish);
 	}
 }

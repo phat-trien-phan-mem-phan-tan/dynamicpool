@@ -41,7 +41,7 @@ public class SinTrajectory extends Trajectory {
 	}
 
 	@Override
-	public Boundary updateCoordinate(float deltaTime) {
+	public Boundary updateLocation(float deltaTime) {
 		t = t+direction*deltaTime;
 		
 		float x = (float) x0+n*t;

@@ -16,7 +16,7 @@ public interface BusinessLogicLayer {
 	
 	void addDevide(DeviceInfo devideInfor);
 	
-	List<IFish> getFishs();
+	List<IFish> getFishes();
 
 	void update(float deltaTime);
 

@@ -14,7 +14,7 @@ public class NoneTrajectory extends Trajectory {
 	}
 
 	@Override
-	public Boundary updateCoordinate(float deltaTime) {
+	public Boundary updateLocation(float deltaTime) {
 		return getFishPosition();
 	}
 

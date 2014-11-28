@@ -36,4 +36,10 @@ public class PoolManager{
 	public void calculate() {
 		FindCommonEdgeFunction.findCommonEdge(this.pools);
 	}
+
+	public void updateLocationOfFishes(float deltaTime) {
+		for (Pool pool : pools) {
+			pool.updateLocationOfFishes(deltaTime);
+		}
+	}
 }

@@ -8,9 +8,10 @@ public class Fish implements IFish {
 	private FishState fishState;
 	private float angle;
 
-	public Fish(FishType fishType, Trajectory trajectory) {
+	public Fish(FishType fishType, Trajectory fishTrajectory, Boundary fishBoundary) {
 		this.fishType = fishType;
-		this.trajectory = trajectory;
+		this.trajectory = fishTrajectory;
+		this.boundary = fishBoundary;
 	}
 
 	@Override
@@ -69,7 +70,7 @@ public class Fish implements IFish {
 	}
 
 	@Override
-	public void update(float deltaTime) {
-
+	public void updateLocation(float deltaTime) {
+		trajectory.updateLocation(deltaTime);
 	}
 }

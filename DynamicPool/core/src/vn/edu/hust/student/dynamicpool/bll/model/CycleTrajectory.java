@@ -28,8 +28,8 @@ public class CycleTrajectory extends Trajectory {
 	private static final int n = 1;
 	
 	
-	public CycleTrajectory(Boundary fishPosition) {
-		super(fishPosition);
+	public CycleTrajectory(Boundary fishBoundary) {
+		super(fishBoundary);
 		
 		this.x0 = 0;
 		this.y0 = 0;
@@ -46,7 +46,7 @@ public class CycleTrajectory extends Trajectory {
 	}
 
 	@Override
-	public Boundary updateCoordinate(float deltaTime) {
+	public Boundary updateLocation(float deltaTime) {
 		
 		t = t+deltaTime;
 		float y = (float) (x0 + a*Math.sin(n*t+angle));

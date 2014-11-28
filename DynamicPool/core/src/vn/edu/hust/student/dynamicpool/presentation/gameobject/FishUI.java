@@ -45,6 +45,6 @@ public abstract class FishUI {
 
 	public void update(float deltaTime) {
 		time += deltaTime;
-		fishBLL.update(deltaTime);
+		fishBLL.updateLocation(deltaTime);
 	}
 }

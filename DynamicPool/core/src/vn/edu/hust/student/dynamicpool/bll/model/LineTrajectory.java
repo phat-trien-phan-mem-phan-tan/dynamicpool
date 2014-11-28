@@ -57,7 +57,7 @@ public class LineTrajectory extends Trajectory {
 	}
 
 	@Override
-	public Boundary updateCoordinate(float deltaTime) {
+	public Boundary updateLocation(float deltaTime) {
 		float x = (float) (fishPosition.getMinX() +A* u.getX() * deltaTime);
 		float y = (float) (fishPosition.getMinY() +A* u.getY() * deltaTime);
 		fishPosition.setLocation(new vn.edu.hust.student.dynamicpool.bll.model.Point(x, y));

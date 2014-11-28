@@ -23,5 +23,5 @@ public interface IFish {
 
 	void setAngle(float angle);
 
-	void update(float deltaTime);
+	void updateLocation(float deltaTime);
 }

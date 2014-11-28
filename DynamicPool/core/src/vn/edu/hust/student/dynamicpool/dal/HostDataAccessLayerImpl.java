@@ -66,7 +66,7 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 	@Override
 	public void createFish(IFish fish) {
 		logger.debug("create fish success");
-		EventDestination.getInstance().dispatchSuccessEvent(EventType.DAL_CREATE_FISH);
+		EventDestination.getInstance().dispatchSuccessEventWithObject(EventType.DAL_CREATE_FISH, fish);
 	}
 
 	@Override

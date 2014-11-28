@@ -125,9 +125,9 @@ public class WorldController {
 	}
 
 	private void showFullScreen() {
-		DisplayMode desktopDisplayMode = Gdx.graphics.getDesktopDisplayMode();
-		Gdx.graphics.setDisplayMode(desktopDisplayMode.width,
-				desktopDisplayMode.height, true);
+//		DisplayMode desktopDisplayMode = Gdx.graphics.getDesktopDisplayMode();
+//		Gdx.graphics.setDisplayMode(desktopDisplayMode.width,
+//				desktopDisplayMode.height, true);
 	}
 
 	private void loadGameResources() {
@@ -222,7 +222,7 @@ public class WorldController {
 	}
 
 	public List<IFish> getFishs() {
-		List<IFish> fishs = businessLogicLayer.getFishs();
+		List<IFish> fishs = businessLogicLayer.getFishes();
 		return fishs;
 	}
 

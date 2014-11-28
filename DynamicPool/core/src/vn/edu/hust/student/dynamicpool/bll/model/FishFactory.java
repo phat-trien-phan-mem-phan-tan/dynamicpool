@@ -29,7 +29,7 @@ public class FishFactory {
 		LineTrajectory lineTrajectory = new LineTrajectory(fishBoundary);
 		lineTrajectory.setDirection(new Vector(1, 1));
 
-		return new Fish(fishType, lineTrajectory);
+		return new Fish(fishType, lineTrajectory, fishBoundary);
 	}
 
 	public static Fish createFishWithSinTrajectory(float fishWidth,
@@ -41,20 +41,18 @@ public class FishFactory {
 		sinTrajectory.setX0(AppConst.width / 2);
 		sinTrajectory.setY0(AppConst.height / 2);
 
-		return new Fish(fishType, sinTrajectory);
+		return new Fish(fishType, sinTrajectory, fishBoundary);
 	}
 
 	public static Fish createFishWithCycleTrajectory(float fishWidth,
 			float fishHeight, FishType fishType) {
-		// center of screen
-
 		Point location = new Point(AppConst.width / 2, AppConst.height / 2);
 		Boundary fishBoundary = new Boundary(location, fishWidth, fishHeight);
 
 		CycleTrajectory cycleTrajectory = new CycleTrajectory(fishBoundary);
 		cycleTrajectory.setX0(AppConst.width / 2);
 		cycleTrajectory.setY0(AppConst.height / 2);
-
-		return new Fish(fishType, cycleTrajectory);
+		
+		return new Fish(fishType, cycleTrajectory, fishBoundary);
 	}
 }
