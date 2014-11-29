@@ -82,8 +82,13 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 		Map<String, Object> map = new HashMap<>();
 		map.put(Field.COMMAND, Field.SEND_SETTINGS);
 		map.put("pool", pool);
-		HostMainController.getInstance().getClientManager()
-				.getClient(clientName).send(map);
+		Client client = HostMainController.getInstance().getClientManager()
+				.getClient(clientName);
+		if (client != null) {
+			client.send(map);
+		} else {
+			logger.error("not found for clientName {}", clientName);
+		}
 	}
 
 	@Override
@@ -113,6 +118,17 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 	private void sendFishToClient(String clientName, boolean isSuccess,
 			IFish fish) {
 		// TODO Thanh viet
+		Client client = HostMainController.getInstance().getClientManager()
+				.getClient(clientName);
+		if (client != null) {
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put(Field.COMMAND, Field.SEND_FISH);
+			map.put("fish", fish);
+			map.put(Field.SUCCESSFUL, isSuccess);
+			client.send(map);
+		} else {
+			logger.error("Not found for clientName {}", clientName);
+		}
 	}
 
 	@Override

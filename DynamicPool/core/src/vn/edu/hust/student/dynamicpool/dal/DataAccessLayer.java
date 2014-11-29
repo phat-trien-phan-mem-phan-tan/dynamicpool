@@ -26,7 +26,7 @@ public interface DataAccessLayer {
 	void exit();
 
 	void respondCreateFishRequest(String clientName, boolean isSuccess,
-			IFish fish);
+			IFish fish) throws DALException;
 
 	void updateSettingToClient(String clientName, Pool pool) throws DALException;
 }

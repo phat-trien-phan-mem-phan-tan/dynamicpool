@@ -121,9 +121,9 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 
 	@Override
 	public void respondCreateFishRequest(String clientName, boolean isSuccess,
-			IFish fish) {
+			IFish fish) throws DALException {
 		// TODO Auto-generated method stub
-		
+		throw new DALException("Not implement", new NotImplementedException());
 	}
 
 	@Override
