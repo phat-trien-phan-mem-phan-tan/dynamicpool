@@ -1,6 +1,7 @@
 <server>
 	<processors>
 		<command name="synchoronous">vn.edu.hust.student.dynamicpool.dal.processor.SynchoronousProcessor</command>
+		<command name="sendSettings">vn.edu.hust.student.dynamicpool.dal.processor.SendSettingsProcessor</command>
 	</processors>
 	
 	<http>
@@ -22,7 +23,7 @@
 			</entry>
 		</network>
 		<handlers>
-		  
+		  	<handler>sendSettings</handler>
 		</handlers>
 	</socket>
 	

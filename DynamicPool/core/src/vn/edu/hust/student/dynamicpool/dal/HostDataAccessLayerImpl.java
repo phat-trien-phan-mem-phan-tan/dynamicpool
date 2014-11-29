@@ -61,6 +61,7 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 	@Override
 	public void addDevice(DeviceInfo deviceInfo) {
 		logger.debug("send add device request");
+		deviceInfo.setClientName(this.getClientName());
 		EventDestination.getInstance().dispatchSuccessEventWithObject(
 				EventType.DAL_ADD_DEVICE_REQUEST, deviceInfo);
 	}
@@ -78,7 +79,11 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 
 	private void sendSetingToClient(String clientName, Pool pool) {
 		// TODO Thanh viet
-		
+		Map<String, Object> map = new HashMap<>();
+		map.put(Field.COMMAND, Field.SEND_SETTINGS);
+		map.put("pool", pool);
+		HostMainController.getInstance().getClientManager()
+				.getClient(clientName).send(map);
 	}
 
 	@Override

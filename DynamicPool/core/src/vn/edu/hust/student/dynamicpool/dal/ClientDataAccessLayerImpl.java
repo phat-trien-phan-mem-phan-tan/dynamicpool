@@ -69,7 +69,7 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put(Field.COMMAND, Field.ADD_DEVICE);
 		map.put("device", deviceInfo);
-		map.put("clientName", this.getClientName());
+		deviceInfo.setClientName(this.getClientName());
 		ClientMainController.getInstance().getClientSocketController()
 		.sendMessage(map);
 	}

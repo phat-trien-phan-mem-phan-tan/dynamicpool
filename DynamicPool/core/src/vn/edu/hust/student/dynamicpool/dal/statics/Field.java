@@ -12,4 +12,6 @@ public class Field {
 	public static final String MOVE_OVER_FISH = "moveOverFish";
 	public static final String SYNCHORONOUS = "synchoronous";
 	public static final String ADD_DEVICE = "addDevice";
+	public static final String SEND_FISH = "sendFish";
+	public static final String SEND_SETTINGS = "sendSettings";
 }
