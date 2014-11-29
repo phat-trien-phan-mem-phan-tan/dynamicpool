@@ -1,5 +1,6 @@
 package vn.edu.hust.student.dynamicpool.dal;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -81,7 +82,7 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 		// TODO Thanh viet
 		Map<String, Object> map = new HashMap<>();
 		map.put(Field.COMMAND, Field.SEND_SETTINGS);
-		map.put("pool", pool);
+		map.put(Field.POOL, pool);
 		Client client = HostMainController.getInstance().getClientManager()
 				.getClient(clientName);
 		if (client != null) {
@@ -94,8 +95,11 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 	@Override
 	public void requestCreateFish(IFish fish) {
 		logger.debug("request creat fish sent");
+		List<Object> list = new ArrayList<Object>();
+		list.add(fish);
+		list.add(this.getClientName());
 		EventDestination.getInstance().dispatchSuccessEventWithObject(
-				EventType.DAL_ADD_FISH_REQUEST, fish);
+				EventType.DAL_ADD_FISH_REQUEST, list);
 	}
 
 	@Override
@@ -123,7 +127,7 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 		if (client != null) {
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put(Field.COMMAND, Field.SEND_FISH);
-			map.put("fish", fish);
+			map.put(Field.FISH, fish);
 			map.put(Field.SUCCESSFUL, isSuccess);
 			client.send(map);
 		} else {
@@ -139,7 +143,7 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 	}
 
 	@Override
-	public void removeFish(Fish fish) {
+	public void removeFish(String clientName, Fish fish) {
 		logger.info("remove fish success");
 		EventDestination.getInstance().dispatchSuccessEvent(
 				EventType.DAL_REMOVE_FISH);

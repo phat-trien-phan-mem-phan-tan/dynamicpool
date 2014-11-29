@@ -8,6 +8,7 @@ import flexjson.JSONSerializer;
 import vn.edu.hust.student.dynamicpool.bll.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.dal.client.entity.Client;
 import vn.edu.hust.student.dynamicpool.dal.controller.HostMainController;
+import vn.edu.hust.student.dynamicpool.dal.statics.Field;
 import vn.edu.hust.student.dynamicpool.events.EventDestination;
 import vn.edu.hust.student.dynamicpool.events.EventType;
 import vn.edu.hust.student.dynamicpool.events.RegisterClientEvent;
@@ -18,7 +19,7 @@ public class AddDeviceProcessor extends Processor {
 	@Override
 	public ProcessorExecutionResponse execute(ProcessorExecutionRequest request) {
 		Map<String, Object> params = request.getParameters();
-		if (params.containsKey("device")) {
+		if (params.containsKey(Field.DEVICE)) {
 			JSONDeserializer<DeviceInfo> json = new JSONDeserializer<DeviceInfo>();
 			JSONSerializer serilizer = new JSONSerializer();
 			String device = serilizer.exclude("*.class").serialize(

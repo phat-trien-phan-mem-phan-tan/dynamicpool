@@ -62,23 +62,24 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 		}
 
 	}
-	
+
 	@Override
 	public void addDevice(DeviceInfo deviceInfo) {
 		logger.debug("add device");
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put(Field.COMMAND, Field.ADD_DEVICE);
-		map.put("device", deviceInfo);
+		map.put(Field.DEVICE, deviceInfo);
 		deviceInfo.setClientName(this.getClientName());
 		ClientMainController.getInstance().getClientSocketController()
-		.sendMessage(map);
+				.sendMessage(map);
 	}
-	
+
 	@Override
 	public void requestCreateFish(IFish fish) {
-		logger.debug("create fish");
+		logger.debug("create fish from client {}", this.getClientName());
 		Map<String, Object> data = new HashMap<String, Object>();
-		data.put("fish", fish);
+		data.put(Field.FISH, fish);
+		data.put(Field.CLIENT_NAME, this.getClientName());
 		ClientMainController.getInstance().getClientSocketController()
 				.sendMessage(data);
 	}
@@ -87,11 +88,11 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	public void synchronization() {
 		logger.debug("synchronization");
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public void removeFish(Fish fish) {
+	public void removeFish(String clientName, Fish fish) {
 		logger.debug("remove fish");
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put(Field.COMMAND, Field.REMOVE_FISH);
@@ -127,7 +128,8 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	}
 
 	@Override
-	public void updateSettingToClient(String clientName, Pool pool) throws DALException {
+	public void updateSettingToClient(String clientName, Pool pool)
+			throws DALException {
 		throw new DALException("Not implement", new NotImplementedException());
 	}
 }

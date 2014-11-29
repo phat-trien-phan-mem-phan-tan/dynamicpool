@@ -17,7 +17,7 @@ public interface DataAccessLayer {
 
 	void synchronization();
 
-	void removeFish(Fish fish);
+	void removeFish(String clientName, Fish fish);
 
 	void synchronous(List<IFish> fishes, String clientName);
 

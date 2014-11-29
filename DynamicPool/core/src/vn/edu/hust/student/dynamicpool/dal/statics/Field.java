@@ -14,4 +14,9 @@ public class Field {
 	public static final String ADD_DEVICE = "addDevice";
 	public static final String SEND_FISH = "sendFish";
 	public static final String SEND_SETTINGS = "sendSettings";
+	public static final String CLIENT_NAME = "clientName";
+	public static final String DEVICE = "device";
+	public static final String FISH = "fish";
+	public static final String POOL = "pool";
+	public static final String ADD_FISH = "addFish";
 }
