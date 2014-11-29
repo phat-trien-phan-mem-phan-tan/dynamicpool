@@ -74,7 +74,7 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	}
 	
 	@Override
-	public void createFish(IFish fish) {
+	public void requestCreateFish(IFish fish) {
 		logger.debug("create fish");
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("fish", fish);
@@ -116,5 +116,12 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	@Override
 	public void exit() {
 
+	}
+
+	@Override
+	public void respondCreateFishRequest(String clientName, boolean isSuccess,
+			IFish fish) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -44,7 +44,7 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 				EventType.DAL_ADD_DEVICE,
 				new BaseEventListener(this, "onAddDeviceCallbackHander"));
 		EventDestination.getInstance().addEventListener(
-				EventType.DAL_CREATE_FISH,
+				EventType.DAL_CREATE_FISH_RESPOND,
 				new BaseEventListener(this, "onCreateFishCallbackHander"));
 	}
 
@@ -128,7 +128,7 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 		logger.debug("Create fish");
 		IFish fish = FishFactory.createFishWithTrajectoryType(fishType,
 				trajectoryType, width, height);
-		dataAccessLayer.createFish(fish);
+		dataAccessLayer.requestCreateFish(fish);
 	}
 
 	@Deprecated

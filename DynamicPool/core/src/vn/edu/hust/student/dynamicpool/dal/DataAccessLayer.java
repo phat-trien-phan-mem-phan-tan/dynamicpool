@@ -12,7 +12,7 @@ public interface DataAccessLayer {
 
 	void addDevice(DeviceInfo deviceInfo);
 
-	void createFish(IFish fish);
+	void requestCreateFish(IFish fish);
 
 	void synchronization();
 
@@ -23,4 +23,7 @@ public interface DataAccessLayer {
 	void registerDone(Pool pool);
 
 	void exit();
+
+	void respondCreateFishRequest(String clientName, boolean isSuccess,
+			IFish fish);
 }

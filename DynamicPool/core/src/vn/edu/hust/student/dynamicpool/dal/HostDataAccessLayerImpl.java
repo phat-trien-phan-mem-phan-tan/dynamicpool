@@ -45,7 +45,7 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 		} catch (DALException e) {
 			logger.error("cannot create host" + e.getMessage());
 			logger.info("retry create host in LAN network");
-			
+
 		}
 	}
 
@@ -68,10 +68,32 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 	}
 
 	@Override
-	public void createFish(IFish fish) {
-		logger.debug("create fish success");
-		EventDestination.getInstance().dispatchSuccessEventWithObject(
-				EventType.DAL_CREATE_FISH, fish);
+	public void requestCreateFish(IFish fish) {
+		logger.debug("request creat fish sent");
+		
+		EventDestination.getInstance().dispatchSuccessEventWithObject(EventType.DAL_ADD_FISH_REQUEST, fish);
+	}
+
+	@Override
+	public void respondCreateFishRequest(String clientName, boolean isSuccess,
+			IFish fish) {
+		logger.debug("create fish respond");
+		if (clientName == getClientName()) {
+			if (isSuccess) {
+				EventDestination.getInstance().dispatchSuccessEventWithObject(
+						EventType.DAL_CREATE_FISH_RESPOND, fish);
+			} else {
+				EventDestination.getInstance().dispatchFailEvent(
+						EventType.DAL_CREATE_FISH_RESPOND);
+			}
+		} else {
+			sendFishToClient(clientName, isSuccess, fish);
+		}
+	}
+
+	private void sendFishToClient(String clientName, boolean isSuccess,
+			IFish fish) {
+		// TODO Thanh viet
 	}
 
 	@Override
