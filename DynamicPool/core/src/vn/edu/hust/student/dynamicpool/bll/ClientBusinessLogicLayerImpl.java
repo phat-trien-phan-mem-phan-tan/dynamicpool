@@ -41,8 +41,8 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 				EventType.DAL_JOIN_HOST,
 				new BaseEventListener(this, "onJoinHostCallBackHander"));		
 		EventDestination.getInstance().addEventListener(
-				EventType.DAL_ADD_DEVICE_RESPOND,
-				new BaseEventListener(this, "onAddDeviceCallbackHander"));
+				EventType.DAL_UPDATE_SETTINGS_RESPONSE,
+				new BaseEventListener(this, "onUpdateSettingCallbackHander"));
 		EventDestination.getInstance().addEventListener(
 				EventType.DAL_CREATE_FISH_RESPOND,
 				new BaseEventListener(this, "onCreateFishCallbackHander"));
@@ -87,21 +87,21 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 	}
 
 	@Deprecated
-	public void onAddDeviceCallbackHander(Event event) {
-		logger.debug("on add device callback hander");
+	public void onUpdateSettingCallbackHander(Event event) {
+		logger.debug("on update setting callback hander");
 		if (EventDestination.parseEventToBoolean(event)) {
 			Object addDeviceResultObject = EventDestination
 					.parseEventToTargetObject(event);
 			if (Pool.class.isInstance(addDeviceResultObject)) {
-				logger.debug("add device success");
+				logger.debug("recive setting success");
 				setClientPool((Pool) addDeviceResultObject);
 				EventDestination.getInstance().dispatchSuccessEvent(
 						EventType.BLL_ADD_DEVICE);
 				return;
 			}
-			logger.debug("cannot add device: target object is not an instance of Pool");
+			logger.debug("cannot update setting: target object is not an instance of Pool");
 		}
-		logger.debug("Cannot add device");
+		logger.debug("Cannot update setting");
 		EventDestination.getInstance().dispatchFailEvent(
 				EventType.BLL_ADD_DEVICE);
 	}

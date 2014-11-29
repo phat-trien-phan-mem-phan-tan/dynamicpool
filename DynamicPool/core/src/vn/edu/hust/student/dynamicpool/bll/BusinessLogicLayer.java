@@ -31,7 +31,4 @@ public interface BusinessLogicLayer {
 
 	void removeFish(Fish fish);
 	
-	
-	
-	
 }

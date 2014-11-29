@@ -180,4 +180,22 @@ public class PoolManager {
 			pool.setFishes(allFishes.get(pool.getDeviceInfo().getClientName()));
 		}
 	}
+
+	public void addFish(String clientName, IFish fish) {
+		Pool pool = getPool(clientName);
+		if (pool == null) {
+			logger.error("client name: {} is not exist", clientName);
+			return;
+		}
+		pool.addFish(fish);
+	}
+
+	private Pool getPool(String clientName) {
+		for (Pool pool : pools) {
+			if (pool.getDeviceInfo().getClientName() == clientName) return pool; 
+		}
+		return null;
+	}
+	
+	
 }
