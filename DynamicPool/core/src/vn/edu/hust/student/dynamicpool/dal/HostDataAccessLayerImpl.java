@@ -34,12 +34,8 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 	}
 
 	@Override
-	public void joinHost(String key) {
-		logger.error("cannot join host");
-		EventDestination.getInstance().dispatchFailEventWithObject(
-				EventType.DAL_JOIN_HOST,
-				new DALException("host instance cannot join to another host",
-						null));
+	public void joinHost(String key) throws DALException {
+		throw new DALException("host cannot join host", null);
 	}
 
 	@Override

@@ -7,9 +7,9 @@ import vn.edu.hust.student.dynamicpool.exception.DALException;
 public interface DataAccessLayer {
 	String getClientName();
 
-	void createHost();
+	void createHost() throws DALException;
 
-	void joinHost(String key);
+	void joinHost(String key) throws DALException;
 
 	void addDevice(DeviceInfo deviceInfo);
 

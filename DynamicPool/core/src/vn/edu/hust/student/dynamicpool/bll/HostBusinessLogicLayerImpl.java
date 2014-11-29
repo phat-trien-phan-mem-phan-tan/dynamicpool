@@ -39,12 +39,17 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 								"onAddDiviceRequestCallbackHander"));
 		EventDestination.getInstance().addEventListener(
 				EventType.DAL_CREATE_FISH_REQUEST,
-				new BaseEventListener(this, "onCreateFishRequest"));
+				new BaseEventListener(this, "onCreateFishRequestCallbackHander"));
 	}
 
 	@Override
 	public void createHost() {
-		dataAccessLayer.createHost();
+		try {
+			dataAccessLayer.createHost();
+		} catch (DALException e) {
+			logger.error("cannot create host {}", e);
+			e.printStackTrace();
+		}
 	}
 
 	@Deprecated
@@ -109,7 +114,8 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 	}
 	
 	@Deprecated
-	public void onCreateFishRequest(Event event) {
+	public void onCreateFishRequestCallbackHander(Event event) {
+		logger.debug("on request create fish callback hander");
 		if (EventDestination.parseEventToBoolean(event)) {
 			Object listObject = EventDestination.parseEventToTargetObject(event);
 			if (List.class.isInstance(listObject)) {

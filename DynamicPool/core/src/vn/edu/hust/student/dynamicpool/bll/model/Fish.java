@@ -10,6 +10,10 @@ public class Fish implements IFish {
 	private Boundary boundary = new Boundary();
 	private FishState fishState = FishState.INSIDE;
 	private boolean isIgnoreUpdateLocation = false;
+	
+	public Fish() {
+		
+	}
 
 	public Fish(FishType fishType, Trajectory fishTrajectory,
 			Boundary fishBoundary) {

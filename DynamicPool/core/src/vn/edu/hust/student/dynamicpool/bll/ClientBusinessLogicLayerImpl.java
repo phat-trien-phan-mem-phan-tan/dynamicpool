@@ -17,6 +17,7 @@ import vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl;
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
 import vn.edu.hust.student.dynamicpool.events.EventDestination;
 import vn.edu.hust.student.dynamicpool.events.EventType;
+import vn.edu.hust.student.dynamicpool.exception.DALException;
 
 import com.eposi.eventdriven.Event;
 import com.eposi.eventdriven.implementors.BaseEventListener;
@@ -56,7 +57,12 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 
 	@Override
 	public void joinHost(String key) {
-		this.dataAccessLayer.joinHost(key);
+		try {
+			this.dataAccessLayer.joinHost(key);
+		} catch (DALException e) {
+			logger.error("cannot creat host {}", e);
+			e.printStackTrace();
+		}
 	}
 
 	@Deprecated

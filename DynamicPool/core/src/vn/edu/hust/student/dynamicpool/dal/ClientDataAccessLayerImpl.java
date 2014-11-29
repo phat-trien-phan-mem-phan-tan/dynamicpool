@@ -39,11 +39,8 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	}
 
 	@Override
-	public void createHost() {
-		logger.error("Cannot create host");
-		EventDestination.getInstance().dispatchFailEventWithObject(
-				EventType.DAL_CREATE_HOST,
-				new DALException("Default client cannot create host", null));
+	public void createHost() throws DALException {
+		throw new DALException("Cannot create host", null);
 	}
 
 	@Override
