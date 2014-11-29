@@ -27,10 +27,10 @@ public class SendFishProcessor extends Processor {
 			boolean isSuccess = (boolean) params.get(Field.SUCCESSFUL);
 			if (isSuccess) {
 				EventDestination.getInstance().dispatchSuccessEventWithObject(
-						EventType.SEND_FISH_RESPONSE, fish);
+						EventType.DAL_SEND_FISH_RESPONSE, fish);
 			} else {
 				EventDestination.getInstance().dispatchFailEvent(
-						EventType.SEND_FISH_RESPONSE);
+						EventType.DAL_SEND_FISH_RESPONSE);
 			}
 		}
 		return null;

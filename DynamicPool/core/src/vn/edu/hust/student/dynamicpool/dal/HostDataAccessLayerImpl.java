@@ -72,7 +72,7 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 		logger.debug("send setting to client");
 		if (clientName == AppConst.DEFAULT_HOST_NAME) {
 			EventDestination.getInstance().dispatchSuccessEventWithObject(
-					EventType.DAL_ADD_DEVICE_RESPOND, pool);
+					EventType.DAL_UPDATE_SETTINGS_RESPONSE, pool);
 		} else {
 			sendSetingToClient(clientName, pool);
 		}
@@ -99,7 +99,7 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 		list.add(fish);
 		list.add(this.getClientName());
 		EventDestination.getInstance().dispatchSuccessEventWithObject(
-				EventType.DAL_ADD_FISH_REQUEST, list);
+				EventType.DAL_CREATE_FISH_REQUEST, list);
 	}
 
 	@Override

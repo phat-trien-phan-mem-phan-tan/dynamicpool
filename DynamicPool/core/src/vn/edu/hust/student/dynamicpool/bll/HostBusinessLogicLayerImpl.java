@@ -40,7 +40,7 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 						new BaseEventListener(this,
 								"onAddDiviceRequestCallbackHander"));
 		EventDestination.getInstance().addEventListener(
-				EventType.DAL_ADD_FISH_REQUEST,
+				EventType.DAL_CREATE_FISH_REQUEST,
 				new BaseEventListener(this, "onCreateFishRequest"));
 	}
 

@@ -26,7 +26,7 @@ public class CreateFishProcessor extends Processor {
 			list.add(fish);
 			list.add(clientName);
 			EventDestination.getInstance().dispatchSuccessEventWithObject(
-					EventType.DAL_ADD_FISH_REQUEST, list);
+					EventType.DAL_CREATE_FISH_REQUEST, list);
 		}
 		return null;
 	}
