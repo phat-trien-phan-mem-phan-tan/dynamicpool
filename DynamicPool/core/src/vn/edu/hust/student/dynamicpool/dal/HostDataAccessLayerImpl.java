@@ -33,6 +33,15 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 	}
 
 	@Override
+	public void joinHost(String key) {
+		logger.error("cannot join host");
+		EventDestination.getInstance().dispatchFailEventWithObject(
+				EventType.DAL_JOIN_HOST,
+				new DALException("host instance cannot join to another host",
+						null));
+	}
+
+	@Override
 	public void createHost() {
 		logger.debug("create host");
 		String key = null;
@@ -50,28 +59,33 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 	}
 
 	@Override
-	public void joinHost(String key) {
-		logger.error("cannot join host");
-		EventDestination.getInstance().dispatchFailEventWithObject(
-				EventType.DAL_JOIN_HOST,
-				new DALException("host instance cannot join to another host",
-						null));
+	public void addDevice(DeviceInfo deviceInfo) {
+		logger.debug("send add device request");
+		EventDestination.getInstance().dispatchSuccessEventWithObject(
+				EventType.DAL_ADD_DEVICE_REQUEST, deviceInfo);
 	}
 
 	@Override
-	public void addDevice(DeviceInfo deviceInfo) {
-		logger.info("add device success");
-		deviceInfo.setClientName(AppConst.DEFAULT_HOST_NAME);
-		Pool pool = new Pool(deviceInfo);
-		EventDestination.getInstance().dispatchSuccessEventWithObject(
-				EventType.DAL_ADD_DEVICE, pool);
+	public void updateSettingToClient(String clientName, Pool pool) {
+		logger.debug("send setting to client");
+		if (clientName == AppConst.DEFAULT_HOST_NAME) {
+			EventDestination.getInstance().dispatchSuccessEventWithObject(
+					EventType.DAL_ADD_DEVICE_RESPOND, pool);
+		} else {
+			sendSetingToClient(clientName, pool);
+		}
+	}
+
+	private void sendSetingToClient(String clientName, Pool pool) {
+		// TODO Thanh viet
+		
 	}
 
 	@Override
 	public void requestCreateFish(IFish fish) {
 		logger.debug("request creat fish sent");
-		
-		EventDestination.getInstance().dispatchSuccessEventWithObject(EventType.DAL_ADD_FISH_REQUEST, fish);
+		EventDestination.getInstance().dispatchSuccessEventWithObject(
+				EventType.DAL_ADD_FISH_REQUEST, fish);
 	}
 
 	@Override

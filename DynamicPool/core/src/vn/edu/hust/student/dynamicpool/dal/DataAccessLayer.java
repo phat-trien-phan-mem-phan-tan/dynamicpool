@@ -2,6 +2,7 @@ package vn.edu.hust.student.dynamicpool.dal;
 
 import java.util.List;
 import vn.edu.hust.student.dynamicpool.bll.model.*;
+import vn.edu.hust.student.dynamicpool.exception.DALException;
 
 public interface DataAccessLayer {
 	String getClientName();
@@ -26,4 +27,6 @@ public interface DataAccessLayer {
 
 	void respondCreateFishRequest(String clientName, boolean isSuccess,
 			IFish fish);
+
+	void updateSettingToClient(String clientName, Pool pool) throws DALException;
 }

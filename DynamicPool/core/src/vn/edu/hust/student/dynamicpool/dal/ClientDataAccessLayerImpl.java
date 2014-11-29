@@ -8,6 +8,7 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import vn.edu.hust.student.dynamicpool.bll.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.bll.model.Fish;
 import vn.edu.hust.student.dynamicpool.bll.model.IFish;
@@ -123,5 +124,10 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 			IFish fish) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void updateSettingToClient(String clientName, Pool pool) throws DALException {
+		throw new DALException("Not implement", new NotImplementedException());
 	}
 }

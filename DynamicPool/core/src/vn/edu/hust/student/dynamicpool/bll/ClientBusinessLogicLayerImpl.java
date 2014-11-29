@@ -41,7 +41,7 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 				EventType.DAL_JOIN_HOST,
 				new BaseEventListener(this, "onJoinHostCallBackHander"));		
 		EventDestination.getInstance().addEventListener(
-				EventType.DAL_ADD_DEVICE,
+				EventType.DAL_ADD_DEVICE_RESPOND,
 				new BaseEventListener(this, "onAddDeviceCallbackHander"));
 		EventDestination.getInstance().addEventListener(
 				EventType.DAL_CREATE_FISH_RESPOND,
