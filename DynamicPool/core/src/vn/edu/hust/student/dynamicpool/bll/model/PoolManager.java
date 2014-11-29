@@ -105,16 +105,16 @@ public class PoolManager {
 		Boundary fishBoundary = fish.getBoundary();
 		Boundary poolBoundary = pool.getBoundary();
 		if (fishBoundary.getMinX() <= poolBoundary.getMinX()) {
-			logger.debug(String.format("{0} hit left: state {1} ", fish.getFishId(), fish.getFishState()));
+			logger.debug(String.format("%d hit left: state %s ", fish.getFishId(), fish.getFishState()));
 			hitLeft(allFishes, pool, fish);
 		} else if (fishBoundary.getMaxX() >= poolBoundary.getMaxX()) {
-			logger.debug(String.format("{0} hit right: state {1} ", fish.getFishId(), fish.getFishState()));
+			logger.debug(String.format("%d hit right: state %s ", fish.getFishId(), fish.getFishState()));
 			hitRight(allFishes, pool, fish);
 		} else if (fishBoundary.getMinY() <= poolBoundary.getMinY()) {
-			logger.debug(String.format("{0} hit bottom: state {1} ", fish.getFishId(), fish.getFishState()));
+			logger.debug(String.format("%d hit bottom: state %s ", fish.getFishId(), fish.getFishState()));
 			hitBottom(allFishes, pool, fish);
 		} else if (fishBoundary.getMaxY() >= poolBoundary.getMaxY()) {
-			logger.debug(String.format("{0} hit top: state {1} ", fish.getFishId(), fish.getFishState()));
+			logger.debug(String.format("%d hit top: state %s ", fish.getFishId(), fish.getFishState()));
 			hitTop(allFishes, pool, fish);
 		}
 		allFishes.get(pool.getDeviceInfo().getClientName()).add(fish);

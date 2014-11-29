@@ -3,20 +3,16 @@ package vn.edu.hust.student.dynamicpool.bll.model;
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.EDirection;
 
 public class SinTrajectory extends Trajectory {
+	// x = x+dx
+	// y = y0 + a * sin(t)
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.myapp.equation.Equation#move(float)
-	 * 
-	 * x = x0+n*t; y = y0 + a*sin(t+angle)
-	 */
-
-	private int a = 10;
-	private int dx = 20;
+	private int a = 100;
+	private int dx = 15;
+	private float y0 = 0;
 
 	public SinTrajectory(Boundary fishPosition) {
 		super(fishPosition);
+		y0 = fishPosition.getLocation().getY();
 	}
 
 	@Override
@@ -27,9 +23,8 @@ public class SinTrajectory extends Trajectory {
 	@Override
 	public void updateLocation(float deltaTime) {
 		increaseTimeState(deltaTime);
-		Point location = this.getFishBoundary().getLocation();
-		float x = location.getX() + dx * deltaTime;
-		float y = location.getY() + (float) (a * Math.cos(Math.toRadians(getTimeState())));
+		float x = getFishBoundary().getLocation().getX() + dx * deltaTime;
+		float y = (float) (y0 + a * Math.sin(getTimeState()));
 		fishBoundary.setLocation(new Point(x, y));
 	}
 
@@ -39,20 +34,19 @@ public class SinTrajectory extends Trajectory {
 		case LEFT:
 		case RIGHT:
 			dx = -dx;
+			y0 = 2 * getFishBoundary().getLocation().getY() - y0;
+			setTimeState(-getTimeState());
 			break;
 		case TOP:
 		case BOTTOM:
 		default:
-			increaseTimeState(Math.toRadians(180));
+			increaseTimeState(Math.PI);
 			break;
 		}
 	}
 
 	@Override
 	public EDirection getHorizontalDirection() {
-		if (dx < 0)
-			return EDirection.LEFT;
-		return EDirection.RIGHT;
+		return dx < 0 ? EDirection.LEFT : EDirection.RIGHT;
 	}
-
 }

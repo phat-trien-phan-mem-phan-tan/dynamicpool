@@ -1,144 +1,62 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
+import java.util.Random;
+
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.EDirection;
+import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 public class CycleTrajectory extends Trajectory {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.myapp.equation.Equation#move(float)
-	 * 
-	 * x0,y0 toa goc a he so t goc
-	 * 
-	 * y = y0+aSin(t + angle) x = x0+aCos(t + angle)
-	 */
+	private float centerX;
+	private float centerY;
 
-	private float x0;
-	private float y0;
-
-	private float a;
-
-	private float angle;
-
-	private float t;
-
-	private static final int n = 1;
+	private float a = 80;
+	private float d = 0.2f;
 
 	public CycleTrajectory(Boundary fishBoundary) {
 		super(fishBoundary);
-
-		this.x0 = 0;
-		this.y0 = 0;
-
-		this.a = 80;
-
-		this.angle = (float) (-Math.PI / 2);
+		this.centerX = fishBoundary.getLocation().getX();
+		int randomInt = Math.abs(new Random().nextInt() % AppConst.height);
+		this.centerY = fishBoundary.getLocation().getY() + randomInt;
+		increaseTimeState(-Math.PI / 2);
+		a = Math.abs(this.centerY - fishBoundary.getLocation().getY());
 	}
 
 	@Override
 	public ETrajectoryType getTrajectoryType() {
-		// TODO Auto-generated method stub
 		return ETrajectoryType.CYCLE;
 	}
 
 	@Override
 	public void updateLocation(float deltaTime) {
-		increaseTimeState(deltaTime);
-		t = t + deltaTime;
-		float y = (float) (x0 + a * Math.sin(n * t + angle));
-		float x = (float) (y0 + a * Math.cos(n * t + angle));
-
-		System.out.println("Cycle: " + "Time: " + deltaTime + "x: " + x + "y: "
-				+ y);
+		increaseTimeState(deltaTime * d);
+		float x = (float) (centerX + a * Math.cos(getTimeState()));
+		float y = (float) (centerY + a * Math.sin(getTimeState()));
 		fishBoundary.setLocation(new Point(x, y));
 	}
 
 	@Override
 	public void changeDirection(EDirection direction) {
-
-		/*
-		 * // alpha < 2PI float T = (float) ((n*t + angle) / (2 * Math.PI)); T =
-		 * (int) T + 1;
-		 */
-		// tinh goc bu
-		/* float beta = (float) (T * 2 * Math.PI - ( t + angle)); */
-
-		//
-		float anpha = (float) (n * t + angle);
-
-		float detaAngle = (float) (Math.PI - 2 * anpha);
-
-		// increase angle
-		// setAngle(2 * beta + angle);
-		float sinValue = (float) Math.sin(anpha);
-		float cosValue = (float) Math.cos(anpha);
 		switch (direction) {
 		case LEFT:
 		case RIGHT:
-			x0 = x0 + 2 * a * cosValue;
-			if (cosValue < 0) {
-				angle = angle + Math.abs(detaAngle);
-			} else {
-				angle = angle - Math.abs(detaAngle);
-			}
+			centerY = 2 * getFishBoundary().getLocation().getY() - centerY;
+			setTimeState(-getTimeState());
 			break;
 		case TOP:
 		case BOTTOM:
+			centerX = 2 * getFishBoundary().getLocation().getX() - centerX;
+			setTimeState(Math.PI - getTimeState());
+			break;
 		default:
-			y0 = y0 + 2 * a * sinValue;
-			if (sinValue < 0) {
-				angle = angle + Math.abs(detaAngle);
-			} else {
-				angle = angle - Math.abs(detaAngle);
-			}
 			break;
 		}
 	}
 
-	public double getX0() {
-		return x0;
-	}
-
-	public void setX0(float x0) {
-		this.x0 = x0;
-	}
-
-	public double getY0() {
-		return y0;
-	}
-
-	public void setY0(float y0) {
-		this.y0 = y0;
-	}
-
-	public float getA() {
-		return a;
-	}
-
-	public void setA(float a) {
-		this.a = a;
-	}
-
-	public float getT() {
-		return t;
-	}
-
-	public void setT(float t) {
-		this.t = t;
-	}
-
-	public double getAngle() {
-		return angle;
-	}
-
-	public void setAngle(float angle) {
-		this.angle = angle;
-	}
-
 	@Override
 	public EDirection getHorizontalDirection() {
-		return EDirection.RIGHT;
+		return Math.sin(getTimeState()) > 0 ? EDirection.LEFT
+				: EDirection.RIGHT;
 	}
 
 }

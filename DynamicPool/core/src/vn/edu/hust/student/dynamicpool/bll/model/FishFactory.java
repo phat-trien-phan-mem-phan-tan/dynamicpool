@@ -44,8 +44,6 @@ public class FishFactory {
 		Boundary fishBoundary = new Boundary(location, fishWidth, fishHeight);
 
 		CycleTrajectory cycleTrajectory = new CycleTrajectory(fishBoundary);
-		cycleTrajectory.setX0(AppConst.width / 2);
-		cycleTrajectory.setY0(AppConst.height / 2);
 		
 		return new Fish(fishType, cycleTrajectory, fishBoundary);
 	}

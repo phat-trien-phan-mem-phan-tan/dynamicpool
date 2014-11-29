@@ -40,9 +40,6 @@ public class LineTrajectory extends Trajectory {
 
 	@Override
 	public EDirection getHorizontalDirection() {
-		if (dx < 0)
-			return EDirection.LEFT;
-		return EDirection.RIGHT;
+		return dx < 0 ? EDirection.LEFT : EDirection.RIGHT;
 	}
-
 }

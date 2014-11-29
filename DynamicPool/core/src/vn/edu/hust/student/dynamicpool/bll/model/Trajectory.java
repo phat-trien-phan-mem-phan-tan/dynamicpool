@@ -29,6 +29,10 @@ public abstract class Trajectory {
 	public void increaseTimeState(double d) {
 		this.timeState += d;
 	}
+	
+	public void setTimeState(double timeState) {
+		this.timeState = timeState;
+	}
 
 	public abstract void changeDirection(EDirection hitTo);
 
