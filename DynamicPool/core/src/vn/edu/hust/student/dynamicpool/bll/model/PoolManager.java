@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.EDirection;
 
 public class PoolManager {
-	
+	private int lastFishId = 1;
 	private Logger logger = LoggerFactory.getLogger(PoolManager.class);
 	private List<Pool> pools;
 
@@ -181,13 +181,15 @@ public class PoolManager {
 		}
 	}
 
-	public void addFish(String clientName, IFish fish) {
+	public IFish addFish(String clientName, IFish fish) {
+		fish.setFishId(++lastFishId);
 		Pool pool = getPool(clientName);
 		if (pool == null) {
 			logger.error("client name: {} is not exist", clientName);
-			return;
+			return null;
 		}
 		pool.addFish(fish);
+		return fish;
 	}
 
 	private Pool getPool(String clientName) {

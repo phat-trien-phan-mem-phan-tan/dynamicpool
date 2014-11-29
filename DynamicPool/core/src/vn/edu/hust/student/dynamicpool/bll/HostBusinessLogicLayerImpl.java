@@ -112,7 +112,12 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 					logger.debug("client name or fish null");
 					return;
 				}
-				poolManager.addFish(clientName, fish);
+				fish = poolManager.addFish(clientName, fish);
+				try {
+					dataAccessLayer.respondCreateFishRequest(clientName, true, fish);
+				} catch (DALException e) {
+					logger.error("cannot respond create fish event");
+				}
 			}
 		}
 	}
