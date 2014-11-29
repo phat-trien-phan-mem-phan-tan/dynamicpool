@@ -78,6 +78,7 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	public void requestCreateFish(IFish fish) {
 		logger.debug("create fish from client {}", this.getClientName());
 		Map<String, Object> data = new HashMap<String, Object>();
+		data.put(Field.COMMAND, Field.CREATE_FISH);
 		data.put(Field.FISH, fish);
 		data.put(Field.CLIENT_NAME, this.getClientName());
 		ClientMainController.getInstance().getClientSocketController()
