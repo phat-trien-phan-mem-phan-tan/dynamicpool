@@ -96,7 +96,7 @@ public class ClientMainController {
 		} catch (NumberFormatException e) {
 			throw new DALException("port is not integer", e);
 		} catch (MalformedURLException e) {
-			throw new DALException("URL invalide", e);
+			throw new DALException("URL invalid", e);
 		} catch (IOException e) {
 			throw new DALException("cannot connect to server", e);
 		}

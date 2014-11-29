@@ -58,6 +58,7 @@ public class SocketClientController implements SocketClientHandler {
 								break;
 							}
 						} catch (SocketException e) {
+							log.debug("socket exception {}" + e.getMessage());
 							e.printStackTrace();
 							disconnect();
 							break;
@@ -74,7 +75,6 @@ public class SocketClientController implements SocketClientHandler {
 			thread.start();
 		} catch (IOException e) {
 			log.debug("Socket Client connot connect to server");
-			e.printStackTrace();
 		}
 	}
 
