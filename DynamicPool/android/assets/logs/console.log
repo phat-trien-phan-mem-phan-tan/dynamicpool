@@ -2808,3 +2808,362 @@
 2014-Nov-29 11:43:58:346 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - 1529633496 hit bottom: state INSIDE 
 2014-Nov-29 11:43:58:546 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - 1363157341 hit bottom: state INSIDE 
 2014-Nov-29 11:43:58:647 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - diconnect from server
+2014-Nov-29 16:46:21:453 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-29 16:46:21:467 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-29 16:46:21:468 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-29 16:46:21:476 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-29 16:46:22:249 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.21
+2014-Nov-29 16:46:22:254 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"0096","ip":"101.99.7.249"}
+2014-Nov-29 16:46:22:256 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-29 16:46:22:581 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-29 16:46:22:583 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-29 16:46:22:605 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-29 16:46:22:605 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-29 16:46:22:609 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-29 16:46:22:609 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-29 16:46:22:610 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-29 16:46:22:610 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-29 16:46:25:791 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-29 16:46:25:791 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-29 16:46:25:792 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-29 16:46:25:794 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client
+2014-Nov-29 16:49:07:202 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-29 16:49:07:216 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-29 16:49:07:216 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-29 16:49:07:234 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-29 16:49:09:023 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.21
+2014-Nov-29 16:49:09:028 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"5454","ip":"101.99.7.249"}
+2014-Nov-29 16:49:09:029 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-29 16:49:09:321 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-29 16:49:09:323 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-29 16:49:09:344 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-29 16:49:09:344 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-29 16:49:09:348 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-29 16:49:09:348 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-29 16:49:09:349 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-29 16:49:09:349 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-29 16:49:12:815 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-29 16:49:12:816 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-29 16:49:12:816 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-29 16:49:12:818 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client
+2014-Nov-29 16:49:12:818 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-29 16:49:12:819 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-29 16:49:12:823 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-29 16:53:18:686 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-29 16:53:18:699 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-29 16:53:18:700 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-29 16:53:18:716 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-29 16:53:19:465 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.21
+2014-Nov-29 16:53:19:471 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"8876","ip":"101.99.7.249"}
+2014-Nov-29 16:53:19:472 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-29 16:53:19:742 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-29 16:53:19:744 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-29 16:53:19:764 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-29 16:53:19:764 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-29 16:53:19:768 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-29 16:53:19:768 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-29 16:53:19:769 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-29 16:53:19:769 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-29 16:54:14:791 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-29 16:54:14:805 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-29 16:54:14:806 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-29 16:54:14:821 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-29 16:54:16:551 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.21
+2014-Nov-29 16:54:16:557 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"1388","ip":"101.99.7.249"}
+2014-Nov-29 16:54:16:559 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-29 16:54:16:824 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-29 16:54:16:826 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-29 16:54:16:847 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-29 16:54:16:847 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-29 16:54:16:851 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-29 16:54:16:851 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-29 16:54:16:851 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-29 16:54:16:852 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-29 16:54:19:897 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-29 16:54:19:898 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-29 16:54:19:898 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-29 16:54:19:898 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-29 16:54:19:900 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client
+2014-Nov-29 16:54:19:901 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-29 16:54:19:901 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-29 16:54:19:903 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-29 16:57:10:677 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-29 16:57:10:679 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host
+2014-Nov-29 16:57:10:683 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-29 16:57:10:906 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-29 16:57:11:483 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=7193
+2014-Nov-29 16:57:11:490 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":"host cannot found by key 7193"}
+2014-Nov-29 16:57:11:491 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - cannot join host
+2014-Nov-29 16:57:11:494 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on join host callback hander
+2014-Nov-29 16:57:11:495 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - cannot join host
+2014-Nov-29 16:57:11:495 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.presentation.WorldController  - Cannot join host
+2014-Nov-29 16:57:30:093 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-29 16:57:30:097 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host
+2014-Nov-29 16:57:30:107 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-29 16:57:30:210 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-29 16:57:32:204 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=7139
+2014-Nov-29 16:57:32:210 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"port":9696,"error":null,"ip":"192.168.0.25"}
+2014-Nov-29 16:57:32:211 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 192.168.0.25, 9696
+2014-Nov-29 16:57:53:208 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client connot connect to server
+2014-Nov-29 16:57:53:211 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - start socket successful
+2014-Nov-29 16:57:53:212 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host success
+2014-Nov-29 16:57:53:215 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on join host callback hander
+2014-Nov-29 16:57:53:215 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - join host success
+2014-Nov-29 17:06:09:261 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-29 17:06:09:277 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-29 17:06:09:277 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-29 17:06:09:296 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-29 17:06:11:265 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.21
+2014-Nov-29 17:06:11:271 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"4579","ip":"101.99.7.249"}
+2014-Nov-29 17:06:11:280 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-29 17:06:11:545 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-29 17:06:11:548 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-29 17:06:11:569 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-29 17:06:11:570 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-29 17:06:11:577 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-29 17:06:11:577 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-29 17:06:11:578 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-29 17:06:11:578 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-29 17:06:15:018 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-29 17:06:15:019 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-29 17:06:15:019 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-29 17:06:15:019 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-29 17:06:15:025 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client
+2014-Nov-29 17:06:15:025 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-29 17:06:15:026 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-29 17:06:15:026 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-29 17:06:25:581 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-29 17:06:25:582 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-29 17:06:35:584 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:06:45:584 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:06:55:585 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:07:05:585 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:07:15:586 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:07:25:587 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:07:35:588 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:07:45:589 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:07:55:590 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:08:02:875 [NioProcessor-2] WARN  org.apache.mina.filter.logging.LoggingFilter  - EXCEPTION :
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:273)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:44)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:690)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:664)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:653)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1124)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2014-Nov-29 17:08:02:884 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CLOSED
+2014-Nov-29 17:09:17:980 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-29 17:09:17:980 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-29 17:09:27:981 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:09:37:981 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:09:47:982 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:09:57:982 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:10:07:983 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:10:17:983 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:10:27:984 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:10:37:985 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:10:47:985 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:10:57:986 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:11:06:212 [NioProcessor-3] WARN  org.apache.mina.filter.logging.LoggingFilter  - EXCEPTION :
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:273)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:44)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:690)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:664)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:653)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1124)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2014-Nov-29 17:11:06:213 [NioProcessor-3] INFO  org.apache.mina.filter.logging.LoggingFilter  - CLOSED
+2014-Nov-29 17:36:43:687 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-29 17:36:43:702 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-29 17:36:43:702 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-29 17:36:43:714 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-29 17:36:44:553 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.21
+2014-Nov-29 17:36:44:559 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"3896","ip":"101.99.7.249"}
+2014-Nov-29 17:36:44:560 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-29 17:36:45:850 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-29 17:36:45:852 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-29 17:36:45:871 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-29 17:36:45:872 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-29 17:36:45:876 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-29 17:36:45:876 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-29 17:36:45:877 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-29 17:36:45:877 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-29 17:36:48:978 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-29 17:36:48:978 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-29 17:36:48:978 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-29 17:36:48:978 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-29 17:36:48:980 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client
+2014-Nov-29 17:36:48:980 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-29 17:36:48:980 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-29 17:36:48:980 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-29 17:36:55:956 [NioProcessor-4] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-29 17:36:55:957 [NioProcessor-4] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-29 17:36:59:183 [NioProcessor-4] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=143 cap=2048: 7B 22 63 6D 64 22 3A 22 61 64 64 44 65 76 69 63...]
+2014-Nov-29 17:36:59:183 [NioProcessor-4] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 3
+2014-Nov-29 17:36:59:185 [NioProcessor-4] DEBUG vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - data recieved: {"cmd":"addDevice","device":{"clientName":"1a8e17bb-07c2-4b77-8c32-6cbcf90488a1","screenHeight":480.0,"screenSize":14.0,"screenWidth":800.0}}
+2014-Nov-29 17:36:59:370 [NioProcessor-4] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-29 17:36:59:370 [NioProcessor-4] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-29 17:36:59:371 [NioProcessor-4] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-29 17:36:59:383 [NioProcessor-4] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - sent add device envent to server
+2014-Nov-29 17:37:09:384 [NioProcessor-4] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:37:19:384 [NioProcessor-4] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:37:29:385 [NioProcessor-4] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:37:39:385 [NioProcessor-4] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:38:26:717 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-29 17:38:26:732 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-29 17:38:26:733 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-29 17:38:26:751 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-29 17:38:27:508 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.0.21
+2014-Nov-29 17:38:27:514 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"4885","ip":"101.99.7.249"}
+2014-Nov-29 17:38:27:515 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-29 17:38:27:783 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-29 17:38:27:785 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-29 17:38:27:806 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-29 17:38:27:806 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-29 17:38:27:810 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-29 17:38:27:810 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-29 17:38:27:811 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-29 17:38:27:811 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-29 17:38:38:437 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-29 17:38:38:438 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-29 17:38:38:438 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-29 17:38:38:438 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-29 17:38:38:440 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client
+2014-Nov-29 17:38:38:440 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-29 17:38:38:441 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-29 17:38:38:441 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-29 17:38:56:196 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-29 17:38:56:198 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-29 17:39:05:713 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=143 cap=2048: 7B 22 63 6D 64 22 3A 22 61 64 64 44 65 76 69 63...]
+2014-Nov-29 17:39:05:714 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-29 17:39:05:718 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - data recieved: {"cmd":"addDevice","device":{"clientName":"c1ba5477-551a-4b2a-b5a3-be91a6baecdd","screenHeight":480.0,"screenSize":14.0,"screenWidth":800.0}}
+2014-Nov-29 17:39:05:773 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-29 17:39:05:773 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-29 17:39:05:774 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-29 17:39:05:792 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - sent add device envent to server
+2014-Nov-29 17:39:15:793 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:39:25:795 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:39:35:796 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:39:45:798 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:39:55:799 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:40:05:799 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:40:15:800 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:40:25:800 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:40:35:801 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:40:45:801 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:40:55:806 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:41:05:807 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:41:15:808 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:41:25:809 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:41:35:809 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:41:45:810 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:41:55:810 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:42:05:811 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:42:15:812 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:42:25:820 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:42:35:821 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:42:45:821 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:42:55:822 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:43:05:822 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:43:15:824 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:43:25:825 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:43:35:831 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:43:45:832 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:43:55:833 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:44:05:835 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:44:15:835 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:44:25:837 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:44:35:839 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:44:45:839 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:44:55:840 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:45:05:841 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:45:15:842 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:45:25:843 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:45:35:845 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:45:45:846 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:45:55:846 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:46:05:847 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:46:15:847 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:46:25:848 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:46:35:848 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:46:45:849 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:46:55:850 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:47:05:850 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:47:15:851 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:47:25:851 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:47:35:852 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:47:45:852 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:47:55:853 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:48:05:854 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:48:15:855 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:48:25:856 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:48:35:856 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:48:45:857 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:48:55:857 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:49:05:858 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:49:15:859 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:49:25:859 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:49:35:860 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:49:45:860 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:49:55:861 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:50:05:861 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:50:15:862 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:50:25:863 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:50:35:863 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:50:45:864 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:50:55:865 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:51:05:866 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:51:15:866 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:51:25:867 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:51:35:868 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:51:45:868 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:51:55:869 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:52:05:869 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:52:15:870 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:52:25:870 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:52:35:871 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:52:45:872 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:52:55:872 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:53:05:873 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:53:15:873 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:53:25:874 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:53:35:875 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:53:45:876 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:53:55:877 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:54:05:877 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:54:15:878 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:54:25:878 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:54:35:879 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:54:45:879 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:54:55:880 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:55:05:882 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:55:15:882 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:55:25:883 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:55:35:883 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:55:45:884 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:55:55:884 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:56:05:885 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:56:15:887 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:56:25:889 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:56:35:890 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-29 17:56:45:897 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE

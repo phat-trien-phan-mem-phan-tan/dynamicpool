@@ -198,6 +198,18 @@ public class PoolManager {
 		}
 		return null;
 	}
+
+	public Pool getPoolForClient(String clientName) {
+		Pool pool = getPool(clientName);
+		if (pool == null) {
+			logger.error("not found client name");
+			return null;
+		}
+		for (Segment segment : pool.getSegments()) {
+			segment.setNeighbourClientName(null);
+		}
+		return pool;
+	}
 	
 	
 }

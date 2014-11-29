@@ -14,8 +14,6 @@ import vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl;
 import vn.edu.hust.student.dynamicpool.events.EventDestination;
 import vn.edu.hust.student.dynamicpool.events.EventType;
 import vn.edu.hust.student.dynamicpool.exception.DALException;
-import vn.edu.hust.student.dynamicpool.utils.AppConst;
-
 import com.eposi.eventdriven.Event;
 import com.eposi.eventdriven.implementors.BaseEventListener;
 
@@ -86,13 +84,27 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 				} else {
 					EventDestination.getInstance().dispatchSuccessEvent(
 							EventType.BLL_ADD_DEVICE);
-					logger.debug("sent add device envent to server");
+					logger.debug("sent add device envent to all client");
+					sendUpdateSettingForAllClient(deviceInfo);
 				}
 				return;
 			}
 			logger.error("cannot add device: target object is not an instance of DiviceInfo");
 		} else {
 			logger.error("Add Device Callback Hander: event false");
+		}
+	}
+
+	private void sendUpdateSettingForAllClient(DeviceInfo deviceInfo) {
+		Pool poolForClient = poolManager.getPoolForClient(deviceInfo.getClientName());
+		if (poolForClient == null) {
+			logger.error("cannot get pool");
+			return;
+		}
+		try {
+			dataAccessLayer.updateSettingToClient(deviceInfo.getClientName(), poolForClient);
+		} catch (DALException e) {
+			logger.error("cannot send update setting to client {}", e);
 		}
 	}
 	
