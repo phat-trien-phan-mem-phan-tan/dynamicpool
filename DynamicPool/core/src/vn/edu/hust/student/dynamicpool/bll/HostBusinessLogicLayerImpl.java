@@ -67,6 +67,7 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 
 	@Deprecated
 	public void onAddDiviceRequestCallbackHander(Event event) {
+		logger.debug("on add device request callback hander");
 		if (EventDestination.parseEventToBoolean(event)) {
 			Object deviceObject = EventDestination
 					.parseEventToTargetObject(event);
