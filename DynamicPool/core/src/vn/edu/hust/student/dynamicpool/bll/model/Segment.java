@@ -38,4 +38,8 @@ public class Segment {
 	public void setNeighbourClientName(String clientName) {
 		this.neighbourClientName = clientName;
 	}
+
+	public Segment cloneWithoutNeighbour() {
+		return new Segment(segmentDirection, beginPoint, endPoint);
+	}
 }

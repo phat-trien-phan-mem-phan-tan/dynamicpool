@@ -10,6 +10,7 @@ public class Pool {
 	private Boundary boundary = new Boundary();
 	private List<Segment> segments = new ArrayList<Segment>();
 	private List<IFish> fishes = new ArrayList<IFish>();
+	private float scale = 1;
 
 	public Pool() {
 		
@@ -54,6 +55,14 @@ public class Pool {
 
 	public void setFishes(List<IFish> fishes) {
 		this.fishes = fishes == null ? new ArrayList<IFish>() : fishes;
+	}
+
+	public float getScale() {
+		return scale;
+	}
+
+	public void setScale(float scale) {
+		this.scale = scale;
 	}
 
 	public void updateLocationOfFishes(float detatime) {

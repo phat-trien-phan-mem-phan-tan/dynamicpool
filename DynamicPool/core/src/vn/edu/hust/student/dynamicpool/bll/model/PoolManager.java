@@ -202,13 +202,16 @@ public class PoolManager {
 	public Pool getPoolForClient(String clientName) {
 		Pool pool = getPool(clientName);
 		if (pool == null) {
-			logger.error("not found client name");
+			logger.error("not found client name {}", clientName);
 			return null;
 		}
+		Pool clientPool = new Pool(pool.getDeviceInfo());
+		clientPool.setScale(pool.getScale());
 		for (Segment segment : pool.getSegments()) {
-			segment.setNeighbourClientName(null);
+			Segment clientSegment = segment.cloneWithoutNeighbour();
+			clientPool.getSegments().add(clientSegment);
 		}
-		return pool;
+		return clientPool;
 	}
 	
 	
