@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -151,7 +152,7 @@ public class HostMainController {
 	}
 
 	@SuppressWarnings("unchecked")
-	public String connectServer() throws DALException {
+	public String connectServer() throws DALException, UnknownHostException {
 		String res;
 		try {
 			res = this.httpClientController.regHost();
@@ -168,7 +169,11 @@ public class HostMainController {
 		} catch (MalformedURLException e) {
 			throw new DALException("Invalid URL", e);
 		} catch (IOException e) {
-			throw new DALException("Cannot connect to server", e);
+			logger.error("cannot connect to server {}", e.getMessage());
+			String ip = this.httpClientController.getIpLan();
+			int port = this.httpClientController.getSocketPort();
+			String key = String.format("%s:%s", ip, port);
+			return key;
 		}
 	}
 
