@@ -185,7 +185,7 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 				logger.error("error: invalid params in event target");
 				return;
 			}
-			
+			// TODO Call method send in DAL
 			logger.info("send fish {} to client {}", fish.getFishId(), clientName);
 		} else {
 			logger.error("send fish callback hander error");

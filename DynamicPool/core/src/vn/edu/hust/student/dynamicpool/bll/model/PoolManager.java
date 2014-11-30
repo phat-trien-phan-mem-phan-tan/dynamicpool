@@ -181,6 +181,18 @@ public class PoolManager {
 		}
 	}
 
+	private IFish movingOverNeighbourPool(Map<String, List<IFish>> allFishes,
+			IFish fish, Segment segment) {
+		fish.setFishState(FishState.PASSING);
+		if (segment.getNeighbourClientName() != null) {
+			IFish referenceFish = fish.cloneIgnoreFishState();
+			referenceFish.setFishState(FishState.OUTSIDE);
+			allFishes.get(segment.getNeighbourClientName()).add(referenceFish);
+			return referenceFish;
+		}
+		return null;
+	}
+	
 	private void dispatchSendFishEventToHostBLL(Pool pool, IFish refFish) {
 		List<Object> params = new ArrayList<Object>();
 		params.add(pool.getDeviceInfo().getClientName());
@@ -195,20 +207,8 @@ public class PoolManager {
 					EventType.BLL_SEND_FISH);
 			logger.error("error when send a fish {} to new pool {}",
 					refFish.getFishId(), pool.getDeviceInfo()
-							.getClientName());
+					.getClientName());
 		}
-	}
-
-	private IFish movingOverNeighbourPool(Map<String, List<IFish>> allFishes,
-			IFish fish, Segment segment) {
-		fish.setFishState(FishState.PASSING);
-		if (segment.getNeighbourClientName() != null) {
-			IFish referenceFish = fish.cloneIgnoreFishState();
-			referenceFish.setFishState(FishState.OUTSIDE);
-			allFishes.get(segment.getNeighbourClientName()).add(referenceFish);
-			return referenceFish;
-		}
-		return null;
 	}
 
 	private void putFishsFromContainerToPools(Map<String, List<IFish>> allFishes) {
