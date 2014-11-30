@@ -111,20 +111,20 @@ public class PoolManager {
 		Boundary fishBoundary = fish.getBoundary();
 		Boundary poolBoundary = pool.getBoundary();
 		if (fishBoundary.getMinX() <= poolBoundary.getMinX()) {
-			logger.debug("fish {} hit left: state {} ",
-					fish.getFishId(), fish.getFishState());
+			logger.debug("fish {} hit left: state {} ", fish.getFishId(),
+					fish.getFishState());
 			hitLeft(allFishes, pool, fish);
 		} else if (fishBoundary.getMaxX() >= poolBoundary.getMaxX()) {
-			logger.debug("fish {} hit right: state {} ",
-					fish.getFishId(), fish.getFishState());
+			logger.debug("fish {} hit right: state {} ", fish.getFishId(),
+					fish.getFishState());
 			hitRight(allFishes, pool, fish);
 		} else if (fishBoundary.getMinY() <= poolBoundary.getMinY()) {
-			logger.debug("fish {} hit bottom: state {} ",
-					fish.getFishId(), fish.getFishState());
+			logger.debug("fish {} hit bottom: state {} ", fish.getFishId(),
+					fish.getFishState());
 			hitBottom(allFishes, pool, fish);
 		} else if (fishBoundary.getMaxY() >= poolBoundary.getMaxY()) {
-			logger.debug("fish {} hit top: state {} ",
-					fish.getFishId(), fish.getFishState());
+			logger.debug("fish {} hit top: state {} ", fish.getFishId(),
+					fish.getFishState());
 			hitTop(allFishes, pool, fish);
 		}
 		allFishes.get(pool.getDeviceInfo().getClientName()).add(fish);
@@ -137,8 +137,7 @@ public class PoolManager {
 			fish.getTrajectory().changeDirection(EDirection.LEFT);
 			fish.setFishState(FishState.RETURN);
 		} else {
-			IFish refFish = movingOverNeighbourPool(allFishes, fish, segment);
-			dispatchSendFishEventToHostBLL(pool, refFish);
+			movingOverNeighbourPool(allFishes, fish, segment);
 		}
 	}
 
@@ -149,8 +148,7 @@ public class PoolManager {
 			fish.getTrajectory().changeDirection(EDirection.RIGHT);
 			fish.setFishState(FishState.RETURN);
 		} else {
-			IFish refFish = movingOverNeighbourPool(allFishes, fish, segment);
-			dispatchSendFishEventToHostBLL(pool, refFish);
+			movingOverNeighbourPool(allFishes, fish, segment);
 		}
 	}
 
@@ -162,8 +160,7 @@ public class PoolManager {
 			fish.getTrajectory().changeDirection(EDirection.BOTTOM);
 			fish.setFishState(FishState.RETURN);
 		} else {
-			IFish refFish = movingOverNeighbourPool(allFishes, fish, segment);
-			dispatchSendFishEventToHostBLL(pool, refFish);
+			movingOverNeighbourPool(allFishes, fish, segment);
 		}
 	}
 
@@ -176,23 +173,29 @@ public class PoolManager {
 			fish.setFishState(FishState.RETURN);
 		} else {
 			logger.debug("after hit: move out");
-			IFish refFish = movingOverNeighbourPool(allFishes, fish, segment);
-			dispatchSendFishEventToHostBLL(pool, refFish);
+			movingOverNeighbourPool(allFishes, fish, segment);
 		}
 	}
 
-	private IFish movingOverNeighbourPool(Map<String, List<IFish>> allFishes,
+	private void movingOverNeighbourPool(Map<String, List<IFish>> allFishes,
 			IFish fish, Segment segment) {
 		fish.setFishState(FishState.PASSING);
 		if (segment.getNeighbourClientName() != null) {
 			IFish referenceFish = fish.cloneIgnoreFishState();
 			referenceFish.setFishState(FishState.OUTSIDE);
 			allFishes.get(segment.getNeighbourClientName()).add(referenceFish);
-			return referenceFish;
+			List<Object> params = new ArrayList<Object>();
+			params.add(segment.getNeighbourClientName());
+			params.add(referenceFish);
+			logger.info("send fish {} to client {}", referenceFish.getFishId(),
+					segment.getNeighbourClientName());
+			EventDestination.getInstance().dispatchSuccessEventWithObject(
+					EventType.BLL_SEND_FISH, params);
+		} else {
+			logger.debug("neighbour client name is null");
 		}
-		return null;
 	}
-	
+
 	private void dispatchSendFishEventToHostBLL(Pool pool, IFish refFish) {
 		List<Object> params = new ArrayList<Object>();
 		params.add(pool.getDeviceInfo().getClientName());
@@ -200,8 +203,8 @@ public class PoolManager {
 			params.add(refFish);
 			EventDestination.getInstance().dispatchSuccessEventWithObject(
 					EventType.BLL_SEND_FISH, params);
-			logger.info("send fish {} to client {}", refFish.getFishId(),
-					pool.getDeviceInfo().getClientName());
+			logger.info("send fish {} to client {}", refFish.getFishId(), pool
+					.getDeviceInfo().getClientName());
 		} else {
 			EventDestination.getInstance().dispatchFailEvent(
 					EventType.BLL_SEND_FISH);
