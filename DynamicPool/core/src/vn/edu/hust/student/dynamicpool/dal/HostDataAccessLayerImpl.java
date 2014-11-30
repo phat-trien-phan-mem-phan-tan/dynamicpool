@@ -105,16 +105,16 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 		if (clientName == getClientName()) {
 			if (isSuccess) {
 				EventDestination.getInstance().dispatchSuccessEventWithObject(
-						EventType.DAL_CREATE_FISH_RESPOND, fish);
+						EventType.DAL_CREATE_FISH_RESPONSE, fish);
 			} else {
 				EventDestination.getInstance().dispatchFailEvent(
-						EventType.DAL_CREATE_FISH_RESPOND);
+						EventType.DAL_CREATE_FISH_RESPONSE);
 			}
 		} else {
 			sendFishToClient(clientName, isSuccess, fish);
 		}
 	}
-
+	
 	private void sendFishToClient(String clientName, boolean isSuccess,
 			IFish fish) {
 		logger.debug("send fish to client: {}", clientName);
@@ -158,13 +158,6 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 		if (client != null) {
 			client.send(data);
 		}
-	}
-
-	@Override
-	public void registerDone(Pool pool) {
-		logger.debug("register done");
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override

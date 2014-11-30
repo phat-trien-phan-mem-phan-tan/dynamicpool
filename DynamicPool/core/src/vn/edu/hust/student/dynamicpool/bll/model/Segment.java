@@ -1,9 +1,5 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
-import vn.edu.hust.student.dynamicpool.dal.processor.SegmentFactory;
-import flexjson.JSON;
-
-@JSON(objectFactory = SegmentFactory.class)
 public class Segment {
 
 	private float beginPoint;

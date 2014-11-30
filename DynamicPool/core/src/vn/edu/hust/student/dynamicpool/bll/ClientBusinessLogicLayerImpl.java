@@ -45,7 +45,7 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 				EventType.DAL_UPDATE_SETTINGS_RESPONSE,
 				new BaseEventListener(this, "onUpdateSettingCallbackHander"));
 		EventDestination.getInstance().addEventListener(
-				EventType.DAL_CREATE_FISH_RESPOND,
+				EventType.DAL_CREATE_FISH_RESPONSE,
 				new BaseEventListener(this, "onCreateFishCallbackHander"));
 	}
 

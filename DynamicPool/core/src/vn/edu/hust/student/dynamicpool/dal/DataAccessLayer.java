@@ -14,14 +14,12 @@ public interface DataAccessLayer {
 	void addDevice(DeviceInfo deviceInfo);
 
 	void requestCreateFish(IFish fish);
-
+	
 	void synchronization();
 
 	void removeFish(String clientName, Fish fish);
 
 	void synchronous(List<IFish> fishes, String clientName);
-
-	void registerDone(Pool pool);
 
 	void exit();
 

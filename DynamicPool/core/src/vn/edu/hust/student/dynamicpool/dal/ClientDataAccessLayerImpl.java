@@ -108,13 +108,6 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 	}
 
 	@Override
-	public void registerDone(Pool pool) {
-		logger.debug("register done");
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public void exit() {
 
 	}
