@@ -39,7 +39,7 @@ public class Client {
 			this.getSession().write(data);
 		} else {
 			JSONSerializer serializer = new JSONSerializer();
-			String message = serializer.exclude("*.class").serialize(data);
+			String message = serializer.exclude("*.class").deepSerialize(data);
 			this.getSession().write(message);
 		}
 	}

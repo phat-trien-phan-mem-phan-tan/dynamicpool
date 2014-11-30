@@ -65,7 +65,7 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 
 	@Override
 	public void updateSettingToClient(String clientName, Pool pool) {
-		logger.debug("send setting to client");
+		logger.debug("send setting to client {}", clientName);
 		if (clientName == AppConst.DEFAULT_HOST_NAME) {
 			EventDestination.getInstance().dispatchSuccessEventWithObject(
 					EventType.DAL_UPDATE_SETTINGS_RESPONSE, pool);
@@ -117,7 +117,9 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 
 	private void sendFishToClient(String clientName, boolean isSuccess,
 			IFish fish) {
-		// TODO Thanh viet
+		logger.debug("send fish to client: {}", clientName);
+		logger.debug(fish == null ? "fish null" : "fish id: "
+				+ fish.getFishId());
 		Client client = HostMainController.getInstance().getClientManager()
 				.getClient(clientName);
 		if (client != null) {

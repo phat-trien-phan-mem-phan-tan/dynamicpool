@@ -34,7 +34,7 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 	public ClientBusinessLogicLayerImpl() {
 		this.dataAccessLayer = new ClientDataAccessLayerImpl();
 		registerEvents();
-		setClientPool(new Pool());
+		clientPoolManager.addClientPool(clientPool);
 	}
 
 	protected void registerEvents() {
@@ -47,12 +47,6 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 		EventDestination.getInstance().addEventListener(
 				EventType.DAL_CREATE_FISH_RESPOND,
 				new BaseEventListener(this, "onCreateFishCallbackHander"));
-	}
-
-	protected void setClientPool(Pool pool) {
-		this.clientPool = pool;
-		clientPoolManager.clear();
-		clientPoolManager.addClientPool(this.clientPool);
 	}
 
 	@Override
@@ -89,6 +83,7 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 	@Override
 	public void addDevide(DeviceInfo deviceInfo) {
 		logger.debug("add device");
+		logger.info("send add device: client name {}", deviceInfo.getClientName());
 		dataAccessLayer.addDevice(deviceInfo);
 	}
 
@@ -100,7 +95,9 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 					.parseEventToTargetObject(event);
 			if (Pool.class.isInstance(addDeviceResultObject)) {
 				logger.debug("recive setting success");
-				setClientPool((Pool) addDeviceResultObject);
+				Pool clientPoolSetting = (Pool) addDeviceResultObject;
+				logger.info("update setting: client name {}", clientPoolSetting.getDeviceInfo().getClientName());
+				clientPool.updateSetting(clientPoolSetting);
 				EventDestination.getInstance().dispatchSuccessEvent(
 						EventType.BLL_ADD_DEVICE);
 				return;
@@ -134,6 +131,7 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 		logger.debug("Create fish");
 		IFish fish = FishFactory.createFishWithTrajectoryType(fishType,
 				trajectoryType, width, height);
+		this.clientPool.addFish(fish);
 		dataAccessLayer.requestCreateFish(fish);
 	}
 

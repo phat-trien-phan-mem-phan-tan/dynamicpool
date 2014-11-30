@@ -3,7 +3,9 @@ package vn.edu.hust.student.dynamicpool.bll.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import vn.edu.hust.student.dynamicpool.presentation.gameobject.EDirection;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 public class Pool {
 	private DeviceInfo deviceInfo = new DeviceInfo();
@@ -11,9 +13,10 @@ public class Pool {
 	private List<Segment> segments = new ArrayList<Segment>();
 	private List<IFish> fishes = new ArrayList<IFish>();
 	private float scale = 1;
+	private Logger logger = LoggerFactory.getLogger(Pool.class);
 
 	public Pool() {
-		
+
 	}
 
 	public Pool(DeviceInfo deviceInfo) {
@@ -42,6 +45,8 @@ public class Pool {
 	}
 
 	public List<Segment> getSegments() {
+		if (segments == null)
+			segments = new ArrayList<>();
 		return segments;
 	}
 
@@ -107,6 +112,7 @@ public class Pool {
 		}
 		return null;
 	}
+
 	public Segment detectCollisionBottomSegments(Boundary fishBoundary) {
 		for (Segment segment : segments) {
 			if (segment.getSegmentDirection() == EDirection.BOTTOM
@@ -116,5 +122,27 @@ public class Pool {
 			}
 		}
 		return null;
+	}
+
+	public void updateSetting(Pool clientPoolSetting) {
+		this.deviceInfo.setClientName(clientPoolSetting.deviceInfo
+				.getClientName());
+		this.getBoundary().setWidth(clientPoolSetting.getBoundary().getWidth());
+		this.getBoundary().setHeight(
+				clientPoolSetting.getBoundary().getHeight());
+		logger.debug("updating {} segments: client name {}", clientPoolSetting
+				.getSegments().size(), deviceInfo.getClientName());
+		this.updateSegments(clientPoolSetting.getSegments());
+		this.scale = clientPoolSetting.scale;
+	}
+
+	private void updateSegments(List<Segment> clientSegments) {
+		this.getSegments().clear();
+		for (Segment clientSegment : clientSegments) {
+			Segment segment = new Segment(clientSegment.getSegmentDirection(),
+					clientSegment.getBeginPoint(), clientSegment
+							.getEndPoint());
+			this.getSegments().add(segment);
+		}
 	}
 }

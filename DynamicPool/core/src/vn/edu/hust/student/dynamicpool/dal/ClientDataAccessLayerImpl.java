@@ -67,6 +67,7 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 		map.put(Field.COMMAND, Field.ADD_DEVICE);
 		map.put(Field.DEVICE, deviceInfo);
 		deviceInfo.setClientName(this.getClientName());
+		logger.info("send add device: client name {}", deviceInfo.getClientName());
 		ClientMainController.getInstance().getClientSocketController()
 				.sendMessage(map);
 	}

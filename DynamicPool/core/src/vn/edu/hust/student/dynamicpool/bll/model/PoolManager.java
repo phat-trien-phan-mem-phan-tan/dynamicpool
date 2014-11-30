@@ -8,7 +8,6 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import vn.edu.hust.student.dynamicpool.presentation.gameobject.EDirection;
 
 public class PoolManager {
 	private int lastFishId = 1;
@@ -24,10 +23,12 @@ public class PoolManager {
 	}
 	
 	public void addClientPool(Pool pool) {
+		logger.debug("add client pool {}", pool.getDeviceInfo().getClientName());
 		this.pools.add(pool);
 	}
 	
 	public void addHostPool(Pool pool) {
+		logger.debug("add host pool {}", pool.getDeviceInfo().getClientName());
 		Point location = getDefaultLocation(pool);
 		pool.getBoundary().setLocation(location);
 		pools.add(pool);
@@ -52,7 +53,8 @@ public class PoolManager {
 	}
 
 	public void calculate() {
-		FindCommonEdgeFunction.findCommonEdge(this.pools);
+		FindCommonEdgeFunction.test(pools);
+//		FindCommonEdgeFunction.findCommonEdge(this.pools);
 	}
 
 	public void updateLocationOfFishes(float deltaTime) {
@@ -71,7 +73,7 @@ public class PoolManager {
 					detectCollisionForInsideFish(allFishes, pool, fish);
 					break;
 				case PASSING:
-					logger.error("Passing");
+					if (fish.getBoundary().isOutside(pool.getBoundary())) return;
 					break;
 				case OUTSIDE:
 					logger.error("Outsite");
@@ -105,16 +107,16 @@ public class PoolManager {
 		Boundary fishBoundary = fish.getBoundary();
 		Boundary poolBoundary = pool.getBoundary();
 		if (fishBoundary.getMinX() <= poolBoundary.getMinX()) {
-			logger.debug(String.format("%d hit left: state %s ", fish.getFishId(), fish.getFishState()));
+			logger.debug(String.format("fish %d hit left: state %s ", fish.getFishId(), fish.getFishState()));
 			hitLeft(allFishes, pool, fish);
 		} else if (fishBoundary.getMaxX() >= poolBoundary.getMaxX()) {
-			logger.debug(String.format("%d hit right: state %s ", fish.getFishId(), fish.getFishState()));
+			logger.debug(String.format("fish %d hit right: state %s ", fish.getFishId(), fish.getFishState()));
 			hitRight(allFishes, pool, fish);
 		} else if (fishBoundary.getMinY() <= poolBoundary.getMinY()) {
-			logger.debug(String.format("%d hit bottom: state %s ", fish.getFishId(), fish.getFishState()));
+			logger.debug(String.format("fish %d hit bottom: state %s ", fish.getFishId(), fish.getFishState()));
 			hitBottom(allFishes, pool, fish);
 		} else if (fishBoundary.getMaxY() >= poolBoundary.getMaxY()) {
-			logger.debug(String.format("%d hit top: state %s ", fish.getFishId(), fish.getFishState()));
+			logger.debug(String.format("fish %d hit top: state %s ", fish.getFishId(), fish.getFishState()));
 			hitTop(allFishes, pool, fish);
 		}
 		allFishes.get(pool.getDeviceInfo().getClientName()).add(fish);
@@ -183,6 +185,7 @@ public class PoolManager {
 
 	public IFish addFish(String clientName, IFish fish) {
 		fish.setFishId(++lastFishId);
+		logger.debug("add new fish to host: id {}", fish.getFishId());
 		Pool pool = getPool(clientName);
 		if (pool == null) {
 			logger.error("client name: {} is not exist", clientName);
@@ -194,7 +197,8 @@ public class PoolManager {
 
 	private Pool getPool(String clientName) {
 		for (Pool pool : pools) {
-			if (pool.getDeviceInfo().getClientName() == clientName) return pool; 
+			String poolClientName = pool.getDeviceInfo().getClientName();
+			if (poolClientName.equals(clientName)) return pool; 
 		}
 		return null;
 	}

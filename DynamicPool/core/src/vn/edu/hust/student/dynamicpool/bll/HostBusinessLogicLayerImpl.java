@@ -18,7 +18,7 @@ import com.eposi.eventdriven.Event;
 import com.eposi.eventdriven.implementors.BaseEventListener;
 
 public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
-	private PoolManager poolManager = new PoolManager();
+	private PoolManager hostPoolManager = new PoolManager();
 	private Logger logger = LoggerFactory
 			.getLogger(HostBusinessLogicLayerImpl.class);
 
@@ -37,9 +37,11 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 						EventType.DAL_ADD_DEVICE_REQUEST,
 						new BaseEventListener(this,
 								"onAddDiviceRequestCallbackHander"));
-		EventDestination.getInstance().addEventListener(
-				EventType.DAL_CREATE_FISH_REQUEST,
-				new BaseEventListener(this, "onCreateFishRequestCallbackHander"));
+		EventDestination.getInstance()
+				.addEventListener(
+						EventType.DAL_CREATE_FISH_REQUEST,
+						new BaseEventListener(this,
+								"onCreateFishRequestCallbackHander"));
 	}
 
 	@Override
@@ -77,9 +79,11 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 			if (DeviceInfo.class.isInstance(deviceObject)) {
 				logger.info("add device success");
 				DeviceInfo deviceInfo = (DeviceInfo) deviceObject;
+				logger.info("add device request: client name {}",
+						deviceInfo.getClientName());
 				Pool pool = new Pool(deviceInfo);
-				poolManager.addHostPool(pool);
-				if (poolManager.size() == 1) {
+				hostPoolManager.addHostPool(pool);
+				if (hostPoolManager.size() == 1) {
 					try {
 						dataAccessLayer.updateSettingToClient(
 								deviceInfo.getClientName(), pool);
@@ -90,7 +94,7 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 					EventDestination.getInstance().dispatchSuccessEvent(
 							EventType.BLL_ADD_DEVICE);
 					logger.debug("sent add device envent to all client");
-					sendUpdateSettingForAllClient(deviceInfo);
+					sendUpdateSettingForAllClient();
 				}
 				return;
 			}
@@ -100,41 +104,59 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 		}
 	}
 
-	private void sendUpdateSettingForAllClient(DeviceInfo deviceInfo) {
-		Pool poolForClient = poolManager.getPoolForClient(deviceInfo.getClientName());
-		if (poolForClient == null) {
-			logger.error("cannot get pool");
-			return;
-		}
-		try {
-			dataAccessLayer.updateSettingToClient(deviceInfo.getClientName(), poolForClient);
-		} catch (DALException e) {
-			logger.error("cannot send update setting to client {}", e);
+	private void sendUpdateSettingForAllClient() {
+		for (Pool pool : hostPoolManager.getPools()) {
+			String clientName = pool.getDeviceInfo().getClientName();
+			Pool poolForClient = hostPoolManager.getPoolForClient(clientName);
+			if (poolForClient == null) {
+				logger.error("cannot get pool {}", clientName);
+				return;
+			}
+			try {
+				logger.debug("send update setting for client {}", clientName);
+				dataAccessLayer
+						.updateSettingToClient(clientName, poolForClient);
+			} catch (DALException e) {
+				logger.error("cannot send update setting to client {}", e);
+			}
 		}
 	}
-	
+
 	@Deprecated
 	public void onCreateFishRequestCallbackHander(Event event) {
 		logger.debug("on request create fish callback hander");
 		if (EventDestination.parseEventToBoolean(event)) {
-			Object listObject = EventDestination.parseEventToTargetObject(event);
+			Object listObject = EventDestination
+					.parseEventToTargetObject(event);
 			if (List.class.isInstance(listObject)) {
 				ArrayList<Object> list = (ArrayList<Object>) listObject;
 				String clientName = null;
 				IFish fish = null;
 				for (Object object : list) {
-					if (IFish.class.isInstance(object)) fish = (IFish) object;
-					if (String.class.isInstance(object)) clientName = (String) object; 
+					if (IFish.class.isInstance(object))
+						fish = (IFish) object;
+					if (String.class.isInstance(object))
+						clientName = (String) object;
 				}
 				if (clientName == null || fish == null) {
 					logger.debug("client name or fish null");
+					try {
+						if (clientName != null)
+							dataAccessLayer.respondCreateFishRequest(
+									clientName, false, null);
+					} catch (DALException e) {
+						logger.error(
+								"cannot send add fish response (false result) {}",
+								e);
+					}
 					return;
 				}
-				fish = poolManager.addFish(clientName, fish);
+				fish = hostPoolManager.addFish(clientName, fish);
 				try {
-					dataAccessLayer.respondCreateFishRequest(clientName, true, fish);
+					dataAccessLayer.respondCreateFishRequest(clientName, true,
+							fish);
 				} catch (DALException e) {
-					logger.error("cannot respond create fish event");
+					logger.error("cannot respond create fish event {}", e);
 				}
 			}
 		}

@@ -1,6 +1,5 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
-import vn.edu.hust.student.dynamicpool.presentation.gameobject.EDirection;
 
 public class Segment {
 
@@ -15,8 +14,8 @@ public class Segment {
 
 	public Segment(EDirection sengmentDirection, float beginPoint, float endPoint) {
 		this.segmentDirection = sengmentDirection;
-		this.beginPoint = Math.min(beginPoint, endPoint);
-		this.endPoint = Math.max(beginPoint, endPoint);
+		this.beginPoint = beginPoint;
+		this.endPoint = endPoint;
 	}
 
 	public float getBeginPoint() {

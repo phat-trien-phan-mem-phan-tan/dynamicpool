@@ -1,6 +1,5 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
-import vn.edu.hust.student.dynamicpool.presentation.gameobject.EDirection;
 
 public class LineTrajectory extends Trajectory {
 	private float dx = 1, dy = 1;

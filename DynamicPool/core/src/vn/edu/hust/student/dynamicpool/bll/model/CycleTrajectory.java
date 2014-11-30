@@ -2,7 +2,6 @@ package vn.edu.hust.student.dynamicpool.bll.model;
 
 import java.util.Random;
 
-import vn.edu.hust.student.dynamicpool.presentation.gameobject.EDirection;
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 public class CycleTrajectory extends Trajectory {

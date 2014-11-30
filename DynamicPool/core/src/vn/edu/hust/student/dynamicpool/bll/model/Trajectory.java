@@ -1,6 +1,5 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
-import vn.edu.hust.student.dynamicpool.presentation.gameobject.EDirection;
 
 public abstract class Trajectory {
 	private double timeState = 0f;

@@ -1,5 +1,6 @@
 package vn.edu.hust.student.dynamicpool.presentation.gameobject;
 
+import vn.edu.hust.student.dynamicpool.bll.model.EDirection;
 import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
