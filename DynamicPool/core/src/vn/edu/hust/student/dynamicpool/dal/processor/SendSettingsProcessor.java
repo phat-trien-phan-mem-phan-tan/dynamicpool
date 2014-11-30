@@ -21,14 +21,13 @@ import flexjson.ObjectFactory;
 public class SendSettingsProcessor extends Processor {
 	JSONDeserializer<Pool> poolDeserializer = new JSONDeserializer<Pool>();
 	JSONSerializer serilizer = new JSONSerializer();
-	JSONDeserializer<Segment> segmentDeserializer = new JSONDeserializer<>();
 
 	@Override
 	public ProcessorExecutionResponse execute(ProcessorExecutionRequest request) {
 		Map<String, Object> params = request.getParameters();
 		if (params.containsKey(Field.POOL)) {
 			String poolString = serilizer.include("segments").serialize(params);
-			Pool pool = poolDeserializer.deserialize(poolString, Pool.class);
+			Pool pool =  new JSONDeserializer<Pool>().deserialize(poolString, Pool.class);
 			EventDestination.getInstance().dispatchSuccessEventWithObject(
 					EventType.DAL_UPDATE_SETTINGS_RESPONSE, pool);
 		}
