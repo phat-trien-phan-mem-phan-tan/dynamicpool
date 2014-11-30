@@ -6,13 +6,16 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import flexjson.JSON;
+
 
 public class Pool {
 	private DeviceInfo deviceInfo = new DeviceInfo();
-	private Boundary boundary = new Boundary();
+	public Boundary boundary = new Boundary();
 	private List<Segment> segments = new ArrayList<Segment>();
 	private List<IFish> fishes = new ArrayList<IFish>();
 	private float scale = 1;
+	@JSON(include=false)
 	private Logger logger = LoggerFactory.getLogger(Pool.class);
 
 	public Pool() {

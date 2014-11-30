@@ -1,5 +1,7 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
+import flexjson.JSON;
+
 public class Boundary {
 
 	private float width;
@@ -44,18 +46,22 @@ public class Boundary {
 		this.location = point;
 	}
 
+	@JSON(include=false)
 	public float getMinX() {
 		return location.getX();
 	}
 
+	@JSON(include=false)
 	public float getMinY() {
 		return location.getY();
 	}
 
+	@JSON(include=false)
 	public float getMaxX() {
 		return location.getX() + getWidth();
 	}
 
+	@JSON(include=false)
 	public float getMaxY() {
 		return location.getY() + getHeight();
 	}

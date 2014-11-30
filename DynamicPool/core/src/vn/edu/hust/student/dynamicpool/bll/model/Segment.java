@@ -1,6 +1,9 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
+import vn.edu.hust.student.dynamicpool.dal.processor.SegmentFactory;
+import flexjson.JSON;
 
+@JSON(objectFactory = SegmentFactory.class)
 public class Segment {
 
 	private float beginPoint;
@@ -9,31 +12,44 @@ public class Segment {
 	private String neighbourClientName = null;
 
 	public Segment() {
-		
-	}
 
-	public Segment(EDirection sengmentDirection, float beginPoint, float endPoint) {
-		this.segmentDirection = sengmentDirection;
-		this.beginPoint = beginPoint;
-		this.endPoint = endPoint;
 	}
 
 	public float getBeginPoint() {
 		return beginPoint;
 	}
 
+	public void setBeginPoint(float beginPoint) {
+		this.beginPoint = beginPoint;
+	}
+
 	public float getEndPoint() {
 		return endPoint;
 	}
 
+	public void setEndPoint(float endPoint) {
+		this.endPoint = endPoint;
+	}
+
 	public EDirection getSegmentDirection() {
-		return this.segmentDirection;
+		return segmentDirection;
 	}
-	
+
+	public void setSegmentDirection(EDirection segmentDirection) {
+		this.segmentDirection = segmentDirection;
+	}
+
+	public Segment(EDirection sengmentDirection, float beginPoint,
+			float endPoint) {
+		this.segmentDirection = sengmentDirection;
+		this.beginPoint = beginPoint;
+		this.endPoint = endPoint;
+	}
+
 	public String getNeighbourClientName() {
-		return this.neighbourClientName;		
+		return this.neighbourClientName;
 	}
-	
+
 	public void setNeighbourClientName(String clientName) {
 		this.neighbourClientName = clientName;
 	}
