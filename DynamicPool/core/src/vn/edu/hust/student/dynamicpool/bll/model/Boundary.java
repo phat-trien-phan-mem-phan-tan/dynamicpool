@@ -86,4 +86,10 @@ public class Boundary {
 		float minDoubleDistanceY = containerBoundary.getHeight() + this.getHeight();
 		return distanceX > minDistanceX && doubleDistanceY > minDoubleDistanceY;
 	}
+
+	@Override
+	public String toString() {
+		return "Boundary [width=" + width + ", height=" + height
+				+ ", location=" + location + "]";
+	}
 }

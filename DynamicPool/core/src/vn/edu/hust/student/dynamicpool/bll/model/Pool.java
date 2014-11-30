@@ -161,4 +161,14 @@ public class Pool {
 			this.getSegments().add(segment);
 		}
 	}
+	
+	@Override
+	public Pool clone() {
+		Pool clone = new Pool();
+		clone.setBoundary(this.boundary);
+		clone.setDeviceInfo(this.deviceInfo);
+		clone.setFishes(this.fishes);
+		clone.setScale(this.scale);
+		return clone;
+	}
 }

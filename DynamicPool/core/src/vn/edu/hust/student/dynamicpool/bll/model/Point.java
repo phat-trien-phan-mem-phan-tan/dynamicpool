@@ -5,6 +5,11 @@ public class Point {
 	private float x;
 	private float y;
 
+	@Override
+	public String toString() {
+		return "Point [x=" + x + ", y=" + y + "]";
+	}
+
 	public Point() {
 		this.x = 0;
 		this.y = 0;

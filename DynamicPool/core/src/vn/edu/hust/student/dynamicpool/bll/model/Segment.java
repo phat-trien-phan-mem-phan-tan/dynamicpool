@@ -7,6 +7,13 @@ public class Segment {
 	private EDirection segmentDirection;
 	private String neighbourClientName = null;
 
+	@Override
+	public String toString() {
+		return "Segment [beginPoint=" + beginPoint + ", endPoint=" + endPoint
+				+ ", segmentDirection=" + segmentDirection
+				+ ", neighbourClientName=" + neighbourClientName + "]";
+	}
+
 	public Segment() {
 
 	}

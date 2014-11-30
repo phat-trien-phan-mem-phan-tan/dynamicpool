@@ -74,6 +74,7 @@ public class SocketClientController implements SocketClientHandler {
 			});
 			thread.start();
 		} catch (IOException e) {
+			e.printStackTrace();
 			log.debug("Socket Client connot connect to server");
 		}
 	}
