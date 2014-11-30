@@ -42,4 +42,11 @@ public class CordinateConvert {
 	private Point convertPoint(Point point) {
 		return new Point(point.getX() * scale, point.getY() * scale);
 	}
+
+	public Boundary convertBoundaryToOriginal(Boundary boundary) {
+		Boundary b = convertBoundary(boundary);
+		b.getLocation().setX(b.getWidth()/2+b.getLocation().getX());
+		b.getLocation().setY(b.getHeight()/2+b.getLocation().getY());
+		return b;
+	}
 }

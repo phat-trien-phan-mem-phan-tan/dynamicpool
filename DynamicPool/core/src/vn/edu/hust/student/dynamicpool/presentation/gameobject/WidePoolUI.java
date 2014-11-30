@@ -1,6 +1,7 @@
 package vn.edu.hust.student.dynamicpool.presentation.gameobject;
 
 import vn.edu.hust.student.dynamicpool.bll.model.Boundary;
+import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 import vn.edu.hust.student.dynamicpool.bll.model.Point;
 import vn.edu.hust.student.dynamicpool.bll.model.Pool;
 import vn.edu.hust.student.dynamicpool.bll.model.PoolManager;
@@ -14,6 +15,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 public class WidePoolUI {
 	private static final Color POOL_COLOR = new Color(255, 255, 255, 0.1f);
+	private static final Color FISH_COLOR = new Color(0, 0, 0, 1);
 	CordinateConvert convert = new CordinateConvert();
 	private PoolManager hostPoolManager;
 	private ShapeRenderer shapeRenderer;
@@ -22,14 +24,21 @@ public class WidePoolUI {
 		this.hostPoolManager = poolManager;
 	}
 
-	public void draw(ShapeRenderer sharpeRenderer) {
-		this.shapeRenderer = sharpeRenderer;
+	public void draw(ShapeRenderer shapeRenderer) {
+		this.shapeRenderer = shapeRenderer;
 		updateChange();
-		shapeRenderer.begin(ShapeType.Filled);
+		shapeRenderer.begin(ShapeType.Line);
 		shapeRenderer.setColor(POOL_COLOR);
-//		shapeRenderer.set(ShapeType.Line);
 		for (Pool pool : hostPoolManager.getPools()) {
 			this.drawPool(pool);
+		}
+		shapeRenderer.end();
+		shapeRenderer.begin(ShapeType.Filled);
+		shapeRenderer.setColor(FISH_COLOR);
+		for (Pool pool : hostPoolManager.getPools()) {
+			for (IFish fish : pool.getFishes()) {
+				this.drawFish(fish);
+			}
 		}
 		shapeRenderer.end();
 	}
@@ -38,6 +47,13 @@ public class WidePoolUI {
 		Boundary poolBoundary = convert.convertBoundary(pool.getBoundary());
 		shapeRenderer.rect(poolBoundary.getMinX(), poolBoundary.getMinY(),
 				poolBoundary.getWidth(), poolBoundary.getHeight());
+	}
+
+	private void drawFish(IFish fish) {
+		Boundary boundary = convert.convertBoundaryToOriginal(fish
+				.getBoundary());
+		shapeRenderer.circle(boundary.getMinX(), boundary.getMinY(),
+				boundary.getWidth());
 	}
 
 	public void updateChange() {
