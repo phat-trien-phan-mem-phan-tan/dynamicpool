@@ -79,10 +79,10 @@ public class Boundary {
 
 	public boolean isOutside(Boundary containerBoundary) {
 		double distanceX = Math.abs(containerBoundary.getMinX() * 2
-				+ containerBoundary.getWidth() - this.getMinX() * 2 - this.getWidth());
+				+ containerBoundary.getWidth() - this.getMinX() * 2 - containerBoundary.getWidth());
 		float minDistanceX = containerBoundary.getWidth() + this.getWidth();
 		float doubleDistanceY = Math.abs(containerBoundary.getMinY() * 2
-				+ containerBoundary.getHeight() - this.getMinY() * 2 - this.getHeight());
+				+ containerBoundary.getHeight() - this.getMinY() * 2 - containerBoundary.getHeight());
 		float minDoubleDistanceY = containerBoundary.getHeight() + this.getHeight();
 		return distanceX > minDistanceX && doubleDistanceY > minDoubleDistanceY;
 	}

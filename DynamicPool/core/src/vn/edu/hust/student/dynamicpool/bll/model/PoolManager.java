@@ -79,7 +79,9 @@ public class PoolManager {
 						return;
 					break;
 				case OUTSIDE:
-					logger.error("Outsite");
+					if (!fish.getBoundary().isOutside(pool.getBoundary())) {
+						fish.setFishState(FishState.RETURN);
+					}
 					break;
 				case RETURN:
 				default:

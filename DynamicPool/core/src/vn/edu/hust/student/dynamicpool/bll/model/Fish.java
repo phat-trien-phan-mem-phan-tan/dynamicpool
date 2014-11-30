@@ -3,6 +3,11 @@ package vn.edu.hust.student.dynamicpool.bll.model;
 import java.util.Random;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import flexjson.JSON;
+
 public class Fish implements IFish {
 	private String fishId = UUID.randomUUID().toString();
 	private FishType fishType = FishType.FISH1;
@@ -10,6 +15,8 @@ public class Fish implements IFish {
 	private Boundary boundary = new Boundary();
 	private FishState fishState = FishState.INSIDE;
 	private boolean isIgnoreUpdateLocation = false;
+	@JSON(include=false)
+	private Logger logger = LoggerFactory.getLogger(Fish.class);
 	
 	public Fish() {
 		
@@ -64,6 +71,7 @@ public class Fish implements IFish {
 
 	@Override
 	public void setFishState(FishState fishState) {
+		logger.debug("Fish {} change state from {} to {}", this.getFishId(), this.fishState, fishState);
 		this.fishState = fishState;
 	}
 
