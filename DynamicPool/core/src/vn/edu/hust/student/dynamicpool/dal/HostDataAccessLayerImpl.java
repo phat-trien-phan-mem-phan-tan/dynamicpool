@@ -1,5 +1,6 @@
 package vn.edu.hust.student.dynamicpool.dal;
 
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -45,13 +46,14 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 		try {
 			key = HostMainController.getInstance().connectServer();
 			HostMainController.getInstance().start();
-			logger.info("create host success");
+			logger.info("create host success with key: {}", key);
 			EventDestination.getInstance().dispatchSuccessEventWithObject(
 					EventType.DAL_CREATE_HOST, key);
 		} catch (DALException e) {
-			logger.error("cannot create host" + e.getMessage());
-			logger.info("retry create host in LAN network");
-
+			logger.error("cannot create host {}", e.getMessage());
+			
+		} catch (UnknownHostException e) {
+			logger.debug("cannot get ip lan {}", e.getMessage());
 		}
 	}
 

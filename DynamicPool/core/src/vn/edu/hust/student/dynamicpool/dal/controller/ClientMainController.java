@@ -77,9 +77,11 @@ public class ClientMainController {
 	@SuppressWarnings("unchecked")
 	public void start(String key) throws DALException {
 		logger.info("Starting Socket Client...");
-		String response;
+		String ip = null;
+		int port = 0;
 		try {
-			response = httpClientController.authentication(key);
+			Integer keyParser = Integer.parseInt(key);
+			String response = httpClientController.authentication(key);
 			Map<String, Object> params = (Map<String, Object>) json
 					.fromJSON(response);
 			if (params.containsKey(Field.ERROR)) {
@@ -87,18 +89,28 @@ public class ClientMainController {
 					throw new DALException((String) params.get(Field.ERROR),
 							null);
 				} else {
-					String ip = (String) params.get("ip");
-					int port = Integer.parseInt(params.get("port").toString());
-					this.getClientSocketController().start(ip, port);
-					logger.info("start socket successful");
+					ip = (String) params.get("ip");
+					port = Integer.parseInt(params.get("port").toString());
 				}
 			}
 		} catch (NumberFormatException e) {
-			throw new DALException("port is not integer", e);
+			logger.info("key {} is not integer. try connect to format string 'ip:port'", key);
+			String[] input = key.split(":");
+			if (input.length == 2) {
+				ip = input[0];
+				port = Integer.parseInt(input[1]);
+			}
 		} catch (MalformedURLException e) {
 			throw new DALException("URL invalid", e);
 		} catch (IOException e) {
 			throw new DALException("cannot connect to server", e);
+		}
+
+		if (ip != null) {
+			this.getClientSocketController().start(ip, port);
+			logger.info("start socket successful");
+		} else {
+			logger.error("cannot start server with ip null");
 		}
 	}
 

@@ -145,7 +145,7 @@ public class NIOSocketServerController extends SocketServerController implements
 
 	@Override
 	public void messageSent(IoSession arg0, Object arg1) throws Exception {
-
+		logger.info("MESSAGE SENT: {}", arg1);
 	}
 
 	@Override

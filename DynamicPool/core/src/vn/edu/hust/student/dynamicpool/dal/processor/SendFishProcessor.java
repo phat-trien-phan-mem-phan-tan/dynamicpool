@@ -22,7 +22,7 @@ public class SendFishProcessor extends Processor {
 						EventType.DAL_SEND_FISH_RESPONSE, fish);
 			} else {
 				EventDestination.getInstance().dispatchFailEventWithObject(EventType.DAL_SEND_FISH_RESPONSE, 
-						new DALException("recieve false result", null), fish);
+						new DALException("receive false result", null), fish);
 			}
 		}
 		return null;

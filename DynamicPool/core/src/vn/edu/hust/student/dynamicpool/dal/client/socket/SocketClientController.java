@@ -54,18 +54,18 @@ public class SocketClientController implements SocketClientHandler {
 								handler.messageReceive(answer);
 							} else {
 								log.debug("diconnect from server");
-								disconnect();
+								handler.disconnect();
 								break;
 							}
 						} catch (SocketException e) {
-							log.debug("socket exception {}" + e.getMessage());
+							log.debug("socket exception {}", e.getMessage());
 							e.printStackTrace();
-							disconnect();
+							handler.disconnect();
 							break;
 						} catch (IOException ioException) {
 							log.debug("diconnect from server");
 							ioException.printStackTrace();
-							disconnect();
+							handler.disconnect();
 							break;
 						}
 
@@ -101,8 +101,9 @@ public class SocketClientController implements SocketClientHandler {
 		}
 	}
 
+	@Override
 	public void disconnect() {
-
+		
 	}
 
 	public void stop() {
