@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import vn.edu.hust.student.dynamicpool.bll.model.DeviceInfo;
-import vn.edu.hust.student.dynamicpool.bll.model.Fish;
 import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 import vn.edu.hust.student.dynamicpool.bll.model.Pool;
 import vn.edu.hust.student.dynamicpool.bll.model.PoolManager;
@@ -15,6 +14,7 @@ import vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl;
 import vn.edu.hust.student.dynamicpool.events.EventDestination;
 import vn.edu.hust.student.dynamicpool.events.EventType;
 import vn.edu.hust.student.dynamicpool.exception.DALException;
+
 import com.eposi.eventdriven.Event;
 import com.eposi.eventdriven.implementors.BaseEventListener;
 

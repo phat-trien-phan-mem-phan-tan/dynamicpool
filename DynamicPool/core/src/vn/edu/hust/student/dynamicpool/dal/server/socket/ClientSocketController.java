@@ -18,6 +18,8 @@ import vn.edu.hust.student.dynamicpool.dal.processor.ProcessorExecutionRequest;
 import vn.edu.hust.student.dynamicpool.dal.processor.ProcessorExecutionResponse;
 import vn.edu.hust.student.dynamicpool.dal.processor.ProcessorManager;
 import vn.edu.hust.student.dynamicpool.dal.statics.Field;
+import vn.edu.hust.student.dynamicpool.events.EventDestination;
+import vn.edu.hust.student.dynamicpool.events.EventType;
 import flexjson.JSONSerializer;
 
 public class ClientSocketController implements SocketClientHandler {
@@ -125,7 +127,7 @@ public class ClientSocketController implements SocketClientHandler {
 				if (result != null) {
 					sendMessage(json.toJSON(result.getData()));
 				}
-				
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -151,6 +153,13 @@ public class ClientSocketController implements SocketClientHandler {
 
 	public void stop() {
 		this.socketClientController.stop();
+	}
+
+	@Override
+	public void disconnect() {
+		logger.debug("dispatch event {}", EventType.DAL_DISCONNECT_FROM_SERVER);
+		EventDestination.getInstance().dispatchSuccessEvent(
+				EventType.DAL_DISCONNECT_FROM_SERVER);
 	}
 
 }
