@@ -1,9 +1,9 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
 public interface IFish {
-	int getFishId();
+	String getFishId();
 
-	void setFishId(int fishId);
+	void setFishId(String fishId);
 
 	Boundary getBoundary();
 

@@ -40,13 +40,18 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 	protected void registerEvents() {
 		EventDestination.getInstance().addEventListener(
 				EventType.DAL_JOIN_HOST,
-				new BaseEventListener(this, "onJoinHostCallBackHander"));		
+				new BaseEventListener(this, "onJoinHostCallBackHander"));
 		EventDestination.getInstance().addEventListener(
 				EventType.DAL_UPDATE_SETTINGS_RESPONSE,
 				new BaseEventListener(this, "onUpdateSettingCallbackHander"));
 		EventDestination.getInstance().addEventListener(
 				EventType.DAL_CREATE_FISH_RESPONSE,
 				new BaseEventListener(this, "onCreateFishCallbackHander"));
+		EventDestination.getInstance()
+				.addEventListener(
+						EventType.DAL_SEND_FISH_RESPONSE,
+						new BaseEventListener(this,
+								"onSendFishResponseCallbackHander"));
 	}
 
 	@Override
@@ -83,7 +88,8 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 	@Override
 	public void addDevide(DeviceInfo deviceInfo) {
 		logger.debug("add device");
-		logger.info("send add device: client name {}", deviceInfo.getClientName());
+		logger.info("send add device: client name {}",
+				deviceInfo.getClientName());
 		dataAccessLayer.addDevice(deviceInfo);
 	}
 
@@ -96,7 +102,8 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 			if (Pool.class.isInstance(addDeviceResultObject)) {
 				logger.debug("recive setting success");
 				Pool clientPoolSetting = (Pool) addDeviceResultObject;
-				logger.info("update setting: client name {}", clientPoolSetting.getDeviceInfo().getClientName());
+				logger.info("update setting: client name {}", clientPoolSetting
+						.getDeviceInfo().getClientName());
 				clientPool.updateSetting(clientPoolSetting);
 				EventDestination.getInstance().dispatchSuccessEvent(
 						EventType.BLL_ADD_DEVICE);
@@ -156,6 +163,41 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 		EventDestination.getInstance().dispatchFailEvent(
 				EventType.BLL_CREATE_FISH);
 	}
+	
+	@Deprecated
+	public void onSendFishResponseCallbackHander(Event event) {
+		logger.debug("recieved a fish event");
+		if (EventDestination.parseEventToBoolean(event)) {
+			Object resultObject = EventDestination.parseEventToTargetObject(event);
+			if (resultObject instanceof IFish) {
+				IFish recievedFish = (IFish)resultObject;
+				IFish existFish = this.clientPool.getFish(recievedFish.getFishId());
+				if (existFish == null) {
+					logger.debug("add new fish to pool");
+					this.clientPool.addFish(recievedFish);
+				} else {
+					logger.debug("fish is exist, update info if nescessary");
+				}
+				return;
+			}
+			logger.error("result not is an instance of IFish");
+		} else {
+			logger.error("delete a fish event");
+			Object resultObject = EventDestination.parseEventToTargetObject(event);
+			if (resultObject instanceof IFish) {
+				IFish recievedFish = (IFish)resultObject;
+				IFish existFish = this.clientPool.getFish(recievedFish.getFishId());
+				if (existFish != null) {
+					logger.debug("remove  fish in pool");
+					this.clientPool.removeFish(existFish);
+				} else {
+					logger.debug("fish is not exist, nothing to do");
+				}
+				return;
+			}
+			logger.error("result not is an instance of IFish");
+		}
+	}
 
 	@Override
 	public void removeFish(Fish fish) {
@@ -196,4 +238,6 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 	public String getKey() {
 		return keyOfHost;
 	}
+	
+	
 }

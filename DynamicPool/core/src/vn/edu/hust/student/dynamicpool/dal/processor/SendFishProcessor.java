@@ -6,6 +6,7 @@ import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 import vn.edu.hust.student.dynamicpool.dal.statics.Field;
 import vn.edu.hust.student.dynamicpool.events.EventDestination;
 import vn.edu.hust.student.dynamicpool.events.EventType;
+import vn.edu.hust.student.dynamicpool.exception.DALException;
 
 public class SendFishProcessor extends Processor {
 
@@ -20,8 +21,8 @@ public class SendFishProcessor extends Processor {
 				EventDestination.getInstance().dispatchSuccessEventWithObject(
 						EventType.DAL_SEND_FISH_RESPONSE, fish);
 			} else {
-				EventDestination.getInstance().dispatchFailEvent(
-						EventType.DAL_SEND_FISH_RESPONSE);
+				EventDestination.getInstance().dispatchFailEventWithObject(EventType.DAL_SEND_FISH_RESPONSE, 
+						new DALException("recieve false result", null), fish);
 			}
 		}
 		return null;

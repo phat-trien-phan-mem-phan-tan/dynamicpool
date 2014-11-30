@@ -1,10 +1,10 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
 import java.util.Random;
+import java.util.UUID;
 
 public class Fish implements IFish {
-	private static Random random = new Random();  
-	private int fishId = random.nextInt();
+	private String fishId = UUID.randomUUID().toString();
 	private FishType fishType = FishType.FISH1;
 	private Trajectory trajectory = new NoneTrajectory();
 	private Boundary boundary = new Boundary();
@@ -23,12 +23,12 @@ public class Fish implements IFish {
 	}
 
 	@Override
-	public int getFishId() {
+	public String getFishId() {
 		return fishId;
 	}
 
 	@Override
-	public void setFishId(int fishId) {
+	public void setFishId(String fishId) {
 		this.fishId = fishId;
 	}
 

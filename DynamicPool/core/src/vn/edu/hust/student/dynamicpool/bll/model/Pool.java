@@ -6,6 +6,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.sun.org.apache.regexp.internal.recompile;
+
 import flexjson.JSON;
 
 
@@ -81,6 +83,17 @@ public class Pool {
 
 	public void addFish(IFish fish) {
 		fishes.add(fish);
+	}
+	
+	public void removeFish(IFish fish) {
+		fishes.remove(fish);
+	}
+	
+	public IFish getFish(String fishId) {
+		for (IFish fish : fishes) {
+			if (fish.getFishId().equals(fishId)) return fish;
+		}
+		return null;
 	}
 
 	public Segment detectCollisionLeftSegments(Boundary fishBoundary) {

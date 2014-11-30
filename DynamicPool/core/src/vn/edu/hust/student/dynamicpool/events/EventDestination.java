@@ -49,7 +49,7 @@ public class EventDestination {
 		dispatchEvent(eventType, true, targetObject, null);
 	}
 	
-	public void dispatchFailEventWithObject(EventType eventType, Exception error) {
+	public void dispatchFailEventWithExeption(EventType eventType, Exception error) {
 		dispatchEvent(eventType, false, null, error);
 	}
 	

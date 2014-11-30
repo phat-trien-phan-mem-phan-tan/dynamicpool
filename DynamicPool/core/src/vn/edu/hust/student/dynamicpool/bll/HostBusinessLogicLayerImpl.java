@@ -28,6 +28,12 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 	}
 
 	@Override
+	public void update(float deltaTime) {
+		super.update(deltaTime);
+		hostPoolManager.updateLocationOfFishes(deltaTime);
+	}
+
+	@Override
 	protected void registerEvents() {
 		super.registerEvents();
 		EventDestination.getInstance().addEventListener(
@@ -165,28 +171,41 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 			}
 		}
 	}
-	
+
 	@Deprecated
 	public void onSendFishCallbackHander(Event event) {
 		logger.debug("on send fish to client callback hander");
 		if (EventDestination.parseEventToBoolean(event)) {
-			Object targetList = EventDestination.parseEventToTargetObject(event);
-			if (targetList instanceof List) {
+			Object targetList = EventDestination
+					.parseEventToTargetObject(event);
+			if (!(targetList instanceof List)) {
 				logger.error("error: event target is not instance of list");
 				return;
 			}
 			String clientName = null;
 			IFish fish = null;
-			for (Object object : (List<Object>)targetList) {
-				if (object instanceof String) clientName = (String) object;
-				if (object instanceof IFish) fish = (IFish) object;
+			for (Object object : (List<Object>) targetList) {
+				if (object instanceof String)
+					clientName = (String) object;
+				if (object instanceof IFish)
+					fish = (IFish) object;
 			}
 			if (clientName == null || fish == null) {
 				logger.error("error: invalid params in event target");
 				return;
 			}
-			// TODO Call method send in DAL
-			logger.info("send fish {} to client {}", fish.getFishId(), clientName);
+			try {
+				dataAccessLayer.respondCreateFishRequest(clientName, true,
+						fish.cloneFish());
+				logger.debug("sent a new fish {} to a client {}",
+						fish.getFishId(), clientName);
+			} catch (DALException e) {
+				logger.error("cannot send new fish {} to client {}",
+						fish.getFishId(), clientName);
+			}
+
+			logger.info("send fish {} to client {}", fish.getFishId(),
+					clientName);
 		} else {
 			logger.error("send fish callback hander error");
 		}

@@ -6,12 +6,12 @@ import java.util.Map;
 import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 
 public class FishUICollection {
-	private Map<Integer, FishUI> dictionary = new HashMap<Integer, FishUI>();
+	private Map<String, FishUI> dictionary = new HashMap<String, FishUI>();
 	public FishUICollection() {
 		
 	}
 	public FishUI getFishUI(IFish fish) {
-		int fishId = fish.getFishId();
+		String fishId = fish.getFishId();
 		FishUI fishUI = dictionary.get(fishId);
 		return fishUI == null ? FishUIFactory.createFishUI(fish) : fishUI;
 	}

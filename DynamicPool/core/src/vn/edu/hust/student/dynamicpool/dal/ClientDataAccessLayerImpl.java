@@ -53,7 +53,7 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 					EventType.DAL_JOIN_HOST);
 		} catch (DALException e) {
 			logger.error("cannot join host");
-			EventDestination.getInstance().dispatchFailEventWithObject(
+			EventDestination.getInstance().dispatchFailEventWithExeption(
 					EventType.DAL_JOIN_HOST,
 					new DALException("cannot join host", e));
 		}

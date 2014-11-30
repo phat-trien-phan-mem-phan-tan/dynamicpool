@@ -7327,3 +7327,1041 @@ java.io.IOException: An existing connection was forcibly closed by the remote ho
 2014-Nov-30 14:42:38:061 [NioProcessor-4] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
 2014-Nov-30 14:42:48:062 [NioProcessor-4] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
 2014-Nov-30 14:42:52:404 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - diconnect from server
+2014-Nov-30 18:54:00:656 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 18:54:00:669 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool c0f8cd49-e834-41a5-9c2e-6797c611c6ae
+2014-Nov-30 18:54:00:670 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-30 18:54:00:670 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-30 18:54:00:679 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-30 18:54:01:406 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.30.101
+2014-Nov-30 18:54:01:409 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"0992","ip":"14.162.172.138"}
+2014-Nov-30 18:54:01:410 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-30 18:54:01:686 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 18:54:01:688 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-30 18:54:01:707 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-30 18:54:01:708 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-30 18:54:01:711 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-30 18:54:01:712 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-30 18:54:01:712 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-30 18:54:01:712 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-30 18:54:04:432 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 18:54:04:433 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name 54cfc0dd-6021-4540-8335-b37d4439c722
+2014-Nov-30 18:54:04:433 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-30 18:54:04:433 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 18:54:04:433 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 18:54:04:433 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name host
+2014-Nov-30 18:54:04:433 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool host
+2014-Nov-30 18:54:04:434 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 18:54:04:435 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 18:54:04:435 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 18:54:04:435 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 18:54:04:435 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 0 segments: client name host
+2014-Nov-30 18:54:04:435 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 18:54:11:843 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 18:54:11:846 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool c87e0df2-e17a-4fa6-9eb5-bf92a0e9bf3f
+2014-Nov-30 18:54:11:846 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host
+2014-Nov-30 18:54:11:849 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-30 18:54:11:919 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-30 18:54:12:452 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=0992
+2014-Nov-30 18:54:12:455 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"port":9696,"error":null,"ip":"192.168.30.101"}
+2014-Nov-30 18:54:12:457 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 192.168.30.101, 9696
+2014-Nov-30 18:54:12:458 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 18:54:12:460 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - start socket successful
+2014-Nov-30 18:54:12:460 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host success
+2014-Nov-30 18:54:12:463 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on join host callback hander
+2014-Nov-30 18:54:12:464 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - join host success
+2014-Nov-30 18:54:12:499 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-30 18:54:12:500 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-30 18:54:14:393 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 18:54:14:393 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name dc4fe752-eb06-486c-8bb1-bf7ec87c6735
+2014-Nov-30 18:54:14:393 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - add device
+2014-Nov-30 18:54:14:393 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - send add device: client name f371bc9f-b2e2-491f-94ff-dedb945f15fc
+2014-Nov-30 18:54:14:403 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - SEND MESSAGE {"cmd":"addDevice","device":{"clientName":"f371bc9f-b2e2-491f-94ff-dedb945f15fc","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 18:54:14:404 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=142 cap=2048: 7B 22 63 6D 64 22 3A 22 61 64 64 44 65 76 69 63...]
+2014-Nov-30 18:54:14:405 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-30 18:54:14:406 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - data recieved: {"cmd":"addDevice","device":{"clientName":"f371bc9f-b2e2-491f-94ff-dedb945f15fc","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 18:54:14:435 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 18:54:14:435 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 18:54:14:435 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name f371bc9f-b2e2-491f-94ff-dedb945f15fc
+2014-Nov-30 18:54:14:436 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool f371bc9f-b2e2-491f-94ff-dedb945f15fc
+2014-Nov-30 18:54:14:437 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 18:54:14:442 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - sent add device envent to all client
+2014-Nov-30 18:54:14:442 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client host
+2014-Nov-30 18:54:14:442 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 18:54:14:443 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 18:54:14:443 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 18:54:14:443 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 18:54:14:443 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name host
+2014-Nov-30 18:54:14:443 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 18:54:14:459 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client f371bc9f-b2e2-491f-94ff-dedb945f15fc
+2014-Nov-30 18:54:14:459 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client f371bc9f-b2e2-491f-94ff-dedb945f15fc
+2014-Nov-30 18:54:14:472 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-30 18:54:14:472 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.dal.server.socket.ClientSocketController  - MESSAGE RECEIVE: {"pool":{"boundary":{"height":480.0,"location":{"x":0.0,"y":0.0},"width":800.0},"deviceInfo":{"clientName":"f371bc9f-b2e2-491f-94ff-dedb945f15fc","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0},"fishes":[],"scale":1.0,"segments":[{"beginPoint":0.0,"endPoint":480.0,"neighbourClientName":null,"segmentDirection":"LEFT"}]},"cmd":"sendSettings"}
+2014-Nov-30 18:54:14:495 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 18:54:14:495 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 18:54:14:496 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name f371bc9f-b2e2-491f-94ff-dedb945f15fc
+2014-Nov-30 18:54:14:496 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name f371bc9f-b2e2-491f-94ff-dedb945f15fc
+2014-Nov-30 18:54:14:496 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 18:54:23:102 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - Create fish
+2014-Nov-30 18:54:23:108 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - request creat fish sent
+2014-Nov-30 18:54:23:108 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on request create fish callback hander
+2014-Nov-30 18:54:23:108 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add new fish to host: id 4a3c9d12-facf-448b-ba7a-95675e2911ec
+2014-Nov-30 18:54:23:109 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create fish respond
+2014-Nov-30 18:54:23:109 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on create fish callback hander
+2014-Nov-30 18:54:23:109 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - create fish success
+2014-Nov-30 18:54:24:473 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:54:34:485 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:54:44:486 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:54:54:486 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:55:04:487 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:55:14:487 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:55:24:488 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:55:34:489 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:55:44:489 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:55:54:490 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:56:04:491 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:56:14:492 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:56:24:492 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:56:34:493 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:56:35:310 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CLOSED
+2014-Nov-30 18:56:51:042 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 18:56:51:053 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 61cdb5d8-0598-4e6f-bc35-0cfe411c2660
+2014-Nov-30 18:56:51:054 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-30 18:56:51:054 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-30 18:56:51:061 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-30 18:56:52:193 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.30.101
+2014-Nov-30 18:56:52:196 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"0508","ip":"14.162.172.138"}
+2014-Nov-30 18:56:52:197 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-30 18:56:52:564 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 18:56:52:566 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-30 18:56:52:585 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-30 18:56:52:585 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-30 18:56:52:589 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-30 18:56:52:589 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-30 18:56:52:590 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-30 18:56:52:590 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-30 18:56:54:833 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 18:56:54:834 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name a9570106-81c4-44b8-977a-fce65a09704a
+2014-Nov-30 18:56:54:834 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-30 18:56:54:834 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 18:56:54:834 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 18:56:54:835 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name host
+2014-Nov-30 18:56:54:835 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool host
+2014-Nov-30 18:56:54:836 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 18:56:54:837 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 18:56:54:837 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 18:56:54:837 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 18:56:54:837 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 0 segments: client name host
+2014-Nov-30 18:56:54:838 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 18:57:00:365 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 18:57:00:369 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool aa679e89-a591-42ae-8bc2-631939e7a88b
+2014-Nov-30 18:57:00:369 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host
+2014-Nov-30 18:57:00:372 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-30 18:57:00:445 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-30 18:57:01:190 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=0508
+2014-Nov-30 18:57:01:193 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"port":9696,"error":null,"ip":"192.168.30.101"}
+2014-Nov-30 18:57:01:194 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 192.168.30.101, 9696
+2014-Nov-30 18:57:01:196 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 18:57:01:197 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - start socket successful
+2014-Nov-30 18:57:01:198 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host success
+2014-Nov-30 18:57:01:200 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on join host callback hander
+2014-Nov-30 18:57:01:201 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - join host success
+2014-Nov-30 18:57:01:223 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-30 18:57:01:224 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-30 18:57:02:777 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 18:57:02:777 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name 0ab5fd8a-0349-43b9-a105-09e683d32ea8
+2014-Nov-30 18:57:02:777 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - add device
+2014-Nov-30 18:57:02:777 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - send add device: client name 6c26541e-24f5-4716-a85f-824f55aedd61
+2014-Nov-30 18:57:02:787 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - SEND MESSAGE {"cmd":"addDevice","device":{"clientName":"6c26541e-24f5-4716-a85f-824f55aedd61","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 18:57:02:789 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=142 cap=2048: 7B 22 63 6D 64 22 3A 22 61 64 64 44 65 76 69 63...]
+2014-Nov-30 18:57:02:789 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-30 18:57:02:792 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - data recieved: {"cmd":"addDevice","device":{"clientName":"6c26541e-24f5-4716-a85f-824f55aedd61","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 18:57:02:826 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 18:57:02:826 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 18:57:02:826 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name 6c26541e-24f5-4716-a85f-824f55aedd61
+2014-Nov-30 18:57:02:826 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool 6c26541e-24f5-4716-a85f-824f55aedd61
+2014-Nov-30 18:57:02:827 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 18:57:02:839 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - sent add device envent to all client
+2014-Nov-30 18:57:02:839 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client host
+2014-Nov-30 18:57:02:839 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 18:57:02:840 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 18:57:02:840 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 18:57:02:840 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 18:57:02:840 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name host
+2014-Nov-30 18:57:02:840 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 18:57:02:856 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client 6c26541e-24f5-4716-a85f-824f55aedd61
+2014-Nov-30 18:57:02:856 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client 6c26541e-24f5-4716-a85f-824f55aedd61
+2014-Nov-30 18:57:02:868 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-30 18:57:02:868 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.dal.server.socket.ClientSocketController  - MESSAGE RECEIVE: {"pool":{"boundary":{"height":480.0,"location":{"x":0.0,"y":0.0},"width":800.0},"deviceInfo":{"clientName":"6c26541e-24f5-4716-a85f-824f55aedd61","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0},"fishes":[],"scale":1.0,"segments":[{"beginPoint":0.0,"endPoint":480.0,"neighbourClientName":null,"segmentDirection":"LEFT"}]},"cmd":"sendSettings"}
+2014-Nov-30 18:57:02:891 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 18:57:02:892 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 18:57:02:892 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name 6c26541e-24f5-4716-a85f-824f55aedd61
+2014-Nov-30 18:57:02:892 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name 6c26541e-24f5-4716-a85f-824f55aedd61
+2014-Nov-30 18:57:02:892 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 18:57:06:865 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - Create fish
+2014-Nov-30 18:57:06:871 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - request creat fish sent
+2014-Nov-30 18:57:06:871 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on request create fish callback hander
+2014-Nov-30 18:57:06:871 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add new fish to host: id edcfcddc-f480-429a-98ba-7546ea640337
+2014-Nov-30 18:57:06:871 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create fish respond
+2014-Nov-30 18:57:06:872 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on create fish callback hander
+2014-Nov-30 18:57:06:872 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - create fish success
+2014-Nov-30 18:57:09:206 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish edcfcddc-f480-429a-98ba-7546ea640337 hit top: state INSIDE 
+2014-Nov-30 18:57:09:207 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - after hit: return
+2014-Nov-30 18:57:10:590 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish edcfcddc-f480-429a-98ba-7546ea640337 hit right: state INSIDE 
+2014-Nov-30 18:57:10:590 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on send fish to client callback hander
+2014-Nov-30 18:57:10:591 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send fish callback hander error
+2014-Nov-30 18:57:12:870 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:57:22:871 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:57:32:871 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:57:42:872 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:57:52:872 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:58:02:873 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:58:12:873 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:58:22:874 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:58:32:875 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:58:42:875 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:58:52:876 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:59:02:876 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:59:12:877 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:59:22:877 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:59:32:878 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 18:59:33:500 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - diconnect from server
+2014-Nov-30 18:59:48:987 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 18:59:48:995 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool bc272279-dfce-4718-b017-dd63c3c079a0
+2014-Nov-30 18:59:48:996 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-30 18:59:48:996 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-30 18:59:49:003 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-30 18:59:49:954 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.30.101
+2014-Nov-30 18:59:49:956 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"8028","ip":"14.162.172.138"}
+2014-Nov-30 18:59:49:958 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-30 18:59:50:240 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 18:59:50:242 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-30 18:59:50:262 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-30 18:59:50:262 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-30 18:59:50:266 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-30 18:59:50:266 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-30 18:59:50:267 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-30 18:59:50:267 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-30 18:59:52:486 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 18:59:52:487 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name 0d75b434-0993-425a-852c-4e43bf8ea570
+2014-Nov-30 18:59:52:487 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-30 18:59:52:487 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 18:59:52:487 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 18:59:52:487 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name host
+2014-Nov-30 18:59:52:487 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool host
+2014-Nov-30 18:59:52:488 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 18:59:52:489 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 18:59:52:489 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 18:59:52:489 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 18:59:52:489 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 0 segments: client name host
+2014-Nov-30 18:59:52:489 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 18:59:58:674 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 18:59:58:677 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 918e018f-312d-47fb-9d6a-5f45d4604f6f
+2014-Nov-30 18:59:58:677 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host
+2014-Nov-30 18:59:58:680 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-30 18:59:58:754 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-30 19:00:02:395 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=8028
+2014-Nov-30 19:00:02:398 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"port":9696,"error":null,"ip":"192.168.30.101"}
+2014-Nov-30 19:00:02:400 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 192.168.30.101, 9696
+2014-Nov-30 19:00:02:401 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:00:02:403 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - start socket successful
+2014-Nov-30 19:00:02:403 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host success
+2014-Nov-30 19:00:02:406 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on join host callback hander
+2014-Nov-30 19:00:02:407 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - join host success
+2014-Nov-30 19:00:02:454 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-30 19:00:02:463 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-30 19:00:04:307 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:00:04:307 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name c4c35e96-d077-4465-b9b2-bdcf3e775445
+2014-Nov-30 19:00:04:307 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - add device
+2014-Nov-30 19:00:04:308 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - send add device: client name 00da0913-10f8-4b6c-98ab-d55935593948
+2014-Nov-30 19:00:04:325 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - SEND MESSAGE {"cmd":"addDevice","device":{"clientName":"00da0913-10f8-4b6c-98ab-d55935593948","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 19:00:04:328 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=142 cap=2048: 7B 22 63 6D 64 22 3A 22 61 64 64 44 65 76 69 63...]
+2014-Nov-30 19:00:04:329 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-30 19:00:04:333 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - data recieved: {"cmd":"addDevice","device":{"clientName":"00da0913-10f8-4b6c-98ab-d55935593948","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 19:00:04:365 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:00:04:365 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:00:04:365 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name 00da0913-10f8-4b6c-98ab-d55935593948
+2014-Nov-30 19:00:04:366 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool 00da0913-10f8-4b6c-98ab-d55935593948
+2014-Nov-30 19:00:04:367 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:00:04:373 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - sent add device envent to all client
+2014-Nov-30 19:00:04:373 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client host
+2014-Nov-30 19:00:04:373 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:00:04:374 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:00:04:374 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:00:04:374 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:00:04:374 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name host
+2014-Nov-30 19:00:04:375 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:00:04:390 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client 00da0913-10f8-4b6c-98ab-d55935593948
+2014-Nov-30 19:00:04:390 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client 00da0913-10f8-4b6c-98ab-d55935593948
+2014-Nov-30 19:00:04:403 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-30 19:00:04:403 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.dal.server.socket.ClientSocketController  - MESSAGE RECEIVE: {"pool":{"boundary":{"height":480.0,"location":{"x":0.0,"y":0.0},"width":800.0},"deviceInfo":{"clientName":"00da0913-10f8-4b6c-98ab-d55935593948","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0},"fishes":[],"scale":1.0,"segments":[{"beginPoint":0.0,"endPoint":480.0,"neighbourClientName":null,"segmentDirection":"LEFT"}]},"cmd":"sendSettings"}
+2014-Nov-30 19:00:04:426 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:00:04:427 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:00:04:427 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name 00da0913-10f8-4b6c-98ab-d55935593948
+2014-Nov-30 19:00:04:427 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name 00da0913-10f8-4b6c-98ab-d55935593948
+2014-Nov-30 19:00:04:427 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:00:08:265 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - Create fish
+2014-Nov-30 19:00:08:270 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - request creat fish sent
+2014-Nov-30 19:00:08:271 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on request create fish callback hander
+2014-Nov-30 19:00:08:271 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add new fish to host: id e26f5077-4d44-48d6-bcce-c05e4d0cd224
+2014-Nov-30 19:00:08:271 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create fish respond
+2014-Nov-30 19:00:08:271 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on create fish callback hander
+2014-Nov-30 19:00:08:271 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - create fish success
+2014-Nov-30 19:00:10:607 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish e26f5077-4d44-48d6-bcce-c05e4d0cd224 hit top: state INSIDE 
+2014-Nov-30 19:00:10:608 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - after hit: return
+2014-Nov-30 19:00:11:991 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish e26f5077-4d44-48d6-bcce-c05e4d0cd224 hit right: state INSIDE 
+2014-Nov-30 19:00:14:404 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:00:24:404 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:00:34:405 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:00:35:523 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on send fish to client callback hander
+2014-Nov-30 19:00:35:524 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send fish callback hander error
+2014-Nov-30 19:00:44:406 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:00:54:406 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:01:02:261 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CLOSED
+2014-Nov-30 19:01:18:543 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:01:18:558 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool ed81b654-451b-409c-83cf-2962638c8ab7
+2014-Nov-30 19:01:18:559 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:01:18:560 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-30 19:01:18:567 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-30 19:01:19:531 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.30.101
+2014-Nov-30 19:01:19:534 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"1130","ip":"14.162.172.138"}
+2014-Nov-30 19:01:19:535 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-30 19:01:19:843 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:01:19:845 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-30 19:01:19:865 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-30 19:01:19:865 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-30 19:01:19:869 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-30 19:01:19:869 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-30 19:01:19:870 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-30 19:01:19:870 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-30 19:01:21:984 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:01:21:985 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name e46b95f6-1eb9-40d1-bd1e-febc571f3b28
+2014-Nov-30 19:01:21:985 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-30 19:01:21:985 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:01:21:985 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:01:21:986 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name host
+2014-Nov-30 19:01:21:986 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool host
+2014-Nov-30 19:01:21:988 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:01:21:988 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:01:21:989 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:01:21:989 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:01:21:989 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 0 segments: client name host
+2014-Nov-30 19:01:21:990 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:01:27:265 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:01:27:269 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool bce20d31-cfd7-468c-99f2-46dd62d2b75c
+2014-Nov-30 19:01:27:269 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host
+2014-Nov-30 19:01:27:272 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-30 19:01:27:347 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-30 19:01:28:009 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=1130
+2014-Nov-30 19:01:28:012 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"port":9696,"error":null,"ip":"192.168.30.101"}
+2014-Nov-30 19:01:28:014 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 192.168.30.101, 9696
+2014-Nov-30 19:01:28:016 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:01:28:018 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - start socket successful
+2014-Nov-30 19:01:28:018 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host success
+2014-Nov-30 19:01:28:021 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on join host callback hander
+2014-Nov-30 19:01:28:021 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - join host success
+2014-Nov-30 19:01:28:118 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-30 19:01:28:138 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-30 19:01:29:881 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:01:29:881 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name 678d5143-f782-4c8f-801e-87a88dce47b0
+2014-Nov-30 19:01:29:882 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - add device
+2014-Nov-30 19:01:29:882 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - send add device: client name b32e47fd-f4f2-4629-b150-2b6516c55a1e
+2014-Nov-30 19:01:29:901 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - SEND MESSAGE {"cmd":"addDevice","device":{"clientName":"b32e47fd-f4f2-4629-b150-2b6516c55a1e","screenHeight":518.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 19:01:29:904 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=142 cap=2048: 7B 22 63 6D 64 22 3A 22 61 64 64 44 65 76 69 63...]
+2014-Nov-30 19:01:29:904 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-30 19:01:29:908 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - data recieved: {"cmd":"addDevice","device":{"clientName":"b32e47fd-f4f2-4629-b150-2b6516c55a1e","screenHeight":518.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 19:01:29:949 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:01:29:949 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:01:29:949 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name b32e47fd-f4f2-4629-b150-2b6516c55a1e
+2014-Nov-30 19:01:29:949 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool b32e47fd-f4f2-4629-b150-2b6516c55a1e
+2014-Nov-30 19:01:29:950 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:01:29:956 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - sent add device envent to all client
+2014-Nov-30 19:01:29:956 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client host
+2014-Nov-30 19:01:29:956 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:01:29:957 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:01:29:957 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:01:29:957 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:01:29:957 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name host
+2014-Nov-30 19:01:29:957 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:01:29:973 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client b32e47fd-f4f2-4629-b150-2b6516c55a1e
+2014-Nov-30 19:01:29:973 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client b32e47fd-f4f2-4629-b150-2b6516c55a1e
+2014-Nov-30 19:01:29:985 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-30 19:01:29:986 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.dal.server.socket.ClientSocketController  - MESSAGE RECEIVE: {"pool":{"boundary":{"height":518.0,"location":{"x":0.0,"y":0.0},"width":800.0},"deviceInfo":{"clientName":"b32e47fd-f4f2-4629-b150-2b6516c55a1e","screenHeight":518.0,"screenSize":5.0,"screenWidth":800.0},"fishes":[],"scale":1.0,"segments":[{"beginPoint":0.0,"endPoint":480.0,"neighbourClientName":null,"segmentDirection":"LEFT"}]},"cmd":"sendSettings"}
+2014-Nov-30 19:01:30:009 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:01:30:009 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:01:30:009 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name b32e47fd-f4f2-4629-b150-2b6516c55a1e
+2014-Nov-30 19:01:30:010 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name b32e47fd-f4f2-4629-b150-2b6516c55a1e
+2014-Nov-30 19:01:30:010 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:01:32:448 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - Create fish
+2014-Nov-30 19:01:32:454 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - request creat fish sent
+2014-Nov-30 19:01:32:454 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on request create fish callback hander
+2014-Nov-30 19:01:32:455 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add new fish to host: id e4e59b95-92b7-45cb-a0cb-b2e4ecc01d31
+2014-Nov-30 19:01:32:455 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create fish respond
+2014-Nov-30 19:01:32:455 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on create fish callback hander
+2014-Nov-30 19:01:32:455 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - create fish success
+2014-Nov-30 19:01:34:790 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish e4e59b95-92b7-45cb-a0cb-b2e4ecc01d31 hit top: state INSIDE 
+2014-Nov-30 19:01:34:790 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - after hit: return
+2014-Nov-30 19:01:36:173 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish e4e59b95-92b7-45cb-a0cb-b2e4ecc01d31 hit right: state INSIDE 
+2014-Nov-30 19:01:39:986 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:01:49:987 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:01:59:988 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:02:09:988 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:02:16:441 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on send fish to client callback hander
+2014-Nov-30 19:02:16:442 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send fish callback hander error
+2014-Nov-30 19:02:19:989 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:02:29:989 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:02:39:990 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:02:42:883 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - diconnect from server
+2014-Nov-30 19:03:23:692 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:03:23:704 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 303f1d9f-ae80-4f28-b42f-157959cacc9c
+2014-Nov-30 19:03:23:706 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:03:23:706 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-30 19:03:23:716 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-30 19:03:24:679 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.30.101
+2014-Nov-30 19:03:24:682 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"6853","ip":"14.162.172.138"}
+2014-Nov-30 19:03:24:684 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-30 19:03:25:063 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:03:25:065 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-30 19:03:25:085 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-30 19:03:25:085 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-30 19:03:25:089 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-30 19:03:25:089 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-30 19:03:25:090 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-30 19:03:25:090 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-30 19:03:32:142 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:03:32:142 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name b7876c61-9fa3-4f43-85c8-d1f6e8eaa8f8
+2014-Nov-30 19:03:32:142 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-30 19:03:32:143 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:03:32:143 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:03:32:143 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name host
+2014-Nov-30 19:03:32:143 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool host
+2014-Nov-30 19:03:32:145 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:03:32:146 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:03:32:146 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:03:32:146 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:03:32:146 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 0 segments: client name host
+2014-Nov-30 19:03:32:147 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:03:36:155 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:03:36:158 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool ca73cc28-cb6d-4f7b-9a0e-d42cee2ad7d5
+2014-Nov-30 19:03:36:158 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host
+2014-Nov-30 19:03:36:160 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-30 19:03:36:233 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-30 19:03:36:968 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=6853
+2014-Nov-30 19:03:36:971 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"port":9696,"error":null,"ip":"192.168.30.101"}
+2014-Nov-30 19:03:36:973 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 192.168.30.101, 9696
+2014-Nov-30 19:03:36:974 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:03:36:976 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - start socket successful
+2014-Nov-30 19:03:36:976 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host success
+2014-Nov-30 19:03:36:979 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on join host callback hander
+2014-Nov-30 19:03:36:980 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - join host success
+2014-Nov-30 19:03:37:028 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-30 19:03:37:029 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-30 19:03:38:602 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:03:38:603 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name cda03761-5c1e-4be0-89c0-66a156122a26
+2014-Nov-30 19:03:38:603 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - add device
+2014-Nov-30 19:03:38:603 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - send add device: client name 3065e7b3-df37-4efe-970e-1da57495e1de
+2014-Nov-30 19:03:38:621 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - SEND MESSAGE {"cmd":"addDevice","device":{"clientName":"3065e7b3-df37-4efe-970e-1da57495e1de","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 19:03:38:624 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=142 cap=2048: 7B 22 63 6D 64 22 3A 22 61 64 64 44 65 76 69 63...]
+2014-Nov-30 19:03:38:625 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-30 19:03:38:629 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - data recieved: {"cmd":"addDevice","device":{"clientName":"3065e7b3-df37-4efe-970e-1da57495e1de","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 19:03:38:665 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:03:38:666 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:03:38:666 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name 3065e7b3-df37-4efe-970e-1da57495e1de
+2014-Nov-30 19:03:38:666 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool 3065e7b3-df37-4efe-970e-1da57495e1de
+2014-Nov-30 19:03:38:667 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:03:38:672 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - sent add device envent to all client
+2014-Nov-30 19:03:38:672 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client host
+2014-Nov-30 19:03:38:672 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:03:38:673 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:03:38:673 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:03:38:673 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:03:38:673 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name host
+2014-Nov-30 19:03:38:673 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:03:38:688 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client 3065e7b3-df37-4efe-970e-1da57495e1de
+2014-Nov-30 19:03:38:689 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client 3065e7b3-df37-4efe-970e-1da57495e1de
+2014-Nov-30 19:03:38:701 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-30 19:03:38:701 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.dal.server.socket.ClientSocketController  - MESSAGE RECEIVE: {"pool":{"boundary":{"height":480.0,"location":{"x":0.0,"y":0.0},"width":800.0},"deviceInfo":{"clientName":"3065e7b3-df37-4efe-970e-1da57495e1de","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0},"fishes":[],"scale":1.0,"segments":[{"beginPoint":0.0,"endPoint":480.0,"neighbourClientName":null,"segmentDirection":"LEFT"}]},"cmd":"sendSettings"}
+2014-Nov-30 19:03:38:724 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:03:38:724 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:03:38:724 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name 3065e7b3-df37-4efe-970e-1da57495e1de
+2014-Nov-30 19:03:38:724 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name 3065e7b3-df37-4efe-970e-1da57495e1de
+2014-Nov-30 19:03:38:724 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:03:42:264 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - Create fish
+2014-Nov-30 19:03:42:269 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - request creat fish sent
+2014-Nov-30 19:03:42:270 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on request create fish callback hander
+2014-Nov-30 19:03:42:270 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add new fish to host: id 317fba27-b857-4ed8-8ba4-968c748ecf33
+2014-Nov-30 19:03:42:270 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create fish respond
+2014-Nov-30 19:03:42:271 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on create fish callback hander
+2014-Nov-30 19:03:42:271 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - create fish success
+2014-Nov-30 19:03:44:605 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish 317fba27-b857-4ed8-8ba4-968c748ecf33 hit top: state INSIDE 
+2014-Nov-30 19:03:44:606 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - after hit: return
+2014-Nov-30 19:03:45:989 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish 317fba27-b857-4ed8-8ba4-968c748ecf33 hit right: state INSIDE 
+2014-Nov-30 19:03:48:702 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:03:58:702 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:04:03:568 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on send fish to client callback hander
+2014-Nov-30 19:04:03:569 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send fish callback hander error
+2014-Nov-30 19:04:08:703 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:04:11:432 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - diconnect from server
+2014-Nov-30 19:04:28:051 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:04:28:058 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 2bc2a449-77ae-405e-a8a9-686d5b4e6b79
+2014-Nov-30 19:04:28:059 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:04:28:059 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-30 19:04:28:065 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-30 19:04:28:961 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.30.101
+2014-Nov-30 19:04:28:963 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"5663","ip":"14.162.172.138"}
+2014-Nov-30 19:04:28:965 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-30 19:04:29:503 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:04:29:505 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-30 19:04:29:525 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-30 19:04:29:525 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-30 19:04:29:529 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-30 19:04:29:529 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-30 19:04:29:530 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-30 19:04:29:530 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-30 19:04:31:655 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:04:31:656 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name 0f69d217-587c-486e-85e1-9d0c04214eaa
+2014-Nov-30 19:04:31:656 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-30 19:04:31:656 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:04:31:656 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:04:31:657 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name host
+2014-Nov-30 19:04:31:657 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool host
+2014-Nov-30 19:04:31:658 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:04:31:659 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:04:31:659 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:04:31:659 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:04:31:660 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 0 segments: client name host
+2014-Nov-30 19:04:31:660 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:04:36:288 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:04:36:291 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 08d65af0-c17f-4a54-aacd-77ae2d05c2e8
+2014-Nov-30 19:04:36:291 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host
+2014-Nov-30 19:04:36:294 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-30 19:04:36:366 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-30 19:04:37:472 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=5663
+2014-Nov-30 19:04:37:475 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"port":9696,"error":null,"ip":"192.168.30.101"}
+2014-Nov-30 19:04:37:477 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 192.168.30.101, 9696
+2014-Nov-30 19:04:37:479 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:04:37:481 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - start socket successful
+2014-Nov-30 19:04:37:481 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host success
+2014-Nov-30 19:04:37:484 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on join host callback hander
+2014-Nov-30 19:04:37:484 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - join host success
+2014-Nov-30 19:04:37:537 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-30 19:04:37:538 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-30 19:04:38:964 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:04:38:965 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name 82a6a400-fddd-48ce-9021-1e2554b2f387
+2014-Nov-30 19:04:38:965 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - add device
+2014-Nov-30 19:04:38:965 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - send add device: client name b8cf6c19-afb7-4073-be4c-3219a12cc94c
+2014-Nov-30 19:04:38:983 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - SEND MESSAGE {"cmd":"addDevice","device":{"clientName":"b8cf6c19-afb7-4073-be4c-3219a12cc94c","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 19:04:38:986 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=142 cap=2048: 7B 22 63 6D 64 22 3A 22 61 64 64 44 65 76 69 63...]
+2014-Nov-30 19:04:38:987 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-30 19:04:38:989 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - data recieved: {"cmd":"addDevice","device":{"clientName":"b8cf6c19-afb7-4073-be4c-3219a12cc94c","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 19:04:39:022 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:04:39:022 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:04:39:022 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name b8cf6c19-afb7-4073-be4c-3219a12cc94c
+2014-Nov-30 19:04:39:022 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool b8cf6c19-afb7-4073-be4c-3219a12cc94c
+2014-Nov-30 19:04:39:024 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:04:39:039 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - sent add device envent to all client
+2014-Nov-30 19:04:39:039 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client host
+2014-Nov-30 19:04:39:039 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:04:39:040 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:04:39:040 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:04:39:040 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:04:39:040 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name host
+2014-Nov-30 19:04:39:040 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:04:39:055 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client b8cf6c19-afb7-4073-be4c-3219a12cc94c
+2014-Nov-30 19:04:39:056 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client b8cf6c19-afb7-4073-be4c-3219a12cc94c
+2014-Nov-30 19:04:39:068 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-30 19:04:39:068 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.dal.server.socket.ClientSocketController  - MESSAGE RECEIVE: {"pool":{"boundary":{"height":480.0,"location":{"x":0.0,"y":0.0},"width":800.0},"deviceInfo":{"clientName":"b8cf6c19-afb7-4073-be4c-3219a12cc94c","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0},"fishes":[],"scale":1.0,"segments":[{"beginPoint":0.0,"endPoint":480.0,"neighbourClientName":null,"segmentDirection":"LEFT"}]},"cmd":"sendSettings"}
+2014-Nov-30 19:04:39:092 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:04:39:093 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:04:39:093 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name b8cf6c19-afb7-4073-be4c-3219a12cc94c
+2014-Nov-30 19:04:39:093 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name b8cf6c19-afb7-4073-be4c-3219a12cc94c
+2014-Nov-30 19:04:39:093 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:04:42:314 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - Create fish
+2014-Nov-30 19:04:42:320 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - request creat fish sent
+2014-Nov-30 19:04:42:321 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on request create fish callback hander
+2014-Nov-30 19:04:42:321 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add new fish to host: id 7290da3c-dfbd-4c32-ade6-0103e0f597b8
+2014-Nov-30 19:04:42:321 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create fish respond
+2014-Nov-30 19:04:42:321 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on create fish callback hander
+2014-Nov-30 19:04:42:321 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - create fish success
+2014-Nov-30 19:04:44:655 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish 7290da3c-dfbd-4c32-ade6-0103e0f597b8 hit top: state INSIDE 
+2014-Nov-30 19:04:44:656 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - after hit: return
+2014-Nov-30 19:04:46:039 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish 7290da3c-dfbd-4c32-ade6-0103e0f597b8 hit right: state INSIDE 
+2014-Nov-30 19:04:49:070 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:04:59:070 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:05:09:071 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:05:19:071 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:05:29:072 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:05:39:072 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:05:40:439 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on send fish to client callback hander
+2014-Nov-30 19:05:40:440 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send fish callback hander error
+2014-Nov-30 19:05:49:073 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:05:54:545 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - diconnect from server
+2014-Nov-30 19:06:54:809 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:06:54:822 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 9fba1078-e985-4edf-be32-ed43028e170e
+2014-Nov-30 19:06:54:824 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:06:54:824 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-30 19:06:54:832 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-30 19:06:55:818 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:06:55:826 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 8250a578-6a2a-4001-aa02-21c87c9cf95c
+2014-Nov-30 19:06:55:827 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:06:55:827 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-30 19:06:55:833 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-30 19:06:55:953 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.30.101
+2014-Nov-30 19:06:55:954 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"2663","ip":"14.162.172.138"}
+2014-Nov-30 19:06:55:955 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-30 19:06:56:306 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:06:56:308 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-30 19:06:56:327 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-30 19:06:56:327 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-30 19:06:56:331 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-30 19:06:56:331 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-30 19:06:56:331 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-30 19:06:56:332 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-30 19:06:56:925 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.30.101
+2014-Nov-30 19:06:56:927 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"1105","ip":"14.162.172.138"}
+2014-Nov-30 19:06:56:929 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-30 19:06:57:361 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:06:57:362 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-30 19:06:57:381 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-30 19:06:57:381 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-30 19:06:57:383 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-30 19:06:57:383 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-30 19:06:57:383 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-30 19:06:57:383 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-30 19:06:59:726 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:06:59:727 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name 4cc5d4e8-d0d0-43fb-9100-2d412e5f3f72
+2014-Nov-30 19:06:59:727 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-30 19:06:59:727 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:06:59:727 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:06:59:728 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name host
+2014-Nov-30 19:06:59:728 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool host
+2014-Nov-30 19:06:59:730 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:06:59:730 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:06:59:730 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:06:59:730 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:06:59:731 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 0 segments: client name host
+2014-Nov-30 19:06:59:731 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:07:09:871 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:07:09:871 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name 6d7f05fb-a53f-4583-b5bf-533476c779b8
+2014-Nov-30 19:07:09:871 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-30 19:07:09:872 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:07:09:872 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:07:09:872 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name host
+2014-Nov-30 19:07:09:872 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool host
+2014-Nov-30 19:07:09:874 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:07:09:874 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:07:09:875 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:07:09:875 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:07:09:875 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 0 segments: client name host
+2014-Nov-30 19:07:09:876 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:07:25:500 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:07:25:511 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 85ee3e46-55c7-4504-b441-e4c104087283
+2014-Nov-30 19:07:25:513 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:07:25:513 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-30 19:07:25:521 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-30 19:07:26:440 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.30.101
+2014-Nov-30 19:07:26:442 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"6577","ip":"14.162.172.138"}
+2014-Nov-30 19:07:26:444 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-30 19:07:26:822 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:07:26:824 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-30 19:07:26:844 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-30 19:07:26:845 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-30 19:07:26:849 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-30 19:07:26:849 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-30 19:07:26:849 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-30 19:07:26:849 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-30 19:07:28:862 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:07:28:863 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name 7ae5bdce-82b2-49ae-ae83-dedf0145ade9
+2014-Nov-30 19:07:28:863 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-30 19:07:28:863 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:07:28:863 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:07:28:863 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name host
+2014-Nov-30 19:07:28:863 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool host
+2014-Nov-30 19:07:28:864 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:07:28:865 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:07:28:865 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:07:28:865 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:07:28:865 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 0 segments: client name host
+2014-Nov-30 19:07:28:865 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:07:39:701 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:07:39:707 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 6b2bb4a0-0898-4600-a02f-be9c3e38d5a3
+2014-Nov-30 19:07:39:707 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host
+2014-Nov-30 19:07:39:711 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-30 19:07:39:785 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-30 19:07:40:505 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=6577
+2014-Nov-30 19:07:40:508 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"port":9696,"error":null,"ip":"192.168.30.101"}
+2014-Nov-30 19:07:40:510 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 192.168.30.101, 9696
+2014-Nov-30 19:07:40:512 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:07:40:514 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - start socket successful
+2014-Nov-30 19:07:40:514 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host success
+2014-Nov-30 19:07:40:518 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on join host callback hander
+2014-Nov-30 19:07:40:518 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - join host success
+2014-Nov-30 19:07:40:569 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-30 19:07:40:573 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-30 19:07:41:947 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:07:41:948 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name a72a17a4-0edc-458e-8bc5-bf7de94f9561
+2014-Nov-30 19:07:41:948 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - add device
+2014-Nov-30 19:07:41:948 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - send add device: client name fd791fd3-6064-4ae4-b4d1-d811bacc6276
+2014-Nov-30 19:07:41:966 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - SEND MESSAGE {"cmd":"addDevice","device":{"clientName":"fd791fd3-6064-4ae4-b4d1-d811bacc6276","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 19:07:41:969 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=142 cap=2048: 7B 22 63 6D 64 22 3A 22 61 64 64 44 65 76 69 63...]
+2014-Nov-30 19:07:41:970 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-30 19:07:41:973 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - data recieved: {"cmd":"addDevice","device":{"clientName":"fd791fd3-6064-4ae4-b4d1-d811bacc6276","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 19:07:42:014 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:07:42:014 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:07:42:014 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name fd791fd3-6064-4ae4-b4d1-d811bacc6276
+2014-Nov-30 19:07:42:014 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool fd791fd3-6064-4ae4-b4d1-d811bacc6276
+2014-Nov-30 19:07:42:016 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:07:42:030 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - sent add device envent to all client
+2014-Nov-30 19:07:42:030 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client host
+2014-Nov-30 19:07:42:031 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:07:42:031 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:07:42:032 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:07:42:032 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:07:42:032 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name host
+2014-Nov-30 19:07:42:032 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:07:42:047 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client fd791fd3-6064-4ae4-b4d1-d811bacc6276
+2014-Nov-30 19:07:42:047 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client fd791fd3-6064-4ae4-b4d1-d811bacc6276
+2014-Nov-30 19:07:42:059 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-30 19:07:42:060 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.dal.server.socket.ClientSocketController  - MESSAGE RECEIVE: {"pool":{"boundary":{"height":480.0,"location":{"x":0.0,"y":0.0},"width":800.0},"deviceInfo":{"clientName":"fd791fd3-6064-4ae4-b4d1-d811bacc6276","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0},"fishes":[],"scale":1.0,"segments":[{"beginPoint":0.0,"endPoint":480.0,"neighbourClientName":null,"segmentDirection":"LEFT"}]},"cmd":"sendSettings"}
+2014-Nov-30 19:07:42:084 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:07:42:084 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:07:42:084 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name fd791fd3-6064-4ae4-b4d1-d811bacc6276
+2014-Nov-30 19:07:42:084 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name fd791fd3-6064-4ae4-b4d1-d811bacc6276
+2014-Nov-30 19:07:42:084 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:07:44:689 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - Create fish
+2014-Nov-30 19:07:44:695 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - request creat fish sent
+2014-Nov-30 19:07:44:695 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on request create fish callback hander
+2014-Nov-30 19:07:44:695 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add new fish to host: id 6a2fc59b-dbd4-40c9-bc61-ef10e5e5f09b
+2014-Nov-30 19:07:44:695 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create fish respond
+2014-Nov-30 19:07:44:696 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on create fish callback hander
+2014-Nov-30 19:07:44:696 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - create fish success
+2014-Nov-30 19:07:47:030 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish 6a2fc59b-dbd4-40c9-bc61-ef10e5e5f09b hit top: state INSIDE 
+2014-Nov-30 19:07:47:031 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - after hit: return
+2014-Nov-30 19:07:48:413 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish 6a2fc59b-dbd4-40c9-bc61-ef10e5e5f09b hit right: state INSIDE 
+2014-Nov-30 19:07:52:060 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:07:53:335 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on send fish to client callback hander
+2014-Nov-30 19:07:53:336 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send fish callback hander error
+2014-Nov-30 19:07:53:336 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - error when send a fish to new pool
+2014-Nov-30 19:08:02:061 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:08:12:061 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:08:22:062 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:08:32:062 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:08:42:063 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:08:52:064 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:09:02:064 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:09:12:065 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:09:22:065 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:09:32:066 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:09:42:066 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:09:52:067 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:09:57:087 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - diconnect from server
+2014-Nov-30 19:10:11:859 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:10:11:870 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 40529f98-d01a-4af0-abdf-5918daba309c
+2014-Nov-30 19:10:11:870 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:10:11:871 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-30 19:10:11:876 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-30 19:10:16:083 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.30.101
+2014-Nov-30 19:10:16:084 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"8972","ip":"14.162.172.138"}
+2014-Nov-30 19:10:16:085 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-30 19:10:16:574 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:10:16:577 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-30 19:10:16:596 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-30 19:10:16:597 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-30 19:10:16:600 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-30 19:10:16:600 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-30 19:10:16:601 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-30 19:10:16:601 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-30 19:10:20:555 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:10:20:555 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name 57951c40-00da-41cd-9f6e-d6d2cb8d7112
+2014-Nov-30 19:10:20:555 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-30 19:10:20:556 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:10:20:556 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:10:20:556 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name host
+2014-Nov-30 19:10:20:556 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool host
+2014-Nov-30 19:10:20:558 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:10:20:559 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:10:20:559 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:10:20:559 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:10:20:559 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 0 segments: client name host
+2014-Nov-30 19:10:20:560 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:10:24:863 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:10:24:866 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 26e97eed-c880-4fa1-8f6c-63238401769f
+2014-Nov-30 19:10:24:866 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host
+2014-Nov-30 19:10:24:869 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-30 19:10:24:945 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-30 19:10:26:237 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=8972
+2014-Nov-30 19:10:26:240 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"port":9696,"error":null,"ip":"192.168.30.101"}
+2014-Nov-30 19:10:26:241 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 192.168.30.101, 9696
+2014-Nov-30 19:10:26:243 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:10:26:245 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - start socket successful
+2014-Nov-30 19:10:26:245 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host success
+2014-Nov-30 19:10:26:248 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on join host callback hander
+2014-Nov-30 19:10:26:248 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - join host success
+2014-Nov-30 19:10:26:276 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-30 19:10:26:277 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-30 19:10:28:098 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:10:28:098 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name 62797885-af01-4fec-9901-216ba0f79321
+2014-Nov-30 19:10:28:099 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - add device
+2014-Nov-30 19:10:28:099 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - send add device: client name 1d67892c-5024-4708-ade1-c387f81b14d1
+2014-Nov-30 19:10:28:117 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - SEND MESSAGE {"cmd":"addDevice","device":{"clientName":"1d67892c-5024-4708-ade1-c387f81b14d1","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 19:10:28:120 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=142 cap=2048: 7B 22 63 6D 64 22 3A 22 61 64 64 44 65 76 69 63...]
+2014-Nov-30 19:10:28:121 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-30 19:10:28:125 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - data recieved: {"cmd":"addDevice","device":{"clientName":"1d67892c-5024-4708-ade1-c387f81b14d1","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 19:10:28:161 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:10:28:162 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:10:28:162 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name 1d67892c-5024-4708-ade1-c387f81b14d1
+2014-Nov-30 19:10:28:162 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool 1d67892c-5024-4708-ade1-c387f81b14d1
+2014-Nov-30 19:10:28:163 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:10:28:174 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - sent add device envent to all client
+2014-Nov-30 19:10:28:174 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client host
+2014-Nov-30 19:10:28:174 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:10:28:175 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:10:28:175 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:10:28:175 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:10:28:175 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name host
+2014-Nov-30 19:10:28:175 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:10:28:190 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client 1d67892c-5024-4708-ade1-c387f81b14d1
+2014-Nov-30 19:10:28:191 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client 1d67892c-5024-4708-ade1-c387f81b14d1
+2014-Nov-30 19:10:28:203 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-30 19:10:28:204 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.dal.server.socket.ClientSocketController  - MESSAGE RECEIVE: {"pool":{"boundary":{"height":480.0,"location":{"x":0.0,"y":0.0},"width":800.0},"deviceInfo":{"clientName":"1d67892c-5024-4708-ade1-c387f81b14d1","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0},"fishes":[],"scale":1.0,"segments":[{"beginPoint":0.0,"endPoint":480.0,"neighbourClientName":null,"segmentDirection":"LEFT"}]},"cmd":"sendSettings"}
+2014-Nov-30 19:10:28:227 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:10:28:227 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:10:28:227 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name 1d67892c-5024-4708-ade1-c387f81b14d1
+2014-Nov-30 19:10:28:227 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name 1d67892c-5024-4708-ade1-c387f81b14d1
+2014-Nov-30 19:10:28:228 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:10:30:767 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - Create fish
+2014-Nov-30 19:10:30:773 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - request creat fish sent
+2014-Nov-30 19:10:30:774 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on request create fish callback hander
+2014-Nov-30 19:10:30:774 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add new fish to host: id 464bbc37-c771-4158-9796-b749a664463b
+2014-Nov-30 19:10:30:774 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create fish respond
+2014-Nov-30 19:10:30:775 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on create fish callback hander
+2014-Nov-30 19:10:30:775 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - create fish success
+2014-Nov-30 19:10:32:642 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish 464bbc37-c771-4158-9796-b749a664463b hit top: state INSIDE 
+2014-Nov-30 19:10:32:642 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - after hit: return
+2014-Nov-30 19:10:33:742 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish 464bbc37-c771-4158-9796-b749a664463b hit right: state INSIDE 
+2014-Nov-30 19:10:38:205 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:10:41:317 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on send fish to client callback hander
+2014-Nov-30 19:10:43:300 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - error: event target is not instance of list
+2014-Nov-30 19:10:48:206 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:10:58:206 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:11:02:845 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - send fish 464bbc37-c771-4158-9796-b749a664463b to client host
+2014-Nov-30 19:11:08:207 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:11:08:426 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - Create fish
+2014-Nov-30 19:11:08:426 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - request creat fish sent
+2014-Nov-30 19:11:08:426 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on request create fish callback hander
+2014-Nov-30 19:11:08:427 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add new fish to host: id 9eef0ced-7b64-4daf-b8cf-2fb5fd2d460f
+2014-Nov-30 19:11:08:427 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create fish respond
+2014-Nov-30 19:11:08:427 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on create fish callback hander
+2014-Nov-30 19:11:08:427 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - create fish success
+2014-Nov-30 19:11:12:805 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - diconnect from server
+2014-Nov-30 19:11:24:927 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:11:24:942 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 86ec7f5e-8c3a-4936-8654-f8eacb3a9772
+2014-Nov-30 19:11:24:944 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:11:24:944 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-30 19:11:24:952 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-30 19:11:26:247 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.30.101
+2014-Nov-30 19:11:26:249 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"3729","ip":"14.162.172.138"}
+2014-Nov-30 19:11:26:251 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-30 19:11:26:630 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:11:26:632 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-30 19:11:26:654 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-30 19:11:26:654 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-30 19:11:26:658 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-30 19:11:26:658 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-30 19:11:26:659 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-30 19:11:26:659 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-30 19:11:28:888 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:11:28:888 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name ca405b05-50f3-4946-bbe5-ed984c4ce41c
+2014-Nov-30 19:11:28:889 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-30 19:11:28:889 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:11:28:890 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:11:28:890 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name host
+2014-Nov-30 19:11:28:891 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool host
+2014-Nov-30 19:11:28:892 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:11:28:893 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:11:28:893 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:11:28:893 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:11:28:893 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 0 segments: client name host
+2014-Nov-30 19:11:28:894 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:11:39:839 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:11:39:844 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 6ec5d33b-4a3d-49ba-a745-82a41781c0eb
+2014-Nov-30 19:11:39:844 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host
+2014-Nov-30 19:11:39:846 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-30 19:11:39:923 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-30 19:11:41:035 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=3792
+2014-Nov-30 19:11:41:038 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":"host cannot found by key 3792"}
+2014-Nov-30 19:11:41:040 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - cannot join host
+2014-Nov-30 19:11:41:043 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on join host callback hander
+2014-Nov-30 19:11:41:043 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - cannot join host
+2014-Nov-30 19:11:41:044 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.presentation.WorldController  - Cannot join host
+2014-Nov-30 19:12:11:896 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:12:11:899 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 12ca6224-d6a6-4683-9c27-69065a56ea41
+2014-Nov-30 19:12:11:900 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host
+2014-Nov-30 19:12:11:902 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-30 19:12:11:981 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-30 19:12:13:098 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=3792
+2014-Nov-30 19:12:13:100 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":"host cannot found by key 3792"}
+2014-Nov-30 19:12:13:102 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - cannot join host
+2014-Nov-30 19:12:13:105 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on join host callback hander
+2014-Nov-30 19:12:13:105 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - cannot join host
+2014-Nov-30 19:12:13:106 [LWJGL Application] ERROR vn.edu.hust.student.dynamicpool.presentation.WorldController  - Cannot join host
+2014-Nov-30 19:12:32:945 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:12:32:948 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 1761768f-a4d2-4f3d-8657-82491e38fd22
+2014-Nov-30 19:12:32:949 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host
+2014-Nov-30 19:12:32:952 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-30 19:12:33:033 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-30 19:12:34:025 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=3729
+2014-Nov-30 19:12:34:028 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"port":9696,"error":null,"ip":"192.168.30.101"}
+2014-Nov-30 19:12:34:029 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 192.168.30.101, 9696
+2014-Nov-30 19:12:34:031 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:12:34:033 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - start socket successful
+2014-Nov-30 19:12:34:033 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host success
+2014-Nov-30 19:12:34:036 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on join host callback hander
+2014-Nov-30 19:12:34:037 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - join host success
+2014-Nov-30 19:12:34:075 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-30 19:12:34:077 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-30 19:12:35:605 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:12:35:606 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name 5000cc56-cb91-4faf-b5e6-a0b8232e4463
+2014-Nov-30 19:12:35:606 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - add device
+2014-Nov-30 19:12:35:606 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - send add device: client name 9175de1e-2077-4e27-8972-3bb5cb380ff6
+2014-Nov-30 19:12:35:625 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - SEND MESSAGE {"cmd":"addDevice","device":{"clientName":"9175de1e-2077-4e27-8972-3bb5cb380ff6","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 19:12:35:628 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=142 cap=2048: 7B 22 63 6D 64 22 3A 22 61 64 64 44 65 76 69 63...]
+2014-Nov-30 19:12:35:628 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-30 19:12:35:632 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - data recieved: {"cmd":"addDevice","device":{"clientName":"9175de1e-2077-4e27-8972-3bb5cb380ff6","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 19:12:35:677 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:12:35:677 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:12:35:678 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name 9175de1e-2077-4e27-8972-3bb5cb380ff6
+2014-Nov-30 19:12:35:678 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool 9175de1e-2077-4e27-8972-3bb5cb380ff6
+2014-Nov-30 19:12:35:679 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:12:35:693 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - sent add device envent to all client
+2014-Nov-30 19:12:35:693 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client host
+2014-Nov-30 19:12:35:693 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:12:35:694 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:12:35:694 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:12:35:694 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:12:35:694 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name host
+2014-Nov-30 19:12:35:694 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:12:35:710 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client 9175de1e-2077-4e27-8972-3bb5cb380ff6
+2014-Nov-30 19:12:35:710 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client 9175de1e-2077-4e27-8972-3bb5cb380ff6
+2014-Nov-30 19:12:35:723 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-30 19:12:35:723 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.dal.server.socket.ClientSocketController  - MESSAGE RECEIVE: {"pool":{"boundary":{"height":480.0,"location":{"x":0.0,"y":0.0},"width":800.0},"deviceInfo":{"clientName":"9175de1e-2077-4e27-8972-3bb5cb380ff6","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0},"fishes":[],"scale":1.0,"segments":[{"beginPoint":0.0,"endPoint":480.0,"neighbourClientName":null,"segmentDirection":"LEFT"}]},"cmd":"sendSettings"}
+2014-Nov-30 19:12:35:747 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:12:35:747 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:12:35:747 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name 9175de1e-2077-4e27-8972-3bb5cb380ff6
+2014-Nov-30 19:12:35:747 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name 9175de1e-2077-4e27-8972-3bb5cb380ff6
+2014-Nov-30 19:12:35:747 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:12:39:901 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - Create fish
+2014-Nov-30 19:12:39:908 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - request creat fish sent
+2014-Nov-30 19:12:39:908 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on request create fish callback hander
+2014-Nov-30 19:12:39:909 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add new fish to host: id 3d78c454-c6e2-476e-8047-eb85f302213a
+2014-Nov-30 19:12:39:909 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create fish respond
+2014-Nov-30 19:12:39:909 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on create fish callback hander
+2014-Nov-30 19:12:39:909 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - create fish success
+2014-Nov-30 19:12:41:777 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish 3d78c454-c6e2-476e-8047-eb85f302213a hit top: state INSIDE 
+2014-Nov-30 19:12:41:778 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - after hit: return
+2014-Nov-30 19:12:42:877 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish 3d78c454-c6e2-476e-8047-eb85f302213a hit right: state INSIDE 
+2014-Nov-30 19:12:45:724 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:12:52:828 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on send fish to client callback hander
+2014-Nov-30 19:12:55:724 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:13:05:725 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:13:08:962 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - diconnect from server
+2014-Nov-30 19:13:40:043 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:13:40:052 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 932fb174-a8f4-4960-bc75-dca60e160371
+2014-Nov-30 19:13:40:053 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:13:40:053 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host
+2014-Nov-30 19:13:40:060 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Reading config file from path conf/server.xml
+2014-Nov-30 19:13:44:096 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_reghost?port=9696&iplan=192.168.30.101
+2014-Nov-30 19:13:44:098 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"error":null,"key":"1968","ip":"14.162.172.138"}
+2014-Nov-30 19:13:44:100 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 104.131.13.155, 2225
+2014-Nov-30 19:13:44:573 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:13:44:576 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Starting Puppet Server.........
+2014-Nov-30 19:13:44:598 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.controller.HostMainController  - Puppet Server Started Successfully
+2014-Nov-30 19:13:44:598 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create host success
+2014-Nov-30 19:13:44:600 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on create host callback hander
+2014-Nov-30 19:13:44:601 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - create host success
+2014-Nov-30 19:13:44:601 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on create host call back hander
+2014-Nov-30 19:13:44:601 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.presentation.WorldController  - create host success
+2014-Nov-30 19:13:47:123 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:13:47:124 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name 75e52819-441a-4723-962c-5afedc068588
+2014-Nov-30 19:13:47:124 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send add device request
+2014-Nov-30 19:13:47:124 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:13:47:125 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:13:47:125 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name host
+2014-Nov-30 19:13:47:125 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool host
+2014-Nov-30 19:13:47:127 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:13:47:127 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:13:47:127 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:13:47:128 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:13:47:128 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 0 segments: client name host
+2014-Nov-30 19:13:47:128 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:14:00:882 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - Contruct
+2014-Nov-30 19:14:00:885 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add client pool 267d0ed2-c8f2-4b85-9bc3-aad4d920f244
+2014-Nov-30 19:14:00:885 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host
+2014-Nov-30 19:14:00:888 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Reading config file from path conf/client.xml
+2014-Nov-30 19:14:00:963 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - Starting Socket Client...
+2014-Nov-30 19:14:02:406 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - Sending 'GET' request to URL : http://104.131.13.155:8990/dp_auth?key=1968
+2014-Nov-30 19:14:02:409 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.client.http.HttpClient  - HTTP RESPONSE: 200 - {"port":9696,"error":null,"ip":"192.168.30.101"}
+2014-Nov-30 19:14:02:410 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Connect socket to server 192.168.30.101, 9696
+2014-Nov-30 19:14:02:412 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - Socket Client Start Sucessfully
+2014-Nov-30 19:14:02:414 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.controller.ClientMainController  - start socket successful
+2014-Nov-30 19:14:02:414 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - join host success
+2014-Nov-30 19:14:02:417 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on join host callback hander
+2014-Nov-30 19:14:02:417 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - join host success
+2014-Nov-30 19:14:02:470 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CREATED
+2014-Nov-30 19:14:02:471 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - OPENED
+2014-Nov-30 19:14:04:276 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - add device
+2014-Nov-30 19:14:04:277 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - send add device: client name 4ac059d4-e474-46db-9485-1a838cfcecce
+2014-Nov-30 19:14:04:277 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - add device
+2014-Nov-30 19:14:04:277 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl  - send add device: client name 20a9f000-9151-4929-95d7-07f17b9c09aa
+2014-Nov-30 19:14:04:290 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController  - SEND MESSAGE {"cmd":"addDevice","device":{"clientName":"20a9f000-9151-4929-95d7-07f17b9c09aa","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 19:14:04:292 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - RECEIVED: HeapBuffer[pos=0 lim=142 cap=2048: 7B 22 63 6D 64 22 3A 22 61 64 64 44 65 76 69 63...]
+2014-Nov-30 19:14:04:292 [NioProcessor-2] DEBUG org.apache.mina.filter.codec.ProtocolCodecFilter  - Processing a MESSAGE_RECEIVED for session 1
+2014-Nov-30 19:14:04:294 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.server.socket.NIOSocketServerController  - data recieved: {"cmd":"addDevice","device":{"clientName":"20a9f000-9151-4929-95d7-07f17b9c09aa","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0}}
+2014-Nov-30 19:14:04:328 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on add device request callback hander
+2014-Nov-30 19:14:04:328 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device success
+2014-Nov-30 19:14:04:328 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - add device request: client name 20a9f000-9151-4929-95d7-07f17b9c09aa
+2014-Nov-30 19:14:04:328 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add host pool 20a9f000-9151-4929-95d7-07f17b9c09aa
+2014-Nov-30 19:14:04:329 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:14:04:345 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - sent add device envent to all client
+2014-Nov-30 19:14:04:345 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client host
+2014-Nov-30 19:14:04:345 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client host
+2014-Nov-30 19:14:04:346 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:14:04:346 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:14:04:346 [NioProcessor-2] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name host
+2014-Nov-30 19:14:04:346 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name host
+2014-Nov-30 19:14:04:346 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:14:04:361 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send update setting for client 20a9f000-9151-4929-95d7-07f17b9c09aa
+2014-Nov-30 19:14:04:361 [NioProcessor-2] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - send setting to client 20a9f000-9151-4929-95d7-07f17b9c09aa
+2014-Nov-30 19:14:04:374 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - SENT: HeapBuffer[pos=0 lim=0 cap=0: empty]
+2014-Nov-30 19:14:04:374 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.dal.server.socket.ClientSocketController  - MESSAGE RECEIVE: {"pool":{"boundary":{"height":480.0,"location":{"x":0.0,"y":0.0},"width":800.0},"deviceInfo":{"clientName":"20a9f000-9151-4929-95d7-07f17b9c09aa","screenHeight":480.0,"screenSize":5.0,"screenWidth":800.0},"fishes":[],"scale":1.0,"segments":[{"beginPoint":0.0,"endPoint":480.0,"neighbourClientName":null,"segmentDirection":"LEFT"}]},"cmd":"sendSettings"}
+2014-Nov-30 19:14:04:398 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on update setting callback hander
+2014-Nov-30 19:14:04:398 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - recive setting success
+2014-Nov-30 19:14:04:398 [Thread-4] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - update setting: client name 20a9f000-9151-4929-95d7-07f17b9c09aa
+2014-Nov-30 19:14:04:398 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.bll.model.Pool  - updating 1 segments: client name 20a9f000-9151-4929-95d7-07f17b9c09aa
+2014-Nov-30 19:14:04:398 [Thread-4] DEBUG vn.edu.hust.student.dynamicpool.presentation.WorldController  - on add device call back hander
+2014-Nov-30 19:14:07:670 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - Create fish
+2014-Nov-30 19:14:07:676 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - request creat fish sent
+2014-Nov-30 19:14:07:677 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on request create fish callback hander
+2014-Nov-30 19:14:07:677 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - add new fish to host: id 292527eb-122a-4392-9c9e-c90e0b6c71a9
+2014-Nov-30 19:14:07:677 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create fish respond
+2014-Nov-30 19:14:07:677 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on create fish callback hander
+2014-Nov-30 19:14:07:678 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - create fish success
+2014-Nov-30 19:14:09:545 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish 292527eb-122a-4392-9c9e-c90e0b6c71a9 hit top: state INSIDE 
+2014-Nov-30 19:14:09:545 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - after hit: return
+2014-Nov-30 19:14:10:645 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - fish 292527eb-122a-4392-9c9e-c90e0b6c71a9 hit right: state INSIDE 
+2014-Nov-30 19:14:14:374 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:14:15:296 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - on send fish to client callback hander
+2014-Nov-30 19:14:24:375 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:14:29:499 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl  - create fish respond
+2014-Nov-30 19:14:29:501 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - on create fish callback hander
+2014-Nov-30 19:14:29:501 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.ClientBusinessLogicLayerImpl  - create fish success
+2014-Nov-30 19:14:31:387 [LWJGL Application] DEBUG vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - sent a new fish 292527eb-122a-4392-9c9e-c90e0b6c71a9 to a client host
+2014-Nov-30 19:14:34:375 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:14:37:652 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl  - send fish 292527eb-122a-4392-9c9e-c90e0b6c71a9 to client host
+2014-Nov-30 19:14:44:376 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:14:47:618 [LWJGL Application] INFO  vn.edu.hust.student.dynamicpool.bll.model.PoolManager  - send fish 292527eb-122a-4392-9c9e-c90e0b6c71a9 to client host
+2014-Nov-30 19:14:54:376 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:15:04:377 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:15:14:378 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:15:24:378 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:15:34:379 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - IDLE
+2014-Nov-30 19:15:39:285 [NioProcessor-2] INFO  org.apache.mina.filter.logging.LoggingFilter  - CLOSED

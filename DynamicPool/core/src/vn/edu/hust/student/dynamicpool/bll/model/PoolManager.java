@@ -111,20 +111,20 @@ public class PoolManager {
 		Boundary fishBoundary = fish.getBoundary();
 		Boundary poolBoundary = pool.getBoundary();
 		if (fishBoundary.getMinX() <= poolBoundary.getMinX()) {
-			logger.debug(String.format("fish %d hit left: state %s ",
-					fish.getFishId(), fish.getFishState()));
+			logger.debug("fish {} hit left: state {} ",
+					fish.getFishId(), fish.getFishState());
 			hitLeft(allFishes, pool, fish);
 		} else if (fishBoundary.getMaxX() >= poolBoundary.getMaxX()) {
-			logger.debug(String.format("fish %d hit right: state %s ",
-					fish.getFishId(), fish.getFishState()));
+			logger.debug("fish {} hit right: state {} ",
+					fish.getFishId(), fish.getFishState());
 			hitRight(allFishes, pool, fish);
 		} else if (fishBoundary.getMinY() <= poolBoundary.getMinY()) {
-			logger.debug(String.format("fish %d hit bottom: state %s ",
-					fish.getFishId(), fish.getFishState()));
+			logger.debug("fish {} hit bottom: state {} ",
+					fish.getFishId(), fish.getFishState());
 			hitBottom(allFishes, pool, fish);
 		} else if (fishBoundary.getMaxY() >= poolBoundary.getMaxY()) {
-			logger.debug(String.format("fish %d hit top: state %s ",
-					fish.getFishId(), fish.getFishState()));
+			logger.debug("fish {} hit top: state {} ",
+					fish.getFishId(), fish.getFishState());
 			hitTop(allFishes, pool, fish);
 		}
 		allFishes.get(pool.getDeviceInfo().getClientName()).add(fish);
@@ -205,9 +205,7 @@ public class PoolManager {
 		} else {
 			EventDestination.getInstance().dispatchFailEvent(
 					EventType.BLL_SEND_FISH);
-			logger.error("error when send a fish {} to new pool {}",
-					refFish.getFishId(), pool.getDeviceInfo()
-					.getClientName());
+			logger.error("error when send a fish to new pool");
 		}
 	}
 
@@ -218,7 +216,6 @@ public class PoolManager {
 	}
 
 	public IFish addFish(String clientName, IFish fish) {
-		fish.setFishId(++lastFishId);
 		logger.debug("add new fish to host: id {}", fish.getFishId());
 		Pool pool = getPool(clientName);
 		if (pool == null) {
