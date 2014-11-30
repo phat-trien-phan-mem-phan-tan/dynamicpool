@@ -13,6 +13,7 @@ import vn.edu.hust.student.dynamicpool.bll.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.bll.model.ETrajectoryType;
 import vn.edu.hust.student.dynamicpool.bll.model.FishType;
 import vn.edu.hust.student.dynamicpool.bll.model.IFish;
+import vn.edu.hust.student.dynamicpool.bll.model.PoolManager;
 import vn.edu.hust.student.dynamicpool.events.EventDestination;
 import vn.edu.hust.student.dynamicpool.events.EventType;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
@@ -168,7 +169,9 @@ public class WorldController {
 	private void loadHostGameResources() {
 		Assets.instance.initGameAssets();
 		WorldRenderer worldRenderer = game.getWorldRenderer();
-		gameScreen = new HostGameScreen(worldRenderer, this);
+		HostBusinessLogicLayerImpl hostBusinessLogicLayer = (HostBusinessLogicLayerImpl)businessLogicLayer;
+		PoolManager hostPoolManager = hostBusinessLogicLayer.getHostPoolManager();
+		gameScreen = new HostGameScreen(worldRenderer, this, hostPoolManager);
 	}
 
 	private void loadDeviceInfoScreenResource() {

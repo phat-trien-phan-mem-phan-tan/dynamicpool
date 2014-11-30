@@ -5,18 +5,22 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.sun.prism.GraphicsPipeline.ShaderType;
 
+import vn.edu.hust.student.dynamicpool.bll.model.PoolManager;
 import vn.edu.hust.student.dynamicpool.presentation.WorldController;
 import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
+import vn.edu.hust.student.dynamicpool.presentation.gameobject.WidePoolUI;
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 public class HostGameScreen extends GameScreen {
 
 	private BitmapFont defaultFont;
+	private WidePoolUI widePoolUI;
 
 	public HostGameScreen(WorldRenderer worldRenderer,
-			WorldController worldController) {
+			WorldController worldController, PoolManager poolManager) {
 		super(worldRenderer, worldController);
+		widePoolUI = new WidePoolUI(poolManager);
 	}
 	
 	@Override
@@ -43,7 +47,7 @@ public class HostGameScreen extends GameScreen {
 		renderKey();
 		renderHubControl();
 		worldRenderer.endRender();
-//		renderWidePool();
+		renderWidePool();
 	}
 
 	private void renderKey() {
@@ -57,9 +61,6 @@ public class HostGameScreen extends GameScreen {
 	ShapeRenderer shapeRenderer = new ShapeRenderer();
 	private void renderWidePool() {
 		shapeRenderer.setProjectionMatrix(worldRenderer.getCamera().combined);
-		shapeRenderer.begin(ShapeType.Filled);
-		shapeRenderer.setColor(0, 1, 0, 1);
-		shapeRenderer.circle(AppConst.width/2, AppConst.height/2, 20);
-		shapeRenderer.end();
+		widePoolUI.draw(this.shapeRenderer);
 	}
 }

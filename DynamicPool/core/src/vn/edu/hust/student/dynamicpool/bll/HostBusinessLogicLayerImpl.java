@@ -210,4 +210,8 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 			logger.error("send fish callback hander error");
 		}
 	}
+
+	public PoolManager getHostPoolManager() {
+		return this.hostPoolManager;
+	}
 }
