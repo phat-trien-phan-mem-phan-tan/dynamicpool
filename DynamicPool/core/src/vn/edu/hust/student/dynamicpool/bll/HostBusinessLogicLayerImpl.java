@@ -10,6 +10,7 @@ import vn.edu.hust.student.dynamicpool.bll.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.bll.model.Fish;
 import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 import vn.edu.hust.student.dynamicpool.bll.model.Pool;
+import vn.edu.hust.student.dynamicpool.bll.model.HostPoolManager;
 import vn.edu.hust.student.dynamicpool.bll.model.PoolManager;
 import vn.edu.hust.student.dynamicpool.dal.HostDataAccessLayerImpl;
 import vn.edu.hust.student.dynamicpool.events.EventDestination;
@@ -19,13 +20,12 @@ import com.eposi.eventdriven.Event;
 import com.eposi.eventdriven.implementors.BaseEventListener;
 
 public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
-	private PoolManager hostPoolManager = new PoolManager();
+	private HostPoolManager hostPoolManager = new HostPoolManager();
 	private Logger logger = LoggerFactory
 			.getLogger(HostBusinessLogicLayerImpl.class);
 
 	public HostBusinessLogicLayerImpl() {
 		this.dataAccessLayer = new HostDataAccessLayerImpl();
-		hostPoolManager.setName("host");
 	}
 
 	@Override
@@ -96,7 +96,7 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 				logger.info("add device request: client name {}",
 						deviceInfo.getClientName());
 				Pool pool = new Pool(deviceInfo);
-				hostPoolManager.addHostPool(pool);
+				hostPoolManager.addPool(pool);
 				if (hostPoolManager.size() == 1) {
 					try {
 						dataAccessLayer.updateSettingToClient(
@@ -215,7 +215,7 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 		}
 	}
 
-	public PoolManager getHostPoolManager() {
+	public HostPoolManager getHostPoolManager() {
 		return this.hostPoolManager;
 	}
 

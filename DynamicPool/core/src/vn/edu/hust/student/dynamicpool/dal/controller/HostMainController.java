@@ -15,6 +15,7 @@ import org.eclipse.jetty.util.ajax.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import vn.edu.hust.student.dynamicpool.bll.model.HostPoolManager;
 import vn.edu.hust.student.dynamicpool.bll.model.PoolManager;
 import vn.edu.hust.student.dynamicpool.dal.client.http.HttpClientController;
 import vn.edu.hust.student.dynamicpool.dal.client.socket.SocketClientController;
@@ -78,7 +79,7 @@ public class HostMainController {
 		}
 
 		socketClientController = new SocketClientController();
-		setPoolManager(new PoolManager());
+		setPoolManager(new HostPoolManager());
 		setClientManager(new ClientManager());
 		setDispatchers(new ArrayList<BaseEventDispatcher>());
 	}

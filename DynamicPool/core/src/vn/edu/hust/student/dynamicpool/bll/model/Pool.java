@@ -140,27 +140,7 @@ public class Pool {
 		return null;
 	}
 
-	public void updateSetting(Pool clientPoolSetting) {
-		this.deviceInfo.setClientName(clientPoolSetting.deviceInfo
-				.getClientName());
-		this.getBoundary().setWidth(clientPoolSetting.getBoundary().getWidth());
-		this.getBoundary().setHeight(
-				clientPoolSetting.getBoundary().getHeight());
-		logger.debug("updating {} segments: client name {}", clientPoolSetting
-				.getSegments().size(), deviceInfo.getClientName());
-		this.updateSegments(clientPoolSetting.getSegments());
-		this.scale = clientPoolSetting.scale;
-	}
-
-	private void updateSegments(List<Segment> clientSegments) {
-		this.getSegments().clear();
-		for (Segment clientSegment : clientSegments) {
-			Segment segment = new Segment(clientSegment.getSegmentDirection(),
-					clientSegment.getBeginPoint(), clientSegment
-							.getEndPoint());
-			this.getSegments().add(segment);
-		}
-	}
+	
 	
 	@Override
 	public Pool clone() {

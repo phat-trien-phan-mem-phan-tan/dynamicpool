@@ -1,16 +1,14 @@
 package vn.edu.hust.student.dynamicpool.presentation.screen;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
-import com.sun.prism.GraphicsPipeline.ShaderType;
-
-import vn.edu.hust.student.dynamicpool.bll.model.PoolManager;
+import vn.edu.hust.student.dynamicpool.bll.model.HostPoolManager;
 import vn.edu.hust.student.dynamicpool.presentation.WorldController;
 import vn.edu.hust.student.dynamicpool.presentation.WorldRenderer;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
 import vn.edu.hust.student.dynamicpool.presentation.gameobject.WidePoolUI;
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
+
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 public class HostGameScreen extends GameScreen {
 
@@ -18,9 +16,9 @@ public class HostGameScreen extends GameScreen {
 	private WidePoolUI widePoolUI;
 
 	public HostGameScreen(WorldRenderer worldRenderer,
-			WorldController worldController, PoolManager poolManager) {
+			WorldController worldController, HostPoolManager hostPoolManager) {
 		super(worldRenderer, worldController);
-		widePoolUI = new WidePoolUI(poolManager);
+		widePoolUI = new WidePoolUI(hostPoolManager);
 	}
 	
 	@Override

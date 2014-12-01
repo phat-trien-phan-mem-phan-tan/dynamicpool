@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import vn.edu.hust.student.dynamicpool.bll.model.ClientPoolManager;
 import vn.edu.hust.student.dynamicpool.bll.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.bll.model.ETrajectoryType;
 import vn.edu.hust.student.dynamicpool.bll.model.Fish;
@@ -12,6 +13,7 @@ import vn.edu.hust.student.dynamicpool.bll.model.FishFactory;
 import vn.edu.hust.student.dynamicpool.bll.model.FishType;
 import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 import vn.edu.hust.student.dynamicpool.bll.model.Pool;
+import vn.edu.hust.student.dynamicpool.bll.model.HostPoolManager;
 import vn.edu.hust.student.dynamicpool.bll.model.PoolManager;
 import vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl;
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
@@ -25,8 +27,7 @@ import com.eposi.eventdriven.implementors.BaseEventListener;
 public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 
 	protected DataAccessLayer dataAccessLayer;
-	private PoolManager clientPoolManager = new PoolManager();
-	private Pool clientPool = new Pool();
+	private ClientPoolManager clientPoolManager = new ClientPoolManager();
 	private String keyOfHost;
 	private Logger logger = LoggerFactory
 			.getLogger(ClientBusinessLogicLayerImpl.class);
@@ -34,7 +35,6 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 	public ClientBusinessLogicLayerImpl() {
 		this.dataAccessLayer = new ClientDataAccessLayerImpl();
 		registerEvents();
-		clientPoolManager.addClientPool(clientPool);
 	}
 
 	protected void registerEvents() {
@@ -104,7 +104,7 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 				Pool clientPoolSetting = (Pool) addDeviceResultObject;
 				logger.info("update setting: client name {}", clientPoolSetting
 						.getDeviceInfo().getClientName());
-				clientPool.updateSetting(clientPoolSetting);
+				clientPoolManager.updateSetting(clientPoolSetting);
 				EventDestination.getInstance().dispatchSuccessEvent(
 						EventType.BLL_ADD_DEVICE);
 				return;
@@ -118,7 +118,7 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 
 	@Override
 	public List<IFish> getFishes() {
-		return clientPool.getFishes();
+		return clientPoolManager.getFishes();
 	}
 
 	@Override
@@ -138,7 +138,7 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 		logger.debug("Create fish");
 		IFish fish = FishFactory.createFishWithTrajectoryType(fishType,
 				trajectoryType, width, height);
-		this.clientPool.addFish(fish);
+		clientPoolManager.addFish(fish);
 		dataAccessLayer.requestCreateFish(fish);
 	}
 
@@ -151,7 +151,7 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 			if (IFish.class.isInstance(targetObject)) {
 				logger.info("create fish success");
 				IFish fish = (IFish) targetObject;
-				clientPool.addFish(fish);
+				clientPoolManager.addFish(fish);
 				EventDestination.getInstance().dispatchSuccessEventWithObject(
 						EventType.BLL_CREATE_FISH, targetObject);
 				return;
@@ -168,16 +168,9 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 	public void onSendFishResponseCallbackHander(Event event) {
 		logger.debug("recieved a fish event");
 		if (EventDestination.parseEventToBoolean(event)) {
-			Object resultObject = EventDestination.parseEventToTargetObject(event);
-			if (resultObject instanceof IFish) {
-				IFish recievedFish = (IFish)resultObject;
-				IFish existFish = this.clientPool.getFish(recievedFish.getFishId());
-				if (existFish == null) {
-					logger.debug("add new fish to pool");
-					this.clientPool.addFish(recievedFish);
-				} else {
-					logger.debug("fish is exist, update info if nescessary");
-				}
+			Object fishObject = EventDestination.parseEventToTargetObject(event);
+			if (fishObject instanceof IFish) {
+				clientPoolManager.addFish((IFish)fishObject);
 				return;
 			}
 			logger.error("result not is an instance of IFish");
@@ -185,14 +178,7 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 			logger.error("delete a fish event");
 			Object resultObject = EventDestination.parseEventToTargetObject(event);
 			if (resultObject instanceof IFish) {
-				IFish recievedFish = (IFish)resultObject;
-				IFish existFish = this.clientPool.getFish(recievedFish.getFishId());
-				if (existFish != null) {
-					logger.debug("remove  fish in pool");
-					this.clientPool.removeFish(existFish);
-				} else {
-					logger.debug("fish is not exist, nothing to do");
-				}
+					clientPoolManager.removeFish(((IFish)resultObject).getFishId());
 				return;
 			}
 			logger.error("result not is an instance of IFish");
@@ -209,23 +195,6 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 
 	}
 
-	@Deprecated
-	public void onCollision(Event e) {
-
-	}
-
-	public DataAccessLayer getDataAccessLayer() {
-		return dataAccessLayer;
-	}
-
-	public Pool getPool() {
-		return clientPool;
-	}
-
-	public void setPool(Pool pool) {
-		this.clientPool = pool;
-	}
-
 	@Override
 	public String getKeyOfHost() {
 		return keyOfHost;
@@ -234,10 +203,4 @@ public class ClientBusinessLogicLayerImpl implements BusinessLogicLayer {
 	public void saveKey(String keyOfHost) {
 		this.keyOfHost = keyOfHost;
 	}
-
-	public String getKey() {
-		return keyOfHost;
-	}
-	
-	
 }

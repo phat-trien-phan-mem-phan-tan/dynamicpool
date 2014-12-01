@@ -1,6 +1,7 @@
 package vn.edu.hust.student.dynamicpool.presentation.gameobject;
 
 import vn.edu.hust.student.dynamicpool.bll.model.Boundary;
+import vn.edu.hust.student.dynamicpool.bll.model.HostPoolManager;
 import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 import vn.edu.hust.student.dynamicpool.bll.model.Point;
 import vn.edu.hust.student.dynamicpool.bll.model.Pool;
@@ -19,10 +20,10 @@ public class WidePoolUI {
 	private static final Color FISH_COLOR = new Color(255, 255, 0, 1);
 	private static final Color SEGMENT_COLOR = new Color(0, 255, 255, 0.1f);
 	CordinateConvert convert = new CordinateConvert();
-	private PoolManager hostPoolManager;
+	private HostPoolManager hostPoolManager;
 	private ShapeRenderer shapeRenderer;
 
-	public WidePoolUI(PoolManager poolManager) {
+	public WidePoolUI(HostPoolManager poolManager) {
 		this.hostPoolManager = poolManager;
 	}
 

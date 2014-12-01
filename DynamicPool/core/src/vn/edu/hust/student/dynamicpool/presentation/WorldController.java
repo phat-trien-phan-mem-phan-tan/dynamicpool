@@ -12,8 +12,8 @@ import vn.edu.hust.student.dynamicpool.bll.HostBusinessLogicLayerImpl;
 import vn.edu.hust.student.dynamicpool.bll.model.DeviceInfo;
 import vn.edu.hust.student.dynamicpool.bll.model.ETrajectoryType;
 import vn.edu.hust.student.dynamicpool.bll.model.FishType;
+import vn.edu.hust.student.dynamicpool.bll.model.HostPoolManager;
 import vn.edu.hust.student.dynamicpool.bll.model.IFish;
-import vn.edu.hust.student.dynamicpool.bll.model.PoolManager;
 import vn.edu.hust.student.dynamicpool.events.EventDestination;
 import vn.edu.hust.student.dynamicpool.events.EventType;
 import vn.edu.hust.student.dynamicpool.presentation.assets.Assets;
@@ -170,7 +170,7 @@ public class WorldController {
 		Assets.instance.initGameAssets();
 		WorldRenderer worldRenderer = game.getWorldRenderer();
 		HostBusinessLogicLayerImpl hostBusinessLogicLayer = (HostBusinessLogicLayerImpl)businessLogicLayer;
-		PoolManager hostPoolManager = hostBusinessLogicLayer.getHostPoolManager();
+		HostPoolManager hostPoolManager = hostBusinessLogicLayer.getHostPoolManager();
 		gameScreen = new HostGameScreen(worldRenderer, this, hostPoolManager);
 	}
 
