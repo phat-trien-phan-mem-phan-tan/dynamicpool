@@ -26,8 +26,8 @@ public class CordinateConvert {
 
 	public Boundary convertBoundary(Boundary boundary) {
 		return new Boundary(convertLocation(boundary.getLocation()),
-				convertFloat(boundary.getWidth()),
-				convertFloat(boundary.getHeight()));
+				convertValue(boundary.getWidth()),
+				convertValue(boundary.getHeight()));
 	}
 
 	public Point convertLocation(Point point) {
@@ -35,7 +35,7 @@ public class CordinateConvert {
 		return new Point(p.getX()+vituralBoundary.getMinX(), p.getY()+vituralBoundary.getMinY());
 	}
 	
-	private float convertFloat(float value) {
+	public float convertValue(float value) {
 		return value * scale;
 	}
 
@@ -48,5 +48,13 @@ public class CordinateConvert {
 		b.getLocation().setX(b.getWidth()/2+b.getLocation().getX());
 		b.getLocation().setY(b.getHeight()/2+b.getLocation().getY());
 		return b;
+	}
+
+	public float convertLocationX(float value) {
+		return vituralBoundary.getMinX() + convertValue(value);
+	}
+	
+	public float convertLocationY(float value) {
+		return vituralBoundary.getMinY() + convertValue(value);
 	}
 }

@@ -50,6 +50,7 @@ public class Fish implements IFish {
 
 	@Override
 	public Trajectory getTrajectory() {
+		if (trajectory == null) return new NoneTrajectory();
 		return trajectory;
 	}
 
@@ -77,7 +78,7 @@ public class Fish implements IFish {
 
 	@Override
 	public void updateLocation(float deltaTime) {
-		Point updateLocation = trajectory.updateLocation(deltaTime);
+		Point updateLocation = getTrajectory().updateLocation(deltaTime);
 		boundary.getLocation().setLocation(updateLocation.getX(), updateLocation.getY());
 	}
 

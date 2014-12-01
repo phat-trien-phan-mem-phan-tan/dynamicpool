@@ -5,10 +5,7 @@ import vn.edu.hust.student.dynamicpool.bll.model.HostPoolManager;
 import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 import vn.edu.hust.student.dynamicpool.bll.model.Point;
 import vn.edu.hust.student.dynamicpool.bll.model.Pool;
-import vn.edu.hust.student.dynamicpool.bll.model.PoolManager;
 import vn.edu.hust.student.dynamicpool.bll.model.Segment;
-import vn.edu.hust.student.dynamicpool.events.EventDestination;
-import vn.edu.hust.student.dynamicpool.events.EventType;
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 import com.badlogic.gdx.graphics.Color;
@@ -18,7 +15,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 public class WidePoolUI {
 	private static final Color POOL_COLOR = new Color(255, 255, 255, 0.1f);
 	private static final Color FISH_COLOR = new Color(255, 255, 0, 1);
-	private static final Color SEGMENT_COLOR = new Color(0, 255, 255, 0.1f);
+	private static final Color SEGMENT_COLOR = new Color(0, 255, 0, 0.1f);
 	CordinateConvert convert = new CordinateConvert();
 	private HostPoolManager hostPoolManager;
 	private ShapeRenderer shapeRenderer;
@@ -44,7 +41,7 @@ public class WidePoolUI {
 			}
 		}
 		shapeRenderer.end();
-		shapeRenderer.begin(ShapeType.Line);
+		shapeRenderer.begin(ShapeType.Filled);
 		shapeRenderer.setColor(SEGMENT_COLOR);
 		for (Pool pool : hostPoolManager.getPools()) {
 			for (Segment segment : pool.getSegments()) {
@@ -56,27 +53,27 @@ public class WidePoolUI {
 
 	private void drawSegment(Pool pool, Segment segment) {
 		float x1 = 0, y1 = 0, x2 = 0, y2 = 0;
-		Boundary poolBoundary = pool.getBoundary();
+		Boundary poolBoundary = convert.convertBoundary(pool.getBoundary());
 		switch (segment.getSegmentDirection()) {
 		case LEFT:
-			x1 = x2 = poolBoundary.getMinX();
-			y1 = segment.getBeginPoint();
-			y2 = segment.getEndPoint();
+			x1 = x2 = convert.convertLocationX(poolBoundary.getMinX());
+			y1 = convert.convertLocationY(segment.getBeginPoint());
+			y2 = convert.convertValue(segment.getEndPoint());
 			break;
 		case RIGHT:
-			x1 = x2 = poolBoundary.getMaxX();
-			y1 = segment.getBeginPoint();
-			y2 = segment.getEndPoint();
+//			x1 = x2 = poolBoundary.getMaxX();
+//			y1 = segment.getBeginPoint();
+//			y2 = segment.getEndPoint();
 			break;
 		case TOP:
-			y1 = y2 = poolBoundary.getMaxY();
-			x1 = segment.getBeginPoint();
-			x2 = segment.getEndPoint();
+			y1 = y2 = convert.convertLocationY(poolBoundary.getMaxY());
+			x1 = convert.convertLocationX(segment.getBeginPoint());
+			x2 = convert.convertLocationX(segment.getEndPoint());
 			break;
 		case BOTTOM:
-			y1 = y2 = poolBoundary.getMinY();
-			x1 = segment.getBeginPoint();
-			x2 = segment.getEndPoint();
+//			y1 = y2 = poolBoundary.getMinY();
+//			x1 = segment.getBeginPoint();
+//			x2 = segment.getEndPoint();
 			break;
 		default:
 			return;
