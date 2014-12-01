@@ -195,7 +195,7 @@ public class PoolManager {
 		}
 		fish.setFishState(FishState.PASSING);
 		if (segment.getNeighbourClientName() != null) {
-			IFish newFishForHostPoolManager = fish.clone();
+			IFish newFishForHostPoolManager = fish.cloneIgnoreFishState();
 			newFishForHostPoolManager.setFishState(FishState.OUTSIDE);
 			allFishes.get(segment.getNeighbourClientName()).add(newFishForHostPoolManager);
 			logger.debug("host: added fish {} to client {} ({})", newFishForHostPoolManager.getFishId(), segment.getNeighbourClientName(), newFishForHostPoolManager.getFishState());
