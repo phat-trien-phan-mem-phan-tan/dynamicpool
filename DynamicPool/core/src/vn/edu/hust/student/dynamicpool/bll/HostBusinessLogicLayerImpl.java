@@ -25,6 +25,7 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 
 	public HostBusinessLogicLayerImpl() {
 		this.dataAccessLayer = new HostDataAccessLayerImpl();
+		hostPoolManager.setName("host");
 	}
 
 	@Override
@@ -165,12 +166,12 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 					return;
 				}
 				fish = hostPoolManager.addFish(clientName, fish);
-				try {
-					dataAccessLayer.respondCreateFishRequest(clientName, true,
-							fish);
-				} catch (DALException e) {
-					logger.error("cannot respond create fish event {}", e);
-				}
+//				try {
+//					dataAccessLayer.respondCreateFishRequest(clientName, true,
+//							fish);
+//				} catch (DALException e) {
+//					logger.error("cannot respond create fish event {}", e);
+//				}
 			}
 		}
 	}

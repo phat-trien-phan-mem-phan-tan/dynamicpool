@@ -230,7 +230,9 @@ public class WorldController {
 	}
 
 	public void updateFishsCordinate(float deltaTime) {
-		businessLogicLayer.update(deltaTime);
+//		businessLogicLayer.update(deltaTime);
+		// test
+		businessLogicLayer.update(0.03f);
 	}
 
 	public void exit() {

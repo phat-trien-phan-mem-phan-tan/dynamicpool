@@ -14,6 +14,10 @@ import vn.edu.hust.student.dynamicpool.events.EventType;
 public class PoolManager {
 	private Logger logger = LoggerFactory.getLogger(PoolManager.class);
 	private List<Pool> pools;
+	private String name = "client";
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public PoolManager() {
 		pools = new ArrayList<Pool>();
@@ -74,13 +78,12 @@ public class PoolManager {
 					detectCollisionForInsideFish(allFishes, pool, fish);
 					break;
 				case PASSING:
+					if (fish.getBoundary().isOutside(pool.getBoundary())) {
+						logger.debug("remove fish {} from pool {}", fish.getFishId(), pool.getDeviceInfo().getClientName());
+						break;
+					}
+					allFishes.get(pool.getDeviceInfo().getClientName()).add(fish);
 					break;
-//					if (fish.getBoundary().isOutside(pool.getBoundary())) {
-//						logger.debug("remove fish {} from pool {}", fish.getFishId(), pool.getDeviceInfo().getClientName());
-//						break;
-//					}
-//					allFishes.get(pool.getDeviceInfo().getClientName()).add(fish);
-//					break;
 				case OUTSIDE:
 					if (!fish.getBoundary().isOutside(pool.getBoundary())) {
 						logger.debug("fish {} begin to draw in pool {}", fish.getFishId(), pool.getDeviceInfo().getClientName());
@@ -187,6 +190,9 @@ public class PoolManager {
 
 	private void movingOverNeighbourPool(Map<String, List<IFish>> allFishes,
 			IFish fish, Segment segment) {
+		if (name.equals("host")) { 
+			logger.debug("Moving fish {} over in {}", fish.getFishId(), name);
+		}
 		fish.setFishState(FishState.PASSING);
 		if (segment.getNeighbourClientName() != null) {
 			IFish newFishForHostPoolManager = fish.clone();
