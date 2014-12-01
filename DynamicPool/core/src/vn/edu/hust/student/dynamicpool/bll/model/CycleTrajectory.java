@@ -2,6 +2,8 @@ package vn.edu.hust.student.dynamicpool.bll.model;
 
 import java.util.Random;
 
+import org.eclipse.jetty.util.ajax.JSON;
+
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
 
 public class CycleTrajectory extends Trajectory {
@@ -11,6 +13,8 @@ public class CycleTrajectory extends Trajectory {
 
 	private float a = 80;
 	private float d = 0.2f;
+	@flexjson.JSON(include=false)
+	JSON json = new JSON(); 
 
 	public CycleTrajectory(Boundary fishBoundary) {
 		super(fishBoundary);
@@ -72,6 +76,17 @@ public class CycleTrajectory extends Trajectory {
 		t.init(centerX, centerY, a, d);
 		t.setTimeState(this.getTimeState());
 		return t;
+	}
+
+	@Override
+	public String getJsonEncode() {
+		return json.toJSON(new float[] {centerX, centerY, a, d});
+	}
+
+	@Override
+	public void setJsonEncode(String jsonEncode) {
+		float[] params = (float[]) json.fromJSON(jsonEncode);
+		init(params[0], params[1], params[2], params[3]);
 	}
 
 }

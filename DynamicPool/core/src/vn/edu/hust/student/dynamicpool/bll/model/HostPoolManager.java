@@ -1,9 +1,7 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +20,7 @@ public class HostPoolManager implements PoolManager {
 	public List<Pool> getPools() {
 		return pools;
 	}
+
 	public void addPool(Pool pool) {
 		logger.debug("add host pool {}", pool.getDeviceInfo().getClientName());
 		Point location = getDefaultLocation(pool);
@@ -60,175 +59,157 @@ public class HostPoolManager implements PoolManager {
 		}
 	}
 
+	class MovingFish {
+		public MovingFish(IFish fish, Pool pool, String neighbour) {
+			this.fish = fish;
+			this.fromPool = pool;
+			this.neighbourClientName = neighbour;
+		}
+		public IFish fish;
+		public Pool fromPool;
+		public String neighbourClientName;
+		public void removeFish() {
+			fromPool.removeFish(fish);
+		}
+		public void moveTo(Pool neighbourPool) {
+			neighbourPool.addFish(fish);
+		}
+	}
+
+	private List<MovingFish> movingFishes = new ArrayList<HostPoolManager.MovingFish>();
+
 	private void detectCollision() {
-		Map<String, List<IFish>> allFishes = createFishContainer();
 		for (Pool pool : pools) {
 			for (IFish fish : pool.getFishes()) {
 				switch (fish.getFishState()) {
 				case INSIDE:
-					detectCollisionForInsideFish(allFishes, pool, fish);
-					break;
-				case PASSING:
-					if (fish.getBoundary().isOutside(pool.getBoundary())) {
-						logger.debug("remove fish {} from pool {}", fish.getFishId(), pool.getDeviceInfo().getClientName());
-						break;
+					String neighbour = detectCollisionForInsideFish(pool, fish);
+					if (neighbour != null) {
+						movingFishes.add(new MovingFish(fish, pool, neighbour));
 					}
-					allFishes.get(pool.getDeviceInfo().getClientName()).add(fish);
 					break;
 				case OUTSIDE:
-					if (!fish.getBoundary().isOutside(pool.getBoundary())) {
-						logger.debug("fish {} begin to draw in pool {}", fish.getFishId(), pool.getDeviceInfo().getClientName());
-						fish.setFishState(FishState.RETURN);
-					}
-					allFishes.get(pool.getDeviceInfo().getClientName()).add(fish);
-					break;
+				case PASSING:
 				case RETURN:
 				default:
 					Boundary poolBoundary = pool.getBoundary();
 					Boundary fishBoundary = fish.getBoundary();
 					if (fishBoundary.isInside(poolBoundary)) {
-						logger.debug("new fish {} come inside pool {}", fish.getFishId(), pool.getDeviceInfo().getClientName());
+						logger.debug("new fish {} come inside pool {}", fish
+								.getFishId(), pool.getDeviceInfo()
+								.getClientName());
 						fish.setFishState(FishState.INSIDE);
 					}
-					allFishes.get(pool.getDeviceInfo().getClientName()).add(
-							fish);
 					break;
 				}
 			}
 		}
-		putFishsFromContainerToPools(allFishes);
+		movingFish();
 	}
 
-	private Map<String, List<IFish>> createFishContainer() {
-		Map<String, List<IFish>> allFishes = new HashMap<String, List<IFish>>();
-		for (Pool pool : pools) {
-			allFishes.put(pool.getDeviceInfo().getClientName(),
-					new ArrayList<IFish>());
+	private void movingFish() {
+		for (MovingFish moving : movingFishes) {
+			Pool neighbourPool = this.getPool(moving.neighbourClientName);
+			moving.removeFish();
+			moving.moveTo(neighbourPool);  
 		}
-		return allFishes;
+		movingFishes.clear();
 	}
 
-	private void detectCollisionForInsideFish(
-			Map<String, List<IFish>> allFishes, Pool pool, IFish fish) {
+	private String detectCollisionForInsideFish(Pool pool, IFish fish) {
 		Boundary fishBoundary = fish.getBoundary();
 		Boundary poolBoundary = pool.getBoundary();
 		if (fishBoundary.getMinX() <= poolBoundary.getMinX()) {
 			logger.debug("fish {} hit left: state {} ", fish.getFishId(),
 					fish.getFishState());
-			hitLeft(allFishes, pool, fish);
+			return hitLeft(pool, fish);
 		} else if (fishBoundary.getMaxX() >= poolBoundary.getMaxX()) {
 			logger.debug("fish {} hit right: state {} ", fish.getFishId(),
 					fish.getFishState());
-			hitRight(allFishes, pool, fish);
+			return hitRight(pool, fish);
 		} else if (fishBoundary.getMinY() <= poolBoundary.getMinY()) {
 			logger.debug("fish {} hit bottom: state {} ", fish.getFishId(),
 					fish.getFishState());
-			hitBottom(allFishes, pool, fish);
+			return hitBottom(pool, fish);
 		} else if (fishBoundary.getMaxY() >= poolBoundary.getMaxY()) {
 			logger.debug("fish {} hit top: state {} ", fish.getFishId(),
 					fish.getFishState());
-			hitTop(allFishes, pool, fish);
+			return hitTop(pool, fish);
 		}
-		allFishes.get(pool.getDeviceInfo().getClientName()).add(fish);
+		return null;
 	}
 
-	private void hitLeft(Map<String, List<IFish>> allFishes, Pool pool,
-			IFish fish) {
+	private String hitLeft(Pool pool, IFish fish) {
 		Segment segment = pool.detectCollisionLeftSegments(fish.getBoundary());
+		fish.setFishState(FishState.RETURN);
 		if (segment == null) {
 			fish.getTrajectory().changeDirection(EDirection.LEFT);
-			fish.setFishState(FishState.RETURN);
+			return null;
 		} else {
-			movingOverNeighbourPool(allFishes, fish, segment);
+			movingOverNeighbourPool(fish, segment);
+			return segment.getNeighbourClientName();
 		}
 	}
 
-	private void hitRight(Map<String, List<IFish>> allFishes, Pool pool,
-			IFish fish) {
+	private String hitRight(Pool pool, IFish fish) {
 		Segment segment = pool.detectCollisionRightSegments(fish.getBoundary());
+		fish.setFishState(FishState.RETURN);
 		if (segment == null) {
 			fish.getTrajectory().changeDirection(EDirection.RIGHT);
-			fish.setFishState(FishState.RETURN);
+			return null;
 		} else {
-			movingOverNeighbourPool(allFishes, fish, segment);
+			movingOverNeighbourPool(fish, segment);
+			return segment.getNeighbourClientName();
 		}
 	}
 
-	private void hitBottom(Map<String, List<IFish>> allFishes, Pool pool,
-			IFish fish) {
+	private String hitBottom(Pool pool, IFish fish) {
 		Segment segment = pool
 				.detectCollisionBottomSegments(fish.getBoundary());
+		fish.setFishState(FishState.RETURN);
 		if (segment == null) {
 			fish.getTrajectory().changeDirection(EDirection.BOTTOM);
-			fish.setFishState(FishState.RETURN);
+			return null;
 		} else {
-			movingOverNeighbourPool(allFishes, fish, segment);
+			movingOverNeighbourPool(fish, segment);
+			return segment.getNeighbourClientName();
 		}
 	}
 
-	private void hitTop(Map<String, List<IFish>> allFishes, Pool pool,
-			IFish fish) {
+	private String hitTop(Pool pool, IFish fish) {
 		Segment segment = pool.detectCollisionTopSegments(fish.getBoundary());
+		fish.setFishState(FishState.RETURN);
 		if (segment == null) {
 			fish.getTrajectory().changeDirection(EDirection.TOP);
-			logger.debug("after hit: return");
-			fish.setFishState(FishState.RETURN);
+			return null;
 		} else {
-			logger.debug("after hit: move out");
-			movingOverNeighbourPool(allFishes, fish, segment);
+			movingOverNeighbourPool(fish, segment);
+			return segment.getNeighbourClientName();
 		}
 	}
 
-	private void movingOverNeighbourPool(Map<String, List<IFish>> allFishes,
-			IFish fish, Segment segment) {
-		fish.setFishState(FishState.PASSING);
-		if (segment.getNeighbourClientName() != null) {
-			IFish newFishForHostPoolManager = fish.cloneIgnoreFishState();
-			newFishForHostPoolManager.setFishState(FishState.OUTSIDE);
-			allFishes.get(segment.getNeighbourClientName()).add(newFishForHostPoolManager);
-			logger.debug("host: added fish {} to client {} ({})", newFishForHostPoolManager.getFishId(), segment.getNeighbourClientName(), newFishForHostPoolManager.getFishState());
-			List<Object> params = new ArrayList<Object>();
-			params.add(segment.getNeighbourClientName());
-			params.add(this.getNewFishForNeighbourPool(newFishForHostPoolManager, segment.getNeighbourClientName()));
-			logger.info("send fish {} to client {}", newFishForHostPoolManager.getFishId(),
-					segment.getNeighbourClientName());
-			EventDestination.getInstance().dispatchSuccessEventWithObject(
-					EventType.BLL_SEND_FISH, params);
-		} else {
-			logger.debug("neighbour client name is null");
-		}
+	private void movingOverNeighbourPool(IFish fish, Segment segment) {
+		List<Object> params = new ArrayList<Object>();
+		params.add(segment.getNeighbourClientName());
+		params.add(this.getNewFishForNeighbourPool(fish.clone(),
+				segment.getNeighbourClientName()));
+		EventDestination.getInstance().dispatchSuccessEventWithObject(
+				EventType.BLL_SEND_FISH, params);
 	}
 
 	private IFish getNewFishForNeighbourPool(IFish fish,
 			String neighbourClientName) {
 		IFish newFish = fish.clone();
 		Boundary poolBoundary = this.getPool(neighbourClientName).getBoundary();
-		newFish.getBoundary().getLocation().setX(fish.getBoundary().getLocation().getX()-poolBoundary.getLocation().getX());
-		newFish.getBoundary().getLocation().setY(poolBoundary.getLocation().getY()-poolBoundary.getLocation().getY());
+		newFish.getBoundary()
+				.getLocation()
+				.setX(fish.getBoundary().getLocation().getX()
+						- poolBoundary.getLocation().getX());
+		newFish.getBoundary()
+				.getLocation()
+				.setY(poolBoundary.getLocation().getY()
+						- poolBoundary.getLocation().getY());
 		return newFish;
-	}
-
-//	private void dispatchSendFishEventToHostBLL(Pool pool, IFish refFish) {
-//		List<Object> params = new ArrayList<Object>();
-//		params.add(pool.getDeviceInfo().getClientName());
-//		if (refFish != null) {
-//			params.add(refFish);
-//			EventDestination.getInstance().dispatchSuccessEventWithObject(
-//					EventType.BLL_SEND_FISH, params);
-//			logger.info("send fish {} to client {}", refFish.getFishId(), pool
-//					.getDeviceInfo().getClientName());
-//		} else {
-//			EventDestination.getInstance().dispatchFailEvent(
-//					EventType.BLL_SEND_FISH);
-//			logger.error("error when send a fish to new pool");
-//		}
-//	}
-
-	private void putFishsFromContainerToPools(Map<String, List<IFish>> allFishes) {
-		for (Pool pool : pools) {
-			pool.setFishes(allFishes.get(pool.getDeviceInfo().getClientName()));
-//			logger.debug("pool {} has {} fishes", pool.getDeviceInfo().getClientName(), pool.getFishes().size());
-		}
 	}
 
 	public IFish addFish(String clientName, IFish fish) {

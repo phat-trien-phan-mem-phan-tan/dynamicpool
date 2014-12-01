@@ -42,4 +42,8 @@ public abstract class Trajectory {
 	public abstract EDirection getHorizontalDirection();
 	
 	public abstract Trajectory clone();
+	
+	public abstract String getJsonEncode();
+	
+	public abstract void setJsonEncode(String jsonEncode);
 }

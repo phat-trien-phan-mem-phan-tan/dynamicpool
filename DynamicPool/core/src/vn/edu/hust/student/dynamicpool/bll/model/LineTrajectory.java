@@ -1,9 +1,13 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
+import org.eclipse.jetty.util.ajax.JSON;
+
 
 public class LineTrajectory extends Trajectory {
 	private float dx = 1, dy = 1;
 	private static final int A = 20;
+	@flexjson.JSON(include=false)
+	JSON json = new JSON();
 
 	public LineTrajectory(Boundary fishBoundary) {
 		super(fishBoundary);
@@ -54,5 +58,16 @@ public class LineTrajectory extends Trajectory {
 		t.init(dx, dy);
 		t.setTimeState(getTimeState());
 		return t;
+	}
+
+	@Override
+	public String getJsonEncode() {
+		return json.toJSON(new float[] {dx, dy});
+	}
+
+	@Override
+	public void setJsonEncode(String jsonEncode) {
+		float[] params = (float[]) json.fromJSON(jsonEncode);
+		init(params[0], params[1]);
 	}
 }

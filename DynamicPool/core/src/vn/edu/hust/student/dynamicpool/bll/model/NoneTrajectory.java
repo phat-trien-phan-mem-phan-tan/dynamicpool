@@ -34,4 +34,16 @@ public class NoneTrajectory extends Trajectory {
 		return null;
 	}
 
+	@Override
+	public String getJsonEncode() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setJsonEncode(String jsonEncode) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

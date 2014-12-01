@@ -1,20 +1,24 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
+import org.eclipse.jetty.util.ajax.JSON;
+
 
 public class SinTrajectory extends Trajectory {
 	// x = x+dx
 	// y = y0 + a * sin(t)
 
-	private int a = 100;
-	private int dx = 15;
+	private float a = 100;
+	private float dx = 15;
 	private float y0 = 0;
+	@flexjson.JSON(include=false)
+	private JSON json = new JSON();
 
 	public SinTrajectory(Boundary fishPosition) {
 		super(fishPosition);
 		y0 = fishPosition.getLocation().getY();
 	}
 	
-	public void init(int a, int dx, float y0) {
+	public void init(float a, float dx, float y0) {
 		this.a = a;
 		this.dx = dx;
 		this.y0 = y0;
@@ -62,5 +66,16 @@ public class SinTrajectory extends Trajectory {
 		t.init(a, dx, y0);
 		t.setTimeState(getTimeState());
 		return t;
+	}
+
+	@Override
+	public String getJsonEncode() {
+		return this.json.toJSON(new float[] {a, dx, y0});
+	}
+
+	@Override
+	public void setJsonEncode(String jsonEncode) {
+		float[] params = (float[]) json.fromJSON(jsonEncode);
+		init(params[0], params[1], params[2]);
 	}
 }

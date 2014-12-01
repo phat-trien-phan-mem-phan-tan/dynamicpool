@@ -13,8 +13,6 @@ import vn.edu.hust.student.dynamicpool.bll.model.FishFactory;
 import vn.edu.hust.student.dynamicpool.bll.model.FishType;
 import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 import vn.edu.hust.student.dynamicpool.bll.model.Pool;
-import vn.edu.hust.student.dynamicpool.bll.model.HostPoolManager;
-import vn.edu.hust.student.dynamicpool.bll.model.PoolManager;
 import vn.edu.hust.student.dynamicpool.dal.ClientDataAccessLayerImpl;
 import vn.edu.hust.student.dynamicpool.dal.DataAccessLayer;
 import vn.edu.hust.student.dynamicpool.events.EventDestination;
