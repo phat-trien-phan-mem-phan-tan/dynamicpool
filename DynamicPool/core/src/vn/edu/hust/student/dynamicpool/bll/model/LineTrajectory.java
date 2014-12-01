@@ -39,7 +39,8 @@ public class LineTrajectory extends Trajectory {
 		increaseTimeState(deltaTime);
 		float x = (float) (fishBoundary.getMinX() + A * dx * deltaTime);
 		float y = (float) (fishBoundary.getMinY() + A * dy * deltaTime);
-		return new Point(x, y);
+		this.getFishBoundary().getLocation().setLocation(x, y);
+		return getFishBoundary().getLocation();
 	}
 
 	@Override

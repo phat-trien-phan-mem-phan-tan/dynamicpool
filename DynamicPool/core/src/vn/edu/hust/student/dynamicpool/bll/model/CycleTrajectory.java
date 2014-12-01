@@ -38,7 +38,8 @@ public class CycleTrajectory extends Trajectory {
 		increaseTimeState(deltaTime * d);
 		float x = (float) (centerX + a * Math.cos(getTimeState()));
 		float y = (float) (centerY + a * Math.sin(getTimeState()));
-		return new Point(x, y);
+		this.getFishBoundary().getLocation().setLocation(x, y);
+		return getFishBoundary().getLocation();
 	}
 
 	@Override

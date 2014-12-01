@@ -30,7 +30,8 @@ public class SinTrajectory extends Trajectory {
 		increaseTimeState(deltaTime);
 		float x = getFishBoundary().getLocation().getX() + dx * deltaTime;
 		float y = (float) (y0 + a * Math.sin(getTimeState()));
-		return new Point(x, y);
+		this.getFishBoundary().getLocation().setLocation(x, y);
+		return getFishBoundary().getLocation();
 	}
 
 	@Override

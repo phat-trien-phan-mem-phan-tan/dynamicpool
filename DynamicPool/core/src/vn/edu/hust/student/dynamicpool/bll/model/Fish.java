@@ -77,7 +77,8 @@ public class Fish implements IFish {
 
 	@Override
 	public void updateLocation(float deltaTime) {
-		trajectory.updateLocation(deltaTime);
+		Point updateLocation = trajectory.updateLocation(deltaTime);
+		boundary.getLocation().setLocation(updateLocation.getX(), updateLocation.getY());
 	}
 
 	@Override
