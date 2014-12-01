@@ -1,6 +1,5 @@
 package vn.edu.hust.student.dynamicpool.bll.model;
 
-import java.util.Random;
 import java.util.UUID;
 
 import org.slf4j.Logger;
@@ -15,11 +14,11 @@ public class Fish implements IFish {
 	private Boundary boundary = new Boundary();
 	private FishState fishState = FishState.INSIDE;
 	private boolean isIgnoreUpdateLocation = false;
-	@JSON(include=false)
+	@JSON(include = false)
 	private Logger logger = LoggerFactory.getLogger(Fish.class);
-	
+
 	public Fish() {
-		
+
 	}
 
 	public Fish(FishType fishType, Trajectory fishTrajectory,
@@ -71,14 +70,14 @@ public class Fish implements IFish {
 
 	@Override
 	public void setFishState(FishState fishState) {
-		logger.debug("Fish {} change state from {} to {}", this.getFishId(), this.fishState, fishState);
+		logger.debug("Fish {} change state from {} to {}", this.getFishId(),
+				this.fishState, fishState);
 		this.fishState = fishState;
 	}
 
 	@Override
 	public void updateLocation(float deltaTime) {
-		if (!isIgnoreUpdateLocation)
-			trajectory.updateLocation(deltaTime);
+		trajectory.updateLocation(deltaTime);
 	}
 
 	@Override
@@ -101,11 +100,13 @@ public class Fish implements IFish {
 	}
 
 	@Override
-	public IFish cloneFish() {
+	public IFish clone() {
+		FishType fishType = this.fishType;
+		Trajectory trajectory = this.getTrajectory().clone();
+		Boundary boundary = this.getBoundary().clone();
 		IFish fish = new Fish(fishType, trajectory, boundary);
 		fish.setFishId(fishId);
 		fish.setFishState(fishState);
-		fish.ignoreUpdateLocation();
 		return fish;
 	}
 }

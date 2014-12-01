@@ -13,6 +13,12 @@ public class SinTrajectory extends Trajectory {
 		super(fishPosition);
 		y0 = fishPosition.getLocation().getY();
 	}
+	
+	public void init(int a, int dx, float y0) {
+		this.a = a;
+		this.dx = dx;
+		this.y0 = y0;
+	}
 
 	@Override
 	public ETrajectoryType getTrajectoryType() {
@@ -20,11 +26,11 @@ public class SinTrajectory extends Trajectory {
 	}
 
 	@Override
-	public void updateLocation(float deltaTime) {
+	public Point updateLocation(float deltaTime) {
 		increaseTimeState(deltaTime);
 		float x = getFishBoundary().getLocation().getX() + dx * deltaTime;
 		float y = (float) (y0 + a * Math.sin(getTimeState()));
-		fishBoundary.setLocation(new Point(x, y));
+		return new Point(x, y);
 	}
 
 	@Override
@@ -47,5 +53,13 @@ public class SinTrajectory extends Trajectory {
 	@Override
 	public EDirection getHorizontalDirection() {
 		return dx < 0 ? EDirection.LEFT : EDirection.RIGHT;
+	}
+
+	@Override
+	public Trajectory clone() {
+		SinTrajectory t = new SinTrajectory(fishBoundary.clone());
+		t.init(a, dx, y0);
+		t.setTimeState(getTimeState());
+		return t;
 	}
 }

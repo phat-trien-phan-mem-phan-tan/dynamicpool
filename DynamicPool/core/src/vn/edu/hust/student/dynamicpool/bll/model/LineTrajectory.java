@@ -8,6 +8,11 @@ public class LineTrajectory extends Trajectory {
 	public LineTrajectory(Boundary fishBoundary) {
 		super(fishBoundary);
 	}
+	
+	public void init(float dx, float dy) {
+		this.dx = dx;
+		this.dy = dy;
+	}
 
 	@Override
 	public void changeDirection(EDirection hitTo) {
@@ -30,15 +35,23 @@ public class LineTrajectory extends Trajectory {
 	}
 
 	@Override
-	public void updateLocation(float deltaTime) {
+	public Point updateLocation(float deltaTime) {
 		increaseTimeState(deltaTime);
 		float x = (float) (fishBoundary.getMinX() + A * dx * deltaTime);
 		float y = (float) (fishBoundary.getMinY() + A * dy * deltaTime);
-		fishBoundary.setLocation(new Point(x, y));
+		return new Point(x, y);
 	}
 
 	@Override
 	public EDirection getHorizontalDirection() {
 		return dx < 0 ? EDirection.LEFT : EDirection.RIGHT;
+	}
+
+	@Override
+	public Trajectory clone() {
+		LineTrajectory t = new LineTrajectory(fishBoundary.clone());
+		t.init(dx, dy);
+		t.setTimeState(getTimeState());
+		return t;
 	}
 }

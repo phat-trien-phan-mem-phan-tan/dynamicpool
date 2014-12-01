@@ -41,6 +41,7 @@ public class Point {
 		this.setY(y);
 	}
 	
-	
-
+	public Point clone() {
+		return new Point(x, y);
+	}
 }

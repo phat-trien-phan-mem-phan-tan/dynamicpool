@@ -46,22 +46,22 @@ public class Boundary {
 		this.location = point;
 	}
 
-	@JSON(include=false)
+	@JSON(include = false)
 	public float getMinX() {
 		return location.getX();
 	}
 
-	@JSON(include=false)
+	@JSON(include = false)
 	public float getMinY() {
 		return location.getY();
 	}
 
-	@JSON(include=false)
+	@JSON(include = false)
 	public float getMaxX() {
 		return location.getX() + getWidth();
 	}
 
-	@JSON(include=false)
+	@JSON(include = false)
 	public float getMaxY() {
 		return location.getY() + getHeight();
 	}
@@ -78,18 +78,26 @@ public class Boundary {
 	}
 
 	public boolean isOutside(Boundary containerBoundary) {
-		double distanceX = Math.abs(containerBoundary.getMinX() * 2
-				+ containerBoundary.getWidth() - this.getMinX() * 2 - containerBoundary.getWidth());
+		double doubleDistanceX = Math.abs(containerBoundary.getMinX() * 2
+				+ containerBoundary.getWidth() - this.getMinX() * 2
+				- this.getWidth());
 		float minDistanceX = containerBoundary.getWidth() + this.getWidth();
 		float doubleDistanceY = Math.abs(containerBoundary.getMinY() * 2
-				+ containerBoundary.getHeight() - this.getMinY() * 2 - containerBoundary.getHeight());
-		float minDoubleDistanceY = containerBoundary.getHeight() + this.getHeight();
-		return distanceX > minDistanceX && doubleDistanceY > minDoubleDistanceY;
+				+ containerBoundary.getHeight() - this.getMinY() * 2
+				- this.getHeight());
+		float minDoubleDistanceY = containerBoundary.getHeight()
+				+ this.getHeight();
+		return doubleDistanceX > minDistanceX
+				|| doubleDistanceY > minDoubleDistanceY;
 	}
 
 	@Override
 	public String toString() {
 		return "Boundary [width=" + width + ", height=" + height
 				+ ", location=" + location + "]";
+	}
+
+	public Boundary clone() {
+		return new Boundary(getLocation().clone(), width, height);
 	}
 }

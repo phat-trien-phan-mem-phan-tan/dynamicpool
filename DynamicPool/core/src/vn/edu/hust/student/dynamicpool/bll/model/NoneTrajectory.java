@@ -13,8 +13,9 @@ public class NoneTrajectory extends Trajectory {
 	}
 
 	@Override
-	public void updateLocation(float deltaTime) {
+	public Point updateLocation(float deltaTime) {
 		increaseTimeState(deltaTime);
+		return new Point();
 	}
 
 	@Override
@@ -25,6 +26,12 @@ public class NoneTrajectory extends Trajectory {
 	@Override
 	public EDirection getHorizontalDirection() {
 		return EDirection.RIGHT;
+	}
+
+	@Override
+	public Trajectory clone() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

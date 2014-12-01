@@ -124,4 +124,10 @@ public class ClientDataAccessLayerImpl implements DataAccessLayer {
 			throws DALException {
 		throw new DALException("Not implement", new NotImplementedException());
 	}
+
+	@Override
+	public void sendNewFishToHostPool(String clientName, boolean isSuccess,
+			IFish fish) throws DALException {
+		throw new DALException("Not implement", new NotImplementedException());
+	}
 }

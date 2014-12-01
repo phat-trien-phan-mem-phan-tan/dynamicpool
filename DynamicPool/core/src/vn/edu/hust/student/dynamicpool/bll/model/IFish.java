@@ -27,5 +27,5 @@ public interface IFish {
 
 	void ignoreUpdateLocation();
 
-	IFish cloneFish();
+	IFish clone();
 }

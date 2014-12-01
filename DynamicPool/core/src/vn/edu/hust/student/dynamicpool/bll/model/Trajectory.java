@@ -37,7 +37,9 @@ public abstract class Trajectory {
 
 	public abstract ETrajectoryType getTrajectoryType();
 
-	public abstract void updateLocation(float deltaTime);
+	public abstract Point updateLocation(float deltaTime);
 
 	public abstract EDirection getHorizontalDirection();
+	
+	public abstract Trajectory clone();
 }

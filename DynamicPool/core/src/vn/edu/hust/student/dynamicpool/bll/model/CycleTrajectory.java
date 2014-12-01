@@ -20,6 +20,13 @@ public class CycleTrajectory extends Trajectory {
 		increaseTimeState(-Math.PI / 2);
 		a = Math.abs(this.centerY - fishBoundary.getLocation().getY());
 	}
+	
+	public void init(float centerX, float centerY, float a, float d) {
+		this.centerX = centerX;
+		this.centerY = centerY;
+		this.a = a;
+		this.d = d;
+	}
 
 	@Override
 	public ETrajectoryType getTrajectoryType() {
@@ -27,11 +34,11 @@ public class CycleTrajectory extends Trajectory {
 	}
 
 	@Override
-	public void updateLocation(float deltaTime) {
+	public Point updateLocation(float deltaTime) {
 		increaseTimeState(deltaTime * d);
 		float x = (float) (centerX + a * Math.cos(getTimeState()));
 		float y = (float) (centerY + a * Math.sin(getTimeState()));
-		fishBoundary.setLocation(new Point(x, y));
+		return new Point(x, y);
 	}
 
 	@Override
@@ -56,6 +63,14 @@ public class CycleTrajectory extends Trajectory {
 	public EDirection getHorizontalDirection() {
 		return Math.sin(getTimeState()) > 0 ? EDirection.LEFT
 				: EDirection.RIGHT;
+	}
+
+	@Override
+	public Trajectory clone() {
+		CycleTrajectory t = new CycleTrajectory(getFishBoundary().clone());
+		t.init(centerX, centerY, a, d);
+		t.setTimeState(this.getTimeState());
+		return t;
 	}
 
 }

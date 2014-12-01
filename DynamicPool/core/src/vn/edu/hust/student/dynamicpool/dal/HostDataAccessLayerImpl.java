@@ -51,7 +51,7 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 					EventType.DAL_CREATE_HOST, key);
 		} catch (DALException e) {
 			logger.error("cannot create host {}", e.getMessage());
-			
+
 		} catch (UnknownHostException e) {
 			logger.debug("cannot get ip lan {}", e.getMessage());
 		}
@@ -113,12 +113,12 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 						EventType.DAL_CREATE_FISH_RESPONSE);
 			}
 		} else {
-			sendFishToClient(clientName, isSuccess, fish);
+			sendFishToClientViaSocket(clientName, isSuccess, fish);
 		}
 	}
-	
-	private void sendFishToClient(String clientName, boolean isSuccess,
-			IFish fish) {
+
+	private void sendFishToClientViaSocket(String clientName,
+			boolean isSuccess, IFish fish) {
 		logger.debug("send fish to client: {}", clientName);
 		logger.debug(fish == null ? "fish null" : "fish id: "
 				+ fish.getFishId());
@@ -132,6 +132,26 @@ public class HostDataAccessLayerImpl implements DataAccessLayer {
 			client.send(map);
 		} else {
 			logger.error("Not found for clientName {}", clientName);
+		}
+	}
+
+	@Override
+	public void sendNewFishToHostPool(String clientName, boolean isSuccess,
+			IFish fish) {
+		logger.debug("dispatch event for host");
+		if (clientName != null && fish != null) {
+			List<Object> list = new ArrayList<Object>();
+			list.add(clientName);
+			list.add(fish);
+			if (isSuccess) {
+				EventDestination.getInstance().dispatchSuccessEventWithObject(
+						EventType.HOST_SEND_FISH, list);
+			} else {
+				EventDestination.getInstance().dispatchFailEventWithObject(
+						EventType.HOST_SEND_FISH, null, list);
+			}
+		} else {
+			logger.error("Client name or fish null");
 		}
 	}
 

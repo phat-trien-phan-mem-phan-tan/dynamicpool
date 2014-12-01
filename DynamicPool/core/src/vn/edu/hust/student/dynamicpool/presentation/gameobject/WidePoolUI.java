@@ -5,6 +5,7 @@ import vn.edu.hust.student.dynamicpool.bll.model.IFish;
 import vn.edu.hust.student.dynamicpool.bll.model.Point;
 import vn.edu.hust.student.dynamicpool.bll.model.Pool;
 import vn.edu.hust.student.dynamicpool.bll.model.PoolManager;
+import vn.edu.hust.student.dynamicpool.bll.model.Segment;
 import vn.edu.hust.student.dynamicpool.events.EventDestination;
 import vn.edu.hust.student.dynamicpool.events.EventType;
 import vn.edu.hust.student.dynamicpool.utils.AppConst;
@@ -15,7 +16,8 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 public class WidePoolUI {
 	private static final Color POOL_COLOR = new Color(255, 255, 255, 0.1f);
-	private static final Color FISH_COLOR = new Color(0, 0, 0, 1);
+	private static final Color FISH_COLOR = new Color(255, 255, 0, 1);
+	private static final Color SEGMENT_COLOR = new Color(0, 255, 255, 0.1f);
 	CordinateConvert convert = new CordinateConvert();
 	private PoolManager hostPoolManager;
 	private ShapeRenderer shapeRenderer;
@@ -41,6 +43,44 @@ public class WidePoolUI {
 			}
 		}
 		shapeRenderer.end();
+		shapeRenderer.begin(ShapeType.Line);
+		shapeRenderer.setColor(SEGMENT_COLOR);
+		for (Pool pool : hostPoolManager.getPools()) {
+			for (Segment segment : pool.getSegments()) {
+				this.drawSegment(pool, segment);
+			}
+		}
+		shapeRenderer.end();
+	}
+
+	private void drawSegment(Pool pool, Segment segment) {
+		float x1 = 0, y1 = 0, x2 = 0, y2 = 0;
+		Boundary poolBoundary = pool.getBoundary();
+		switch (segment.getSegmentDirection()) {
+		case LEFT:
+			x1 = x2 = poolBoundary.getMinX();
+			y1 = segment.getBeginPoint();
+			y2 = segment.getEndPoint();
+			break;
+		case RIGHT:
+			x1 = x2 = poolBoundary.getMaxX();
+			y1 = segment.getBeginPoint();
+			y2 = segment.getEndPoint();
+			break;
+		case TOP:
+			y1 = y2 = poolBoundary.getMaxY();
+			x1 = segment.getBeginPoint();
+			x2 = segment.getEndPoint();
+			break;
+		case BOTTOM:
+			y1 = y2 = poolBoundary.getMinY();
+			x1 = segment.getBeginPoint();
+			x2 = segment.getEndPoint();
+			break;
+		default:
+			return;
+		}
+		shapeRenderer.line(x1, y1, x2, y2);
 	}
 
 	private void drawPool(Pool pool) {
@@ -50,10 +90,9 @@ public class WidePoolUI {
 	}
 
 	private void drawFish(IFish fish) {
-		Boundary boundary = convert.convertBoundaryToOriginal(fish
-				.getBoundary());
-		shapeRenderer.circle(boundary.getMinX(), boundary.getMinY(),
-				boundary.getWidth());
+		Boundary boundary = convert.convertBoundary(fish.getBoundary());
+		shapeRenderer.rect(boundary.getMinX(), boundary.getMinY(),
+				boundary.getWidth(), boundary.getHeight());
 	}
 
 	public void updateChange() {

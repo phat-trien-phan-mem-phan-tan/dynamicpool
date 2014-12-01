@@ -52,6 +52,9 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 		EventDestination.getInstance().addEventListener(
 				EventType.BLL_SEND_FISH,
 				new BaseEventListener(this, "onSendFishCallbackHander"));
+		EventDestination.getInstance().addEventListener(
+				EventType.HOST_SEND_FISH,
+				new BaseEventListener(this, "onHostSendFishCallbackHander"));
 	}
 
 	@Override
@@ -150,15 +153,15 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 				}
 				if (clientName == null || fish == null) {
 					logger.debug("client name or fish null");
-					try {
-						if (clientName != null)
-							dataAccessLayer.respondCreateFishRequest(
-									clientName, false, null);
-					} catch (DALException e) {
-						logger.error(
-								"cannot send add fish response (false result) {}",
-								e);
-					}
+					// try {
+					// if (clientName != null)
+					// dataAccessLayer.respondCreateFishRequest(
+					// clientName, false, null);
+					// } catch (DALException e) {
+					// logger.error(
+					// "cannot send add fish response (false result) {}",
+					// e);
+					// }
 					return;
 				}
 				fish = hostPoolManager.addFish(clientName, fish);
@@ -196,14 +199,14 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 			}
 			try {
 				dataAccessLayer.respondCreateFishRequest(clientName, true,
-						fish.cloneFish());
+						fish.clone());
+//				dataAccessLayer.sendNewFishToHostPool(clientName, true, fish);
 				logger.debug("sent a new fish {} to a client {}",
 						fish.getFishId(), clientName);
 			} catch (DALException e) {
 				logger.error("cannot send new fish {} to client {}",
 						fish.getFishId(), clientName);
 			}
-
 			logger.info("send fish {} to client {}", fish.getFishId(),
 					clientName);
 		} else {
@@ -213,5 +216,57 @@ public class HostBusinessLogicLayerImpl extends ClientBusinessLogicLayerImpl {
 
 	public PoolManager getHostPoolManager() {
 		return this.hostPoolManager;
+	}
+
+	public void onHostSendFishCallbackHander(Event event) {
+		logger.debug("on host send fish callback hander");
+		if (EventDestination.parseEventToBoolean(event)) {
+			logger.debug("onHostSendFishCallbackHander: begin add fish");
+			IFish fish = this.getFish(event);
+			String clientName = this.getClientName(event);
+			if (fish != null && clientName != null) {
+				hostPoolManager.addFish(clientName, fish);
+				logger.info("added new fish {} to {} in wide pool",
+						fish.getFishId(), clientName);
+			} else {
+				logger.error("onHostSendFishCallbackHander: cannot get fish and client name from event target");
+			}
+		} else {
+			logger.debug("onHostSendFishCallbackHander: begin remove fish");
+			IFish fish = this.getFish(event);
+			String clientName = this.getClientName(event);
+			if (fish != null && clientName != null) {
+				hostPoolManager.addFish(clientName, fish);
+				hostPoolManager.removeFish(clientName, fish.getFishId());
+				logger.info("removed fish {} to {} in wide pool",
+						fish.getFishId(), clientName);
+			} else {
+				logger.error("onHostSendFishCallbackHander: cannot get fish and client name from event target");
+			}
+		}
+	}
+
+	private IFish getFish(Event eventWithListTarget) {
+		Object listObject = EventDestination
+				.parseEventToTargetObject(eventWithListTarget);
+		if (listObject instanceof List) {
+			for (Object object : (List) listObject) {
+				if (object instanceof IFish)
+					return (IFish) object;
+			}
+		}
+		return null;
+	}
+
+	private String getClientName(Event eventWithListTarget) {
+		Object listObject = EventDestination
+				.parseEventToTargetObject(eventWithListTarget);
+		if (listObject instanceof List) {
+			for (Object object : (List) listObject) {
+				if (object instanceof String)
+					return (String) object;
+			}
+		}
+		return null;
 	}
 }

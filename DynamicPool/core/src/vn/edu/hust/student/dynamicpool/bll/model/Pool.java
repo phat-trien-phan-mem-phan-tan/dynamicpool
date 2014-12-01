@@ -171,4 +171,14 @@ public class Pool {
 		clone.setScale(this.scale);
 		return clone;
 	}
+
+	public void removeFishById(String fishId) {
+		IFish fish = getFish(fishId);
+		if (fish == null) {
+			logger.error("removeFishById: fish {} not found", fishId);
+			return;
+		}
+		fishes.remove(fish);
+		logger.info("removeFishById: fish {} removed from pool {}", fishId, getDeviceInfo().getClientName());
+	}
 }
